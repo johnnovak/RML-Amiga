@@ -16,6 +16,7 @@
 *.uss
 
 /Configurations/*.cache
+/Configurations/*.backup
 /Configurations.*
 /Games
 /ROMs
