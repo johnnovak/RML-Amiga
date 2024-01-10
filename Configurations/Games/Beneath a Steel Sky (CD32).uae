@@ -179,6 +179,7 @@ rtg_modes=0x212
 debug_mem=false
 log_illegal_mem=false
 kbd_lang=us
+warpboot=true
 input.config=0
 input.joymouse_speed_analog=100
 input.joymouse_speed_digital=10

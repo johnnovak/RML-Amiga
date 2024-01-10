@@ -179,6 +179,7 @@ rtg_modes=0x212
 debug_mem=false
 log_illegal_mem=false
 kbd_lang=us
+warpboot=true
 filesystem2=rw,DH0:System:..\System-1.3,0
 uaehf0=dir,rw,DH0:System:..\System-1.3,0
 filesystem2=rw,DH1:Game:..\Games\Altered Destiny\Harddisk,0
