@@ -18,10 +18,12 @@
 /Configurations/*.cache
 /Configurations/*.backup
 /Configurations.*
+/Demos
 /Games
 /ROMs
 /Screenshots
 /System-*
 /WinUAE/winuaebootlog.txt
+/WinUAE/*.mod
 /WinUAE.*
 
