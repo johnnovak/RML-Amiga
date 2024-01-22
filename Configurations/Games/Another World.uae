@@ -1,7 +1,7 @@
 config_description=
 config_hardware=true
 config_host=true
-config_version=5.1.0
+config_version=5.2.0
 config_hardware_path=
 config_host_path=
 config_all_path=
@@ -141,7 +141,7 @@ immediate_blits=false
 ntsc=false
 genlock=false
 show_leds=true
-chipset=ocs
+chipset=ecs_agnus
 chipset_refreshrate=49.920406
 collision_level=playfields
 chipset_compatible=A500
