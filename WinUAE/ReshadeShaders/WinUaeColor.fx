@@ -1,6 +1,6 @@
 /*
     WinUAE Color Shader
-   
+
    Copyright (C) 2020 guest(r), Dr. Venom - guest.r@gmail.com
 
    This program is free software; you can redistribute it and/or
@@ -71,7 +71,7 @@ float3 plant (float3 tar, float r)
 	float t = max(max(tar.r,tar.g),tar.b) + 0.00001;
 	return tar * r / t;
 }
- 
+
 float4 WUColor(float4 pos : SV_Position, float2 uv : TexCoord) : SV_Target
 {
 
@@ -117,7 +117,7 @@ float3x3 ToSRGB = float3x3(
 -0.969244,  1.875968,  0.041555,
  0.055630, -0.203977,  1.056972
 );
- 
+
 float3x3 ToDCI = float3x3(
  2.725394,  -1.018003,  -0.440163,
 -0.795168,   1.689732,   0.022647,
@@ -134,7 +134,7 @@ float3x3 ToREC = float3x3(
  1.716651, -0.355671, -0.253366,
 -0.666684,  1.616481,  0.015769,
  0.017640, -0.042771,  0.942103
-); 
+);
 
 
 float3x3 D65_to_XYZ = float3x3 (
@@ -146,16 +146,16 @@ float3x3 XYZ_to_D65 = float3x3 (
            3.0628971, -0.9692660,  0.0678775,
           -1.3931791,  1.8760108, -0.2288548,
           -0.4757517,  0.0415560,  1.0693490);
-		   
+
 float3x3 D50_to_XYZ = float3x3 (
            0.4552773,  0.2323025,  0.0145457,
            0.3675500,  0.7077956,  0.1049154,
            0.1413926,  0.0599019,  0.7057489);
-		   
+
 float3x3 XYZ_to_D50 = float3x3 (
            2.9603944, -0.9787684,  0.0844874,
           -1.4678519,  1.9161415, -0.2545973,
-          -0.4685105,  0.0334540,  1.4216174);		    
+          -0.4685105,  0.0334540,  1.4216174);
 
 	// Reading the texels
 
@@ -169,17 +169,17 @@ float3x3 XYZ_to_D50 = float3x3 (
 
 	float p;
 	float3x3 m_out = ToSRGB;
-	
+
 	if (CS == 0.0) { p = 2.4; m_out =  ToSRGB; } else
 	if (CS == 1.0) { p = 2.6; m_out =  ToDCI;  } else
 	if (CS == 2.0) { p = 2.2; m_out =  ToAdobe;} else
 	if (CS == 3.0) { p = 2.4; m_out =  ToREC;  }
-	
+
 	float3 color = pow(c, float3(p,p,p));
-	
+
 	float3x3 m_in = Profile0;
 
-	if (CP == 0.0) { m_in = Profile0; } else	
+	if (CP == 0.0) { m_in = Profile0; } else
 	if (CP == 1.0) { m_in = Profile1; } else
 	if (CP == 2.0) { m_in = Profile2; } else
 	if (CP == 3.0) { m_in = Profile3; } else
@@ -189,10 +189,10 @@ float3x3 XYZ_to_D50 = float3x3 (
 	color = mul(m_in,color);
 	color = mul(m_out,color);
 	color = clamp(color, 0.0, 1.0);
-	
+
 	float r = 1.0/p;
-	color = pow(color, float3(r,r,r));	
-	
+	color = pow(color, float3(r,r,r));
+
 	if (CP == -1.0) color = c;
 
 	color = pow(color, float3(1.0,1.0,1.0)*2.4);
@@ -200,23 +200,23 @@ float3x3 XYZ_to_D50 = float3x3 (
 
 	float3 warmer = mul(transpose(D50_to_XYZ),color);
 	warmer = mul(transpose(XYZ_to_D65),warmer);
-	warmer = clamp(warmer, 0.000000, 1.0);	
-	
+	warmer = clamp(warmer, 0.000000, 1.0);
+
 	float3 cooler = mul(transpose(D65_to_XYZ),color);
 	cooler = mul(transpose(XYZ_to_D50),cooler);
-	cooler = clamp(cooler, 0.000000, 1.0);	
-	
+	cooler = clamp(cooler, 0.000000, 1.0);
+
 	float m = abs(WP);
-	
+
 	float3 comp = (WP < 0.0) ? cooler : warmer;
-	
-	color = lerp(color, comp, m); 
+
+	color = lerp(color, comp, m);
 
 	color = pow(color, float3(1.0,1.0,1.0)/2.4);
 	color = clamp(color, 0.0, 1.0);
-	
+
 	color*=contr(color);
-	
+
 	return float4(clamp(color*brightness, 0.0, 1.0),w);
 }
 
