@@ -74,10 +74,11 @@ nav:
     - manual/index.md   # dummy page for redirecting
 
     - manual/introduction.md
+    - manual/getting-started.md
     - manual/installation.md
     - manual/hard-drive-installed-games.md
     - manual/floppy-games.md
-    - manual/saving-your-progress.md
+    - manual/save-states.md
     - manual/keyboard-shortcuts.md
     - manual/folder-organisation.md
     - manual/customising-your-setup.md

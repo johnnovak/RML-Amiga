@@ -1,5 +1,10 @@
 # Keyboard shortcuts
 
+!!! warning "Not all keyboards are created equal"
+
+    You might not be able to use some of the 3-key shortcuts if you do not
+    have a *3-key rollover* (3KRO) or better keyboard.
+
 <div class="compact" markdown>
 | Shortcut                   | Description                                            |
 | --------                   | -----------                                            |
@@ -14,9 +19,3 @@
 | ++end+f4++ | Eject floppy image from DF0 -- DF3                     |
 | ++end+print-screen++       | Save screenshot                                        |
 </div>
-
-!!! warning "Not all keyboards are created equal"
-
-    You might not be able to use some of the 3-key shortcuts if you do not
-    have a *3-key rollover* (3KRO) or better keyboard.
-
