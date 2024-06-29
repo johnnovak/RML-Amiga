@@ -1,0 +1,65 @@
+# Project information
+site_name: Rincewind's Magic Luggage Full of Amiga Goodies
+site_url: https://amiga-collection.org/
+site_author: Rincewind
+site_description: >-
+  It's a magic luggage, full of Amiga goodies
+
+# Theme configuration
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  font:
+    text: Open Sans
+    code: Roboto Mono
+#  logo: assets/images/dosbox-staging-nobg.svg
+#  favicon: assets/images/favicon.ico
+
+# CSS overrides
+extra_css:
+  - stylesheets/extra.css
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.betterem
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.saneheaders
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - sane_lists
+  - smarty
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search
+  - glightbox:
+      slide_effect: 'none'
+      skip_classes:
+        - skip-lightbox
+
+
