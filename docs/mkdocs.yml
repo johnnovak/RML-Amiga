@@ -61,5 +61,30 @@ plugins:
       slide_effect: 'none'
       skip_classes:
         - skip-lightbox
+  - redirects:
+      redirect_maps:
+        # Convenience redirects for top level sections (so for example
+        # `/manual/` takes you to `manual/introduction/` instead of a 404).
+        #
+        'manual/index.md': 'manual/introduction.md'
 
+# Page tree
+nav:
+  - Manual:
+    - manual/index.md   # dummy page for redirecting
 
+    - manual/introduction.md
+    - manual/installation.md
+    - manual/hard-drive-installed-games.md
+    - manual/floppy-games.md
+    - manual/saving-your-progress.md
+    - manual/keyboard-shortcuts.md
+    - manual/folder-organisation.md
+    - manual/customising-your-setup.md
+
+  - Games:
+    - games/index.md
+
+not_in_nav: |
+  # To silence the warning about the custom `index.md` front page
+  /index.md
