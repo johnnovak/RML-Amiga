@@ -29,7 +29,7 @@
 #define s_beam       1.00     // overgrown bright beam (0.0 to 1.0)
 #define h_sharp      7.00     // pixel sharpness (1.0 to 10.0)
 #define cubic        1.80     // cubic sharpness (0.0 to 2.0)
-#define gamma_out    1.78     // gamma out
+#define gamma_out    1.90     // gamma out
 
 
 // The name of this effect
