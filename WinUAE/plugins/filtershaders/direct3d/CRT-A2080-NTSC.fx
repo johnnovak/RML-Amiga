@@ -21,7 +21,7 @@
 
 
 #define brightboost1 1.80     // adjust brightness - dark pixels (1.0 to 2.0)
-#define brightboost2 1.05     // adjust brightness - bright pixels (1.0 to 2.0)
+#define brightboost2 1.00     // adjust brightness - bright pixels (1.0 to 2.0)
 #define scanline1    6.50     // scanline shape, center (3.0 to 12.0)
 #define scanline2   11.00     // scanline shape, edges (6.0 to 15.0)
 #define beam_min     0.72     // dark area beam min - narrow (0.5 to 2.0)
@@ -29,7 +29,7 @@
 #define s_beam       1.00     // overgrown bright beam (0.0 to 1.0)
 #define h_sharp      7.00     // pixel sharpness (1.0 to 10.0)
 #define cubic        1.80     // cubic sharpness (0.0 to 2.0)
-#define gamma_out    1.78     // gamma out
+#define gamma_out    1.90     // gamma out
 
 
 // The name of this effect

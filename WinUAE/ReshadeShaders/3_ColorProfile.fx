@@ -1,5 +1,5 @@
 /*
-   WinUAE Color Shader
+    WinUAE Color Shader
 
    Copyright (C) 2020 guest(r), Dr. Venom - guest.r@gmail.com
 
@@ -18,8 +18,13 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 
-// Renames to MonitorControls for clarity when tweaking the
-// parameters in the ReShade UI
+// Changes by John Novak:
+//
+// - Renamed to ColorProfile for clarity when tweaking the parameters in the
+//   ReShade UI
+//
+// - Only show 'Color Profile' and 'Color Space' controls
+//
 
 #include "ReShadeUI.fxh"
 #include "ReShade.fxh"
@@ -41,24 +46,28 @@ uniform float WP < __UNIFORM_SLIDER_FLOAT1
 	ui_min = -1.0; ui_max = 1.0;
 	ui_label = "Color Temperature";
 	ui_tooltip = "Color Temperature";
+	hidden = true;
 > = 0.0;
 
 uniform float saturation < __UNIFORM_SLIDER_FLOAT1
 	ui_min = 0.0; ui_max = 2.0;
 	ui_label = "Color Saturation";
 	ui_tooltip = "Color Saturation";
+	hidden = true;
 > = 1.0;
 
 uniform float contrast < __UNIFORM_SLIDER_FLOAT1
 	ui_min = -1.0; ui_max = 2.0;
 	ui_label = "Color Contrast";
 	ui_tooltip = "Color Contrast";
+	hidden = true;
 > = 0.0;
 
 uniform float brightness < __UNIFORM_SLIDER_FLOAT1
 	ui_min = 0.0; ui_max = 3.0;
 	ui_label = "Color Brightness";
 	ui_tooltip = "Color Brightness";
+	hidden = true;
 > = 1.0;
 
 float contr( float3 c)
@@ -223,7 +232,7 @@ float3x3 XYZ_to_D50 = float3x3 (
 	return float4(clamp(color*brightness, 0.0, 1.0),w);
 }
 
-technique MonitorControls
+technique ColorProfile
 {
 	pass
 	{

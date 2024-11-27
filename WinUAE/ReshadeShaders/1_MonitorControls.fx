@@ -1,5 +1,5 @@
 /*
-    WinUAE Color Shader
+   WinUAE Color Shader
 
    Copyright (C) 2020 guest(r), Dr. Venom - guest.r@gmail.com
 
@@ -18,6 +18,14 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 
+// Changes by John Novak:
+//
+// - Renamed to MonitorControls for clarity when tweaking the
+//   parameters in the ReShade UI
+//
+// - Hide 'Color Profile' and 'Color Space' controls
+//
+
 #include "ReShadeUI.fxh"
 #include "ReShade.fxh"
 
@@ -26,12 +34,14 @@ uniform int CP < __UNIFORM_SLIDER_INT1
 	ui_min = -1; ui_max = 5;
 	ui_label = "Color Profile (-1 : All OFF)";
 	ui_tooltip = "Color Profile (-1 : All OFF)";
+	hidden = true;
 > = 0;
 
 uniform int CS < __UNIFORM_SLIDER_INT1
 	ui_min = 0; ui_max = 3;
 	ui_label = "Color Space: sRGB, DCI-P3, Adobe RGB, Rec.2020";
 	ui_tooltip = "Color Space: sRGB, DCI-P3, Adobe RGB, Rec.2020";
+	hidden = true;
 > = 0;
 
 uniform float WP < __UNIFORM_SLIDER_FLOAT1
@@ -220,7 +230,7 @@ float3x3 XYZ_to_D50 = float3x3 (
 	return float4(clamp(color*brightness, 0.0, 1.0),w);
 }
 
-technique WinUaeColor
+technique MonitorControls
 {
 	pass
 	{

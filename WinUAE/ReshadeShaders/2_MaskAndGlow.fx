@@ -18,6 +18,12 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 
+// Changes by John Novak:
+//
+// - Renamed to MaskAndGlow for clarity when tweaking the parameters in the
+//   ReShade UI
+//
+
 #include "ReShadeUI.fxh"
 #include "ReShade.fxh"
 
@@ -588,7 +594,7 @@ float3 WMASK(float4 pos : SV_Position, float2 uv : TexCoord) : SV_Target
 	return color;
 }
 
-technique WinUaeMask
+technique MaskAndGlow
 {
 
 	pass bloom1
