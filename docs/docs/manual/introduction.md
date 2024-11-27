@@ -1,14 +1,27 @@
 # Introduction
 
-Welcome to this curated collection of (mostly) cerebral Amiga
+Welcome **RML Amiga** (**R**incewind's **M**agic **L**uggage Full of Amiga
+Goodies), a prestigious curated collection of (mostly) cerebral Amiga
 games! Adventures, RPGs, simulators, strategy, board and puzzle games are the
-stars of the show, but a small number of arcade classics are also
-included.
+stars of the show, but a small number of arcade classics are also included.
+
+The aim of this collection is to recreate the Original Authentic Experience™ of sitting
+in front of a real Amiga connected to a Commodore CRT monitor, playing the
+original uncracked and unaltered versions of these games.
+
+Does this mean you'll need to play all games from floppies and put up with
+long loading times? No! About 70% of the games in the collection run from an
+emulated hard drive or a CD image. The majority of big multi-disk games are
+hard drive installable---they always have been, you don't need WHDLoad when
+running them in an emulator. About half of the floppy-only titles are
+single-disk games, and the half of remaining multi-disk games support multiple
+disk drives, which reduces or even completely eliminating disk swapping.
+
+The relatively few games that benefit from faster CPUs have been configured
+with an emulated turbo card.
 
 
-What differentiates this from all other Amiga game collections? Quite a few
-things:
-
+## Features in detail
 
 Authentic experience
 : Every single game has been painstakingly set up for an optimal and

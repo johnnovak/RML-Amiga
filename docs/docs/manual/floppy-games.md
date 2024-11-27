@@ -81,12 +81,14 @@ warp mode with the ++end+pause++ shortcut.
     start the game instantaneously.
 
 
-## Save disks
+## Saving your progress
 
 Some games give you continuation codes at certain checkpoints, while others
 let your save your progress to disk whenever you want. Some other games don't
 have any built-in continuation or save support---luckily, you can use WinUAE
 [Save states](#save-states) for these.
+
+### Save disks
 
 Many floppy games support saving your progress to disk. Most such games
 require you to use a dedicated _save disk_ for this purpose. The collection
@@ -113,7 +115,7 @@ pressing ++end+9++).
     size. The regular 880 KB ADF images will give you problems in many games.
 
 
-## Saving to the game disk
+### Saving to the game disk
 
 Some games save your progress directly to the game disk. These games are
 configured to never modify the original floppy images, but to create
