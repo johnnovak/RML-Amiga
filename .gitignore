@@ -20,10 +20,11 @@
 /Configurations.*
 /Demos
 /Games
+/NVRAMs
+/Quicksaves
 /ROMs
 /Screenshots
 /System-*
 /WinUAE/winuaebootlog.txt
 /WinUAE/*.mod
 /WinUAE.*
-
