@@ -5,17 +5,59 @@
     You might not be able to use some of the 3-key shortcuts if you do not
     have a *3-key rollover* (3KRO) or better keyboard.
 
+## General
+
 <div class="compact" markdown>
-| Shortcut                   | Description                                            |
-| --------                   | -----------                                            |
-| ++f12++                    | Pause emulation and bring up the WinUAE GUI            |
-| ++end+f12++                | Toggle full windowed and windowed mode                 |
-| ++pause++                  | Toggle pause                                           |
-| ++end+pause++              | Toggle warp mode (speed up the emulation)              |
-| ++end+ctrl+1++ -- ++4++    | Disk swapper: select target floppy drive               |
-| ++end+1++ -- ++9++         | Disk swapper: insert disk 1 to 9 into the target drive |
-| ++end+f1++ -- ++f4++       | Insert floppy image into DF0 -- DF3                    |
-| ++end+shift+f1++ -- ++f4++ | Eject floppy image from DF0 -- DF3                     |
-| ++end+f4++ | Eject floppy image from DF0 -- DF3                     |
-| ++end+print-screen++       | Save screenshot                                        |
+| Shortcut                   | Description                                           |
+| --------                   | -----------                                           |
+| ++f12++                    | Pause emulation and bring up the WinUAE GUI           |
+| ++end+f12++                | Toggle between windowed and full windowed mode        |
+| ++pause++                  | Toggle pausing the emulation                          |
+| ++end+pause++              | Toggle warp mode (run the emulation at maximum speed) |
+| ++end+print-screen++       | Save screenshot                                       |
 </div>
+
+
+## Input
+
+<div class="compact" markdown>
+| Shortcut                   | Description         |
+| --------                   | -----------         |
+| ++end+j++                  | Swap joystick ports |
+</div>
+
+
+## Audio
+
+<div class="compact" markdown>
+| Shortcut                   | Description     |
+| --------                   | -----------     |
+| ++end+multiply++           | Mute audio      |
+| ++end+subtract++           | Decrease volume |
+| ++end+add++                | Increase volume |
+</div>
+
+
+## Floppy
+
+<div class="compact" markdown>
+| Shortcut                   | Description                                                 |
+| --------                   | -----------                                                 |
+| ++end+ctrl+1++ -- ++4++    | Select target floppy drive to DF0--DF3 for the disk swapper |
+| ++end+1++ -- ++9++         | Insert disk 1--9 into the target floppy drive             |
+| ++end+f1++ -- ++f4++       | Bring up insert floppy image into DF0--DF3 dialog           |
+| ++end+shift+f1++ -- ++f4++ | Eject floppy image from DF0--DF3                            |
+</div>
+
+
+## Save states
+
+<div class="compact" markdown>
+| Shortcut                       | Description                        |
+| --------                       | -----------                        |
+| ++end+shift+num1++ -- ++num9++ | Quick save state to slot 1--9      |
+| ++end+num1++ -- ++num9++       | Quick restore state from slot 1--9 |
+| ++end+shift+f6++               | Bring up the save state dialog         |
+| ++end+f6++                     | Bring up the restore state dialog      |
+</div>
+
