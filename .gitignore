@@ -15,6 +15,7 @@
 *.nvr
 *.uss
 
+*.cache
 /Configurations/*.cache
 /Configurations/*.backup
 /Configurations.*
