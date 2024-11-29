@@ -47,6 +47,7 @@ floppy3sound=1
 floppy3soundvolume_disk=88
 floppy3soundvolume_empty=88
 diskimage0=..\Games\IK+\Disks\IK+.ipf
+statefile=..\Games\IK+\
 nr_floppies=1
 floppy_speed=100
 cd_speed=100

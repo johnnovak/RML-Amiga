@@ -15,15 +15,17 @@
 *.nvr
 *.uss
 
+*.cache
 /Configurations/*.cache
 /Configurations/*.backup
 /Configurations.*
 /Demos
 /Games
+/NVRAMs
+/Quicksaves
 /ROMs
 /Screenshots
 /System-*
 /WinUAE/winuaebootlog.txt
 /WinUAE/*.mod
 /WinUAE.*
-
