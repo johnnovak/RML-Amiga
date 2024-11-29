@@ -1,8 +1,5 @@
-import std/algorithm
 import std/cmdline
 import std/dirs
-import std/lenientops
-import std/options
 import std/os
 import std/paths
 import std/streams
@@ -81,7 +78,6 @@ proc checkConfig(path: Path): seq[string] =
 #      result.add("PAL config but 'gfx_filter' is not a PAL shader")
 
 # }}}
-
 # {{{ getFilePaths()
 proc getFilePaths(path: Path): seq[Path] =
   if fileExists($path):
@@ -94,40 +90,44 @@ proc getFilePaths(path: Path): seq[Path] =
     quit(1)
 
 # }}}
-#############################################################################
 
-if paramCount() <= 1:
-  echo "Usage: uae-conf-tool COMMAND PATH [ARGS]"
-  quit(1)
-
-let
-  command = paramStr(1)
-  path    = paramStr(2).Path
-
-case command:
-of "check":
-  for p in getFilePaths(path):
-    let errors = checkConfig(p)
-    if errors.len > 0:
-      let (dir, file) = splitPath(p)
-      styledEcho fgGreen, $dir, "/", fgYellow, $file
-      for err in errors:
-        echo fmt"  {err}"
-      echo ""
-
-of "set":
-  if paramCount() < 4:
-    echo "Usage: uae-conf-tool set PATH PARAM VALUE"
+# {{{ main()
+proc main() =
+  if paramCount() <= 1:
+    echo "Usage: uae-conf-tool COMMAND PATH [ARGS]"
     quit(1)
 
-  let param = paramStr(3)
-  let value = paramStr(4)
+  let
+    command = paramStr(1)
+    path    = paramStr(2).Path
 
-  for p in getFilePaths(path):
-    let updatedConf = setSetting(p, param, value)
-    var f = open($p, fmWrite)
-    f.write(updatedConf)
-    f.close()
+  case command:
+  of "check":
+    for p in getFilePaths(path):
+      let errors = checkConfig(p)
+      if errors.len > 0:
+        let (dir, file) = splitPath(p)
+        styledEcho fgGreen, $dir, "/", fgYellow, $file
+        for err in errors:
+          echo fmt"  {err}"
+        echo ""
 
+  of "set":
+    if paramCount() < 4:
+      echo "Usage: uae-conf-tool set PATH PARAM VALUE"
+      quit(1)
+
+    let param = paramStr(3)
+    let value = paramStr(4)
+
+    for p in getFilePaths(path):
+      let updatedConf = setSetting(p, param, value)
+      var f = open($p, fmWrite)
+      f.write(updatedConf)
+      f.close()
+
+# }}}
+
+main()
 
 # vim: et:ts=2:sw=2:fdm=marker
