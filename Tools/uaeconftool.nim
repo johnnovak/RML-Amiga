@@ -3,6 +3,7 @@ import std/cmdline
 import std/dirs
 import std/lenientops
 import std/options
+import std/os
 import std/paths
 import std/streams
 import std/strformat
@@ -27,10 +28,10 @@ proc setSetting(path: Path, setting: string, value: string): string =
   var
     stream = newStringStream(contents)
     line = ""
-    value = ""
 
   while stream.readLine(line):
-    if tryReadSetting(line, setting, value):
+    var oldValue = ""
+    if tryReadSetting(line, setting, oldValue):
       result &= fmt"{setting}={value}"
     else:
       result &= line
@@ -81,10 +82,18 @@ proc checkConfig(path: Path): seq[string] =
 
 # }}}
 
+# {{{ getFilePaths()
 proc getFilePaths(path: Path): seq[Path] =
-  collect:
-    for p in walkDirRec(path): p
+  if fileExists($path):
+    @[path]
+  elif dirExists($path):
+    collect:
+      for p in walkDirRec(path): p
+  else:
+    echo fmt"ERROR: Path '{path}' does not exist"
+    quit(1)
 
+# }}}
 #############################################################################
 
 if paramCount() <= 1:
@@ -107,6 +116,10 @@ of "check":
       echo ""
 
 of "set":
+  if paramCount() < 4:
+    echo "Usage: uae-conf-tool set PATH PARAM VALUE"
+    quit(1)
+
   let param = paramStr(3)
   let value = paramStr(4)
 
