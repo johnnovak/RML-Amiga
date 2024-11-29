@@ -15,18 +15,17 @@
 Starting a game
 
 : Start the bundled portable Amiga emulator by running `winuae.exe` (creating
-  an icon for it on your desktop is a good idea). This should bring up the
+  an icon for it on your desktop is a good idea). This will bring up the
   configuration browser. If the **Games** folder is not expanded, double-click
-  on it to open it. You can use the search box to narrow down the list of game
-  configs. Double-click on a config and the game will start (note that some
-  floppy games might take a bit of time to load).
+  on it to open it. You can start typing into the search box to narrow down
+  the list of game configs. Double-click on a config and the game will start
+  (note that some floppy games might take a bit of time to load).
 
       Alternatively, select a game from the list by single clicking on it,
       click on the **Load** button below the configuration browser, then click
       **Start** to launch the game. You _must_ press **Load** before pressing
       **Start**, otherwise WinUAE will use the _last_ loaded config, or the
-      default config right after startup! You'll get used to this with a bit of
-      practice.
+      default config if you haven't loaded anything yet!
 
       If you want to play a different game, it's best to quit WinUAE with
       ++alt+f4++ then start it again.
@@ -35,21 +34,23 @@ Skipping code checks
 : Some games have additional special configs to skip the intro or the
   manual-based copy protection check at the start (e.g., `Altered Destiny
   [skip code check]`). It's advised to start the normal config for the first
-  time, just to experience the intro and the original game at least once.
+  time to experience the intro and the original game at least once.
 
 
 Use warp mode
-: You can speed up floppy loading times considerably by using "warp mode".
-  This speeds up the emulation as much as your computer can handle it. Pressing
-  ++end+pause++ toggles warp mode.
+: You can speed up floppy loading times considerably by entering "warp mode".
+  This speeds up the emulation to the maximum your computer can handle. You can
+  toggle warp mode with ++end+pause++ (there is no sound in warp mode and the
+  emulated CPU speed indicator in the lower right corner will show a value
+  greater than 100).
 
-Read the manual
+Read the manuals
 
 : It's important to understand that control schemes and user interfaces were a
   lot less standardised in the 1980s and early 90s. You won't get very far in
-  most games without reading the manual or the reference card first. Look for
-  these in the **Manual** and **Extras** sub-folders within the individual
-  game folders.
+  most games without reading the manuals, the reference cards, and other
+  supplementary materials first. Look for these in the **Manual** and
+  **Extras** sub-folders within the individual game folders.
 
 Joystick-based games
 
@@ -62,16 +63,16 @@ Joystick-based games
 
 Floppy games
 : Hard drive installed games are the easiest to deal with, floppy games need a
-  bit of practice. Read the [Floppy games](#floppy-games) section for details.
+  bit of practice. Read the [Floppy games](#floppy-games) section for guidance.
   You can easily recognise a floppy game by the emulated floppy drive sounds.
 
 Saving your progress
 : When it comes to saving your game progress, it's a bit of a Wild West
   situation. Every game is slightly different, and floppy games that require
-  dedicated save disks are the trickiest. But fear not, help is provided for
-  you on the [Game notes](game-notes.md) page for these titles. Make sure to
-  read the detailed [Saving your progress](#saving-your-progress) section as
-  well for general tips.
+  dedicated save disks are the trickiest. But fear not, help is provided on
+  the [Game notes](game-notes.md) page for these titles. Make sure to read the
+  detailed [Saving your progress](#saving-your-progress) section as well for
+  general tips.
 
 Read the game notes
 : Always check the [Game notes](game-notes.md) page for special instructions
@@ -80,9 +81,10 @@ Read the game notes
   manual.
 
 Customising your setup
-: If you're a power user, you should definitely configure the games for proper
+: If you're a power user, you should consider configuring the games for proper
   vertical syncing (vsync) for the best results. This is an advanced topic
-  detailed in the [Graphics customisation](customising-your-setup.md#graphics-customisation) section.
+  detailed in the [Graphics customisation](customising-your-setup.md#graphics-customisation)
+  section.
 
 Learn more about Amiga games
 

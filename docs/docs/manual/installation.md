@@ -1,7 +1,7 @@
 # Installation
 
 The collection is split into several packs: **Base**, **Systems**, **ROMs**,
-**Games** and **Demos**.
+**Games**, and **Demos**.
 
 The **Base** and **Systems** packs are mandatory. The **ROMs** packs is not
 necessary if you have acquired the ROM files from other sources (see
@@ -9,16 +9,16 @@ necessary if you have acquired the ROM files from other sources (see
 
 You can either download the entire **Games** pack (recommended), or,
 alternatively, only grab the games you're interested in. Each game resides in
-its own ZIP archive.
+its own ZIP archive inside the big **Games** ZIP file.
 
 Links to the latest versions of the packs:
 
 <div class="compact" markdown>
-- [RML-Amiga-Base-v1]()
-- [RML-Amiga-Systems-v1]()
-- [RML-Amiga-ROMs-v1]()
-- [RML-Amiga-Games-v1]()
-- [RML-Amiga-Demos-v1]()
+- [RML-Amiga-Base-v1.0](TODO)
+- [RML-Amiga-Systems-v1.0](TODO)
+- [RML-Amiga-ROMs-v1.0](TODO)
+- [RML-Amiga-Games-v1.0](TODO)
+- [RML-Amiga-Demos-v1.0](TODO)
 </div>
 
 Download the packs, then extract all ZIP archives into the same folder (e.g.,
@@ -30,7 +30,7 @@ copy of WinUAE in portable mode, so it won't interfere with any existing
 installations. The included WinUAE will never save any data outside of the
 `$RML_BASE` folder.
 
-It's a good idea to create a shortcut for ``$RML_BASE\winuae.exe` on your
+It's a good idea to create a shortcut for `$RML_BASE\winuae.exe` on your
 desktop at this point.
 
 !!! warning "This voids your warranty, pal!"
@@ -45,13 +45,15 @@ Here is a detailed descriptions of the packs:
 
 - **Base** -- Contains 64-bit versions of WinUAE, the IPF disk image plugin, a
   custom-compiled version of ReShade (with auto-updates and the nag screen
-  removed), and the CRT shader setup.
+  disabled), and the CRT shader setup.
 
-- **Systems** --- Minimal Workbench 1.3 and 3.1 hard drive setups as directory hard disks.
-Just the bare minimum to run the games. The 3.1 installation also
-contains WHDLoad.
+- **Systems** --- Minimal Workbench 1.3 and 3.1 hard drive setups as directory
+  hard disks. Just the bare minimum required to run games. The Workbench 3.1
+  installation also contains WHDLoad.
 
-- **ROMs** --- Various ROM images (e.g., Kickstart ROMs) necessary to emulate the various Amiga models. _(Note: The Amiga is not a console. Games are not called "ROMs" on the Amiga.)_
+- **ROMs** --- ROM images (e.g., Kickstart ROMs) necessary to emulate
+  the various Amiga models. (Note: The Amiga is *not* a console! Games are
+  *not* called "ROMs" on the Amiga.)
 
 - **Games** --- Can you guess?
 
@@ -61,7 +63,6 @@ contains WHDLoad.
 
 The **Games** and **Demos** archives will get the most frequent updates, the
 rest very rarely.
-
 
 !!! note "The practical reality we live in"
 
@@ -74,6 +75,17 @@ rest very rarely.
     from somewhere makes little difference. Up to you, really. If you decide
     to pay for them, make sure to purchase the full ROM set, not the "value
     edition".
+
+
+## Versioning & updates
+
+"Point zero" versions (e.g., v1.0, v2.0, v3.0, etc.) always contain a snapshot of
+all the files in the collection.
+
+"Point releases" (e.g., v1.1, v1.2. v1.3, etc.) are updates; they need to be
+applied in order. So, for example, if you're currently on **Games** v1.2 and
+you want to upgrade to the latest v1.5 release, you'll need to apply the v1.3,
+v1.4, and v1.5 update packages _in order_.
 
 
 ## Supplying your own Kickstart ROMs
@@ -91,7 +103,7 @@ install them. Unpack the base and system packs first, then do the following:
   `$RML_BASE/System-3.1/Devs/Kickstarts` directory. You'll need to name them
   `kick34005.A500.RTB` and `kick40068.A1200.RTB`, respectively.
 
-These are the ROM files actually used by the setup:
+These are the ROM files needed by the setup:
 
 **Amiga 500**
 
