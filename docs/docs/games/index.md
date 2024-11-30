@@ -148,6 +148,14 @@ when loading the save game in EoB II AGA, you must have copied over
   prevent game-breaking bugs!
 
 
+## Fate -- Gates of Dawn
+
+- The official English version has censored nudity; the
+  original image files have been manually restored from the German original
+  (only the image files, so this is a safe change).
+
+
+
 ## Fish!
 
 - Righ-click the top of the screen and drag down to see the illustrations.
