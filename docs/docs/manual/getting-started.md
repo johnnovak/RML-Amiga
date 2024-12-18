@@ -62,20 +62,22 @@ Joystick-based games
   after starting the game and WinUAE will auto-detect it.
 
 Floppy games
-: Hard drive installed games are the easiest to deal with, floppy games need a
-  bit of practice. Read the [Floppy games](#floppy-games) section for guidance.
-  You can easily recognise a floppy game by the emulated floppy drive sounds.
+: [Hard drive installed games](hard-drive-games.md) are the easiest to deal
+  with, floppy games need a bit of practice. Read the [Floppy games](floppy-games.md)
+  section for guidance. You can easily recognise a floppy game by the emulated
+  floppy drive sounds.
 
 Saving your progress
 : When it comes to saving your game progress, it's a bit of a Wild West
   situation. Every game is slightly different, and floppy games that require
   dedicated save disks are the trickiest. But fear not, help is provided on
-  the [Game notes](game-notes.md) page for these titles. Make sure to read the
-  detailed [Saving your progress](#saving-your-progress) section as well for
-  general tips.
+  the [Game notes](../games/index.md) page for these titles. Make sure to read the
+  detailed [Saving your progress](floppy-games.md/#saving-your-progress) section as well for
+  general tips, and don't forget about [Save states](save-states.md) as an
+  alternative saving option.
 
 Read the game notes
-: Always check the [Game notes](game-notes.md) page for special instructions
+: Always check the [Game notes](../games/index.md) page for special instructions
   when trying a game for the first time. Some of the advice there is very hard
   to figure out on your own, or the information is deeply buried in the
   manual.
@@ -89,5 +91,5 @@ Customising your setup
 Learn more about Amiga games
 
 : Check out the [Useful websites](useful-websites.md) page to find out more
-  about Amiga games. These websites should also you decide which titles to try
-  next.
+  about Amiga games. These sites should also help you decide which titles to
+  try next.

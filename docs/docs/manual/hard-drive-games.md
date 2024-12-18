@@ -12,7 +12,7 @@ Most hard drive games store the save games on the hard drive; using
 the save and restore game functionality in these games should be
 straightforward. A minority of games insist on using a save disk even when
 installed to the hard drive---these special games are mentioned on the [Game
-notes](game-notes.md) page. (Future Wars ?)
+notes](../games/index.md) page. (Future Wars ?)
 
 TODO
 
