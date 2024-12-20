@@ -26,7 +26,7 @@ Download the packs, then extract all ZIP archives into the same folder (e.g.,
 from now on.
 
 If you already have WinUAE installed, no problem. The collection uses its own
-copy of WinUAE in portable mode, so it won't interfere with any existing
+copy of WinUAE in portable mode, so it won't interfere with existing
 installations. The included WinUAE will never save any data outside of the
 `$RML_BASE` folder.
 
@@ -43,17 +43,17 @@ desktop at this point.
 
 Here is a detailed descriptions of the packs:
 
-- **Base** -- Contains 64-bit versions of WinUAE, the IPF disk image plugin, a
-  custom-compiled version of ReShade (with auto-updates and the nag screen
-  disabled), and the CRT shader setup.
+- **Base** -- Contains 64-bit versions of WinUAE, the CAPS IPF disk image
+  plugin, a custom-compiled version of ReShade (with auto-updates and the nag
+  screen disabled), and the CRT shader setup.
 
 - **Systems** --- Minimal Workbench 1.3 and 3.1 hard drive setups as directory
   hard disks. Just the bare minimum required to run games. The Workbench 3.1
-  installation also contains WHDLoad.
+  installation contains WHDLoad as well.
 
 - **ROMs** --- ROM images (e.g., Kickstart ROMs) necessary to emulate
-  the various Amiga models. (Note: The Amiga is *not* a console! Games are
-  *not* called "ROMs" on the Amiga.)
+  the various Amiga models and other required hardware. (Note: The Amiga is
+  *not* a console! Games are *not* called "ROMs" on the Amiga.)
 
 - **Games** --- Can you guess?
 
@@ -75,6 +75,8 @@ rest very rarely.
     from somewhere makes little difference. Up to you, really. If you decide
     to pay for them, make sure to purchase the full ROM set, not the "value
     edition".
+
+    Many floppy games contains a very minimal stripped down version of the OS, 
 
 
 ## Versioning & updates
