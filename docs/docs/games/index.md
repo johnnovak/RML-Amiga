@@ -96,6 +96,8 @@ above steps.
 
 - Righ-click the top of the screen and drag down to see the illustrations.
 
+- Listen to the audio tape included with the original release.
+
 
 ## Cruise for a Corpse
 
@@ -293,6 +295,12 @@ Coverdisk 14 (Issue 21, August 1991).
 
 - Debugged Virgin re-release (1992-08-06). All other versions contain
   game-breaking bugs.
+
+
+## Loom
+
+- Listen to the audio drama included with the original release before playing
+  the game.
 
 
 ## Moonstone: A Hard Days Knight
