@@ -83,9 +83,19 @@ nav:
     # - manual/folder-organisation.md
     - manual/customising-your-setup.md
     - manual/useful-websites.md
+    - manual/thanks.md
 
-  - Games:
+  - Game notes:
     - games/index.md
+    - games/a-b.md
+    - games/c-d.md
+    - games/e-f.md
+    - games/g-h.md
+    - games/i-j.md
+    - games/k-l.md
+    - games/m-o.md
+    - games/p-q.md
+    - games/s-t.md
 
 not_in_nav: |
   # To silence the warning about the custom `index.md` front page
