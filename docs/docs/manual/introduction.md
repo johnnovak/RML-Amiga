@@ -73,7 +73,7 @@ PAL/NTSC & aspect ratio correctness
   stretch" are correctly set up, too (typically Atari ST ports and European
   multi-platform releases).
 
-Quality-of-life save state
+Quality-of-life save states
 : Some games force you to complete a manual-based protection check at startup,
   or take a really long time to load from floppies, or have an unskippable
   intro sequence. For these games, the collection provides save states taken
@@ -82,8 +82,8 @@ Quality-of-life save state
 
 All necessary information included
 : Manuals, hint books, reference cards, interactive code wheels, maps,
-  posters, box art, audio recordings, and various other extras to enjoy the
-  games to their fullest are all included. Quite a few games are next to
+  posters, box art, audio recordings, and various other extras to enjoy these
+  games to the fullest are all included. Quite a few games are next to
   impossible to play without these materials. Significant effort has been
   taken to track down the best-looking scanned copies for each individual
   game.
