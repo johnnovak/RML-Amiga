@@ -18,7 +18,7 @@
 - Saves to game disk in DF0.
 
 
-## Castle Master II --- The Crypt
+## Castle Master II: The Crypt
 
 - Type **2** then press ++enter++ when prompted.
 
