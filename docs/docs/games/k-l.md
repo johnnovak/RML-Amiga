@@ -20,7 +20,7 @@
 
 ## Knightmare
 
-- Supports 4 floppy drives. No disk swapping necessary, save disk is in drive 3 (DF2).
+- Supports 4 floppy drives. No disk swapping necessary, save disk is in DF2:
 
 
 ## Lancelot
@@ -59,7 +59,7 @@ Coverdisk 14 (Issue 21, August 1991).
 
 **Using the expansion disk**
 
-- Start the game and then put the expansion kit in the first disk drive (DF0).
+- Start the game and then put the expansion kit in DF0:
 - Select the **Load Scenario** option and type **4** to load scenario four, or
   **5** to load scenario five.
 

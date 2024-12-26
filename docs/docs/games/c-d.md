@@ -3,14 +3,14 @@
 ## Cannon Fodder (OCS)
 
 - Supports four floppy drives. No disk swapping necessary, save disk is in
-  drive 4 (DF3).
+  drive DF3:
 
 
 ## Captive
 
 - v1.2, contains a number important bug and crash fixes.
 - Supports four floppy drives. No disk swapping necessary, save disk is in
-  drive 2 (DF1).
+  drive DF1:
 
 
 ## Castle Master
@@ -35,8 +35,8 @@
 
 ## Death Knights of Krynn
 
-- Configured to load your **Champions of Krynn** save games when selectiong
-  **CHAMPIONS*  in the load game menu.
+- Configured to load your **Champions of Krynn** save games when selecting
+  **CHAMPIONS** in the load game menu.
 
 
 ## Demon's Winter

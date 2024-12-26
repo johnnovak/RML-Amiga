@@ -23,7 +23,7 @@
 
 ## Populous II: The Challenge Games
 
-- Needs the **Populous II** base game disk in the first drive (DF0).
+- Needs the **Populous II** base game disk in DF0:
 
 
 ## Portal: A Computer Novel
