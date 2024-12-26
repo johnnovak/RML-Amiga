@@ -3,7 +3,8 @@
 ._*
 *.swp
 *.bak
-*.log
+*.log*
+*.dmp
 
 *.dll
 *.exe
