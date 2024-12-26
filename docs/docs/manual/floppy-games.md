@@ -76,9 +76,9 @@ warp mode with the ++end+pause++ shortcut.
 
 !!! tip "ProTip(tm)"
 
-    If you know what you're doing, you can create a [savestate](#) right after
-    the game finished loading. You can save this as a new config and use it to
-    start the game instantaneously.
+    If you know what you're doing, you can create a [save
+    states](save-states.md) right after the game finished loading. You can
+    save this as a new config and use it to start the game instantaneously.
 
 
 ## Saving your progress
@@ -86,7 +86,7 @@ warp mode with the ++end+pause++ shortcut.
 Some games give you continuation codes at certain checkpoints, while others
 let your save your progress to disk whenever you want. Some other games don't
 have any built-in continuation or save support---luckily, you can use WinUAE
-[Save states](#save-states) for these.
+[save states](save-states.md) for these.
 
 ### Save disks
 
