@@ -62,6 +62,8 @@
 
 ## Death Knights of Krynn
 
+- To start the game, double-click on the **DeathKnightsOfKrynn** disk icon in
+  the middle, then on the **DeathKnightsOfKrynn** icon.
 - Configured to load your **Champions of Krynn** save games when selecting
   **CHAMPIONS** in the load game menu (if you have **Champions of Krynn** in
   your game library).
@@ -72,6 +74,11 @@
 - To start the game, double-click on the **Defender1** disk icon, then on the
   **Defender** icon.
 - Supports two floppy drives.
+
+
+## Defender of the Crown II (CD32)
+
+- You can use either the mouse or a gamepad in port 2 to control the game.
 
 
 ## Deja Vu: A Nightmare Comes True!!
@@ -106,6 +113,12 @@ hard drive, otherwise you'd be booting from the floppy.
 - The game files get modified as you progress through the game. To start a new
   game, delete the `Demon's Winter\Harddisk` folder and then restore it from
   the included `Demon's Winter\Sources\DemonsWinter_Harddisk.zip`.
+
+
+## Distant Armies: A Playing History of Chess
+
+- To start the game, double-click on the **DistantArmies** disk icon, then on
+  the **DistantArmies** icon.
 
 
 ## DreamWeb (AGA)
