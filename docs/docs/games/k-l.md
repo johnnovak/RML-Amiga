@@ -20,7 +20,8 @@
 
 ## Knightmare
 
-- Supports 4 floppy drives. No disk swapping necessary, save disk is in DF2:
+- Supports four floppy drives. No disk swapping necessary, save disk is in drive
+  DF2:
 
 
 ## Lancelot

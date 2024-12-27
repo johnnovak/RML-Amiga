@@ -2,8 +2,9 @@
 
 ## Shadowgate
 
-- Blank savedisk is inserted in DF1. Type `DF1:YourSavegameName` in the dialog
-  when saving the game.
+- Save disk is in drive DF1:
+- Type **DF1:YourSavegameName** in the dialog when saving the game (you can
+  use any name you like after the **DF1:** part).
 
 
 ## Space Quest I: The Sarien Encounter (AGI)
