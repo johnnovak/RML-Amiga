@@ -2,13 +2,13 @@
 
 ## Exile
 
-- Galahad/FLT's 100% working crack that he verified himself by completing the
-  game. The official re-releases approved by the Amiga port's creator, Peter
-  J. M. Irvin, are bad cracks done by The Company.
+- Galahad/FLT's 100% working crack, confirmed to be completable by himself.
+  The official re-releases approved by the Amiga port's creator, Peter J. M.
+  Irvin, are bad cracks done by The Company.
 
-- The uncracked SPS original asks for security codes that were printed on the
-  sides of the game's box; we can't use this version until we find scans of
-  the sides.
+- The original game asks for security codes that were printed inside
+  the sides of the game's box; we can't use the uncracked version until we
+  find scans of those codes.
 
 
 ## Eye of the Beholder (OCS)
@@ -144,7 +144,14 @@ copied over `EOBDATA.SAV` by mistake.
 
 ## Faery Tale Adventure, The
 
-- You _must_ always put the save disk in DF1: to prevent game-breaking bugs!
+- Patched and cracked version by Ross that fixes the garbled sound issue
+  present on later than A1000 models and bypasses the manual-based protection
+  check. Confirmed to be completable.
+
+- Just press enter at the copy protection question after the intro.
+
+- Save disk is in drive DF1: --- you must always have the save disk in DF1:
+  to prevent game-breaking bugs.
 
 
 ## Fate -- Gates of Dawn
@@ -153,11 +160,16 @@ copied over `EOBDATA.SAV` by mistake.
   original image files have been manually restored from the German original
   (only the image files, so this is a safe change).
 
+- Pay special attention to answer the manual-based copy protection questions
+  correctly later in the game. Failing these checks too many times will cause
+  the game to slowly deterioriate over the next few hours until it becomes
+  unplayable and impossible to finish.
 
 
 ## Fish!
 
-- Righ-click the top of the screen and drag down to see the illustrations.
+- Right-click on the top of the screen and drag it down to see the
+  illustrations.
 
 
 ## Future Wars: Adventures in Time

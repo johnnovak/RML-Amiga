@@ -44,7 +44,8 @@
 
 ## Corruption
 
-- Righ-click the top of the screen and drag down to see the illustrations.
+- Right-click on the top of the screen and drag it down to see the
+  illustrations.
 - Make sure to listen to the audio tape in the **Extras** folder.
 
 
