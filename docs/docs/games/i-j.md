@@ -5,6 +5,12 @@
 - Contains all 34 Amiga Infocom releases (all Infocom games except Border
   Zone).
 
+- To start a game:
+    - Double-click on the **Infocom Collection** disk icon
+    - Double-click on one of the category drawers
+    - Double-click on the game's name
+    - Then finally double-click on the game's start icon
+
 - **Wishbringer** crashes on quit but otherwise seems to work fine.
 
 
