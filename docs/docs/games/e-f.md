@@ -18,8 +18,8 @@
 - Press ++home+w++ to switch to an alternative input mapping which maps the
   cursor keys to the WASD keys and turning left/right to Q/E.
 
-- Press ++home+e++ to switch back to the normal input mapping (e.g., when
-  entering the name for your save game).
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name for your save game).
 
 
 **Save file compatibility**
@@ -40,8 +40,9 @@
 - Press ++home+w++ to switch to an alternative input mapping which maps the
   cursor keys to the WASD keys and turning left/right to Q/E.
 
-- Press ++home+e++ to switch back to the normal input mapping (e.g., when
-  entering the name for your save game).
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name for your save game).
+
 
 **Save file compatibility**
 
@@ -70,8 +71,8 @@
 - Press ++home+w++ to switch to an alternative input mapping which maps the
   cursor keys to the WASD keys and turning left/right to Q/E.
 
-- Press ++home+e++ to switch back to the normal input mapping (e.g., when
-  entering the name for your save game).
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name for your save game).
 
 
 **Save file compatibility**
@@ -103,8 +104,8 @@ transfer option in the menu.
 - Press ++home+w++ to switch to an alternative input mapping which maps the
   cursor keys to the WASD keys, and turning left/right to Q/E.
 
-- Press ++home+e++ to switch back to the normal input mapping (e.g., when
-  entering the name for your save game).
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name for your save game).
 
 
 **Save file compatibility**
@@ -175,9 +176,9 @@ copied over `EOBDATA.SAV` by mistake.
 ## Future Wars: Adventures in Time
 
 - If you fail the protection check at the start, you will be asked to insert
-  the game disk into DF0: when running from the HDD. Just restart and try
-  again if this happens.
+  the game disk into drive DF0: --- just restart and try again if this happens.
 
-- The built-in save game mechanism is broken when the game is run from the
-  hard drive, so only use save states!
+- The game is configured to run from the hard drive, and the built-in save
+  game mechanism only works when you run the game from floppies. So don't use
+  the built-in save mechanism; use save states instead.
 
