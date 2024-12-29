@@ -160,7 +160,7 @@ hard drive, otherwise you'd be booting from the floppy.
   or when entering the name for your save game).
 
 
-## Dungeon Master II: The Legend of Skullkeep.uae
+## Dungeon Master II: The Legend of Skullkeep
 
 **WASD movement keys**
 

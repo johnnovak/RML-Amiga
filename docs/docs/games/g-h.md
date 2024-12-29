@@ -11,6 +11,13 @@
   or when entering the name for your save game).
 
 
+## Gold Rush!
+
+- To start the game, double-click on the **GR Disk 1** icon, then on the
+  **GR** icon.
+- Saves to the game disk.
+
+
 ## Guild of Thieves, The
 
 - Right-click on the top of the screen and drag it down to see the
