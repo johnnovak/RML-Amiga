@@ -54,6 +54,7 @@ alphabetically):
 <div class="compact" markdown>
 - [Dungeon Master Encyclopedia](http://dmweb.free.fr/)
 - [English Amiga Board](https://eab.abime.net/)
+- [eXoDOS](https://www.retro-exo.com/exodos.html)
 - [Flux Capacity: The Hagstrom Collection](https://archive.org/details/@paulhagstrom)
 - [GameBase Amiga](http://gbamiga.elowar.com/)
 - [Hall of Light -- The database of Amiga games](https://amiga.abime.net/)
@@ -65,11 +66,11 @@ alphabetically):
 - [Magnetic Scrolls Memorial](https://msmemorial.if-legends.org/)
 - [MobyGames](https://www.mobygames.com/)
 - [Museum of Computer Adventure Game History](https://mocagh.org/)
+- [replacementdocs](http://www.replacementdocs.com/)
 - [Retroplay WHDLoad Packs](https://eab.abime.net/showthread.php?t=61028)
 - [Sierra Chest, The](https://sierrachest.com/)
 - [Sierra Help Pages, The](http://www.sierrahelp.com/)
 - [Thalion Software Webshrine](http://thalion.exotica.org.uk/)
+- [Turran FTP -- The ultimate retro repository for Amiga nuts](https://grandis.nu/turran/)
 - [WHDLoad](https://www.whdload.de/)
-- [eXoDOS](https://www.retro-exo.com/exodos.html)
-- [replacementdocs](http://www.replacementdocs.com/)
 </div>

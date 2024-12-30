@@ -24,6 +24,25 @@
   DF2:
 
 
+## Lost Treasures of Infocom, The
+
+- Contains all 34 Amiga Infocom releases (the 20 games included in the **The
+  Lost Treasures of Infocom** collection, plus the rest except for **Border
+  Zone** which never got an Amiga release).
+
+- **Wishbringer** crashes on quit but otherwise seems to work fine.
+
+- Make sure to check out the interactive InvisiClues in the **Extras** folder if you're stuck.
+
+- To start a game:
+    <div class="compact" markdown>
+    - Double-click on the **Infocom** disk icon
+    - Double-click on one of the category drawers
+    - Double-click on the game's name
+    - Then finally double-click on the game's start icon
+    </div>
+
+
 ## Lancelot
 
 - Use the **SAVE** command to save your game, just press ++enter++ at the
