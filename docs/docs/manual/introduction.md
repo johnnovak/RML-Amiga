@@ -50,8 +50,9 @@ No more bad cracks
 : An overarching theme of the collection is "no hacks allowed!" For games
   designed to run from floppies, the original floppy images are preferred with
   the disk-based protection intact. Cracks, hacks, WHDLoad, and other fan-made
-  content is generally avoided and is only used as a last resort. No more
-  worrying about bad cracks in those 40+ hour RPGs!
+  content is generally avoided and is only used as a last resort. If a cracked
+  version is used out of necessity, every effort is taken to confirm the game
+  is completable. No more worrying about bad cracks in those 40+ hour RPGs!
 
 Play floppy games like a boss
 : Every floppy game comes pre-configured to use multiple floppy drives if the

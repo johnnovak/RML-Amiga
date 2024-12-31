@@ -15,7 +15,13 @@
 
 - To start the game, double-click on the **GR Disk 1** icon, then on the
   **GR** icon.
-- Saves to the game disk.
+
+- To save the game, insert the save disk into drive
+  DF0: _after_ starting the game (press ++end+9++), press ++f5++ to bring up
+  the save dialog, then enter `Save:` for the volume (note the semicolon at
+  the end).
+
+- Similarly, enter `Save:` for the volume name when restoring a saves game.
 
 
 ## Guild of Thieves, The
