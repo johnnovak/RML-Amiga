@@ -2,7 +2,8 @@
 
 ## Pawn, The
 
-- Righ-click the top of the screen and drag down to see the illustrations.
+- Right-click on the top of the screen and drag it down to see the
+  illustrations.
 
 
 ## Perihelion
@@ -23,7 +24,7 @@
 
 ## Populous II: The Challenge Games
 
-- Needs the **Populous II** base game disk in the first drive (DF0).
+- Needs the **Populous II** base game disk in DF0:
 
 
 ## Portal: A Computer Novel

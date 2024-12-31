@@ -20,7 +20,27 @@
 
 ## Knightmare
 
-- Supports 4 floppy drives. No disk swapping necessary, save disk is in drive 3 (DF2).
+- Supports four floppy drives. No disk swapping necessary, save disk is in drive
+  DF2:
+
+
+## Lost Treasures of Infocom, The
+
+- Contains all 34 Amiga Infocom releases (the 20 games included in the **The
+  Lost Treasures of Infocom** collection, plus the rest except for **Border
+  Zone** which never got an Amiga release).
+
+- **Wishbringer** crashes on quit but otherwise seems to work fine.
+
+- Make sure to check out the interactive InvisiClues in the **Extras** folder if you're stuck.
+
+- To start a game:
+    <div class="compact" markdown>
+    - Double-click on the **Infocom** disk icon
+    - Double-click on one of the category drawers
+    - Double-click on the game's name
+    - Then finally double-click on the game's start icon
+    </div>
 
 
 ## Lancelot
@@ -59,7 +79,7 @@ Coverdisk 14 (Issue 21, August 1991).
 
 **Using the expansion disk**
 
-- Start the game and then put the expansion kit in the first disk drive (DF0).
+- Start the game and then put the expansion kit in DF0:
 - Select the **Load Scenario** option and type **4** to load scenario four, or
   **5** to load scenario five.
 

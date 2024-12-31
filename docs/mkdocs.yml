@@ -68,6 +68,38 @@ plugins:
         #
         'manual/index.md': 'manual/introduction.md'
 
+        'games/a.md': 'games/a-b.md'
+        'games/b.md': 'games/a-b.md'
+
+        'games/e.md': 'games/e-f.md'
+        'games/f.md': 'games/e-f.md'
+
+        'games/g.md': 'games/g-h.md'
+        'games/h.md': 'games/g-h.md'
+
+        'games/i.md': 'games/i-j.md'
+        'games/j.md': 'games/i-j.md'
+
+        'games/k.md': 'games/k-l.md'
+        'games/l.md': 'games/k-l.md'
+
+        'games/m.md': 'games/m-o.md'
+        'games/n.md': 'games/m-o.md'
+        'games/o.md': 'games/m-o.md'
+
+        'games/p.md': 'games/p-r.md'
+        'games/q.md': 'games/p-r.md'
+        'games/r.md': 'games/p-r.md'
+
+        'games/s.md': 'games/s-z.md'
+        'games/t.md': 'games/s-z.md'
+        'games/u.md': 'games/s-z.md'
+        'games/v.md': 'games/s-z.md'
+        'games/w.md': 'games/s-z.md'
+        'games/x.md': 'games/s-z.md'
+        'games/y.md': 'games/s-z.md'
+        'games/z.md': 'games/s-z.md'
+
 # Page tree
 nav:
   - Manual:
@@ -88,14 +120,15 @@ nav:
   - Game notes:
     - games/index.md
     - games/a-b.md
-    - games/c-d.md
+    - games/c.md
+    - games/d.md
     - games/e-f.md
     - games/g-h.md
     - games/i-j.md
     - games/k-l.md
     - games/m-o.md
-    - games/p-q.md
-    - games/s-t.md
+    - games/p-r.md
+    - games/s-z.md
 
 not_in_nav: |
   # To silence the warning about the custom `index.md` front page

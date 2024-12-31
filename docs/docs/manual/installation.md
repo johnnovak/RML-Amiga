@@ -109,7 +109,7 @@ These are the ROM files needed by the setup:
 
 **Amiga 500**
 
-You need _either one_ of the following (any will do):
+_Either_ of the following three files is required:
 
 ```
 Kickstart v1.3 r34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV)[!].rom
@@ -137,7 +137,7 @@ SHA-1: e21545723fe8374e91342617604f1b3d703094f1
 
 **Amiga CD32**
 
-You need _both_ files:
+_Both_ files are required:
 
 ```
 Kickstart v3.1 r40.60 (1993)(Commodore)(CD32).rom

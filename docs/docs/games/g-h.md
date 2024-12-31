@@ -1,8 +1,27 @@
 # G–H
 
+## Gateway to the Savage Frontier
+
+**WASD movement keys**
+
+- Press ++home+w++ to switch to an alternative input mapping which maps the
+  cursor keys to the WASD keys.
+
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name for your save game).
+
+
+## Gold Rush!
+
+- To start the game, double-click on the **GR Disk 1** icon, then on the
+  **GR** icon.
+- Saves to the game disk.
+
+
 ## Guild of Thieves, The
 
-- Righ-click the top of the screen and drag down to see the illustrations.
+- Right-click on the top of the screen and drag it down to see the
+  illustrations.
 
 
 ## Heimdall

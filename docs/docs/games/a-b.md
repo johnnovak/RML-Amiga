@@ -2,6 +2,7 @@
 
 ## Agony
 
+- Best played with a digital joystick.
 - Supports two floppy drives.
 
 
@@ -62,10 +63,70 @@ above steps.
 - To skip the intro, press ++c++ and enter the `EDJI` continuation code.
 
 
+## Aufschwung Ost
+
+- Can use only DF0: for the game disk, but you can set the save disk
+  location to DF1: or DF2: in the options menu.
+
+
+## Balance of Power: Geopolitics in the Nuclear Age
+
+- "A "disk invalid" dialog will pop-up 3-4 times; this is normal, just keep
+  pressing cancel. Once the pop-ups are gone, double-click on the **BOP** disk
+  icon, then on the **Balance of Power** icon to start the game.
+
+
 ## Bard's Tale, The: Tales of the Unknown
 
-- You need to create a character disk before starting the game as described in
-  the manual. The config already includes a new blank character disk in drive
-  2 (DF1).
+- A blank character disk in in DF1: (the manual describes how to create one).
 
+- If you accidentally clicked on the left icon in the top-right corner and
+  you're now on the blue Workbench screen, this is how to return to the game
+  screen:
+
+    - Shrink the window by clicking and dragging its bottom-right handle.
+    - Drag it down by its titlebar to expose the top bar with **Workbench screen** written on it.
+    - Click on the first icon in the top-right corner on the **Workbench screen** bar.
+
+
+## Battle Chess
+
+- Double-click on the **BattleChess** disk icon then on the **BattleChess** icon
+to start the game.
+
+
+## Battle Isle
+
+- Double-click on the **BattleIsle** disk icon then on the **Start** icon to
+  start the game, or the **Intro** icon to watch the intro then start the
+  game.
+
+
+## Battle Isle '93: The Moon Of Chromos
+
+- Double-click on the **BattleIsle** disk icon then on the **Start** icon to
+  start the game, or the **Intro** icon to watch the intro then start the
+  game.
+
+
+## Black Cauldron, The
+
+- Double-click on the **BC** disk icon, then on the **Black Cauldron** icon.
+- Saves to the game disk.
+
+
+## Borrowed Time
+
+- Saves to the game disk.
+
+
+## Buck Rogers: Countdown to Doomsday
+
+**WASD movement keys**
+
+- Press ++home+w++ to switch to an alternative input mapping which maps the
+  cursor keys to the WASD keys.
+
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name for your save game).
 
