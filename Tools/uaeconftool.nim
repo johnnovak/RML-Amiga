@@ -26,13 +26,20 @@ proc setSetting(path: Path, setting: string, value: string): string =
     stream = newStringStream(contents)
     line = ""
 
+  var found = false
+
   while stream.readLine(line):
     var oldValue = ""
     if tryReadSetting(line, setting, oldValue):
       result &= fmt"{setting}={value}"
+      found = true
     else:
       result &= line
 
+    result &= "\r\n"
+
+  if not found:
+    result &= fmt"{setting}={value}"
     result &= "\r\n"
 
 # }}}
