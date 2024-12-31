@@ -35,4 +35,8 @@
 
 ## Quest For Glory II: Trial By Fire
 
-- You can set Amiga or MT-32 sound before starting the game.
+- Before starting the game, you can choose between Amiga digital sound and
+  Roland MT-32 MIDI music by double-clicking on the **Set Amiga sound** or
+  **Set MT-32 sound** icons, respectively.
+
+

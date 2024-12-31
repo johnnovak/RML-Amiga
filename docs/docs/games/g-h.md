@@ -8,7 +8,7 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Gold Rush!
@@ -16,12 +16,11 @@
 - To start the game, double-click on the **GR Disk 1** icon, then on the
   **GR** icon.
 
-- To save the game, insert the save disk into drive
-  DF0: _after_ starting the game (press ++end+9++), press ++f5++ to bring up
-  the save dialog, then enter `Save:` for the volume (note the semicolon at
-  the end).
+- Save disk is in drive DF2:
 
-- Similarly, enter `Save:` for the volume name when restoring a saves game.
+- When saving or restoring the game, enter **Save:** for the volume name, with
+  the colon at the end (this is important). Alternatively, you can enter
+  **DF2:** as well.
 
 
 ## Guild of Thieves, The

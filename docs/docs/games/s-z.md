@@ -8,12 +8,13 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Shadowgate
 
 - Save disk is in drive DF1:
+
 - Type **DF1:YourSavegameName** in the dialog when saving the game (you can
   use any name you like after the **DF1:** part).
 
@@ -39,5 +40,5 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 

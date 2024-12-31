@@ -11,13 +11,14 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Death Knights of Krynn
 
 - To start the game, double-click on the **DeathKnightsOfKrynn** disk icon in
   the middle, then on the **DeathKnightsOfKrynn** icon.
+
 - Configured to load your **Champions of Krynn** save games when selecting
   **CHAMPIONS** in the load game menu (if you have **Champions of Krynn** in
   your game library).
@@ -28,7 +29,7 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Defender of the Crown
@@ -47,34 +48,32 @@
 
 - To start the game, double-click on the **DEJAVU** disk icon, then on the
   **DejaVu** icon.
+
 - Save disk is in drive DF1:
+
 - Type **DF1:YourSavegameName** in the dialog when saving the game (you can
   use any name you like after the **DF1:** part).
 
 
 ## Deja Vu II: Lost in Las Vegas!!
 
-To start the game:
-
-1. Wait until the workbench screen appears.
-2. Insert the game disk into DF0: (press ++home+++++1++).
-3. Wait until the disk icon of the floppy appears in the middle of the screen.
-4. Double-click on the **DejaVuII HD** disk icon in the upper right corner,
-   then on the **DejaVuII** icon.
-
-We need to do this because the game disk must be present in drive DF0: when you
-start the game to pass the disk-based copy protection check. But you need to
-insert the the floppy into DF0: _after_ you've booted into Workbench from the
-hard drive, otherwise you'd be booting from the floppy.
+- To start the game, double-click on the **DejaVuII HD** disk icon in the
+  upper right corner, then on the **DejaVuII** icon.
 
 
 ## Demon's Winter
 
 - Spell list needed for the copy protection check is in **Appendix D** of the
   manual (page 26).
+
 - The game files get modified as you progress through the game. To start a new
   game, delete the `Demon's Winter\Harddisk` folder and then restore it from
   the included `Demon's Winter\Sources\DemonsWinter_Harddisk.zip`.
+
+!!! danger "Only use regular saves"
+
+    The game is _not_ compatible with save states---only user regular in-game
+    saves!
 
 
 ## Distant Armies: A Playing History of Chess
@@ -93,6 +92,7 @@ hard drive, otherwise you'd be booting from the floppy.
 - This is supposed to be a 100% bug-free dump of the original game with the
   nefarious disk-based copy protection intact. If you notice any weird issues,
   please report it.
+
 - If the copy protection has been triggered, any of the following may happen:
     <div class="compact" markdown>
     - The game hangs while loading.
@@ -114,7 +114,7 @@ hard drive, otherwise you'd be booting from the floppy.
   to save the game (remapped from ++ctrl+s++).
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Dungeon Master (v3.6)
@@ -126,16 +126,19 @@ hard drive, otherwise you'd be booting from the floppy.
   to save the game (remapped from ++ctrl+s++).
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Dungeon Master: Chaos Strikes Back (v3.5)
 
 - Read the manual carefully for the instructions on how to start the game.
+
 - Save disk is in drive DF1:
+
 - This is supposed to be a 100% bug-free dump of the original game with the
   nefarious disk-based copy protection intact. If you notice any weird issues,
   please report it.
+
 - If the copy protection has been triggered, any of the following may happen:
     <div class="compact" markdown>
     - The game hangs while loading.
@@ -157,7 +160,7 @@ hard drive, otherwise you'd be booting from the floppy.
   to save the game (remapped from ++ctrl+s++).
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Dungeon Master II: The Legend of Skullkeep
@@ -168,5 +171,5 @@ hard drive, otherwise you'd be booting from the floppy.
   cursor keys to the WASD keys and turning left/right to Q/E.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 

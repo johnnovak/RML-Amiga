@@ -57,6 +57,11 @@ Delete the `$RML_AMIGA\Amberstar\Harddisk\AMBERSTAR` folder and repeat the
 above steps.
 
 
+!!! danger "Only use regular saves"
+
+    The game is _not_ compatible with save states---only user regular in-game
+    saves!
+
 
 ## Another World
 
@@ -85,7 +90,8 @@ above steps.
   screen:
 
     - Shrink the window by clicking and dragging its bottom-right handle.
-    - Drag it down by its titlebar to expose the top bar with **Workbench screen** written on it.
+    - Drag it down by its titlebar to expose the top bar with **Workbench
+      screen** written on it.
     - Click on the first icon in the top-right corner on the **Workbench screen** bar.
 
 
@@ -114,15 +120,11 @@ above steps.
 - To start the game, double-click on the **BC** disk icon, then on the **Black
   Cauldron** icon.
 
-- To save the game, insert the save disk into drive DF0: _after_ starting the
-  game (press ++end+9++), press ++f5++ to bring up the save dialog, then enter
-  `Save:` for the volume (note the semicolon at the end).
+- Save disk is in drive DF1:
 
-- Similarly, enter `Save:` for the volume name when restoring a saves game.
-
-!!! warning
-
-    The first disk must be in DF1: 
+- When saving or restoring the game, enter **Save:** for the volume name, with
+  the colon at the end (this is important). Alternatively, you can enter
+  **DF1:** as well.
 
 
 ## Borrowed Time
@@ -138,5 +140,5 @@ above steps.
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 

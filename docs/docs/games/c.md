@@ -41,7 +41,7 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Conquests of Camelot: The Search for the Grail
@@ -71,6 +71,6 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 

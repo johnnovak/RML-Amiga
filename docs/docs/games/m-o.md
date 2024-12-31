@@ -11,6 +11,7 @@
 
 - Enter **lister6657** and the **voapqi** for the password at the start, or
   use the provided save state to skip the code check.
+
 - Right-click on the top of the screen and drag it down to see the
   illustrations.
 
@@ -28,7 +29,7 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 ## Pools of Darkness
@@ -39,5 +40,5 @@
   cursor keys to the WASD keys.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 

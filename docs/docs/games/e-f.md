@@ -19,7 +19,7 @@
   cursor keys to the WASD keys and turning left/right to Q/E.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 **Save file compatibility**
@@ -34,21 +34,12 @@
   missing from the DOS version and an automap. The definitive version of the
   game; it's essentially bug-free.
 
+!!! danger "Only use regular saves"
 
-**WASD movement keys**
+    The game is _not_ compatible with save states---only user regular in-game
+    saves!
 
-- Press ++home+w++ to switch to an alternative input mapping which maps the
-  cursor keys to the WASD keys and turning left/right to Q/E.
-
-- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
-
-
-**Save file compatibility**
-
-- The save files of the OCS and AGA versions are compatible.
-
-!!! warning
+!!! warning "WHDLoad save game warning"
 
      This is a WHDLoad game which saves to memory. You *must* quit the game
      with the F10 key to write the save games to disk!
@@ -57,11 +48,19 @@
      config, you will lose *all your save games* you made in the current
      gaming session!
 
-!!! important
 
-     Do *not* use saves states with this game! This is a WHDLoad game which is
-     not compatible with save states (the game might crash or you might end up
-     with corrupted save files).
+**WASD movement keys**
+
+- Press ++home+w++ to switch to an alternative input mapping which maps the
+  cursor keys to the WASD keys and turning left/right to Q/E.
+
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name of your save game).
+
+
+**Save file compatibility**
+
+- The save files of the OCS and AGA versions are compatible.
 
 
 ## Eye of the Beholder II: The Legend of Darkmoon (OCS)
@@ -72,7 +71,7 @@
   cursor keys to the WASD keys and turning left/right to Q/E.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 **Save file compatibility**
@@ -82,9 +81,8 @@
 
 **Transferring your party from the first game**
 
-Copy the `EOBDATA.SAV` savegame file over into the game folder, then use the
-transfer option in the menu.
-
+- Copy the `EOBDATA.SAV` savegame file over into the game folder, then use the
+  transfer option in the menu.
 
 
 ## Eye of the Beholder II: The Legend of Darkmoon (AGA)
@@ -97,7 +95,20 @@ transfer option in the menu.
   game, then reload it. You might need to restart the game before reloading.
   This will only occur a few times over the course of the game in certain
   later areas and it's not game breaking, only a minor inconvenience.
- 
+
+!!! danger "Only use regular saves"
+
+    The game is _not_ compatible with save states---only user regular in-game
+    saves!
+
+!!! warning "WHDLoad save game warning"
+
+     This is a WHDLoad game which saves to memory. You *must* quit the game
+     with the F10 key to write the save games to disk!
+
+     If you don't do that and you just quit WinUAE, or load another game
+     config, you will lose *all your save games* you made in the current
+     gaming session!
 
 **WASD movement keys**
 
@@ -105,7 +116,7 @@ transfer option in the menu.
   cursor keys to the WASD keys, and turning left/right to Q/E.
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name for your save game).
+  or when entering the name of your save game).
 
 
 **Save file compatibility**
@@ -127,20 +138,7 @@ must be 46&thinsp;897 bytes long! `EOBDATA.SAV` (without the 0) is
 you get an error when loading the save game in EoB II AGA, you must have
 copied over `EOBDATA.SAV` by mistake.
 
-!!! warning
 
-     This is a WHDLoad game which saves to memory. You *must* quit the game
-     with the F10 key to write the save games to disk!
-
-     If you don't do that and you just quit WinUAE, or load another game
-     config, you will lose *all your save games* you made in the current
-     gaming session!
-
-!!! important
-
-     Do *not* use saves states with this game! This is a WHDLoad game which is
-     not compatible with save states (the game might crash or you might end up
-     with corrupted save files).
 
 
 ## Faery Tale Adventure, The
@@ -155,7 +153,7 @@ copied over `EOBDATA.SAV` by mistake.
   to prevent game-breaking bugs.
 
 
-## Fate -- Gates of Dawn
+## Fate: Gates of Dawn
 
 - The official English version has censored nudity; the
   original image files have been manually restored from the German original
