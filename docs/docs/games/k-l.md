@@ -5,11 +5,22 @@
 - To start the game, double-click on the **KQ1** disk icon, then on the
   **King's Quest I** icon.
 
+- To save the game, insert the save disk into drive
+  DF0: _after_ starting the game (press ++end+9++), press ++f5++ to bring up
+  the save dialog, then enter `Save:` for the volume (note the semicolon at
+  the end).
 
-## King's Quest II: Romancing the Throne
+- Similarly, enter `Save:` for the volume name when restoring a saves game.
 
-- To start the game, double-click on the **KQ2** disk icon, then on the
-  **King's Quest II** icon.
+
+## King's Quest: Quest for the Crown (SCI)
+
+- To start the game, double-click on the **KingsQuest1** disk icon, then on
+  the **KingsQuest1** icon.
+
+- Before starting the game, you can select between Amiga digital sound and
+  Roland MT-32 MIDI music by double-clicking on the **Set Amiga sound** and
+  **Set MT-32 sound** icons, respectively.
 
 
 ## King's Quest III: To Heir is Human
@@ -17,11 +28,18 @@
 - To start the game, double-click on the **KQ3** disk icon, then on the
   **King's Quest III** icon.
 
+- To save the game, insert the save disk into drive
+  DF0: _after_ starting the game (press ++end+9++), press ++f5++ to bring up
+  the save dialog, then enter `Save:` for the volume (note the semicolon at
+  the end).
+
+- Similarly, enter `Save:` for the volume name when restoring a saves game.
+
 
 ## Knightmare
 
-- Supports four floppy drives. No disk swapping necessary, save disk is in drive
-  DF2:
+- Supports four floppy drives, no disk swapping is necessary.
+- Save disk is in drive DF2:
 
 
 ## Lost Treasures of Infocom, The

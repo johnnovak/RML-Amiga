@@ -1,34 +1,63 @@
 # Getting started
 
-!!! warning "HALT! No one shall pass before reading this first!"
+!!! danger "HALT! --- No one shall pass before reading this first!"
 
     If you've never used an Amiga before, you will _not_ get very far without
     reading this getting started section. You will probably not even make it
-    past the intro of your first game...
+    past the intro of your very first game!
 
-    So please read these tips very carefully!
+    So please **read these instructions _very carefully!_**
 
-    Seasoned Amiga veterans who know the Amiga inside out should also read
-    this because half of the information is emulation-related.
+    Seasoned Amiga veterans who know the Amiga inside out should also keep
+    reading as half of the information is emulation-related.
 
 
 Starting a game
 
 : Start the bundled portable Amiga emulator by running `winuae.exe` (creating
-  an icon for it on your desktop is a good idea). This will bring up the
-  configuration browser. If the **Games** folder is not expanded, double-click
-  on it to open it. You can start typing into the search box to narrow down
-  the list of game configs. Double-click on a config and the game will start
-  (note that some floppy games might take a bit of time to load).
+  an icon for it on your desktop is a good idea). This should bring up the
+  configurations tab. You can always return to the configurations tab by
+  selecting :material-numeric-1-circle:{: .circ-num} **Configurations** in the
+  left pane.
 
-      Alternatively, select a game from the list by single clicking on it,
-      click on the **Load** button below the configuration browser, then click
-      **Start** to launch the game. You _must_ press **Load** before pressing
-      **Start**, otherwise WinUAE will use the _last_ loaded config, or the
-      default config if you haven't loaded anything yet!
+    ![Starting games](img/starting-games.png)
 
-      If you want to play a different game, it's best to quit WinUAE with
+    Once you're in the configs tab:
+
+    - Make sure **Games\\** is selected in the :material-numeric-2-circle:{: .circ-num}
+      **Filter** drop-down. 
+
+    - To start a game, double-click on its name in the
+      :material-numeric-3-circle:{: .circ-num} list (note that some games
+      might take a bit of time to load).
+
+    - To narrow down the list, start typing into the
+      :material-numeric-4-circle:{: .circ-num} search box. Click on the **X**
+      button next to search field to clear the search filter.
+
+    - If you want to play a different game, it's best to quit WinUAE with
       ++alt+f4++ then start it again.
+
+    Alternatively, you can load a config by single clicking on it and
+    then pressing the :material-numeric-5-circle:{: .circ-num} **Load** button.
+    You can see the name of the currently loaded config in the
+    :material-numeric-6-circle:{: .circ-num} title bar. Now click on
+    :material-numeric-7-circle:{: .circ-num} **Start** to launch the game.
+
+    !!! important 
+
+        You _must_ press **Load** before pressing **Start**, otherwise WinUAE
+        will use the _last_ loaded config, or the default one if you
+        haven't loaded a config yet... which won't do anything!
+
+
+Read the game notes
+: Always check the [Game notes](../games/index.md) page first when trying a
+  game for the first time. A few titles need special extra steps to even just
+  start the game---this could be hard to figure out if you've never used an
+  Amiga before. Some of the advice is very hard or impossible to figure out on
+  your own, or the information is deeply buried in the manual. 
+
 
 Skipping code checks
 : Some games have additional special configs to skip the intro or the
@@ -39,10 +68,30 @@ Skipping code checks
 
 Use warp mode
 : You can speed up floppy loading times considerably by entering "warp mode".
-  This speeds up the emulation to the maximum your computer can handle. You can
-  toggle warp mode with ++end+pause++ (there is no sound in warp mode and the
-  emulated CPU speed indicator in the lower right corner will show a value
-  greater than 100).
+  This "warps" the speed of the emulation to the maximum your computer can
+  handle. You can toggle warp mode with ++end+pause++ (there is no sound in
+  warp mode and the emulated CPU speed meter is pegged to 100% on the
+  on-screen display).
+
+Meet the on-screen display
+: The on-screen display (OSD) in the bottom-right corner is a handy little
+  thing that gives you feedback about what the emulator is doing (in addition
+  to the emulated floppy drive sounds).
+
+    ![On-screen display](img/osd.png)
+
+    - :material-numeric-1-circle:{: .circ-num} **Audio buffer** utilisation meter
+    - :material-numeric-2-circle:{: .circ-num} **CPU** utilisation meter (it's
+    pegged to **100** in warp mode)
+    - :material-numeric-3-circle:{: .circ-num} **FPS** meter (shows the letter **P** if the emulation is paused; jumps up to the 200-300+ FPS range in warp mode)
+    - :material-numeric-4-circle:{: .circ-num} **Power LED** of the emulated Amiga (usually blinks a few times if a program crashes before the machine reboots automatically)
+    - :material-numeric-5-circle:{: .circ-num} **Hard disk** activity LED (blue on reads, red on writes)
+    - :material-numeric-6-circle:{: .circ-num} **CD-ROM** activity
+    - :material-numeric-7-circle:{: .circ-num} **Floppy drive** activity of
+    the four floppy drives (green on reads, red on writes; the number
+    indicates the current track). The first drive is always present
+    (except on the CDTV and the CD32), the rest are optional.
+
 
 Read the manuals
 
@@ -52,12 +101,21 @@ Read the manuals
   supplementary materials first. Look for these in the **Manual** and
   **Extras** sub-folders within the individual game folders.
 
+    The **Manual** folder contains *not* just the manual, but any other items
+    included with the original game that are necessary for playing and
+    completing the game (e.g., code wheels, code sheets, or other documents
+    and images you might need to refer to during the course of your
+    playthrough as a form of copy protection).
+
+    The **Extras** folder contains optional content not strictly necessary to
+    complete the game, and the official hint books for many titles.
+
 Joystick-based games
 
 : Most games in the collection are controlled with the mouse and the keyboard,
   but a few need a joystick. These games are configured for an emulated
   joystick: use the regular cursor keys (not the numeric keypad) for movement, and the
-  ++ralt++, ++rshift++, or ++rctrl++ key for the fire button. If you want to
+  ++ralt++, ++rshift++, or ++rctrl++ key for the fire button. TODO If you want to
   use a real joystick or gamepad, press the fire button on the controller
   after starting the game and WinUAE will auto-detect it.
 
@@ -75,12 +133,6 @@ Saving your progress
   detailed [Saving your progress](floppy-games.md/#saving-your-progress) section as well for
   general tips, and don't forget about [Save states](save-states.md) as an
   alternative saving option.
-
-Read the game notes
-: Always check the [Game notes](../games/index.md) page for special instructions
-  when trying a game for the first time. Some of the advice there is very hard
-  to figure out on your own, or the information is deeply buried in the
-  manual.
 
 Customising your setup
 : If you're a power user, you should consider configuring the games for proper

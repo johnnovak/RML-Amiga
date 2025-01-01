@@ -91,8 +91,8 @@ above steps.
 
 ## Battle Chess
 
-- Double-click on the **BattleChess** disk icon then on the **BattleChess** icon
-to start the game.
+- To start the game, double-click on the **BattleChess** disk icon then on the
+  **BattleChess** icon.
 
 
 ## Battle Isle
@@ -111,8 +111,18 @@ to start the game.
 
 ## Black Cauldron, The
 
-- Double-click on the **BC** disk icon, then on the **Black Cauldron** icon.
-- Saves to the game disk.
+- To start the game, double-click on the **BC** disk icon, then on the **Black
+  Cauldron** icon.
+
+- To save the game, insert the save disk into drive DF0: _after_ starting the
+  game (press ++end+9++), press ++f5++ to bring up the save dialog, then enter
+  `Save:` for the volume (note the semicolon at the end).
+
+- Similarly, enter `Save:` for the volume name when restoring a saves game.
+
+!!! warning
+
+    The first disk must be in DF1: 
 
 
 ## Borrowed Time
