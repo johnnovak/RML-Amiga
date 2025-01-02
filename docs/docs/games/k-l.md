@@ -105,16 +105,27 @@
 
 ## Lords of Chaos
 
-The base game features the original three scenarios, and the included
-expansion disk has two additional scenarios. The **Escape from Zol** expansion
-contains one more exclusively designed scenario which appeared on Zero
-Coverdisk 14 (Issue 21, August 1991).
+The base game features the three original scenarios:
+
+<div class="compact" markdown>
+- Scenario One: The Many Coloured Land
+- Scenario Two: Slayer's Dungeon
+- Scenario Three: Ragaril's Domain
+</div>
+
+The included expansion disk has two additional scenarios:
+
+<div class="compact" markdown>
+- Scenario Four: Islands of Iris
+- Scenario Five: Tombs of the Undead
+</div>
 
 **Using the expansion disk**
 
-- Start the game and then put the expansion kit in DF0:
-- Select the **Load Scenario** option and type **4** to load scenario four, or
-  **5** to load scenario five.
+- Start the game then select the **Load Scenario** option in the menu.
+- Put the expansion disk in DF0: (press ++home+2++).
+- Type **4** to load scenario four, or **5** to load scenario five, then press
+  ++enter++.
 
 **Original game bugs**
 
@@ -124,8 +135,25 @@ Coverdisk 14 (Issue 21, August 1991).
   Just press ++enter++ to exit the menu.
 
 
+## Lords of Chaos Demo: Escape From Zol
+
+- **Escape from Zol** is an exclusive demo scenario included in
+  Zero Coverdisk 14 (Issue 21, August 1991).
+
+- Press **1** (Lords of Chaos Demo) when prompted to start the game.
+
+
 ## Lure of the Temptress
 
 - Debugged Virgin re-release (1992-08-06). All other versions contain
   game-breaking bugs.
+
+- Supports four floppy drives. All four game disks are inserted into the four
+  drives.
+
+- When entering the save and load dialog, the game confusingly refers to the
+  save disk as "data disk" (it asks you to insert the "data disk").
+
+- After starting the game, you should be able to replace the boot disk in
+  drive DF0: with the save disk and leave it there (press ++enter+1++).
 

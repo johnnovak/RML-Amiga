@@ -26,6 +26,9 @@
 
 - v1.96 English release
 
+- Only look at the included map, the table of runes and the novel (it's the
+  second half of the manual) after discovering them in-game.
+
 
 **Starting a new game**
 
@@ -44,11 +47,11 @@ can start playing the game.
   4. Click on the right HD icon when the "Install where?" question appears.
      Enter `DH1:AMBERSTAR` for the path name.
 
-  5. Turn on warp mode again and wait a few minutes until the "Installation
+  5. Enable warp mode again and wait a few minutes until the "Installation
      complete" message appears. Press the left mouse button to exit the
      installer.
 
-  6. Now you can start the game with the **Amberstar** configuration.
+  6. Now you can start the game with the regular **Amberstar** configuration.
 
 
 **Restarting the game with a new character**
