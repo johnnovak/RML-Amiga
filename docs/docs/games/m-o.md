@@ -1,5 +1,11 @@
 # M–O
 
+## Marble Madness
+
+- To start the game, double-click on the **MarbleMadness!** disk icon, then on
+  the **MarbleMadness!** icon.
+
+
 ## Moonstone: A Hard Days Knight
 
 - Supports three floppy drives.
