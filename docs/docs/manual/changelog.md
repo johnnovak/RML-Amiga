@@ -44,8 +44,8 @@ over 200 games including:
 - All Freescape games by **Incentive** (**Dark Side**, **Driller**, **Total
     Eclipse**, **Castle Master I & II**).
 
-- A handful of all-time arcade favourites (**Pinball Dreams**, **Agony**, **Shadow of the
-  Beast**, **Speedball 2: Brutal Deluxe**, **IK+**, etc.)
+- A handful of all-time action game favourites (**Pinball Dreams**, **Agony**,
+  **Shadow of the Beast**, **Speedball 2: Brutal Deluxe**, **IK+**, etc.)
 
 And a lot more---check out the full games list! Of course, all games come with
 manuals, code wheels, hint books, posters, box cover scans, and all sorts of

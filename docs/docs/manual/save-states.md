@@ -101,7 +101,7 @@ dialog.
     configuration.
 
 
-## Creating your own config variants
+## Creating config variants
 
 If you want to create your own "skip intro" or "skip code check" config
 variants for existing game configs, this is how to do it. We'll use the imaginary game **Bikini
@@ -155,8 +155,18 @@ last save point, which is pretty comfortable!
 
 ## Save state best practices
 
+Using save states is 100% safe with games with no in-game save support
+(virtually all action games), or to state it differently, games that never
+write anything to the disk.
 
-**Persistent game worlds** 
+The overwhelming majority of adventure, strategy, puzzle games, and simulators
+that feature in-game saves are also safe. Generally, you can even use both
+in-game saves and save states, but make sure to _never_ create a save state
+when you're in the in the "disk menu" or the "save menu" of the game, or when
+writing to any disk is in progress.
+
+
+### Persistent game worlds
 
 Some games, typically complex RPGs, change the data on the disk as you
 progress through the game. Using save states in such games will invariably
@@ -179,7 +189,7 @@ floppy or hard drive write indicators (flashing red lights) in the on-screen
 display in the bottom-right corner.
 
 
-**WHDLoad games**
+### WHDLoad games
 
 WHDLoad games perform in-game saves to memory only, then write these cached
 save games to disk when you exit the game with the ++f10++ key. The same sync
@@ -187,7 +197,7 @@ issues explained in the previus point apply---_never_ use save states with
 WHDLoad games if you don't like losing your progress!
 
 
-**Running a game for "too long"**
+### Running games for too long
 
 Some games might misbehave if you keep them running for a really long
 time without a restart. Back in the day, people played a game for a few hours or

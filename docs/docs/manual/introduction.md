@@ -3,7 +3,8 @@
 Welcome **RML Amiga** (**R**incewind's **M**agic **L**uggage Full of Amiga
 Goodies), a prestigious curated collection of (mostly) cerebral Amiga
 games! Adventures, RPGs, simulators, strategy, board and puzzle games are the
-stars of the show, but a small number of arcade classics are also included.
+stars of the show, but a small number of classic action games are also
+included.
 
 The aim of this collection is to recreate the Original Authentic Experience™
 of sitting in front of a real Amiga connected to a Commodore CRT monitor,
