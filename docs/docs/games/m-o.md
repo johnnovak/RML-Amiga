@@ -10,6 +10,8 @@
 - To start the game, double-click on the **MarbleMadness!** disk icon, then on
   the **MarbleMadness!** icon.
 
+- Saves the high scores to the game disk.
+
 
 ## Moonstone: A Hard Days Knight
 
@@ -52,4 +54,14 @@
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
   or when entering the name of your save game).
+
+
+## Portal: A Computer Novel
+
+- Saves to the game disk.
+
+!!! danger "Only use regular saves"
+
+    The game is _not_ compatible with save states---only user regular in-game
+    saves!
 

@@ -14,6 +14,11 @@
   or when entering the name of your save game).
 
 
+## Dark Side
+
+- Saves to the game disk.
+
+
 ## Death Knights of Krynn
 
 - To start the game, double-click on the **DeathKnightsOfKrynn** disk icon in
@@ -76,6 +81,12 @@
     saves!
 
 
+## Distant Armies: A Playing History of Chess
+
+- To start the game, double-click on the **DistantArmies** disk icon, then on
+  the **DistantArmies** icon.
+
+
 ## Dragon Wars
 
 - The reference card lists commands you have to use with the "Open-Amiga key".
@@ -92,12 +103,6 @@
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
   or when entering the name of your save game).
-
-
-## Distant Armies: A Playing History of Chess
-
-- To start the game, double-click on the **DistantArmies** disk icon, then on
-  the **DistantArmies** icon.
 
 
 ## DreamWeb (AGA)

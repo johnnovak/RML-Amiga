@@ -1,5 +1,10 @@
 # I–J
 
+## IK+
+
+- Saves the high scores to the game disk.
+
+
 ## Ishar 2: Messengers of Doom (AGA)
 
 - To start the game, double-click the **Start** icon.

@@ -4,6 +4,7 @@
 
 - Best played with a digital joystick.
 - Supports two floppy drives.
+- Saves the high scores to the game disk.
 
 
 ## Altered Destiny
@@ -71,6 +72,11 @@ above steps.
 - To skip the intro, press ++c++ and enter the `EDJI` continuation code.
 
 
+## Archipelagos
+
+- Saves the high scores to the game disk.
+
+
 ## Aufschwung Ost
 
 - Can use only DF0: for the game disk, but you can set the save disk
@@ -82,6 +88,13 @@ above steps.
 - "A "disk invalid" dialog will pop-up 3-4 times; this is normal, just keep
   pressing cancel. Once the pop-ups are gone, double-click on the **BOP** disk
   icon, then on the **Balance of Power** icon to start the game.
+
+- Saves to the game disk.
+
+
+## Balance of Power: The 1990 Edition
+
+- Saves to the game disk.
 
 
 ## Bard's Tale, The: Tales of the Unknown
@@ -163,6 +176,11 @@ above steps.
 ## Borrowed Time
 
 - Saves to the game disk.
+
+
+## Boston Bomb Club
+
+- Saves high scores to the game disk.
 
 
 ## Buck Rogers: Countdown to Doomsday
