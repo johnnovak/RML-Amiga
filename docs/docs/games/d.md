@@ -14,6 +14,11 @@
   or when entering the name of your save game).
 
 
+## Dark Side
+
+- Saves to the game disk.
+
+
 ## Death Knights of Krynn
 
 - To start the game, double-click on the **DeathKnightsOfKrynn** disk icon in
@@ -80,6 +85,24 @@
 
 - To start the game, double-click on the **DistantArmies** disk icon, then on
   the **DistantArmies** icon.
+
+
+## Dragon Wars
+
+- The reference card lists commands you have to use with the "Open-Amiga key".
+  This is the right Amiga key, which is mapped to the ++rctrl++ and ++home++
+  keys (e.g., to enter the save dialog, press ++rctrl+s++ or ++home+s++).
+
+- Use the **Savegames** directory for your saves (double-click on `Savegames
+  (dir)` in the load and save dialogs to enter that directory).
+
+**WASD movement keys**
+
+- Press ++home+w++ to switch to an alternative input mapping which maps the
+  cursor keys to the WASD keys.
+
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name of your save game).
 
 
 ## DreamWeb (AGA)

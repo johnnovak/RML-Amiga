@@ -14,6 +14,7 @@
 ## Pinball Dreams
 
 - Supports two floppy drives.
+- Saves the high scores to the game disk.
 
 
 ## Pirates!
@@ -31,6 +32,21 @@
 
 - The game will get stuck after entering your name if the disk is write
   protected.
+
+
+## Rick Dangerous
+
+- Saves the high scores to the game disk.
+
+
+## Rick Dangerous 2
+
+- Saves the high scores to the game disk.
+
+
+## Rome AD92
+
+- Saves to the game disk.
 
 
 ## Quest For Glory II: Trial By Fire

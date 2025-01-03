@@ -24,10 +24,25 @@
 - To start the game, TODO
 
 
+## Speedball 2: Brutal Deluxe
+
+- Saves high scores to the game disk.
+
+
 ## Tass Times in Tonetown
 
 - Very long initial loading time. There's no floppy activity for a long time
   during loading. You can use the "start" save state to skip the loading.
+
+- Saves to the game disk.
+
+
+## Times of Lore
+
+- Saves to the game disk.
+
+
+## Total Eclipse
 
 - Saves to the game disk.
 
