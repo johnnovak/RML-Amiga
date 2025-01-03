@@ -97,6 +97,36 @@ above steps.
       screen** written on it.
     - Click on the first icon in the top-right corner on the **Workbench screen** bar.
 
+**WASD movement keys**
+
+- Press ++home+w++ to switch to an alternative input mapping which maps the
+  cursor keys to the WASD keys.
+
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name of your save game).
+
+
+## Bard's Tale II, The - The Destiny Knight
+
+**WASD movement keys**
+
+- Press ++home+w++ to switch to an alternative input mapping which maps the
+  cursor keys to the WASD keys.
+
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name of your save game).
+
+
+## Bard's Tale III, The - Thief of Fate.uae
+
+**WASD movement keys**
+
+- Press ++home+w++ to switch to an alternative input mapping which maps the
+  cursor keys to the WASD keys.
+
+- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
+  or when entering the name of your save game).
+
 
 ## Battle Chess
 

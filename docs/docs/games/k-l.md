@@ -143,6 +143,14 @@ The included expansion disk has two additional scenarios:
 - Press **1** (Lords of Chaos Demo) when prompted to start the game.
 
 
+## Lord of the Rings, The - Vol. 1
+
+!!! danger "Only use regular saves"
+
+    The game is _not_ compatible with save states---only user regular in-game
+    saves!
+
+
 ## Lure of the Temptress
 
 - Debugged Virgin re-release (1992-08-06). All other versions contain
