@@ -1,5 +1,10 @@
 # M–O
 
+## Mindshadow
+
+- Saves to the game disk.
+
+
 ## Marble Madness
 
 - To start the game, double-click on the **MarbleMadness!** disk icon, then on
