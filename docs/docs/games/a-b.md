@@ -161,6 +161,12 @@ above steps.
   game.
 
 
+## Beneath A Steel Sky (CD32)
+
+- This is the best version of the game that features in-game music and full
+  voiceovers.
+
+
 ## Black Cauldron, The
 
 - To start the game, double-click on the **BC** disk icon, then on the **Black

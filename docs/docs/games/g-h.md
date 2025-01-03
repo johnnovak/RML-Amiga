@@ -36,5 +36,14 @@
 
 ## Heimdall 2: Into the Hall of Worlds (CD32)
 
+- This is the best version of the game that features all animations and a full
+  CD Audio soundtrack.
+
 - Needs a gamepad (it's very hard to play with keyboard mappings).
 
+- In this CD32 version, you can only save in the Hall of Worlds by finding a
+  special book. Unfortunately, this saving mechanism is buggy---it's possible
+  to end up in a state where you're unable to revisit other worlds, preventing
+  you from completing the game. Using save states is recommended instead
+  (which isn't considered cheating because you can save anywhere in the OCS
+  and AGA versions).
