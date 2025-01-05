@@ -44,6 +44,7 @@ floppy3=
 floppy3sound=1
 floppy3soundvolume_disk=88
 floppy3soundvolume_empty=88
+statefile=..\Games\Monkey Island 2 - LeChuck's Revenge\Savestates\SkipCodeCheck.uss
 nr_floppies=1
 floppy_speed=100
 cd_speed=100
