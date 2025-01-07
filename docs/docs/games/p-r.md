@@ -91,15 +91,6 @@
 - You can also double-click on the credits icons to watch the credits.
 
 
-## Powermonger: World War 1 Edition
-
-- Insert the **Powermonger disk** (base game disk) when prompted (press
-  ++end+2++) and press **OK**.
-
-- Insert the **WW1 data disk** when prompted (press ++end+1++) and press
-  **OK**.
-
-
 ## Portal: A Computer Novel
 
 - Saves to the game disk.
@@ -111,6 +102,23 @@
 
     The game is _not_ compatible with save states---only user regular in-game
     saves!
+
+
+## Ports of Call
+
+- To start the game, double-click on the **PoC** disk icon, then on the
+  **PortsOfCall** icon.
+
+- Saves to the game disk.
+
+
+## Powermonger: World War 1 Edition
+
+- Insert the **Powermonger disk** (base game disk) when prompted (press
+  ++end+2++) and press **OK**.
+
+- Insert the **WW1 data disk** when prompted (press ++end+1++) and press
+  **OK**.
 
 
 ## Rick Dangerous
@@ -127,7 +135,7 @@
 
 ## Rome AD92
 
-- Saves to the game disk.
+- Has a single save-slot only; saves the game to first game disk on quit.
 
 
 ## Quest For Glory II: Trial By Fire
