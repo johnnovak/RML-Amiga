@@ -17,9 +17,9 @@
 - To start the game, double-click on the **KingsQuest1** disk icon, then on
   the **KingsQuest1** icon.
 
-- Before starting the game, you can choose between Amiga digital sound and
-  Roland MT-32 MIDI music by double-clicking on the **Set Amiga sound** or
-  **Set MT-32 sound** icons, respectively.
+- You can choose between Amiga digital sound and Roland MT-32 MIDI music by
+  double-clicking on the **Set Amiga sound** or **Set MT-32 sound** icons,
+  respectively, before starting the game.
 
 
 ## King's Quest III: To Heir is Human
@@ -164,4 +164,3 @@ The included expansion disk has two additional scenarios:
 
 - After starting the game, you should be able to replace the boot disk in
   drive DF0: with the save disk and leave it there (press ++enter+1++).
-

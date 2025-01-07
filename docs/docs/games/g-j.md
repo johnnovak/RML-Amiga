@@ -1,4 +1,4 @@
-# G–H
+# G–J
 
 ## Gateway to the Savage Frontier
 
@@ -47,3 +47,30 @@
   you from completing the game. Using save states is recommended instead
   (which isn't considered cheating because you can save anywhere in the OCS
   and AGA versions).
+
+
+## IK+
+
+- Saves the high scores to the game disk.
+
+
+## Ishar 2: Messengers of Doom (AGA)
+
+- To start the game, double-click the **Start** icon.
+
+- The intro can't be skipped. Pressing ++esc++ during the intro will hang the
+  game; use the "skip intro" save state instead.
+
+
+## Ishar 3: The Seven Gates of Infinity (AGA)
+
+- To start the game, double-click the **Start** icon.
+
+- The intro can't be skipped. Pressing ++esc++ during the intro will hang the
+  game; use the "skip intro" save state instead.
+
+
+## Jinxter
+
+- Right-click on the top of the screen and drag it down to see the
+  illustrations.

@@ -139,8 +139,6 @@ you get an error when loading the save game in EoB II AGA, you must have
 copied over `EOBDATA.SAV` by mistake.
 
 
-
-
 ## Faery Tale Adventure, The
 
 - Patched and cracked version by Ross that fixes the garbled sound issue
@@ -179,4 +177,3 @@ copied over `EOBDATA.SAV` by mistake.
 - The game is configured to run from the hard drive, and the built-in save
   game mechanism only works when you run the game from floppies. So don't use
   the built-in save mechanism; use save states instead.
-

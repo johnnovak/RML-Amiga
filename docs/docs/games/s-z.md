@@ -56,4 +56,3 @@
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
   or when entering the name of your save game).
-
