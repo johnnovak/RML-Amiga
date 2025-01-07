@@ -54,6 +54,7 @@
 
 - Right-click on the top of the screen and drag it down to see the
   illustrations.
+
 - Make sure to listen to the audio tape in the **Extras** folder.
 
 
@@ -72,5 +73,3 @@
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
   or when entering the name of your save game).
-
-
