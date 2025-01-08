@@ -13,10 +13,40 @@
 
 ## Shadowgate
 
+- To start the game, double-click on the **SHADOWGATE** disk icon, then on the
+  **Shadowgate** icon.
+
 - Save disk is in drive DF1:
 
 - Type **DF1:YourSavegameName** in the dialog when saving the game (you can
   use any name you like after the **DF1:** part).
+
+
+## Shadow of the Beast
+
+- Best played with a digital joystick.
+
+
+## SimCity
+
+- "Ultimate" version compiled from the v1.1 and v1.2.2 releases and various
+  extras disks. Includes the 16-colour and 64-colour versions, all city packs,
+  the terrain editor, utilities, and all official extra maps.
+
+- To start the game, double-click on the **SimCity** disk icon, then on either
+  the **SimCity512K** or  **SimCity1.2** drawer icon, then on the
+  **SimCity** icon.
+
+**SimCity512K**
+
+- Initial 16-colour version (v1.1).
+- Has manual-based copy protection; refer to the protection codes PDF. The
+  first symbol of the 3-symbol code is in the top-right corner of each page.
+
+**SimCity1.2**
+
+- Later 64-colour version (v1.2.2).
+- This version has the manual-based copy protection removed by the developer.
 
 
 ## Space Quest I: The Sarien Encounter (AGI)
