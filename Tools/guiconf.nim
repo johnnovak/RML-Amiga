@@ -1,5 +1,6 @@
 import std/lenientops
 import std/options
+import std/os
 import std/strformat
 
 import glad/gl
@@ -14,12 +15,19 @@ var vg: NVGContext
 
 type
   App = object
-    currTab: MainTab
+    currTab:      MainTab
+    applyTarget:  ApplyTarget
+    helpText:     string
 
   MainTab = enum
-    mtDisplay = (0, "Display"),
-    mtAudio   = (1, "Audio"),
-    mtGeneral = (2, "General")
+    mtDisplay = "Display"
+    mtAudio   = "Audio"
+    mtGeneral = "General"
+
+  ApplyTarget = enum
+    atAll      = "All configs"
+    atAllGames = "All games"
+    atAllDemos = "All demos"
 
 var app: App
 
@@ -33,47 +41,52 @@ type
   # Display settings
   # -----------------------------------------
   DisplaySettings = object
-    displayMode:   DisplayMode
-    crtEmulation:  bool
-    shaderQuality: ShaderQuality
-    palScaling:    PalScaling
-    ntscScaling:   NtscScaling
-    showOsd:       bool
+    displayMode:     tuple[value: DisplayMode,   set: bool]
+    windowWidth:     tuple[value: string,        set: bool]
+    windowHeight:    tuple[value: string,        set: bool]
+    resizableWindow: tuple[value: bool,          set: bool]
+    showOsd:         tuple[value: bool,          set: bool]
+    showClock:       tuple[value: bool,          set: bool]
+
+    crtEmulation:    tuple[value: bool,          set: bool]
+    shaderQuality:   tuple[value: ShaderQuality, set: bool]
+    palScaling:      tuple[value: PalScaling,    set: bool]
+    ntscScaling:     tuple[value: NtscScaling,   set: bool]
 
     # advanced settings
-    sharperPal:    bool
-    interlacing:   bool
-    vsyncMode:     VsyncMode
-    sliceCount:    Natural
+    sharperPal:      tuple[value: bool,          set: bool]
+    interlacing:     tuple[value: bool,          set: bool]
+    vsyncMode:       tuple[value: VsyncMode,     set: bool]
+    sliceCount:      tuple[value: string,        set: bool]
 
   ShaderQuality = enum
-    sqFast = (0, "Fast")
-    sqBest = (1, "Best")
+    sqFast = "Fast"
+    sqBest = "Best"
 
   DisplayMode = enum
-    dmWindowed   = (0, "Windowed")
-    dmFullWindow = (1, "Full-window")
-    dmFullscreen = (2, "Fullscreen")
+    dmWindowed   = "Windowed"
+    dmFullWindow = "Full-window"
+    dmFullscreen = "Fullscreen"
 
   PalScaling = enum
-    palScaling30 = (0, "3.0x")
-    palScaling32 = (1, "3.2x")
-    palScaling35 = (2, "3.5x")
-    palScaling40 = (3, "4.0x")
-    palScaling45 = (4, "4.5x")
-    palScaling50 = (5, "5.0x")
+    palScaling30 = "3.0x"
+    palScaling32 = "3.2x"
+    palScaling35 = "3.5x"
+    palScaling40 = "4.0x"
+    palScaling45 = "4.5x"
+    palScaling50 = "5.0x"
 
   NtscScaling = enum
-    ntscScaling30 = (0, "3.0x")
-    ntscScaling32 = (1, "3.2x")
-    ntscScaling35 = (2, "3.5x")
-    ntscScaling40 = (3, "4.0x")
-    ntscScaling42 = (4, "4.2x")
+    ntscScaling30 = "3.0x"
+    ntscScaling32 = "3.2x"
+    ntscScaling35 = "3.5x"
+    ntscScaling40 = "4.0x"
+    ntscScaling42 = "4.2x"
 
   VsyncMode = enum
-    vmOff      = (0, "Off")
-    vmStandard = (1, "Standard")
-    vmLagless  = (2, "Lagless")
+    vmStandard = "Standard"
+    vmLagless  = "Lagless"
+    vmOff      = "Off"
 
   # Audio settings
   # -----------------------------------------
@@ -86,38 +99,38 @@ type
     floppySounds:     bool
 
   AudioDevice = enum
-    adDirectSound = (0, "DirectSound"),
-    adWasapi      = (1, "WASAPI")
+    adDirectSound = "DirectSound"
+    adWasapi      = "WASAPI"
 
   SampleRate = enum
-    sr44100 = (0, "44100")
-    sr48000 = (1, "48000")
-    sr88200 = (2, "88200")
-    sr96000 = (3, "96000")
+    sr44100 = "44100"
+    sr48000 = "48000"
+    sr88200 = "88200"
+    sr96000 = "96000"
 
   StereoSeparation = enum
-    ss100 = (0,  "100%")
-    ss90  = (1,  "90%")
-    ss80  = (2,  "80%")
-    ss70  = (3,  "70%")
-    ss60  = (4,  "60%")
-    ss50  = (5,  "50%")
-    ss40  = (6,  "40%")
-    ss30  = (7,  "30%")
-    ss20  = (8,  "20%")
-    ss10  = (9,  "10%")
-    ss0   = (10, "0%")
+    ss100 = "100%"
+    ss90  = "90%"
+    ss80  = "80%"
+    ss70  = "70%"
+    ss60  = "60%"
+    ss50  = "50%"
+    ss40  = "40%"
+    ss30  = "30%"
+    ss20  = "20%"
+    ss10  = "10%"
+    ss0   = "0%"
 
   SoundBufferSize = enum
-    sbsMin = (0, "Min")
-    sbs1   = (1, "1")
-    sbs2   = (2, "2")
-    sbs3   = (3, "3")
-    sbs4   = (4, "4")
-    sbs5   = (5, "5")
-    sbs6   = (6, "6")
-    sbs7   = (7, "7")
-    sbs8   = (8, "8")
+    sbsMin = "Min"
+    sbs1   = "1"
+    sbs2   = "2"
+    sbs3   = "3"
+    sbs4   = "4"
+    sbs5   = "5"
+    sbs6   = "6"
+    sbs7   = "7"
+    sbs8   = "8"
 
   # General settings
   # -----------------------------------------
@@ -127,59 +140,168 @@ type
 
 var cfg: Config
 
+# default
+cfg.display = DisplaySettings(
+    displayMode:     (dmFullWindow, false),
+    windowWidth:     ("1280", false),
+    windowHeight:    ("960", false),
+    resizableWindow: (true, false),
+    showOsd:         (true, false),
+    showClock:       (true, false),
+
+    crtEmulation:    (true, false),
+    shaderQuality:   (sqBest, false),
+    palScaling:      (palScaling30, false),
+    ntscScaling:     (ntscScaling30, false),
+
+    sharperPal:      (false, false),
+    interlacing:     (false, false),
+    vsyncMode:       (vmStandard, false),
+    sliceCount:      ("2", false)
+)
+
 const
   DialogLayoutParams = AutoLayoutParams(
     itemsPerRow:       2,
-    rowWidth:          280.0,
-    labelWidth:        170.0,
+    rowWidth:          330.0,
+    labelWidth:        190.0,
     sectionPad:        0.0,
     leftPad:           0.0,
     rightPad:          0.0,
-    rowPad:            8.0,
+    rowPad:            7.0,
     rowGroupPad:       20.0,
-    defaultRowHeight:  23.0,
-    defaultItemHeight: 23.0
+    defaultRowHeight:  22.0,
+    defaultItemHeight: 22.0
   )
 
+  CheckBoxSize = 18.0
+
+# Icons
+
+const
+  NoIcon     = ""
+  IconCheck  = "\ue900"
+  IconFloppy = "\uf0c7"
 
 # }}}
 
+proc setHelpText(s: string) =
+  let y = koi.autoLayoutNextY()
+  let oy = koi.drawOffset().oy
+  if koi.my() >= oy + y and koi.my() <= oy + y + 22:
+    app.helpText = s
+
 # {{{ renderDisplayTab()
 proc renderDisplayTab() =
-  group:
-    koi.label("Display mode")
-    koi.dropDown(cfg.display.displayMode)
+    group:
+      koi.toggleButton(cfg.display.displayMode.set, "Display mode")
+      setHelpText("Set the default display mode. You can always toggle between 'Windowed' and 'Full-windowed' with End+12. Use 'Fullscreen' for the best results with lagless vsync enabled.")
+      koi.dropDown(cfg.display.displayMode.value, disabled=not cfg.display.displayMode.set)
 
-  group:
-    koi.label("CRT emulation")
-    koi.checkBox(cfg.display.crtEmulation)
+      koi.toggleButton(cfg.display.windowWidth.set, "Window size")
+      setHelpText("Set the window size in windowed mode.")
+      let y = koi.autoLayoutNextY()
 
-    koi.label("CRT emulation quality")
-    koi.dropDown(cfg.display.shaderQuality)
+      koi.nextItemWidth(60)
+      koi.textField(
+        cfg.display.windowWidth.value,
+        tooltip = "",
+        constraint = TextFieldConstraint(
+          kind:   tckInteger,
+          minInt: 640,
+          maxInt: 9999
+        ).some,
+        disabled = not cfg.display.windowWidth.set
+      )
 
-  group:
-    koi.label("PAL scaling")
-    koi.dropDown(cfg.display.palScaling)
+      koi.label(x=256, y, w=20, h=22, "x")
 
-    koi.label("NTSC scaling")
-    koi.dropDown(cfg.display.ntscScaling)
+      koi.textField(
+        x=270, y, w=60, h=22,
+        cfg.display.windowHeight.value,
+        constraint = TextFieldConstraint(
+          kind:   tckInteger,
+          minInt: 640,
+          maxInt: 9999
+        ).some,
+        disabled = not cfg.display.windowWidth.set
+      )
 
-  group:
-    koi.label("Show OSD")
-    koi.checkBox(cfg.display.showOsd)
+      koi.toggleButton(cfg.display.resizableWindow.set, "Resizable window")
+      setHelpText("Allow resizing the WinUAE window in windowed mode.")
+      koi.nextItemHeight(CheckBoxSize)
+      koi.checkBox(cfg.display.resizableWindow.value,
+                   disabled=not cfg.display.resizableWindow.set)
 
-  group:
-    koi.label("Sharper PAL mode")
-    koi.checkBox(cfg.display.sharperPal)
+    group:
+      koi.toggleButton(cfg.display.showOsd.set, "Show OSD")
+      setHelpText("Show on-screen display (OSD) in the bottom-right corner that indicates the HDD and floppy drive activity of the emulated machine, plus CPU and audio buffer utilisation, currnt FPS, pause/warp mode, etc.")
 
-    koi.label("Interlacing emulation")
-    koi.checkBox(cfg.display.interlacing)
+      koi.nextItemHeight(CheckBoxSize)
+      koi.checkBox(cfg.display.showOsd.value,
+                   disabled=not cfg.display.showOsd.set)
 
-    koi.label("Vsync mode")
-    koi.dropDown(cfg.display.vsyncMode)
+      koi.toggleButton(cfg.display.showClock.set, "Show clock")
+      setHelpText("Show clock in the top-right corner (only work if CRT emulation is enabled).")
+      koi.nextItemHeight(CheckBoxSize)
+      koi.checkBox(cfg.display.showClock.value,
+                   disabled = not cfg.display.showClock.set)
 
-#      koi.label("Lagless vsync slices")
-#      koi.dropDown(cfg.display.sliceCount)
+    group:
+      koi.toggleButton(cfg.display.palScaling.set, "PAL scaling")
+      setHelpText("Set the scaling factor for PAL games and demos. Fractional scaling factors (in particular the 3.2x factor) might result in some vertical interference artifacts on 1080p screens. This is especially noticeable on fade-in & fade-out effects.")
+      koi.nextItemWidth(60)
+      koi.dropDown(cfg.display.palScaling.value,
+                   disabled = not cfg.display.palScaling.set)
+
+      koi.toggleButton(cfg.display.ntscScaling.set, "NTSC scaling")
+      setHelpText("Set the scaling factor for NTSC and NTSC50 games. Fractional settings are not prone to vertical interference artifacts as the PAL shaders.")
+      koi.nextItemWidth(60)
+      koi.dropDown(cfg.display.ntscScaling.value,
+                   disabled = not cfg.display.ntscScaling.set)
+
+    group:
+      koi.toggleButton(cfg.display.crtEmulation.set, "CRT emulation")
+      setHelpText("Enables authentic 15 kHz Commodore monitor CRT emulation. Pixels are rendered as sharp little rectangles if disabled. You might need to disable CRT emulation if you have a really weak GPU and you're getting slowdowns and glitchy audio.")
+      koi.nextItemHeight(CheckBoxSize)
+      koi.checkBox(cfg.display.crtEmulation.value,
+                   disabled = not cfg.display.crtEmulation.set)
+
+      koi.toggleButton(cfg.display.shaderQuality.set, "CRT emulation quality")
+      setHelpText("'Best' is recommended to minimise vertical interference artifacts. Only select 'Fast' if you have a weak GPU and you're getting slowdowns and audio stutters (it's three times faster than 'Best').")
+      koi.dropDown(cfg.display.shaderQuality.value,
+                   disabled = not cfg.display.shaderQuality.set)
+
+      koi.toggleButton(cfg.display.sharperPal.set, "Sharper PAL CRT emulation")
+      setHelpText("Enable maximum horizontal sharpness for PAL CRT emulation. This increases the legibility of 80-column text (e.g., in text adventures), at the detriment of the 'natural antialiasing' and blending properties of the CRT shaders. This only exists for PAL because the NTSC shaders don't benefit from it.")
+      koi.nextItemHeight(CheckBoxSize)
+      koi.checkBox(cfg.display.sharperPal.value,
+                   disabled = not cfg.display.sharperPal.set)
+
+      koi.toggleButton(cfg.display.interlacing.set, "Interlacing emulation")
+      setHelpText("Enable interlacing flicker emulation in hi-res laced screen modes (400-pixel-high NTSC and 512-pixel-high PAL modes). Interlacing emulation works best on VRR monitors or with matched refresh rates on fixed-refresh displays (50 Hz for PAL and 60 Hz for NTSC; make sure your Windows desktop uses the appropriate refresh rate).")
+      koi.nextItemHeight(CheckBoxSize)
+      koi.checkBox(cfg.display.interlacing.value,
+                   disabled = not cfg.display.interlacing.set)
+
+    group:
+      koi.toggleButton(cfg.display.vsyncMode.set, "Vsync mode")
+      setHelpText("'Standard' uses triple buffering and works well in both windowed and fullscreen. This should satisfy most users. 'Lagless' reduces input latency which might matter in fast-paced action games, but is finicky as it needs fullscreen for the best results and a VRR monitor or exact refresh rates (see 'Interlacing emulation').")
+      koi.dropDown(cfg.display.vsyncMode.value,
+                   disabled = not cfg.display.vsyncMode.set)
+
+      koi.toggleButton(cfg.display.sliceCount.set, "Lagless vsync slices")
+      setHelpText("Number of frame slices in lagless vsync mode. Higher values reduce latency, but how far you can go without getting weird artifacts is very much setup-dependent. Value between 2 and 8 and the most useful. Generally you'll need slightly larger audio buffers in lagless vsync mode.")
+      koi.nextItemWidth(60)
+      koi.textField(
+        cfg.display.sliceCount.value,
+        constraint = TextFieldConstraint(
+          kind:   tckInteger,
+          minInt: 1,
+          maxInt: 29
+        ).some,
+        disabled = not cfg.display.sliceCount.set
+      )
 
 # }}}
 # {{{ renderAudioTab()
@@ -216,14 +338,11 @@ proc renderTabs(x, y: float) =
 proc renderUI() =
   koi.beginFrame()
 
-  let
-    w = 110.0
-    h = 22.0
-    pad = h + 8
+  let h = 22.0
 
   var
-    x = 30.0
-    y = 30.0
+    x = 25.0
+    y = 25.0
 
   # Clear background
   vg.beginPath()
@@ -231,11 +350,29 @@ proc renderUI() =
   vg.fillColor(gray(0.3))
   vg.fill()
 
-  # Main tabs
-  koi.radioButtons(x, y, 440, h, app.currTab)
+  # Tabs
+  koi.radioButtons(x, y, 390, h, app.currTab)
 
-  y += 50
-  renderTabs(x+30, y)
+  y += 60
+  renderTabs(x, y)
+
+  # Help text
+  y += 450
+  koi.textArea(x, y, 390, 150, app.helpText, disabled=true)
+
+  # Action buttons
+  y = koi.winHeight() - 22 - 25
+
+  if koi.button(x, y, 75, 24, "Reset"):
+    discard
+
+  if koi.button(x + 83, y, 75, 24, "Load"):
+    discard
+
+  if koi.button(koi.winWidth() - 90 - x - 98, y, 90, 24, "Apply to"):
+    discard
+
+  koi.dropDown(koi.winWidth() - 90 - x, y, 90, 24, app.applyTarget)
 
   koi.endFrame()
 
@@ -257,9 +394,9 @@ proc framebufSizeCb(win: Window, size: tuple[w, h: int32]) =
 # {{{ createWindow()
 proc createWindow(): Window =
   var cfg           = DefaultOpenglWindowConfig
-  cfg.size          = (w: 500, h: 650)
+  cfg.size          = (w: 440, h: 760)
   cfg.title         = "RML Amiga Configuration Tool"
-  cfg.resizable     = true
+  cfg.resizable     = false
   cfg.visible       = false
   cfg.bits          = (r: some(8'i32), g: some(8'i32), b: some(8'i32),
                        a: some(8'i32),
@@ -277,15 +414,32 @@ proc createWindow(): Window =
   newWindow(cfg)
 
 # }}}
-# {{{ loadData()
-proc loadData(vg: NVGContext) =
-  let regularFont = vg.createFont("sans", "data/Roboto-Regular.ttf")
-  if regularFont == NoFont:
-    quit "Could not load regular italic.\n"
+# {{{ loadFonts()
+proc loadFonts() =
+  proc loadFont(fontName: string, path: string): Font =
+    try:
+      vg.createFont(fontName, path)
+    except CatchableError as e:
+      quit "Cannot load font '{path}'"
+      raise e
 
-  let boldFont = vg.createFont("sans-bold", "data/Roboto-Bold.ttf")
-  if boldFont == NoFont:
-    quit "Could not load bold font.\n"
+  discard         loadFont("sans",       "data" / "Roboto-Regular.ttf")
+  let boldFont  = loadFont("sans-bold",  "data" / "Roboto-Bold.ttf")
+  let blackFont = loadFont("sans-black", "data" / "Roboto-Black.ttf")
+  let iconFont  = loadFont("icon",       "data" / "Icons.ttf")
+
+  discard addFallbackFont(vg, boldFont,  iconFont)
+  discard addFallbackFont(vg, blackFont, iconFont)
+
+# }}}
+# {{{ setWidgetStyles()
+proc setWidgetStyles() =
+  var cbs = koi.getDefaultCheckBoxStyle()
+  cbs.icon.fontSize = 12
+  cbs.iconActive    = IconCheck
+  cbs.iconInactive  = NoIcon
+
+  koi.setDefaultCheckBoxStyle(cbs)
 
 # }}}
 # {{{ init()
@@ -300,9 +454,11 @@ proc init(): Window =
   if not gladLoadGL(getProcAddress):
     quit "Error initialising OpenGL"
 
-  loadData(vg)
+  loadFonts()
 
   koi.init(vg, getProcAddress)
+
+  setWidgetStyles()
 
   win.windowPositionCb  = windowPosCb
   win.framebufferSizeCb = framebufSizeCb
