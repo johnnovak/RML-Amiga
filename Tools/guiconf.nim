@@ -13,17 +13,70 @@ import koi
 var vg: NVGContext
 
 type
-  ConfigUI = object
-    currentTab: int
+  App = object
+    currTab: MainTab
 
+  MainTab = enum
+    mtDisplay = (0, "Display"),
+    mtAudio   = (1, "Audio"),
+    mtGeneral = (2, "General")
+
+var app: App
+
+
+type
+  Config = object
+    display: DisplaySettings
     audio:   AudioSettings
-    video:   DisplaySettings
     general: GeneralSettings
 
-  AudioDevice = enum
-    adDirectSound = (0, "DirectSound"),
-    adWasapi      = (1, "WASAPI")
+  # Display settings
+  # -----------------------------------------
+  DisplaySettings = object
+    displayMode:   DisplayMode
+    crtEmulation:  bool
+    shaderQuality: ShaderQuality
+    palScaling:    PalScaling
+    ntscScaling:   NtscScaling
+    showOsd:       bool
 
+    # advanced settings
+    sharperPal:    bool
+    interlacing:   bool
+    vsyncMode:     VsyncMode
+    sliceCount:    Natural
+
+  ShaderQuality = enum
+    sqFast = (0, "Fast")
+    sqBest = (1, "Best")
+
+  DisplayMode = enum
+    dmWindowed   = (0, "Windowed")
+    dmFullWindow = (1, "Full-window")
+    dmFullscreen = (2, "Fullscreen")
+
+  PalScaling = enum
+    palScaling30 = (0, "3.0x")
+    palScaling32 = (1, "3.2x")
+    palScaling35 = (2, "3.5x")
+    palScaling40 = (3, "4.0x")
+    palScaling45 = (4, "4.5x")
+    palScaling50 = (5, "5.0x")
+
+  NtscScaling = enum
+    ntscScaling30 = (0, "3.0x")
+    ntscScaling32 = (1, "3.2x")
+    ntscScaling35 = (2, "3.5x")
+    ntscScaling40 = (3, "4.0x")
+    ntscScaling42 = (4, "4.2x")
+
+  VsyncMode = enum
+    vmOff      = (0, "Off")
+    vmStandard = (1, "Standard")
+    vmLagless  = (2, "Lagless")
+
+  # Audio settings
+  # -----------------------------------------
   AudioSettings = object
     audioDevice:      AudioDevice
     sampleRate:       SampleRate
@@ -31,6 +84,10 @@ type
     volume:           Natural
     stereoSeparation: StereoSeparation
     floppySounds:     bool
+
+  AudioDevice = enum
+    adDirectSound = (0, "DirectSound"),
+    adWasapi      = (1, "WASAPI")
 
   SampleRate = enum
     sr44100 = (0, "44100")
@@ -62,66 +119,102 @@ type
     sbs7   = (7, "7")
     sbs8   = (8, "8")
 
-
-  DisplaySettings = object
-    windowMode:    WindowMode
-    crtEmulation:  bool
-    shaderQualtiy: ShaderQuality
-    palScaling:    PalScaling
-    ntscScaling:   NtscScaling
-    showOsd:       bool
-
-    # advanced settings
-    sharperPal:    bool
-    interlacing:   bool
-    vsyncMode:     VsyncMode
-    sliceCount:    Natural
-
-
-  ShaderQuality = enum
-    sqFast = (0, "Fast")
-    sqBest = (1, "Best")
-
-  WindowMode = enum
-    wmWindowed   = (0, "Windowed")
-    wmFullWindow = (1, "Full-window")
-    wmFullscreen = (3, "Fullscreen")
-
-  PalScaling = enum
-    palScaling30 = (0, "3.0x")
-    palScaling32 = (1, "3.2x")
-    palScaling35 = (2, "3.5x")
-    palScaling40 = (3, "4.0x")
-    palScaling45 = (4, "4.5x")
-    palScaling50 = (5, "5.0x")
-
-  NtscScaling = enum
-    ntscScaling30 = (0, "3.0x")
-    ntscScaling32 = (1, "3.2x")
-    ntscScaling35 = (2, "3.5x")
-    ntscScaling40 = (3, "4.0x")
-    ntscScaling42 = (4, "4.2x")
-
-  VsyncMode = enum
-    vmStandard = (0, "Standard")
-    vmLagless  = (1, "Lagless")
-
+  # General settings
+  # -----------------------------------------
   GeneralSettings = object
     discard
 
 
-var gui: ConfigUI
+var cfg: Config
+
+const
+  DialogLayoutParams = AutoLayoutParams(
+    itemsPerRow:       2,
+    rowWidth:          280.0,
+    labelWidth:        170.0,
+    sectionPad:        0.0,
+    leftPad:           0.0,
+    rightPad:          0.0,
+    rowPad:            8.0,
+    rowGroupPad:       20.0,
+    defaultRowHeight:  23.0,
+    defaultItemHeight: 23.0
+  )
+
 
 # }}}
 
+# {{{ renderDisplayTab()
+proc renderDisplayTab() =
+  group:
+    koi.label("Display mode")
+    koi.dropDown(cfg.display.displayMode)
+
+  group:
+    koi.label("CRT emulation")
+    koi.checkBox(cfg.display.crtEmulation)
+
+    koi.label("CRT emulation quality")
+    koi.dropDown(cfg.display.shaderQuality)
+
+  group:
+    koi.label("PAL scaling")
+    koi.dropDown(cfg.display.palScaling)
+
+    koi.label("NTSC scaling")
+    koi.dropDown(cfg.display.ntscScaling)
+
+  group:
+    koi.label("Show OSD")
+    koi.checkBox(cfg.display.showOsd)
+
+  group:
+    koi.label("Sharper PAL mode")
+    koi.checkBox(cfg.display.sharperPal)
+
+    koi.label("Interlacing emulation")
+    koi.checkBox(cfg.display.interlacing)
+
+    koi.label("Vsync mode")
+    koi.dropDown(cfg.display.vsyncMode)
+
+#      koi.label("Lagless vsync slices")
+#      koi.dropDown(cfg.display.sliceCount)
+
+# }}}
+# {{{ renderAudioTab()
+proc renderAudioTab() =
+  discard
+
+# }}}
+# {{{ renderGeneralTab()
+proc renderGeneralTab() =
+  discard
+
+# }}}
+# {{{ renderTabs()
+proc renderTabs(x, y: float) =
+  koi.beginView(x, y, w=1000, h=1000)
+
+  var lp = DialogLayoutParams
+  koi.initAutoLayout(lp)
+
+  case app.currTab:
+  of mtDisplay:
+    renderDisplayTab()
+
+  of mtAudio:
+    renderAudioTab()
+
+  of mtGeneral:
+    renderGeneralTab()
+
+  koi.endView()
+
+# }}}
 # {{{ renderUI()
 proc renderUI() =
   koi.beginFrame()
-
-  vg.beginPath()
-  vg.rect(0, 0, koi.winWidth(), koi.winHeight())
-  vg.fillColor(gray(0.3))
-  vg.fill()
 
   let
     w = 110.0
@@ -132,29 +225,17 @@ proc renderUI() =
     x = 30.0
     y = 30.0
 
-  var labelStyle = getDefaultLabelStyle()
-  labelStyle.fontSize = 15.0
-  labelStyle.color = gray(0.8)
+  # Clear background
+  vg.beginPath()
+  vg.rect(0, 0, koi.winWidth(), koi.winHeight())
+  vg.fillColor(gray(0.3))
+  vg.fill()
 
-  koi.radioButtons(
-    x, y, 440, h,
-    labels = @["Audio", "Video", "General"],
-    gui.currentTab
-  )
+  # Main tabs
+  koi.radioButtons(x, y, 440, h, app.currTab)
 
-  # Buttons
   y += 50
-  if koi.button(x, y, w, h, "Start", tooltip = "I am the first!"):
-    echo "button 1 pressed"
-
-  y += pad
-  if koi.button(x, y, w, h, "Stop (very long text)", tooltip = "Middle one..."):
-    echo "button 2 pressed"
-
-  y += pad
-  if koi.button(x, y, w, h, "Disabled", tooltip = "This is a disabled button",
-                disabled = true):
-    echo "button 3 pressed"
+  renderTabs(x+30, y)
 
   koi.endFrame()
 
@@ -176,7 +257,7 @@ proc framebufSizeCb(win: Window, size: tuple[w, h: int32]) =
 # {{{ createWindow()
 proc createWindow(): Window =
   var cfg           = DefaultOpenglWindowConfig
-  cfg.size          = (w: 500, h: 350)
+  cfg.size          = (w: 500, h: 650)
   cfg.title         = "RML Amiga Configuration Tool"
   cfg.resizable     = true
   cfg.visible       = false
