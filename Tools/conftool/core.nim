@@ -252,6 +252,33 @@ proc setShowOsd(c: Config, showOsd: bool) =
   c.cfg["show_leds"] = $showOsd
 
 # }}}
+
+proc isLaced(c: Config): bool =
+  c.cfg.getOrDefault("linemode", "double2") == "none"
+
+proc getScalingFactors(c: Config): tuple[horiz, vert: int] =
+  # TODO parseIntOrDefault
+  let h = parseInt(c.cfg.getOrDefault("gfx_filter_horiz_zoomf", "1000"))
+  let v = parseInt(c.cfg.getOrDefault("gfx_filter_vert_zoomf",  "1000"))
+  (h, v)
+
+proc findNtscScaling(c: Config, isLaced: bool): Option[NtscScaling] =
+  let f = getScalingFactors(c)
+  if isLaced: lacedNtscScalingFactors.findByValue(f)
+  else:            ntscScalingFactors.findByValue(f)
+
+proc hasNtscStretch(c: Config, isLaced: bool): bool =
+  findNtscScaling(c, isLaced).isSome
+
+proc isNtsc(c: Config): bool =
+  c.cfg.getOrDefault("ntsc", "false").parseBool
+
+proc isPal(c: Config): bool =
+  not isNtsc(c)
+
+proc isNtsc50(c: Config): bool =
+  isPal(c) and hasNtscStretch(c, isLaced(c))
+
 # {{{ setScaling()
 proc setScaling(c: Config, palScaling:  Option[PalScaling],
                            ntscScaling: Option[NtscScaling],
@@ -261,38 +288,24 @@ proc setScaling(c: Config, palScaling:  Option[PalScaling],
     c.cfg["gfx_filter_horiz_zoomf"] = fmt"{f.horiz}.000000"
     c.cfg["gfx_filter_vert_zoomf"]  = fmt"{f.vert}.000000"
 
-  proc getScalingFactors(): tuple[horiz, vert: int] =
-    # TODO parseIntOrDefault
-    let h = parseInt(c.cfg.getOrDefault("gfx_filter_horiz_zoomf", "1000"))
-    let v = parseInt(c.cfg.getOrDefault("gfx_filter_vert_zoomf",  "1000"))
-    (h, v)
-
-  proc findNtscScaling(isLaced: bool): Option[NtscScaling] =
-    let f = getScalingFactors()
-    if isLaced: lacedNtscScalingFactors.findByValue(f)
-    else:            ntscScalingFactors.findByValue(f)
-
   proc findPalScaling(isLaced: bool): Option[PalScaling] =
-    let f = getScalingFactors()
+    let f = getScalingFactors(c)
     if isLaced: lacedPalScalingFactors.findByValue(f)
     else:            palScalingFactors.findByValue(f)
-
-  proc hasNtscStretch(isLaced: bool): bool =
-    findNtscScaling(isLaced).isSome
 
   proc setInterlacing(isLaced: bool) =
     c.cfg["linemode"] = if isLaced: "none" else: "double2"
 
   # TODO parseBoolOrDefault
   let
-    isLaced  = (c.cfg.getOrDefault("linemode", "double2") == "none")
-    isNtsc   =  c.cfg.getOrDefault("ntsc", "false").parseBool
-    isPal    = not isNtsc
-    isNtsc50 = isPal and hasNtscStretch(isLaced)
+    isLaced  = isLaced(c)
+    isNtsc   = c.cfg.getOrDefault("ntsc", "false").parseBool
+    isPal    = isPal(c)
+    isNtsc50 = isPal and hasNtscStretch(c, isLaced)
 
   if (isNtsc or isNtsc50) and (ntscScaling.isSome or interlacing.isSome):
     let ntscScaling = if ntscScaling.isSome: ntscScaling.get
-                      else: findNtscScaling(isLaced).get(ntscScaling30)
+                      else: findNtscScaling(c, isLaced).get(ntscScaling30)
 
     let f = if isLaced: lacedNtscScalingFactors[ntscScaling]
             else:            ntscScalingFactors[ntscScaling]
@@ -310,8 +323,10 @@ proc setScaling(c: Config, palScaling:  Option[PalScaling],
 # {{{ setCrtEmulation()
 proc setCrtEmulation(c: Config, enabled: Option[bool],
                                 sharperPal: Option[bool]) =
-  # TODO
-  discard
+  if isNtsc(c) or isNtsc50(c):
+    discard
+  else:
+    discard
 
 # }}}
 # {{{ setShaderQuality()
