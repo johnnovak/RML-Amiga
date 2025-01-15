@@ -257,55 +257,54 @@ proc setScaling(c: Config, palScaling:  Option[PalScaling],
                            ntscScaling: Option[NtscScaling],
                            interlacing: Option[bool]) =
 
-  proc set(f: tuple[horiz, vert: int]) =
+  proc setScalingFactors(f: tuple[horiz, vert: int]) =
     c.cfg["gfx_filter_horiz_zoomf"] = fmt"{f.horiz}.000000"
     c.cfg["gfx_filter_vert_zoomf"]  = fmt"{f.vert}.000000"
 
-  proc getScaling(): tuple[horiz, vert: int] =
+  proc getScalingFactors(): tuple[horiz, vert: int] =
     # TODO parseIntOrDefault
     let h = parseInt(c.cfg.getOrDefault("gfx_filter_horiz_zoomf", "1000"))
     let v = parseInt(c.cfg.getOrDefault("gfx_filter_vert_zoomf",  "1000"))
     (h, v)
 
-  proc hasNtscStretch(isLaced: bool): bool =
-    true
-
   proc findNtscScaling(isLaced: bool): Option[NtscScaling] =
-    let s = getScaling()
-    if isLaced: lacedNtscScalingFactors.findByValue(s)
-    else:            ntscScalingFactors.findByValue(s)
+    let f = getScalingFactors()
+    if isLaced: lacedNtscScalingFactors.findByValue(f)
+    else:            ntscScalingFactors.findByValue(f)
 
   proc findPalScaling(isLaced: bool): Option[PalScaling] =
-    let s = getScaling()
-    if isLaced: lacedPalScalingFactors.findByValue(s)
-    else:            palScalingFactors.findByValue(s)
+    let f = getScalingFactors()
+    if isLaced: lacedPalScalingFactors.findByValue(f)
+    else:            palScalingFactors.findByValue(f)
+
+  proc hasNtscStretch(isLaced: bool): bool =
+    findNtscScaling(isLaced).isSome
+
+  proc setInterlacing(isLaced: bool) =
+    c.cfg["linemode"] = if isLaced: "none" else: "double2"
 
   # TODO parseBoolOrDefault
   let
     isLaced  = (c.cfg.getOrDefault("linemode", "double2") == "none")
     isNtsc   =  c.cfg.getOrDefault("ntsc", "false").parseBool
-    isNtsc50 = not isNtsc and hasNtscStretch(isLaced)
+    isPal    = not isNtsc
+    isNtsc50 = isPal and hasNtscStretch(isLaced)
 
   if (isNtsc or isNtsc50) and (ntscScaling.isSome or interlacing.isSome):
-    let ntscScaling = if ntscScaling.isNone:
-                        findNtscScaling(isLaced).get(ntscScaling30)
-                      else: ntscScaling.get
+    let ntscScaling = if ntscScaling.isSome: ntscScaling.get
+                      else: findNtscScaling(isLaced).get(ntscScaling30)
 
-    if isLaced: set(lacedNtscScalingFactors[ntscScaling])
-    else:       set(     ntscScalingFactors[ntscScaling])
+    let f = if isLaced: lacedNtscScalingFactors[ntscScaling]
+            else:            ntscScalingFactors[ntscScaling]
+    setScalingFactors(f)
 
-  else:
-    let palScaling = if palScaling.isNone:
-                       findPalScaling(isLaced).get(palScaling30)
-                     else: palScaling.get
+  elif isPal and (palScaling.isSome or interlacing.isSome):
+    let palScaling = if palScaling.isSome: palScaling.get
+                     else: findPalScaling(isLaced).get(palScaling30)
 
-    if isLaced: set(lacedPalScalingFactors[palScaling])
-    else:       set(     palScalingFactors[palScaling])
-
-  #c.cfg["gfx_filter_vert_zoomf"]
-  #c.cfg["gfx_filter_horiz_zoomf"]
-  # TODO
-  discard
+    let f = if isLaced: lacedPalScalingFactors[palScaling]
+            else:            palScalingFactors[palScaling]
+    setScalingFactors(f)
 
 # }}}
 # {{{ setCrtEmulation()
