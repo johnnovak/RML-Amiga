@@ -9,8 +9,8 @@ whopping 214 stone-cold classics for the intelligent gamer, including:
   Scrolls**, **Lucasfilm/LucasArts**, **Revolution** adventures that were
   released on the Amiga.
 
-- All **Interplay** Amiga releases (their early
-  adventures, **The Bard's Tale** series, **Dragon Wars**, **Neuromancer**, etc.)
+- All **Interplay** Amiga releases (their early adventures, **The Bard's
+  Tale** series, **Dragon Wars**, **Neuromancer**, etc.)
 
 - Iconic strategy titles and action/strategy hybrids such as **SimCity**,
   **Lemmings**, **Pirates!**, **Populous**, **Powermonger**, **Cannon
@@ -19,7 +19,7 @@ whopping 214 stone-cold classics for the intelligent gamer, including:
 
 - 100% working uncracked originals of **Dungeon Master** (v2.2 and v3.60),
   **Chaos Strikes Back**, and **Fate: Gates of Dawn** which are notorious
-  for their elaborate copy-protections.
+  for their elaborate copy protections.
 
 - The entire Amiga **SSI Gold Box** catalog. 
 
@@ -34,12 +34,12 @@ whopping 214 stone-cold classics for the intelligent gamer, including:
   Hard Day's Knight**, **Starflight**, **Ishar series**, etc.)
 
 - All AGI and SCI0 **Sierra** adventures (everything except for the
-  questionable VGA ports, with optional Roland MT-32 sound in the few
-  games that support it).
+  questionable VGA ports), with optional Roland MT-32 sound in the few games
+  that support it.
 
 - All 34 **Incofom** text adventures with all supplementary materials
-  (that's every Infocom text adventure except for **Border Zone** that never
-  had an Amiga release).
+  (that's every Infocom text adventure except **Border Zone** that was never
+  released on the Amiga).
 
 - A good selection of **Cinemaware** classic (**Defender of the Crown**,
   **Lords of the Rising Sun**, and **It Came from the Desert I & II**).
@@ -54,7 +54,7 @@ whopping 214 stone-cold classics for the intelligent gamer, including:
 
 And a lot more---check out the full games list! Of course, all games come with
 manuals, code wheels, hint books, posters, box cover scans, and all sorts of
-other supplementary materials to enjoy the games to the fullest.
+other supplementary materials so you can enjoy them to the fullest.
 
 About 70% of the titles run from an emulated hard drive. The remaining 30%
 are floppy games that require either no or only very minimal disk swapping.
