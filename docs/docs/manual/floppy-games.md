@@ -56,6 +56,18 @@ For example:
     better keyboard.
 
 
+## Workbench
+
+Most floppy games start automatically when you launch their configs, but
+some need to be started manually from the Workbench screen.
+
+The Workbench is the graphical interface of AmigaOS. It is a very simple
+graphical operating environment that resembles the Windows desktop. To launch
+the game from Workbench, usually you need to double-click on a disk icon in
+the upper right corner which opens a window, then double-click on the game's
+icon in that window.
+
+
 ## Speeding up loading times
 
 To reduce loading times, use _warp mode_ that speeds up the emulated Amiga to

@@ -65,7 +65,7 @@
 - Use the **SAVE** command to save your game. Press ++enter++ at the
   "Insert save disc" prompt, then enter `save:your_save_name` to save the
   game under your chosen name. The save games are stored in the
-  `Harddisk\Lacelot\save` folder.
+  `Harddisk\Lancelot\save` folder.
 
 - Use the **RESTORE** command and the same process to load your previously
   saved gamed.
