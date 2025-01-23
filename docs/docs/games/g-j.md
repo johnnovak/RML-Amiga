@@ -13,14 +13,13 @@
 
 ## Gold Rush!
 
-- To start the game, double-click on the **GR Disk 1** icon, then on the
-  **GR** icon.
+- Supports two floppy drives, no disk swapping necessary.
 
-- Save disk is in drive DF2:
+- Floppy game that saves to the hard drive.
 
 - When saving or restoring the game, enter **Save:** for the volume name, with
-  the colon at the end (this is important). Alternatively, you can enter
-  **DF2:** as well.
+  the colon at the end (this is important). This will use the `Harddisk\Save`
+  folder within the game folder for the save games.
 
 
 ## Guild of Thieves, The
@@ -54,17 +53,7 @@
 - Saves the high scores to the game disk.
 
 
-## Ishar 2: Messengers of Doom (AGA)
-
-- To start the game, double-click the **Start** icon.
-
-- The intro can't be skipped. Pressing ++esc++ during the intro will hang the
-  game; use the "skip intro" save state instead.
-
-
 ## Ishar 3: The Seven Gates of Infinity (AGA)
-
-- To start the game, double-click the **Start** icon.
 
 - The intro can't be skipped. Pressing ++esc++ during the intro will hang the
   game; use the "skip intro" save state instead.

@@ -25,12 +25,12 @@
 - Also check out the **Extras** folder for a comprehensive summary of the
   PSI-power system compiled by one of the game's authors.
 
-- Supports four floppy drives (no disk swapping necessary).
+- Supports four floppy drives, no disk swapping necessary.
 
 
 ## Pinball Dreams
 
-- Supports two floppy drives (no disk swapping necessary).
+- Supports two floppy drives, no disk swapping necessary.
 - Saves the high scores to the game disk.
 
 
@@ -88,7 +88,7 @@
   double-clicking). You might want to enter warp mode (press ++end+pause++) to
   speed up the startup process.
 
-- You can also double-click on the credits icons to watch the credits.
+- Double-click on the credits icons to watch the credits.
 
 
 ## Portal: A Computer Novel
@@ -114,11 +114,29 @@
 
 ## Powermonger: World War 1 Edition
 
-- Insert the **Powermonger disk** (base game disk) when prompted (press
-  ++end+2++) and press **OK**.
+- Insert the **original Powermonger disk** when prompted (press
+  ++end+2++), then press **OK**.
 
-- Insert the **WW1 data disk** when prompted (press ++end+1++) and press
+- Insert the **WW1 data disk** when prompted (press ++end+1++), then press
   **OK**.
+
+- Information about the copy protection is on page 5 of the manual.
+
+
+## Quest For Glory I: Trial By Fire
+
+- To start the game, double-click on the **QuestForGloryI** disk icon, then on
+  the **QuestForGloryI** icon.
+
+
+## Quest For Glory II: Trial By Fire
+
+- To start the game, double-click on the **QuestForGloryII** disk icon, then
+  on the **QuestForGloryII** icon.
+
+- To choose between Amiga digital sound and Roland MT-32 MIDI music,
+  double-click on the **Set Amiga sound** or **Set MT-32 sound** icons
+  before starting the game.
 
 
 ## Rick Dangerous
@@ -133,13 +151,27 @@
 - Saves the high scores to the game disk.
 
 
-## Rome AD92
+## Rome AD92: The Pathway to Power
 
-- Has a single save-slot only; saves the game to first game disk on quit.
+- Has a single save slot only (forced "Ironman Mode"); saves the game to the
+  first disk (the **boot disk**) on quit. You need to delete the save image of
+  the first disk to start a new game.
 
+- Supports two floppy drives.
 
-## Quest For Glory II: Trial By Fire
+- When the game asks you to insert **disk 2**, just press ++end+3++ to insert
+  the _third_ disk into drive DF0: (the first disk is the "boot disk"). This
+  will eliminate any further disk swapping (except for saving to the boot
+  disk on quit).
+ 
+!!! danger "Tread carefully with save states"
 
-- You can choose between Amiga digital sound and Roland MT-32 MIDI music by
-  double-clicking on the **Set Amiga sound** or **Set MT-32 sound** icons,
-  respectively, before starting the game.
+    You cannot freely mix in-game saves and save states with this game!
+
+    To be completely safe, only use the in-game save feature on quit. Or you
+    can use only save states and never save in-game (but in this case try not
+    to play the game for more than 15-20 hours in total).
+
+    If you're careful, you can use short-term save states (aka save scumming)
+    but _only_ during a single gaming session between two in-game saves to the
+    boot disk.

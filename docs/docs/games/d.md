@@ -39,31 +39,26 @@
 
 ## Defender of the Crown
 
-- To start the game, double-click on the **Defender1** disk icon, then on the
-  **Defender** icon.
-- Supports two floppy drives.
+- Supports two floppy drives, no disk swapping necessary.
 
 
 ## Defender of the Crown II (CD32)
 
-- You can use either the mouse or a gamepad in port 2 to control the game.
+- Use either the mouse or a gamepad in port 2 to control the game.
 
 
 ## Deja Vu: A Nightmare Comes True!!
 
-- To start the game, double-click on the **DEJAVU** disk icon, then on the
-  **DejaVu** icon.
+- Floppy game that saves to the hard drive.
 
-- Save disk is in drive DF1:
+- Type **Save:YourSavegameName** in the dialog when saving the game (you can
+  use any name you like after the **Save:** part).
 
-- Type **DF1:YourSavegameName** in the dialog when saving the game (you can
-  use any name you like after the **DF1:** part).
-
-
-## Deja Vu II: Lost in Las Vegas!!
-
-- To start the game, double-click on the **DejaVuII HD** disk icon in the
-  upper right corner, then on the **DejaVuII** icon.
+- When restoring a game, your save games will be listed if you have
+  saved before in this gaming session. If not, you'll need to type **Save:**
+  (with the colon at the end; this is important), then press the **OK**
+  button to list your save games. Click on one to select it and press **OK**
+  again to load it.
 
 
 ## Demon's Winter

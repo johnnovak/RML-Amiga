@@ -1,5 +1,16 @@
 # S–T
 
+## Scapeghost
+
+- Use the **SAVE** command to save your game. Press ++enter++ at the
+  "Insert save disc" prompt, then enter `save:your_save_name` to save the
+  game under your chosen name. The save games are stored in
+  `Harddisk\Scapeghost\save` within the game's folder.
+
+- Use the **RESTORE** command and the same process to load your previously
+  saved gamed.
+
+
 ## Secret of the Silver Blades
 
 **WASD movement keys**
@@ -11,15 +22,41 @@
   or when entering the name of your save game).
 
 
+## Settlers, The
+
+- Double-click on the **TheSettlers** disk icon, then on the
+  **The Settlers** icon to start the game, or on the **Intro** icon to watch
+  the intro.
+
+
+## Seven Cities of Gold
+
+- The game is controlled by the keyboard and a joystick in **port 1** (versus
+  port 2 which is the most common).
+
+- You need to create a so-called map disk to play the game. A new "historical map
+  disk" is available in the save disk slot (insert it with ++end+9++).
+
+- Refer to the **Command Summary** on how to create map disks yourself.
+
+!!! danger "Only use regular saves"
+
+    The game is _not_ compatible with save states---only user regular in-game
+    saves!
+
+
 ## Shadowgate
 
-- To start the game, double-click on the **SHADOWGATE** disk icon, then on the
-  **Shadowgate** icon.
+- Floppy game that saves to the hard drive.
 
-- Save disk is in drive DF1:
+- Type **Save:YourSavegameName** in the dialog when saving the game (you can
+  use any name you like after the **Save:** part).
 
-- Type **DF1:YourSavegameName** in the dialog when saving the game (you can
-  use any name you like after the **DF1:** part).
+- When restoring a game, your save games will be listed if you have
+  saved before in this gaming session. If not, you'll need to type **Save:**
+  (with the colon at the end; this is important), then press the **OK**
+  button to list your save games. Click on one to select it and press **OK**
+  again to load it.
 
 
 ## Shadow of the Beast
@@ -51,7 +88,11 @@
 
 ## Space Quest I: The Sarien Encounter (AGI)
 
-- To start the game, TODO
+- Floppy game that saves to the hard drive.
+
+- When saving or restoring the game, enter **Save:** for the volume name, with
+  the colon at the end (this is important). This will use the `Harddisk\Save`
+  folder within the game folder for the save games.
 
 
 ## Speedball 2: Brutal Deluxe
@@ -86,3 +127,18 @@
 
 - Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
   or when entering the name of your save game).
+
+
+## Uninvited
+
+- Floppy game that saves to the hard drive.
+
+- Type **Save:YourSavegameName** in the dialog when saving the game (you can
+  use any name you like after the **Save:** part).
+
+- When restoring a game, your save games will be listed if you have
+  saved before in this gaming session. If not, you'll need to type **Save:**
+  (with the colon at the end; this is important), then press the **OK**
+  button to list your save games. Click on one to select it and press **OK**
+  again to load it.
+

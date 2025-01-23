@@ -1,21 +1,32 @@
 # C
 
+## Cadaver - The Last Supper
+
+- **The Last Supper** is an exclusive demo level featured on Zero Coverdisk 15
+  (Issue 23, September 1991).
+
+- Type **3** when prompted to start the game.
+
+- The unpacking at startup takes a while (when you see the flashing horizontal
+  bars); use warp mode to speed it up (press ++end+pause++).
+
+
 ## Cannon Fodder (OCS)
 
-- Supports four floppy drives. No disk swapping necessary, save disk is in
-  drive DF3:
+- Supports four floppy drives, no disk swapping necessary.
+- Save disk is in drive DF3:
 
 
 ## Captive
 
 - v1.2, contains a number important bug and crash fixes.
-- Supports four floppy drives. No disk swapping necessary, save disk is in
-  drive DF1:
+- Supports four floppy drives, no disk swapping necessary.
+- Save disk is in drive DF1:
 
 
 ## Case of the Cautious Condor, The
 
-- You can use either the mouse or a gamepad in port 2 to control the game.
+- Use either the mouse or a gamepad in port 2 to control the game.
 
 
 ## Castle Master
