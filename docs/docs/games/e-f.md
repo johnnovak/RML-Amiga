@@ -142,8 +142,8 @@ copied over `EOBDATA.SAV` by mistake.
 ## Faery Tale Adventure, The
 
 - Patched and cracked version by Ross that fixes the garbled sound issue
-  present on later than A1000 models and bypasses the manual-based protection
-  check. Confirmed to be completable.
+  present on later than Amiga 1000 models and bypasses the manual-based
+  protection check. Confirmed to be completable.
 
 - Just press enter at the copy protection question after the intro.
 

@@ -2,14 +2,11 @@
 
 ## King's Quest: Quest for the Crown (AGI)
 
-- To start the game, double-click on the **KQ1** disk icon, then on the
-  **King's Quest I** icon.
-
-- Save disk is in drive DF1:
+- Floppy game that saves to the hard drive.
 
 - When saving or restoring the game, enter **Save:** for the volume name, with
-  the colon at the end (this is important). Alternatively, you can enter
-  **DF1:** as well.
+  the colon at the end (this is important). This will use the `Harddisk\Save`
+  folder within the game folder for the save games.
 
 
 ## King's Quest: Quest for the Crown (SCI)
@@ -17,26 +14,23 @@
 - To start the game, double-click on the **KingsQuest1** disk icon, then on
   the **KingsQuest1** icon.
 
-- You can choose between Amiga digital sound and Roland MT-32 MIDI music by
-  double-clicking on the **Set Amiga sound** or **Set MT-32 sound** icons,
-  respectively, before starting the game.
+- To choose between Amiga digital sound and Roland MT-32 MIDI music,
+  double-click on the **Set Amiga sound** or **Set MT-32 sound** icons
+  before starting the game.
 
 
 ## King's Quest III: To Heir is Human
 
-- To start the game, double-click on the **KQ3** disk icon, then on the
-  **King's Quest III** icon.
-
-- Save disk is in drive DF1:
+- Floppy game that saves to the hard drive.
 
 - When saving or restoring the game, enter **Save:** for the volume name, with
-  the colon at the end (this is important). Alternatively, you can enter
-  **DF1:** as well.
+  the colon at the end (this is important). This will use the `Harddisk\Save`
+  folder within the game folder for the save games.
 
 
 ## Knightmare
 
-- Supports four floppy drives, no disk swapping is necessary.
+- Supports four floppy drives, no disk swapping necessary.
 - Save disk is in drive DF2:
 
 
@@ -53,10 +47,10 @@
 
 - To start a game:
     <div class="compact" markdown>
-    - Double-click on the **Infocom** disk icon
-    - Double-click on one of the category drawers
-    - Double-click on the game's name
-    - Then finally double-click on the game's start icon
+    - Double-click on the **Infocom** disk icon.
+    - Double-click on one of the category drawers.
+    - Double-click on the game's name.
+    - Then finally double-click on the game's start icon.
     </div>
 
 
@@ -65,7 +59,7 @@
 - Use the **SAVE** command to save your game. Press ++enter++ at the
   "Insert save disc" prompt, then enter `save:your_save_name` to save the
   game under your chosen name. The save games are stored in the
-  `Harddisk\Lancelot\save` folder.
+  `Harddisk\Lancelot\save` within the game's folder.
 
 - Use the **RESTORE** command and the same process to load your previously
   saved gamed.
@@ -90,17 +84,14 @@
 
 ## Leisure Suit Larry: In the Land of the Lounge Lizards (AGI)
 
-- To start the game, double-click on the **LSL** disk icon, then on the
-  **LSL** icon.
-
 - Enter at least 18 at the age prompt, then press ++alt+x++ at the first age
   verification question to bypass the checks.
 
-- Save disk is in drive DF1:
+- Floppy game that saves to the hard drive.
 
 - When saving or restoring the game, enter **Save:** for the volume name, with
-  the colon at the end (this is important). Alternatively, you can enter
-  **DF1:** as well.
+  the colon at the end (this is important). This will use the `Harddisk\Save`
+  folder within the game folder for the save games.
 
 
 ## Lords of Chaos
@@ -156,11 +147,11 @@ The included expansion disk has two additional scenarios:
 - Debugged Virgin re-release (1992-08-06). All other versions contain
   game-breaking bugs.
 
-- Supports four floppy drives. All four game disks are inserted into the four
-  drives.
+- Supports four floppy drives, no disk swapping necessary.
+
+- Past the intro, you can replace the boot disk in
+  drive DF0: with the save disk (press ++enter+1++) and leave it there.
 
 - When entering the save and load dialog, the game confusingly refers to the
   save disk as "data disk" (it asks you to insert the "data disk").
 
-- After starting the game, you should be able to replace the boot disk in
-  drive DF0: with the save disk and leave it there (press ++enter+1++).

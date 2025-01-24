@@ -16,7 +16,6 @@
 
 ## Mixed-Up Mother Goose (AGI)
 
-- To start the game, double-click on the **MG** disk icon, then on the **MG** icon.
 - Saves to the game disk.
 
 
@@ -25,10 +24,10 @@
 - To start the game, double-click on the **MotherGoose** disk icon, then on
   the **MotherGoose icon**.
 
-- You can choose between Amiga digital sound and Roland MT-32 MIDI music by
-  double-clicking on the **Set Amiga sound** or **Set MT-32 sound** icons,
-  respectively, before starting the game.
- 
+- To choose between Amiga digital sound and Roland MT-32 MIDI music,
+  double-click on the **Set Amiga sound** or **Set MT-32 sound** icons
+  before starting the game.
+
 
 ## Moonstone: A Hard Days Knight
 
@@ -36,9 +35,9 @@
 
 - Hold ++esc++ key while the credits are loading to skip the intro.
 
-- Supports three floppy drives (no disk swapping necessary).
+- Supports three floppy drives, no disk swapping necessary.
 
-- The developers did not have enough time to properly finish the game so it is
+- The developers did not have enough time to properly finish the game so it's
   quite buggy. Certain actions or game events will inevitably result in
   crashes. The solution is to evade these actions. Use save states a lot, and
   in time you'll develop a feel for it what triggers the crashes.
@@ -69,6 +68,6 @@
 ## Odyssey
 
 - Best played with a digital joystick.
-- Supports two floppy drives (no disk swapping necessary).
+- Supports two floppy drives, no disk swapping necessary.
 
 

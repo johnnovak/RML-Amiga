@@ -86,14 +86,11 @@
 
 ## Black Cauldron, The
 
-- To start the game, double-click on the **BC** disk icon, then on the **Black
-  Cauldron** icon.
-
-- Save disk is in drive DF1:
+- Floppy game that saves to the hard drive.
 
 - When saving or restoring the game, enter **Save:** for the volume name, with
-  the colon at the end (this is important). Alternatively, you can enter
-  **DF1:** as well.
+  the colon at the end (this is important). This will use the `Harddisk\Save`
+  folder within the game folder for the save games.
 
 
 ## Borrowed Time
