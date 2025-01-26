@@ -31,8 +31,8 @@
 
 ## Seven Cities of Gold
 
-- The game is controlled by the keyboard and a joystick in **port 1** (versus
-  port 2 which is the most common).
+- The game is controlled by the keyboard and a joystick in **port 1** (_not_
+  port 2, which is the most common).
 
 - You need to create a so-called map disk to play the game. A new "historical map
   disk" is available in the save disk slot (insert it with ++end+9++).
@@ -100,10 +100,21 @@
 - Saves high scores to the game disk.
 
 
+## Starflight
+
+- Every time you leave the starport, you will be asked to enter the correct
+  launch codes. This is a form of copy protection; if you enter the wrong
+  code, the game will let you play for a while, but eventually the space
+  police will catch you and will destroy your ship.
+
+- Use either the code wheel or the launch code generator to pass the
+  protection check.
+
+
 ## Tass Times in Tonetown
 
 - Very long initial loading time. There's no floppy activity for a long time
-  during loading. You can use the "start" save state to skip the loading.
+  during loading. You can use the **start** save state to skip the loading.
 
 - Saves to the game disk.
 
