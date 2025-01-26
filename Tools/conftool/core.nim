@@ -219,12 +219,7 @@ proc writeConfig*(c: Config, filename: string) =
 
 # }}}
 
-proc findByValue[K, V](t: Table[K, V], value: V): Option[K] =
-  for (k, v) in t.pairs:
-    if v == value:
-      return k.some
-  return K.none
-
+# {{{ Set display settings
 # {{{ setDisplayMode()
 proc setDisplayMode(c: Config, dm: DisplayMode) =
   c.cfg["gfx_fullscreen_amiga"] = case dm
@@ -252,33 +247,55 @@ proc setShowOsd(c: Config, showOsd: bool) =
   c.cfg["show_leds"] = $showOsd
 
 # }}}
-
+# {{{ isLaced()
 proc isLaced(c: Config): bool =
   c.cfg.getOrDefault("linemode", "double2") == "none"
 
+# }}}
+# {{{ getScalingFactors()
 proc getScalingFactors(c: Config): tuple[horiz, vert: int] =
   # TODO parseIntOrDefault
   let h = parseInt(c.cfg.getOrDefault("gfx_filter_horiz_zoomf", "1000"))
   let v = parseInt(c.cfg.getOrDefault("gfx_filter_vert_zoomf",  "1000"))
   (h, v)
 
+# }}}
+# {{{ findByValue()
+proc findByValue[K, V](t: Table[K, V], value: V): Option[K] =
+  for (k, v) in t.pairs:
+    if v == value:
+      return k.some
+  return K.none
+
+# }}}
+# {{{ findPalScaling()
+proc findPalScaling(c: Config, isLaced: bool): Option[PalScaling] =
+  let f = getScalingFactors(c)
+  if isLaced: lacedPalScalingFactors.findByValue(f)
+  else:            palScalingFactors.findByValue(f)
+
+# }}}
+# {{{ findNtscScaling()
 proc findNtscScaling(c: Config, isLaced: bool): Option[NtscScaling] =
   let f = getScalingFactors(c)
   if isLaced: lacedNtscScalingFactors.findByValue(f)
   else:            ntscScalingFactors.findByValue(f)
 
-proc hasNtscStretch(c: Config, isLaced: bool): bool =
-  findNtscScaling(c, isLaced).isSome
+# }}}
+# {{{ getVideoStandard()
+type VideoStandard = enum
+  vsPal, vsNtsc, vsNtsc50
 
-proc isNtsc(c: Config): bool =
-  c.cfg.getOrDefault("ntsc", "false").parseBool
+proc getVideoStandard(c: Config): VideoStandard =
+  # TODO parseBoolOrDefault
+  let isNtsc = c.cfg.getOrDefault("ntsc", "false").parseBool
+  if isNtsc:
+    vsNtsc
+  else:
+    if findNtscScaling(c, isLaced(c)).isSome: vsNtsc50
+    else: vsPal
 
-proc isPal(c: Config): bool =
-  not isNtsc(c)
-
-proc isNtsc50(c: Config): bool =
-  isPal(c) and hasNtscStretch(c, isLaced(c))
-
+# }}}
 # {{{ setScaling()
 proc setScaling(c: Config, palScaling:  Option[PalScaling],
                            ntscScaling: Option[NtscScaling],
@@ -288,45 +305,46 @@ proc setScaling(c: Config, palScaling:  Option[PalScaling],
     c.cfg["gfx_filter_horiz_zoomf"] = fmt"{f.horiz}.000000"
     c.cfg["gfx_filter_vert_zoomf"]  = fmt"{f.vert}.000000"
 
-  proc findPalScaling(isLaced: bool): Option[PalScaling] =
-    let f = getScalingFactors(c)
-    if isLaced: lacedPalScalingFactors.findByValue(f)
-    else:            palScalingFactors.findByValue(f)
-
   proc setInterlacing(isLaced: bool) =
     c.cfg["linemode"] = if isLaced: "none" else: "double2"
 
-  # TODO parseBoolOrDefault
-  let
-    isLaced  = isLaced(c)
-    isNtsc   = c.cfg.getOrDefault("ntsc", "false").parseBool
-    isPal    = isPal(c)
-    isNtsc50 = isPal and hasNtscStretch(c, isLaced)
+  case getVideoStandard(c)
+  of vsPal:
+    if palScaling.isSome or interlacing.isSome:
+      let isLaced = isLaced(c)
+      let palScaling = if palScaling.isSome: palScaling.get
+                       else: findPalScaling(c, isLaced).get(palScaling30)
 
-  if (isNtsc or isNtsc50) and (ntscScaling.isSome or interlacing.isSome):
-    let ntscScaling = if ntscScaling.isSome: ntscScaling.get
-                      else: findNtscScaling(c, isLaced).get(ntscScaling30)
+      let f = if isLaced: lacedPalScalingFactors[palScaling]
+              else:            palScalingFactors[palScaling]
+      setScalingFactors(f)
 
-    let f = if isLaced: lacedNtscScalingFactors[ntscScaling]
-            else:            ntscScalingFactors[ntscScaling]
-    setScalingFactors(f)
+  of vsNtsc, vsNtsc50:
+    if ntscScaling.isSome or interlacing.isSome:
+      let isLaced = isLaced(c)
+      let ntscScaling = if ntscScaling.isSome: ntscScaling.get
+                        else: findNtscScaling(c, isLaced).get(ntscScaling30)
 
-  elif isPal and (palScaling.isSome or interlacing.isSome):
-    let palScaling = if palScaling.isSome: palScaling.get
-                     else: findPalScaling(isLaced).get(palScaling30)
-
-    let f = if isLaced: lacedPalScalingFactors[palScaling]
-            else:            palScalingFactors[palScaling]
-    setScalingFactors(f)
+      let f = if isLaced: lacedNtscScalingFactors[ntscScaling]
+              else:            ntscScalingFactors[ntscScaling]
+      setScalingFactors(f)
 
 # }}}
 # {{{ setCrtEmulation()
 proc setCrtEmulation(c: Config, enabled: Option[bool],
                                 sharperPal: Option[bool]) =
-  if isNtsc(c) or isNtsc50(c):
-    discard
+  proc setFilter(s: string) =
+    c.cfg["gfx_filter"] = s
+
+  if enabled.get(false):
+    case getVideoStandard(c)
+    of vsPal:
+      if sharperPal.get(false): setFilter("D3D:CRT-A2080-PAL-Sharp.fx")
+      else:                     setFilter("D3D:CRT-A2080-PAL.fx")
+    of vsNtsc, vsNtsc50:
+      setFilter("D3D:CRT-A2080-NTSC.fx")
   else:
-    discard
+      setFilter("D3D:Point-Prescale.fx")
 
 # }}}
 # {{{ setShaderQuality()
@@ -343,10 +361,40 @@ proc setShaderQuality(c: Config, shaderQuality: ShaderQuality) =
 # }}}
 # {{{ setVsyncMode()
 proc setVsyncMode(c: Config, vsyncMode: Option[VsyncMode],
-                              sliceCount: Option[string]) =
-  # TODO
-  discard
+                             sliceCount: Option[string]) =
 
+  proc setDoubleBuffering() =
+    c.cfg["gfx_backbuffers"] = "1"
+
+  proc setTripleBuffering() =
+    c.cfg["gfx_backbuffers"] = "2"
+
+  proc setSliceCount(count: string) =
+    c.cfg["gfx_frame_slices"] = count
+
+  if vsyncMode.isSome:
+    case vsyncMode.get
+    of vmStandard:
+      setTripleBuffering()
+      c.cfg["gfx_vsync"] = "autoswitch"
+
+    of vmLagless:
+      setDoubleBuffering()
+      c.cfg["gfx_vsync"]        = "autoswitch"
+      c.cfg["gfx_vsyncmode"]    = "busywait"
+      setSliceCount(sliceCount.get("2"))
+
+    of vmOff:
+      setTripleBuffering()
+      c.cfg["gfx_vsync"] = "false"
+
+  elif vsyncMode.isNone and sliceCount.isSome:
+    let isLaglessVsync = (c.cfg["gfx_vsync"]     == "autoswitch" and
+                          c.cfg["gfx_vsyncmode"] == "busywait")
+    if isLaglessVsync:
+      setSliceCount(sliceCount.get)
+
+# }}}
 # }}}
 
 # {{{ toOpt()
@@ -384,7 +432,6 @@ proc applySettings*(cfg: Config, settings: Settings, file: Path) =
     if vsyncMode.set or sliceCount.set:
       cfg.setVsyncMode(vsyncMode.toOpt, sliceCount.toOpt)
 
-#    if sliceCount.set:    cfg.setSliceCount(sliceCount.value)
 # }}}
 
 # vim: et:ts=2:sw=2:fdm=marker

@@ -139,7 +139,7 @@ proc renderDisplayTab() =
 
       koi.toggleButton(settings.display.resizableWindow.set, "Resizable window")
       setHelpText("""
-        Allow resizing the WinUAE window in windowed mode.
+        Allow resizing the window in windowed mode.
       """)
       koi.nextItemHeight(CheckBoxSize)
       koi.checkBox(settings.display.resizableWindow.value,
@@ -329,6 +329,11 @@ proc renderUI() =
     discard
 
   if koi.button(koi.winWidth() - 90 - x - 98, y, 90, 24, "Apply to"):
+#    case app.applyTarget:
+#    of atAll:
+#    of atAllGames:
+#    of atAllDemos:
+#
 #    applySettings(app.applyTarget)
     discard
 
