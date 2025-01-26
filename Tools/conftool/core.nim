@@ -2,7 +2,6 @@ import std/dirs
 import std/options
 import std/os
 import std/paths
-import std/sequtils
 import std/streams
 import std/strformat
 import std/strutils
@@ -171,12 +170,12 @@ let lacedNtscScalingFactors = {
 # }}}
 
 # {{{ getFilePaths*()
-proc getFilePaths*(path: Path): seq[Path] =
-  if fileExists($path):
-    @[path]
-  elif dirExists($path):
+proc getFilePaths*(p: string): seq[Path] =
+  if fileExists(p):
+    @[p.Path]
+  elif dirExists(p):
     collect:
-      for p in walkDirRec(path): p
+      for p in walkDirRec(p.Path): p
   else:
     @[]
 
@@ -189,6 +188,7 @@ proc readConfig*(file: Path): Config =
     line   = ""
     lineNo = 1
 
+  result = new Config
   result.cfg = initOrderedTable[string, string]()
 
   while stream.readLine(line):
@@ -404,7 +404,7 @@ proc toOpt[T](a: tuple[value: T, set: bool]): Option[T] =
 
 # }}}
 # {{{ applySettings*()
-proc applySettings*(cfg: Config, settings: Settings, file: Path) =
+proc applySettings*(cfg: Config, settings: Settings) =
   with settings.display:
     if displayMode.set:
       cfg.setDisplayMode(displayMode.value)

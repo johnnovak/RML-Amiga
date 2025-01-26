@@ -1,6 +1,7 @@
 import std/lenientops
 import std/options
 import std/os
+import std/paths
 import std/strformat
 import std/strutils
 
@@ -83,6 +84,23 @@ const
   NoIcon     = ""
   IconCheck  = "\ue900"
   IconFloppy = "\uf0c7"
+
+# }}}
+
+# {{{ applyAction()
+proc applyAction() =
+  # TODO
+  let configPath = "../../Configurations"
+
+  let files = case app.applyTarget
+              of atAll:      getFilePaths(configPath)
+              of atAllGames: getFilePaths(configPath / "Games")
+              of atAllDemos: getFilePaths(configPath / "Demos")
+
+  for f in files:
+    # TODO error handling
+    let cfg = readConfig(f)
+    cfg.applySettings(settings)
 
 # }}}
 
@@ -329,13 +347,7 @@ proc renderUI() =
     discard
 
   if koi.button(koi.winWidth() - 90 - x - 98, y, 90, 24, "Apply to"):
-#    case app.applyTarget:
-#    of atAll:
-#    of atAllGames:
-#    of atAllDemos:
-#
-#    applySettings(app.applyTarget)
-    discard
+    applyAction()
 
   koi.dropDown(koi.winWidth() - 90 - x, y, 90, 24, app.applyTarget)
 
