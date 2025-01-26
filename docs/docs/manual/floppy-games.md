@@ -1,52 +1,54 @@
 # Floppy games
 
 All Amigas come with one floppy drive as standard equipment, but they can be
-optionally expanded to up to four drives in total. The first floppy drive is called
-**DF0** (**D**rive **F**loppy **0**), the second **DF1**, the third **DF2**,
-and the fourth **DF3**.
+optionally expanded to up to four drives. The first floppy drive is called
+**DF0:** (**D**rive **F**loppy **0**), the second **DF1:**, the third
+**DF2:**, and the fourth **DF3:**.
 
-Most floppy games are in the **IPF** format (Interchangeable Presentation Format).
-These are exact copies of the original disks with the copy protection intact.
+Most floppy games are in the **IPF** format (Interchangeable Presentation
+Format), and some in the **RAW** (KyroFlux CT-RAW) format. These are accurate
+representations of the original disks with the copy protection intact.
 
 A small set of games are provided as regular **ADF** files (Amiga Disk File).
-These games either don't use copy protection, or are only available
-in cracked from.
+These games either don't use copy protection, or are only available in cracked
+form at the time being.
 
 
 ## Single-disk games
 
-All floppy game configurations have the first floppy pre-inserted in the
-first drive (DF0). For single-disk games, that's all you need.
+All floppy game configurations have the first floppy pre-inserted in drive
+DF0: (the first floppy drive). For single-disk games, that's all you need.
 
 
 ## Multi-disk games
 
-Multi-disk games fall into two categories: some support multiple drives, some
-only a single drive. The best case scenario is when a game supports as many
-drives as the number of disks it comes on. Such games are configured with the
-game disks pre-inserted into each drive. One example is **Lemmings** (a two
-disk game) and **Perihelion** (a four disk game).
+Multi-disk games fall into two categories: some support multiple floppy
+drives, some only a single drive. The best case scenario is when a game
+supports as many drives as the number of disks it comes on. Such games are
+configured with the game disks pre-inserted into the drives (e.g., the
+two-disk game *Lemmings**; and the four-disk game **Perihelion**).
 
 The other scenario is that the game supports *less* drives than the number of
-disks it comes on (e.g., a two disk game supporting a single drive, or a four
-disk game supporting two drives). In these games, you'll need to swap the
-disks when the game prompts you. Fortunately, WinUAE has a convenient
-disk swapper feature to make this easy:
+disks it has (e.g., a two-disk game supporting a single drive, or a four-disk
+game supporting two drives). In these games, you'll need to swap the disks
+when the game prompts you. Fortunately, WinUAE has a convenient disk swapper
+feature to make this easy:
 
-- Press ++end+1++ to ++9++ to insert floppy number 1 to 9 into the first drive
-(DF0).
+- Press ++end+1++ to ++9++ to insert floppy number 1 to 9 into drive
+  DF0: (the first floppy drive).
 
 - By default, the disk swapper targets the first floppy drive. To insert a
-  floppy into any of the four drives, you need to select the drive
+  floppy into any of the four drives, you need to select the target drive
   with ++end+ctrl+1++ to ++4++ first.
 
 For example:
 
-- To insert the second floppy into the first drive (DF0), press ++end+2++.
-- To insert the third floppy into the second drive (DF1) next, press ++end+ctrl+2++
-  to select the second drive, then  ++end+3++ to insert the third floppy.
-- To insert the fourth floppy into the first drive again, press ++end+ctrl+1++
-  then ++end+4++ .
+- To insert the second game disk into drive DF0: (first drive), press ++end+2++.
+- To insert the third game disk into drive DF1: (second drive) next, press
+  ++end+ctrl+2++ to select the second drive as the target, then  ++end+3++ to
+  insert the third disk.
+- To insert the fourth game edisk into DF0: again, press ++end+ctrl+1++
+  followed by ++end+4++ .
 
 
 !!! warning "Not all keyboards are created equal"
@@ -109,13 +111,19 @@ located in the `Savedisk` subfolder of the game's folder, and it's always
 available in the 9th disk swapper slot (so you can insert the save disk by
 pressing ++end+9++).
 
+Some games ask you to enter a full path of your save file, e.g.,
+`DF0:MySave1`, or you might need to enter `DF0:` and press enter to list
+the save games on the floppy in the first drive. Make sure *not* to leave the
+semicolon off in such scenarios. The semicolon after **DF0:** signals that
+we're dealing with a drive, not just a file called **DF0**. This is similar to
+the **C:** drive in Windows.
+
 !!! warning "Not all blank disks are created equal"
 
     Always use the save disk included with the game. A regular empty AmigaDOS
-    ADF disk image won't work with games that use special encoding schemes,
-    such as the floppy version of **Canon Fodder**. A pristine blank save disk
-    is always included in a ZIP archive as well, should you want to reset your
-    save disk.
+    ADF disk image won't work with games that use special encoding schemes
+    (e.g., [Canon Fodder](TODO)). A blank save disk is always included in a
+    ZIP archive as well, should you want to reset your save disk.
 
 !!! tip "ProTip(tm)"
 
@@ -134,15 +142,15 @@ configured to never modify the original floppy images, but to create
 so-called _save images_ instead that only contain the changes compared to the
 original disks.
 
-Save images have the `.save_adf` file extensions and are located in the same
-folder as the game disks.
+Save images have the `.save_adf` file extension and are located in the
+`Disks` folder within the game folder next to the game disks.
 
-If you wish to revert such a "virtually modified" game disk to its original
+If you wish to revert such "virtually modified" game disks to their original
 pristine state, click on the **Delete save image** button in the **Floppy**
-configuration tab (you don't need to re-save the config after this). TODO tick
+configuration tab TODO. TODO tick
 writeable checkbox?
 
-TODO ? Alternatively, you can delete the `.save_adf` file manually.
+Alternatively, you can delete the `.save_adf` file manually.
 
 !!! tip "ProTip(tm)"
 
