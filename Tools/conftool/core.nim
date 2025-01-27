@@ -169,13 +169,15 @@ let lacedNtscScalingFactors = {
 
 # }}}
 
-# {{{ getFilePaths*()
-proc getFilePaths*(p: string): seq[Path] =
-  if fileExists(p):
-    @[p.Path]
-  elif dirExists(p):
+# {{{ getConfigPaths*()
+proc getConfigPaths*(path: Path): seq[Path] =
+  if fileExists($path):
+    @[path]
+  elif dirExists(path):
     collect:
-      for p in walkDirRec(p.Path): p
+      for p in walkDirRec(path):
+        let (_, _, ext) = p.splitFile
+        if ext == ".uae": p
   else:
     @[]
 
@@ -199,14 +201,17 @@ proc readConfig*(file: Path): Config =
       if p > -1:
         let key = line[0..p-1].strip
         let val = line[p+1..^1].strip
-        result.cfg[key] = val
+
+        # This will allow duplicates, e.g., for `filesystem2` that can occurr
+        # multiple times.
+        result.cfg.add(key, val)
 
     inc(lineNo)
 
 # }}}
 # {{{ writeConfig*()
-proc writeConfig*(c: Config, filename: string) =
-  let f = open(filename, fmWrite)
+proc writeConfig*(c: Config, path: Path) =
+  let f = open($path, fmWrite)
 
   for (key, val) in c.cfg.pairs():
     if key.startsWith(CommentKeyPrefix):
@@ -255,9 +260,9 @@ proc isLaced(c: Config): bool =
 # {{{ getScalingFactors()
 proc getScalingFactors(c: Config): tuple[horiz, vert: int] =
   # TODO parseIntOrDefault
-  let h = parseInt(c.cfg.getOrDefault("gfx_filter_horiz_zoomf", "1000"))
-  let v = parseInt(c.cfg.getOrDefault("gfx_filter_vert_zoomf",  "1000"))
-  (h, v)
+  let h = parseFloat(c.cfg.getOrDefault("gfx_filter_horiz_zoomf", "1000.0"))
+  let v = parseFloat(c.cfg.getOrDefault("gfx_filter_vert_zoomf",  "1000.0"))
+  (h.int, v.int)
 
 # }}}
 # {{{ findByValue()

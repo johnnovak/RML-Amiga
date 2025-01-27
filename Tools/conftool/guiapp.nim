@@ -90,17 +90,20 @@ const
 # {{{ applyAction()
 proc applyAction() =
   # TODO
-  let configPath = "../../Configurations"
+  let basePath = "../../Configurations"
 
-  let files = case app.applyTarget
-              of atAll:      getFilePaths(configPath)
-              of atAllGames: getFilePaths(configPath / "Games")
-              of atAllDemos: getFilePaths(configPath / "Demos")
+  let path = case app.applyTarget
+             of atAll:      basePath
+             of atAllGames: basePath / "Games"
+             of atAllDemos: basePath / "Demos"
 
-  for f in files:
+  let configPaths = getConfigPaths(path.Path)
+
+  for p in configPaths:
     # TODO error handling
-    let cfg = readConfig(f)
+    let cfg = readConfig(p)
     cfg.applySettings(settings)
+    cfg.writeConfig(p)
 
 # }}}
 
