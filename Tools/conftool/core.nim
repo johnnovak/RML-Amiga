@@ -316,40 +316,53 @@ proc setScaling(c: Config, palScaling:  Option[PalScaling],
   case getVideoStandard(c)
   of vsPal:
     if palScaling.isSome or interlacing.isSome:
-      let isLaced = isLaced(c)
       let palScaling = if palScaling.isSome: palScaling.get
-                       else: findPalScaling(c, isLaced).get(palScaling30)
+                       else: findPalScaling(c, isLaced(c)).get(palScaling30)
 
-      let f = if isLaced: lacedPalScalingFactors[palScaling]
-              else:            palScalingFactors[palScaling]
+      let f = if interlacing.get: lacedPalScalingFactors[palScaling]
+              else:                    palScalingFactors[palScaling]
       setScalingFactors(f)
+      setInterlacing(interlacing.get)
 
   of vsNtsc, vsNtsc50:
     if ntscScaling.isSome or interlacing.isSome:
-      let isLaced = isLaced(c)
       let ntscScaling = if ntscScaling.isSome: ntscScaling.get
-                        else: findNtscScaling(c, isLaced).get(ntscScaling30)
+                        else: findNtscScaling(c, isLaced(c)).get(ntscScaling30)
 
-      let f = if isLaced: lacedNtscScalingFactors[ntscScaling]
-              else:            ntscScalingFactors[ntscScaling]
+      let f = if interlacing.get: lacedNtscScalingFactors[ntscScaling]
+              else:                    ntscScalingFactors[ntscScaling]
       setScalingFactors(f)
+      setInterlacing(interlacing.get)
 
 # }}}
 # {{{ setCrtEmulation()
 proc setCrtEmulation(c: Config, enabled: Option[bool],
                                 sharperPal: Option[bool]) =
+  const
+    PalFilter      = "D3D:CRT-A2080-PAL.fx"
+    PalSharpFilter = "D3D:CRT-A2080-PAL-Sharp.fx"
+
+  proc getFilter(): string =
+    c.cfg.getOrDefault("gfx_filter", "")
+
   proc setFilter(s: string) =
     c.cfg["gfx_filter"] = s
 
-  if enabled.get(false):
+  if enabled.isSome:
+    if enabled.get:
+      case getVideoStandard(c)
+      of vsPal:            setFilter(PalFilter)
+      of vsNtsc, vsNtsc50: setFilter("D3D:CRT-A2080-NTSC.fx")
+    else:                  setFilter("D3D:Point-Prescale.fx")
+
+  if sharperPal.isSome:
     case getVideoStandard(c)
     of vsPal:
-      if sharperPal.get(false): setFilter("D3D:CRT-A2080-PAL-Sharp.fx")
-      else:                     setFilter("D3D:CRT-A2080-PAL.fx")
+      if getFilter() in @[PalFilter, PalSharpFilter]:
+        setFilter(if sharperPal.get: PalSharpFilter
+                  else:              PalFilter)
     of vsNtsc, vsNtsc50:
-      setFilter("D3D:CRT-A2080-NTSC.fx")
-  else:
-      setFilter("D3D:Point-Prescale.fx")
+      discard
 
 # }}}
 # {{{ setShaderQuality()
