@@ -1,6 +1,7 @@
 import std/lenientops
 import std/options
 import std/os
+import std/paths
 import std/strformat
 import std/strutils
 
@@ -86,6 +87,26 @@ const
 
 # }}}
 
+# {{{ applyAction()
+proc applyAction() =
+  # TODO
+  let basePath = "../../Configurations"
+
+  let path = case app.applyTarget
+             of atAll:      basePath
+             of atAllGames: basePath / "Games"
+             of atAllDemos: basePath / "Demos"
+
+  let configPaths = getConfigPaths(path.Path)
+
+  for p in configPaths:
+    # TODO error handling
+    let cfg = readConfig(p)
+    cfg.applySettings(settings)
+    cfg.writeConfig(p)
+
+# }}}
+
 # {{{ setHelpText()
 template setHelpText(s: string) =
   let y = koi.autoLayoutNextY()
@@ -139,7 +160,7 @@ proc renderDisplayTab() =
 
       koi.toggleButton(settings.display.resizableWindow.set, "Resizable window")
       setHelpText("""
-        Allow resizing the WinUAE window in windowed mode.
+        Allow resizing the window in windowed mode.
       """)
       koi.nextItemHeight(CheckBoxSize)
       koi.checkBox(settings.display.resizableWindow.value,
@@ -329,8 +350,7 @@ proc renderUI() =
     discard
 
   if koi.button(koi.winWidth() - 90 - x - 98, y, 90, 24, "Apply to"):
-#    applySettings(app.applyTarget)
-    discard
+    applyAction()
 
   koi.dropDown(koi.winWidth() - 90 - x, y, 90, 24, app.applyTarget)
 
