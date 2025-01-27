@@ -151,6 +151,20 @@
 - Saves the high scores to the game disk.
 
 
+## Rogue: The Adventure Game
+
+- Reassembled & bugfixed version by **dennis2342**. This is true to the
+  original; it mainly only fixes some annoying bugs (more details
+  [here](https://github.com/denis2342/Rogue)).
+
+- Saves to the game disk.
+
+!!! danger "Only use regular saves"
+
+    The game is _not_ compatible with save states---only user regular in-game
+    saves!
+
+
 ## Rome AD92: The Pathway to Power
 
 - Has a single save slot only (forced "Ironman Mode"); saves the game to the
@@ -175,3 +189,4 @@
     If you're careful, you can use short-term save states (aka save scumming)
     but _only_ during a single gaming session between two in-game saves to the
     boot disk.
+
