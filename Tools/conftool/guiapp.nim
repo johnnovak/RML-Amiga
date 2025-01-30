@@ -170,8 +170,8 @@ proc renderDisplayTab() =
       koi.toggleButton(settings.display.showOsd.set, "Show OSD")
       setHelpText("""
           Show on-screen display (OSD) in the bottom-right corner that
-          indicates the HDD and floppy drive activity of the emulated machine,
-          plus CPU and audio buffer utilisation, currnt FPS, pause/warp mode,
+          indicates the floppy and hard drive activity of the emulated machine,
+          CPU and audio buffer utilisation, current FPS, pause/warp mode,
           etc.
       """)
 
@@ -181,8 +181,7 @@ proc renderDisplayTab() =
 
       koi.toggleButton(settings.display.showClock.set, "Show clock")
       setHelpText("""
-        Show clock in the top-right corner (only work if CRT emulation is
-        enabled).
+        Show clock in the top-right corner.
       """)
       koi.nextItemHeight(CheckBoxSize)
       koi.checkBox(settings.display.showClock.value,
@@ -192,9 +191,9 @@ proc renderDisplayTab() =
       koi.toggleButton(settings.display.palScaling.set, "PAL scaling")
       setHelpText("""
         Set the scaling factor for PAL games and demos. Fractional scaling
-        factors (in particular the 3.2x factor) might result in some vertical
-        interference artifacts on 1080p screens. This is especially noticeable
-        on fade-in & fade-out effects.
+        factors (3.2x in particular) can result in some vertical interference
+        patterns on 1080p screens. This is especially noticeable on fade-in &
+        fade-out effects.
       """)
       koi.nextItemWidth(60)
       koi.dropDown(settings.display.palScaling.value,
@@ -202,8 +201,9 @@ proc renderDisplayTab() =
 
       koi.toggleButton(settings.display.ntscScaling.set, "NTSC scaling")
       setHelpText("""
-        Set the scaling factor for NTSC and NTSC50 games. Fractional settings
-        are not prone to vertical interference artifacts as the PAL shaders.
+        Set the scaling factor for NTSC and NTSC50 games. Unlike the PAL
+        shader, the NTSC shader is not prone to vertical interference patterns
+        with fractional scaling factors.
       """)
       koi.nextItemWidth(60)
       koi.dropDown(settings.display.ntscScaling.value,
@@ -212,10 +212,10 @@ proc renderDisplayTab() =
     group:
       koi.toggleButton(settings.display.crtEmulation.set, "CRT emulation")
       setHelpText("""
-        Enables authentic 15 kHz Commodore monitor CRT emulation. Pixels are
-        rendered as sharp little rectangles if disabled. You might need to
-        disable CRT emulation if you have a really weak GPU and you're getting
-        slowdowns and glitchy audio.
+        Emulate an authentic Commodore CRT monitor. Pixels are rendered as
+        sharp little rectangles if disabled. You might need to disable CRT
+        emulation if you have a really weak GPU and you're getting slowdowns
+        or audio drop-outs.
       """)
       koi.nextItemHeight(CheckBoxSize)
       koi.checkBox(settings.display.crtEmulation.value,
@@ -223,9 +223,9 @@ proc renderDisplayTab() =
 
       koi.toggleButton(settings.display.shaderQuality.set, "CRT emulation quality")
       setHelpText("""
-        'Best' is recommended to minimise vertical interference artifacts.
+        'Best' is recommended to minimise vertical interference patterns.
         Only select 'Fast' if you have a weak GPU and you're getting slowdowns
-        and audio stutters (it's three times faster than 'Best').
+        and audio drop-outs (it's three times faster than 'Best').
       """)
       koi.dropDown(settings.display.shaderQuality.value,
                    disabled = not settings.display.shaderQuality.set)
@@ -234,9 +234,9 @@ proc renderDisplayTab() =
       setHelpText("""
         Enable maximum horizontal sharpness for PAL CRT emulation. This
         increases the legibility of 80-column text (e.g., in text adventures),
-        at the detriment of the 'natural antialiasing' and blending properties
-        of the CRT shaders. This only exists for PAL because the NTSC shaders
-        don't benefit from it.
+        but reduces the benefical 'natural antialiasing' effect of the CRT
+        emulation. The option only exists for PAL because the NTSC shader
+        doesn't benefit from it.
       """)
       koi.nextItemHeight(CheckBoxSize)
       koi.checkBox(settings.display.sharperPal.value,
@@ -244,11 +244,10 @@ proc renderDisplayTab() =
 
       koi.toggleButton(settings.display.interlacing.set, "Interlacing emulation")
       setHelpText("""
-        Enable interlacing flicker emulation in hi-res laced screen modes
-        (400-pixel-high NTSC and 512-pixel-high PAL modes). Interlacing
-        emulation works best on VRR monitors or with matched refresh rates on
-        fixed-refresh displays (50 Hz for PAL and 60 Hz for NTSC; make sure
-        your Windows desktop uses the appropriate refresh rate).
+        Enable interlace flicker emulation in hi-res screen modes (400 pixel
+        high NTSC and 512 pixel high PAL modes). Interlacing emulation works
+        best with vsync enabled and a 50 Hz desktop refresh rate for PAL and
+        60 Hz for NTSC, or a VRR monitor.
       """)
       koi.nextItemHeight(CheckBoxSize)
       koi.checkBox(settings.display.interlacing.value,
@@ -257,11 +256,12 @@ proc renderDisplayTab() =
     group:
       koi.toggleButton(settings.display.vsyncMode.set, "Vsync mode")
       setHelpText("""
-        'Standard' uses triple buffering and works well in both windowed and
-        fullscreen. This should satisfy most users. 'Lagless' reduces input
-        latency which might matter in fast-paced action games, but is finicky
-        as it needs fullscreen for the best results and a VRR monitor or exact
-        refresh rates (see 'Interlacing emulation').
+        'Off' can add tearing in action games but has low input lag.
+        'Standard' eliminates tearing in both windowed and fullscreen modes,
+        but adds input lag. 'Lagless' reduces input lag which mostly
+        only matters in action games, but it doesn't work in windowed mode,
+        needs fullscreen for the best results, and requires either a VRR
+        monitor or matching 50/60 desktop refresh rates for PAL/NTSC.
       """)
       koi.dropDown(settings.display.vsyncMode.value,
                    disabled = not settings.display.vsyncMode.set)
@@ -269,10 +269,9 @@ proc renderDisplayTab() =
       koi.toggleButton(settings.display.vsyncSlices.set, "Lagless vsync slices")
       setHelpText("""
         Number of frame slices in lagless vsync mode. Higher values reduce
-        latency, but how far you can go without getting weird artifacts is
-        very much setup-dependent. Value between 2 and 8 and the most useful.
-        Generally you'll need slightly larger audio buffers in lagless vsync
-        mode.
+        latency, values between 2 and 8 and the most useful (setup dependent,
+        you'll need to experiment). Generally, you'll need slightly larger
+        audio buffers in lagless vsync mode.
       """)
       koi.nextItemWidth(60)
       koi.textField(
