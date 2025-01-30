@@ -20,6 +20,12 @@ const CommentKeyPrefix = "#comment-"
 
 # }}}
 # {{{ Settings
+const
+  NoFilter       = "D3D:Point-Prescale.fx"
+  PalFilter      = "D3D:CRT-A2080-PAL.fx"
+  PalSharpFilter = "D3D:CRT-A2080-PAL-Sharp.fx"
+  NtscFilter     = "D3D:CRT-A2080-NTSC.fx"
+
 type
   Settings* = object
     display*: DisplaySettings
@@ -44,7 +50,7 @@ type
     sharperPal*:      tuple[value: bool,          set: bool]
     interlacing*:     tuple[value: bool,          set: bool]
     vsyncMode*:       tuple[value: VsyncMode,     set: bool]
-    sliceCount*:      tuple[value: string,        set: bool]
+    vsyncSlices*:     tuple[value: string,        set: bool]
 
   ShaderQuality* = enum
     sqFast = "Fast"
@@ -204,7 +210,7 @@ proc readConfig*(file: Path): Config =
 
         # This will allow duplicates, e.g., for `filesystem2` that can occurr
         # multiple times.
-        result.cfg.add(key, val)
+        result.cfg[key] = val
 
     inc(lineNo)
 
@@ -254,7 +260,7 @@ proc setShowOsd(c: Config, showOsd: bool) =
 # }}}
 # {{{ isLaced()
 proc isLaced(c: Config): bool =
-  c.cfg.getOrDefault("linemode", "double2") == "none"
+  c.cfg.getOrDefault("gfx_linemode", "double2") == "none"
 
 # }}}
 # {{{ getScalingFactors()
@@ -273,18 +279,18 @@ proc findByValue[K, V](t: Table[K, V], value: V): Option[K] =
   return K.none
 
 # }}}
-# {{{ findPalScaling()
-proc findPalScaling(c: Config, isLaced: bool): Option[PalScaling] =
+# {{{ getPalScaling()
+proc getPalScaling(c: Config): Option[PalScaling] =
   let f = getScalingFactors(c)
-  if isLaced: lacedPalScalingFactors.findByValue(f)
-  else:            palScalingFactors.findByValue(f)
+  if isLaced(c): lacedPalScalingFactors.findByValue(f)
+  else:               palScalingFactors.findByValue(f)
 
 # }}}
-# {{{ findNtscScaling()
-proc findNtscScaling(c: Config, isLaced: bool): Option[NtscScaling] =
+# {{{ getNtscScaling()
+proc getNtscScaling(c: Config): Option[NtscScaling] =
   let f = getScalingFactors(c)
-  if isLaced: lacedNtscScalingFactors.findByValue(f)
-  else:            ntscScalingFactors.findByValue(f)
+  if isLaced(c): lacedNtscScalingFactors.findByValue(f)
+  else:               ntscScalingFactors.findByValue(f)
 
 # }}}
 # {{{ getVideoStandard()
@@ -297,50 +303,77 @@ proc getVideoStandard(c: Config): VideoStandard =
   if isNtsc:
     vsNtsc
   else:
-    if findNtscScaling(c, isLaced(c)).isSome: vsNtsc50
+    if getNtscScaling(c).isSome: vsNtsc50
     else: vsPal
+
+# }}}
+# {{{ setScalingFactors()
+proc setScalingFactors(c: Config, f: tuple[horiz, vert: int]) =
+  c.cfg["gfx_filter_horiz_zoomf"] = fmt"{f.horiz}.000000"
+  c.cfg["gfx_filter_vert_zoomf"]  = fmt"{f.vert}.000000"
 
 # }}}
 # {{{ setScaling()
 proc setScaling(c: Config, palScaling:  Option[PalScaling],
-                           ntscScaling: Option[NtscScaling],
-                           interlacing: Option[bool]) =
-
-  proc setScalingFactors(f: tuple[horiz, vert: int]) =
-    c.cfg["gfx_filter_horiz_zoomf"] = fmt"{f.horiz}.000000"
-    c.cfg["gfx_filter_vert_zoomf"]  = fmt"{f.vert}.000000"
-
-  proc setInterlacing(isLaced: bool) =
-    c.cfg["linemode"] = if isLaced: "none" else: "double2"
+                           ntscScaling: Option[NtscScaling]) =
 
   case getVideoStandard(c)
   of vsPal:
-    if palScaling.isSome or interlacing.isSome:
-      let palScaling = if palScaling.isSome: palScaling.get
-                       else: findPalScaling(c, isLaced(c)).get(palScaling30)
+    if palScaling.isSome:
+      let s = if palScaling.isSome: palScaling.get
+              else: getPalScaling(c).get(palScaling30)
 
-      let f = if interlacing.get: lacedPalScalingFactors[palScaling]
-              else:                    palScalingFactors[palScaling]
-      setScalingFactors(f)
-      setInterlacing(interlacing.get)
+      let f = if isLaced(c): lacedPalScalingFactors[s]
+              else:               palScalingFactors[s]
+      setScalingFactors(c, f)
 
   of vsNtsc, vsNtsc50:
-    if ntscScaling.isSome or interlacing.isSome:
-      let ntscScaling = if ntscScaling.isSome: ntscScaling.get
-                        else: findNtscScaling(c, isLaced(c)).get(ntscScaling30)
+    if ntscScaling.isSome:
+      let s = if ntscScaling.isSome: ntscScaling.get
+              else: getNtscScaling(c).get(ntscScaling30)
 
-      let f = if interlacing.get: lacedNtscScalingFactors[ntscScaling]
-              else:                    ntscScalingFactors[ntscScaling]
-      setScalingFactors(f)
-      setInterlacing(interlacing.get)
+      let f = if isLaced(c): lacedNtscScalingFactors[s]
+              else:               ntscScalingFactors[s]
+      setScalingFactors(c, f)
+
+# }}}
+# {{{ setInterlacing()
+proc setInterlacing(c: Config, enabled: bool) =
+
+  proc setInterlacing(enabled: bool) =
+    c.cfg["gfx_linemode"] = if enabled: "none" else: "double2"
+
+  case getVideoStandard(c)
+  of vsPal:
+    let s = getPalScaling(c).get(palScaling30)
+    let f = if enabled: lacedPalScalingFactors[s]
+            else:            palScalingFactors[s]
+    setScalingFactors(c, f)
+    setInterlacing(enabled)
+
+  of vsNtsc, vsNtsc50:
+    let s = getNtscScaling(c).get(ntscScaling30)
+    let f = if enabled: lacedNtscScalingFactors[s]
+            else:            ntscScalingFactors[s]
+    setScalingFactors(c, f)
+    setInterlacing(enabled)
 
 # }}}
 # {{{ setCrtEmulation()
-proc setCrtEmulation(c: Config, enabled: Option[bool],
-                                sharperPal: Option[bool]) =
-  const
-    PalFilter      = "D3D:CRT-A2080-PAL.fx"
-    PalSharpFilter = "D3D:CRT-A2080-PAL-Sharp.fx"
+proc setCrtEmulation(c: Config, enabled: bool) =
+
+  proc setFilter(s: string) =
+    c.cfg["gfx_filter"] = s
+
+  if enabled:
+    case getVideoStandard(c)
+    of vsPal:            setFilter(PalFilter)
+    of vsNtsc, vsNtsc50: setFilter(NtscFilter)
+  else:                  setFilter(NoFilter)
+
+# }}}
+# {{{ setSharperPal()
+proc setSharperPal(c: Config, sharperPal: bool) =
 
   proc getFilter(): string =
     c.cfg.getOrDefault("gfx_filter", "")
@@ -348,21 +381,13 @@ proc setCrtEmulation(c: Config, enabled: Option[bool],
   proc setFilter(s: string) =
     c.cfg["gfx_filter"] = s
 
-  if enabled.isSome:
-    if enabled.get:
-      case getVideoStandard(c)
-      of vsPal:            setFilter(PalFilter)
-      of vsNtsc, vsNtsc50: setFilter("D3D:CRT-A2080-NTSC.fx")
-    else:                  setFilter("D3D:Point-Prescale.fx")
-
-  if sharperPal.isSome:
-    case getVideoStandard(c)
-    of vsPal:
-      if getFilter() in @[PalFilter, PalSharpFilter]:
-        setFilter(if sharperPal.get: PalSharpFilter
-                  else:              PalFilter)
-    of vsNtsc, vsNtsc50:
-      discard
+  case getVideoStandard(c)
+  of vsPal:
+    if getFilter() in @[PalFilter, PalSharpFilter]:
+      setFilter(if sharperPal: PalSharpFilter
+                else:          PalFilter)
+  of vsNtsc, vsNtsc50:
+    discard
 
 # }}}
 # {{{ setShaderQuality()
@@ -378,8 +403,7 @@ proc setShaderQuality(c: Config, shaderQuality: ShaderQuality) =
 
 # }}}
 # {{{ setVsyncMode()
-proc setVsyncMode(c: Config, vsyncMode: Option[VsyncMode],
-                             sliceCount: Option[string]) =
+proc setVsyncMode(c: Config, vsyncMode: VsyncMode) =
 
   proc setDoubleBuffering() =
     c.cfg["gfx_backbuffers"] = "1"
@@ -387,30 +411,37 @@ proc setVsyncMode(c: Config, vsyncMode: Option[VsyncMode],
   proc setTripleBuffering() =
     c.cfg["gfx_backbuffers"] = "2"
 
-  proc setSliceCount(count: string) =
-    c.cfg["gfx_frame_slices"] = count
+  case vsyncMode
+  of vmStandard:
+    c.cfg["gfx_vsync"] = "autoswitch"
+    c.cfg.del("gfx_vsyncmode")
+    setTripleBuffering()
 
-  if vsyncMode.isSome:
-    case vsyncMode.get
-    of vmStandard:
-      setTripleBuffering()
-      c.cfg["gfx_vsync"] = "autoswitch"
+  of vmLagless:
+    c.cfg["gfx_vsync"]     = "autoswitch"
+    c.cfg["gfx_vsyncmode"] = "busywait"
+    setDoubleBuffering()
 
-    of vmLagless:
-      setDoubleBuffering()
-      c.cfg["gfx_vsync"]        = "autoswitch"
-      c.cfg["gfx_vsyncmode"]    = "busywait"
-      setSliceCount(sliceCount.get("2"))
+  of vmOff:
+    c.cfg["gfx_vsync"] = "false"
+    c.cfg.del("gfx_vsyncmode")
+    setTripleBuffering()
 
-    of vmOff:
-      setTripleBuffering()
-      c.cfg["gfx_vsync"] = "false"
+# }}}
+# {{{ setLaglessVsyncSlices()
+proc setLaglessVsyncSlices(c: Config, vsyncSlices: string) =
 
-  elif vsyncMode.isNone and sliceCount.isSome:
-    let isLaglessVsync = (c.cfg["gfx_vsync"]     == "autoswitch" and
-                          c.cfg["gfx_vsyncmode"] == "busywait")
-    if isLaglessVsync:
-      setSliceCount(sliceCount.get)
+  let vsyncMode = case c.cfg.getOrDefault("gfx_vsync", "false"):
+    of "autoswitch":
+      if c.cfg.getOrDefault("gfx_vsyncmode", "") == "busywait": vmLagless
+      else: vmStandard
+    else: vmOff
+
+  case vsyncMode
+  of vmLagless:
+    c.cfg["gfx_frame_slices"] = vsyncSlices
+  of vmStandard, vmOff:
+    discard
 
 # }}}
 # }}}
@@ -438,17 +469,28 @@ proc applySettings*(cfg: Config, settings: Settings) =
     # TODO
 #    if showClock.set: c.setShowClock(showClock.value)
 
-    if crtEmulation.set or sharperPal.set:
-      cfg.setCrtEmulation(crtEmulation.toOpt, sharperPal.toOpt)
+    if crtEmulation.set:
+      cfg.setCrtEmulation(crtEmulation.value)
+
+    if sharperPal.set:
+      # Must be called after `setCrtEmulation`
+      cfg.setSharperPal(sharperPal.value)
 
     if shaderQuality.set:
       cfg.setShaderQuality(shaderQuality.value)
 
-    if palScaling.set or ntscScaling.set or interlacing.set:
-      cfg.setScaling(palScaling.toOpt, ntscScaling.toOpt, interlacing.toOpt)
+    if palScaling.set or ntscScaling.set:
+      cfg.setScaling(palScaling.toOpt, ntscScaling.toOpt)
 
-    if vsyncMode.set or sliceCount.set:
-      cfg.setVsyncMode(vsyncMode.toOpt, sliceCount.toOpt)
+    if interlacing.set:
+      # Must be called after `setScaling`
+      cfg.setInterlacing(interlacing.value)
+
+    if vsyncMode.set:
+      cfg.setVsyncMode(vsyncMode.value)
+
+    if vsyncSlices.set:
+      cfg.setLaglessVsyncSlices(vsyncSlices.value)
 
 # }}}
 

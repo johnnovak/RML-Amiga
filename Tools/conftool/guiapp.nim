@@ -56,7 +56,7 @@ settings.display = DisplaySettings(
     sharperPal:      (false, false),
     interlacing:     (false, false),
     vsyncMode:       (vmStandard, false),
-    sliceCount:      ("2", false)
+    vsyncSlices:     ("2", false)
 )
 
 const
@@ -266,7 +266,7 @@ proc renderDisplayTab() =
       koi.dropDown(settings.display.vsyncMode.value,
                    disabled = not settings.display.vsyncMode.set)
 
-      koi.toggleButton(settings.display.sliceCount.set, "Lagless vsync slices")
+      koi.toggleButton(settings.display.vsyncSlices.set, "Lagless vsync slices")
       setHelpText("""
         Number of frame slices in lagless vsync mode. Higher values reduce
         latency, but how far you can go without getting weird artifacts is
@@ -276,13 +276,13 @@ proc renderDisplayTab() =
       """)
       koi.nextItemWidth(60)
       koi.textField(
-        settings.display.sliceCount.value,
+        settings.display.vsyncSlices.value,
         constraint = TextFieldConstraint(
           kind:   tckInteger,
           minInt: 1,
           maxInt: 29
         ).some,
-        disabled = not settings.display.sliceCount.set
+        disabled = not settings.display.vsyncSlices.set
       )
 
 # }}}
@@ -360,6 +360,7 @@ proc renderUI() =
 
 # {{{ GLFW callbacks
 proc renderFrame(win: Window, res: tuple[w, h: int32] = (0,0)) =
+  if win.iconified: return
   renderUI()
   glfw.swapBuffers(win)
 
