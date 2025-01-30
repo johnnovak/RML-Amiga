@@ -199,6 +199,8 @@ proc readConfig*(file: Path): Config =
   result = new Config
   result.cfg = initOrderedTable[string, string]()
 
+  var filesystem2Index = 0
+
   while stream.readLine(line):
     if line.strip().startsWith(";"):
       result.cfg[fmt"{CommentKeyPrefix}{lineNo}"] = line
@@ -208,9 +210,12 @@ proc readConfig*(file: Path): Config =
         let key = line[0..p-1].strip
         let val = line[p+1..^1].strip
 
-        # This will allow duplicates, e.g., for `filesystem2` that can occurr
-        # multiple times.
-        result.cfg[key] = val
+        if key == "filesystem2":
+          # `filesystem2` can occur multiple times.
+          result.cfg[fmt"{key}#{filesystem2Index}"] = val
+          inc(filesystem2Index)
+        else:
+          result.cfg[key] = val
 
     inc(lineNo)
 
@@ -222,6 +227,8 @@ proc writeConfig*(c: Config, path: Path) =
   for (key, val) in c.cfg.pairs():
     if key.startsWith(CommentKeyPrefix):
       f.write(val)
+    elif key.startsWith("filesystem2"):
+      f.write(fmt"filesystem2={val}")
     else:
       f.write(fmt"{key}={val}")
     f.write("\r\n")
@@ -413,8 +420,8 @@ proc setVsyncMode(c: Config, vsyncMode: VsyncMode) =
 
   case vsyncMode
   of vmStandard:
-    c.cfg["gfx_vsync"] = "autoswitch"
-    c.cfg.del("gfx_vsyncmode")
+    c.cfg["gfx_vsync"]     = "autoswitch"
+    c.cfg["gfx_vsyncmode"] = "normal"
     setTripleBuffering()
 
   of vmLagless:
@@ -423,8 +430,8 @@ proc setVsyncMode(c: Config, vsyncMode: VsyncMode) =
     setDoubleBuffering()
 
   of vmOff:
-    c.cfg["gfx_vsync"] = "false"
-    c.cfg.del("gfx_vsyncmode")
+    c.cfg["gfx_vsync"]     = "false"
+    c.cfg["gfx_vsyncmode"] = "normal"
     setTripleBuffering()
 
 # }}}
