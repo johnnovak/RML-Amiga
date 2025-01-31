@@ -5,12 +5,16 @@ import std/paths
 import std/strutils
 
 import glad/gl
+
 import glfw
 from glfw/wrapper import showWindow
+
 import koi
 import nanovg
-import osdialog
+
 import with
+when not defined(DEBUG):
+  import osdialog
 
 import core
 
@@ -377,13 +381,10 @@ proc createWindow(): Window =
   cfg.title         = "RML Amiga Configuration Tool"
   cfg.resizable     = false
   cfg.visible       = false
+  cfg.nMultiSamples = 4
   cfg.bits          = (r: some(8'i32), g: some(8'i32), b: some(8'i32),
                        a: some(8'i32),
                        stencil: some(8'i32), depth: some(16'i32))
-  cfg.nMultiSamples = 4
-#  cfg.decorated     = false
-#  cfg.focusOnShow   = true
-#  cfg.transparentFramebuffer = true
 
   when defined(macosx):
     cfg.version = glv32
@@ -443,6 +444,7 @@ proc setWidgetStyles() =
   koi.setDefaultToggleButtonStyle(tbs)
 
 # }}}
+
 # {{{ init()
 proc init(): Window =
   glfw.initialize()
@@ -486,13 +488,16 @@ proc deinit() =
   glfw.terminate()
 
 # }}}
-# {{{
+# {{{ crashHandler()
 proc crashHandler(e: ref Exception) =
   var msg = "A fatal error has occured, exiting program.\n\n" &
             "Error message: " & e.msg & "\n\n" &
             "Stack trace:\n" & getStackTrace(e)
 
-  discard osdialog_message(mblError, mbbOk, msg.cstring)
+  when not defined(DEBUG):
+    discard osdialog_message(mblError, mbbOk, msg.cstring)
+
+  quit(QuitFailure)
 
 # }}}
 # {{{ main()
@@ -510,7 +515,8 @@ proc main() =
     deinit()
 
   except CatchableError as e:
-    crashHandler(e)
+    when defined(DEBUG): raise e
+    else: crashHandler(e)
 
 # }}}
 
