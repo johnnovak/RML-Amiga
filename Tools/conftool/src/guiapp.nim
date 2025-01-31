@@ -2,15 +2,14 @@ import std/lenientops
 import std/options
 import std/os
 import std/paths
-import std/strformat
 import std/strutils
 
 import glad/gl
 import glfw
 from glfw/wrapper import showWindow
-import nanovg
-
 import koi
+import nanovg
+import osdialog
 import with
 
 import core
@@ -400,8 +399,7 @@ proc loadFonts() =
     try:
       vg.createFont(fontName, path)
     except CatchableError as e:
-      quit "Cannot load font '{path}'"
-      raise e
+      raise newException(IOError, "Cannot load font '{path}'")
 
   discard         loadFont("sans",       "data" / "Roboto-Regular.ttf")
   let boldFont  = loadFont("sans-bold",  "data" / "Roboto-Bold.ttf")
@@ -488,19 +486,31 @@ proc deinit() =
   glfw.terminate()
 
 # }}}
+# {{{
+proc crashHandler(e: ref Exception) =
+  var msg = "A fatal error has occured, exiting program.\n\n" &
+            "Error message: " & e.msg & "\n\n" &
+            "Stack trace:\n" & getStackTrace(e)
 
+  discard osdialog_message(mblError, mbbOk, msg.cstring)
+
+# }}}
 # {{{ main()
 proc main() =
-  let win = init()
+  try:
+    let win = init()
 
-  while not win.shouldClose:
-    if koi.shouldRenderNextFrame():
-      glfw.pollEvents()
-    else:
-      glfw.waitEvents()
-    renderFrame(win)
+    while not win.shouldClose:
+      if koi.shouldRenderNextFrame():
+        glfw.pollEvents()
+      else:
+        glfw.waitEvents()
+      renderFrame(win)
 
-  deinit()
+    deinit()
+
+  except CatchableError as e:
+    crashHandler(e)
 
 # }}}
 
