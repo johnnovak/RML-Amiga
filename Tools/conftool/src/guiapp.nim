@@ -79,8 +79,8 @@ settings.display = DisplaySettings(
 const
   DialogLayoutParams = AutoLayoutParams(
     itemsPerRow:       2,
-    rowWidth:          330.0,
-    labelWidth:        190.0,
+    rowWidth:          340.0,
+    labelWidth:        205.0,
     sectionPad:        0.0,
     leftPad:           0.0,
     rightPad:          0.0,
@@ -165,9 +165,9 @@ proc openApplyErrorDialog() =
   app.activeDialog = dlgApplyError
 
 proc applyErrorDialog() =
-  const
-    DlgWidth  = 420.0
-    DlgHeight = 380.0
+  let
+    DlgWidth  = koi.winWidth() - 70
+    DlgHeight = 372.0
     DlgPadX   = 20.0
 
   koi.beginDialog(DlgWidth, DlgHeight, fmt"Error applying changes")
@@ -180,11 +180,11 @@ proc applyErrorDialog() =
   koi.label(x, y, w, h=30, app.errorMsg)
   y += 40
 
-  koi.textArea(x, y, w, h=DlgHeight-150, app.detailedErrorMsg,
+  koi.textArea(x, y, w, h=DlgHeight-148, app.detailedErrorMsg,
                disabled=true)
 
   const ButtonWidth = 75
-  if koi.button(x=(DlgWidth - ButtonWidth) / 2, y=DlgHeight-42, w=75, h=24, "Close"):
+  if koi.button(x=(DlgWidth - ButtonWidth) / 2, y=DlgHeight-40, w=75, h=24, "OK"):
     closeDialog()
 
   koi.endDialog()
@@ -452,15 +452,16 @@ proc renderUI() =
   vg.fill()
 
   # Tabs
-  const TabWidth = 390.0
-  x = (winWidth - TabWidth) / 2
-  koi.radioButtons(x, y, w=TabWidth, h=ButtonHeight, app.currTab)
+  let tabWidth = winWidth-PadX*2
+  x = (winWidth - tabWidth) / 2
+  koi.radioButtons(x, y, w=tabWidth, h=ButtonHeight, app.currTab)
 
-  x = PadX
+  x = (winWidth - DialogLayoutParams.rowWidth) / 2 - 10
   y += 60
   renderTabs(x, y)
 
   # Help text
+  x= PadX
   y += 450
   koi.textArea(x, y, w=winWidth-2*PadX, h=150, app.helpText, disabled=true)
 
