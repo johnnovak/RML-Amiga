@@ -371,12 +371,13 @@ proc renderDisplayTab() =
     group:
       koi.toggleButton(settings.display.vsyncMode.set, "Vsync mode")
       setHelpText("""
-        'Off' can add tearing in action games but has low input lag.
-        'Standard' eliminates tearing in both windowed and fullscreen modes,
-        but adds input lag. 'Lagless' reduces input lag which mostly
-        only matters in action games, but it doesn't work in windowed mode,
-        needs fullscreen for the best results, and requires either a VRR
-        monitor or matching 50/60 desktop refresh rates for PAL/NTSC.
+        'Off' is the best option for VRR monitors. On non-VRR monitors, it can
+        add tearing, but reduces input lag. 'Standard' eliminates tearing in
+        both windowed and fullscreen modes on non-VRR monitors, but increases
+        input lag. 'Lagless' drastically reduces input lag but it doesn't work
+        in windowed mode, it needs true fullscreen for the best results, and
+        requires either a VRR monitor or matching 50/60 desktop refresh rates
+        for PAL/NTSC.
       """)
       koi.dropDown(settings.display.vsyncMode.value,
                    disabled = not settings.display.vsyncMode.set)
