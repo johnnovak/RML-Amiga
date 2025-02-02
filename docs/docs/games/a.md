@@ -79,5 +79,7 @@ above steps.
 
 ## Aufschwung Ost
 
+- German-only game.
+
 - Can use only DF0: for the game disk, but you can set the save disk
   location to DF1: or DF2: in the options menu.

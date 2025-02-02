@@ -31,6 +31,7 @@
 
 ## Castle Master
 
+- Multi-language release (English, French, German).
 - Type **E** then press ++enter++ when prompted to start the game.
 - Saves to the game disk.
 

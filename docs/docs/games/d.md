@@ -137,6 +137,8 @@
 
 ## Dungeon Master (v3.6)
 
+- Multi-language release (English, French, German).
+
 **WASD movement keys**
 
 - Press ++home+w++ to switch to an alternative input mapping which maps the
@@ -148,6 +150,8 @@
 
 
 ## Dungeon Master: Chaos Strikes Back (v3.5)
+
+- Multi-language release (English, French, German).
 
 - Read the manual carefully for the instructions on how to start the game.
 
