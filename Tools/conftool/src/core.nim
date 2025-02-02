@@ -11,9 +11,16 @@ import std/tables
 
 import with
 
-# {{{ Config
+# TODO
+import random
+var rand = initRand()
+
+const
+  AppVersion* = staticRead("../CURRENT_VERSION").strip
+
+# {{{ UaeConfig
 type
-  Config = ref object
+  UaeConfig = ref object
     cfg: OrderedTable[string, string]
 
 const CommentKeyPrefix = "#comment-"
@@ -175,6 +182,22 @@ let lacedNtscScalingFactors = {
 
 # }}}
 
+# {{{ parseFloatOrDefault()
+func parseFloatOrDefault(s: string, default: float): float =
+  try:
+    parseFloat(s)
+  except ValueError:
+    default
+
+# }}}
+# {{{ parseBoolOrDefault()
+func parseBoolOrDefault(s: string, default: bool): bool =
+  try:
+    parseBool(s)
+  except ValueError:
+    default
+
+# }}}
 # {{{ getConfigPaths*()
 proc getConfigPaths*(path: Path): seq[Path] =
   if fileExists($path):
@@ -188,15 +211,15 @@ proc getConfigPaths*(path: Path): seq[Path] =
     @[]
 
 # }}}
-# {{{ readConfig*()
-proc readConfig*(file: Path): Config =
+# {{{ readUaeConfig*()
+proc readUaeConfig*(file: Path): UaeConfig =
   let contents = readFile($file)
   var
     stream = newStringStream(contents)
     line   = ""
     lineNo = 1
 
-  result = new Config
+  result = new UaeConfig
   result.cfg = initOrderedTable[string, string]()
 
   var filesystem2Index = 0
@@ -220,9 +243,12 @@ proc readConfig*(file: Path): Config =
     inc(lineNo)
 
 # }}}
-# {{{ writeConfig*()
-proc writeConfig*(c: Config, path: Path) =
+# {{{ write*()
+proc write*(c: UaeConfig, path: Path) =
   let f = open($path, fmWrite)
+
+  if rand(10) > 5:
+      raise newException(IOError, "Error writing config")
 
   for (key, val) in c.cfg.pairs():
     if key.startsWith(CommentKeyPrefix):
@@ -239,7 +265,7 @@ proc writeConfig*(c: Config, path: Path) =
 
 # {{{ Set display settings
 # {{{ setDisplayMode()
-proc setDisplayMode(c: Config, dm: DisplayMode) =
+proc setDisplayMode(c: UaeConfig, dm: DisplayMode) =
   c.cfg["gfx_fullscreen_amiga"] = case dm
                                   of dmWindowed:   "false"
                                   of dmFullWindow: "fullwindow"
@@ -247,12 +273,12 @@ proc setDisplayMode(c: Config, dm: DisplayMode) =
 
 # }}}
 # {{{ setResizableWindow()
-proc setResizableWindow(c: Config, resizable: bool) =
+proc setResizableWindow(c: UaeConfig, resizable: bool) =
   c.cfg["gfx_resize_windowed"] = $resizable
 
 # }}}
 # {{{ setWindowSize()
-proc setWindowSize(c: Config, width, height: string) =
+proc setWindowSize(c: UaeConfig, width, height: string) =
   c.cfg["gfx_width"]          = width
   c.cfg["gfx_width_windowed"] = width
 
@@ -261,20 +287,25 @@ proc setWindowSize(c: Config, width, height: string) =
 
 # }}}
 # {{{ setShowOsd()
-proc setShowOsd(c: Config, showOsd: bool) =
+proc setShowOsd(c: UaeConfig, showOsd: bool) =
   c.cfg["show_leds"] = $showOsd
 
 # }}}
 # {{{ isLaced()
-proc isLaced(c: Config): bool =
+proc isLaced(c: UaeConfig): bool =
   c.cfg.getOrDefault("gfx_linemode", "double2") == "none"
 
 # }}}
 # {{{ getScalingFactors()
-proc getScalingFactors(c: Config): tuple[horiz, vert: int] =
-  # TODO parseIntOrDefault
-  let h = parseFloat(c.cfg.getOrDefault("gfx_filter_horiz_zoomf", "1000.0"))
-  let v = parseFloat(c.cfg.getOrDefault("gfx_filter_vert_zoomf",  "1000.0"))
+proc getScalingFactors(c: UaeConfig): tuple[horiz, vert: int] =
+  const Default = 1000.0
+
+  let h = c.cfg.getOrDefault("gfx_filter_horiz_zoomf", $Default)
+            .parseFloatOrDefault(Default)
+
+  let v = c.cfg.getOrDefault("gfx_filter_vert_zoomf",  $Default)
+            .parseFloatOrDefault(Default)
+
   (h.int, v.int)
 
 # }}}
@@ -287,14 +318,14 @@ proc findByValue[K, V](t: Table[K, V], value: V): Option[K] =
 
 # }}}
 # {{{ getPalScaling()
-proc getPalScaling(c: Config): Option[PalScaling] =
+proc getPalScaling(c: UaeConfig): Option[PalScaling] =
   let f = getScalingFactors(c)
   if isLaced(c): lacedPalScalingFactors.findByValue(f)
   else:               palScalingFactors.findByValue(f)
 
 # }}}
 # {{{ getNtscScaling()
-proc getNtscScaling(c: Config): Option[NtscScaling] =
+proc getNtscScaling(c: UaeConfig): Option[NtscScaling] =
   let f = getScalingFactors(c)
   if isLaced(c): lacedNtscScalingFactors.findByValue(f)
   else:               ntscScalingFactors.findByValue(f)
@@ -304,9 +335,8 @@ proc getNtscScaling(c: Config): Option[NtscScaling] =
 type VideoStandard = enum
   vsPal, vsNtsc, vsNtsc50
 
-proc getVideoStandard(c: Config): VideoStandard =
-  # TODO parseBoolOrDefault
-  let isNtsc = c.cfg.getOrDefault("ntsc", "false").parseBool
+proc getVideoStandard(c: UaeConfig): VideoStandard =
+  let isNtsc = c.cfg.getOrDefault("ntsc", "false").parseBoolOrDefault(false)
   if isNtsc:
     vsNtsc
   else:
@@ -315,14 +345,14 @@ proc getVideoStandard(c: Config): VideoStandard =
 
 # }}}
 # {{{ setScalingFactors()
-proc setScalingFactors(c: Config, f: tuple[horiz, vert: int]) =
+proc setScalingFactors(c: UaeConfig, f: tuple[horiz, vert: int]) =
   c.cfg["gfx_filter_horiz_zoomf"] = fmt"{f.horiz}.000000"
   c.cfg["gfx_filter_vert_zoomf"]  = fmt"{f.vert}.000000"
 
 # }}}
 # {{{ setScaling()
-proc setScaling(c: Config, palScaling:  Option[PalScaling],
-                           ntscScaling: Option[NtscScaling]) =
+proc setScaling(c: UaeConfig, palScaling:  Option[PalScaling],
+                              ntscScaling: Option[NtscScaling]) =
 
   case getVideoStandard(c)
   of vsPal:
@@ -345,7 +375,7 @@ proc setScaling(c: Config, palScaling:  Option[PalScaling],
 
 # }}}
 # {{{ setInterlacing()
-proc setInterlacing(c: Config, enabled: bool) =
+proc setInterlacing(c: UaeConfig, enabled: bool) =
 
   proc setInterlacing(enabled: bool) =
     c.cfg["gfx_linemode"] = if enabled: "none" else: "double2"
@@ -367,7 +397,7 @@ proc setInterlacing(c: Config, enabled: bool) =
 
 # }}}
 # {{{ setCrtEmulation()
-proc setCrtEmulation(c: Config, enabled: bool) =
+proc setCrtEmulation(c: UaeConfig, enabled: bool) =
 
   proc setFilter(s: string) =
     c.cfg["gfx_filter"] = s
@@ -380,7 +410,7 @@ proc setCrtEmulation(c: Config, enabled: bool) =
 
 # }}}
 # {{{ setSharperPal()
-proc setSharperPal(c: Config, sharperPal: bool) =
+proc setSharperPal(c: UaeConfig, sharperPal: bool) =
 
   proc getFilter(): string =
     c.cfg.getOrDefault("gfx_filter", "")
@@ -398,7 +428,7 @@ proc setSharperPal(c: Config, sharperPal: bool) =
 
 # }}}
 # {{{ setShaderQuality()
-proc setShaderQuality(c: Config, shaderQuality: ShaderQuality) =
+proc setShaderQuality(c: UaeConfig, shaderQuality: ShaderQuality) =
   case shaderQuality
   of sqFast:
     c.cfg["gfx_filter_mode"]  = "1x"
@@ -410,7 +440,7 @@ proc setShaderQuality(c: Config, shaderQuality: ShaderQuality) =
 
 # }}}
 # {{{ setVsyncMode()
-proc setVsyncMode(c: Config, vsyncMode: VsyncMode) =
+proc setVsyncMode(c: UaeConfig, vsyncMode: VsyncMode) =
 
   proc setDoubleBuffering() =
     c.cfg["gfx_backbuffers"] = "1"
@@ -436,7 +466,7 @@ proc setVsyncMode(c: Config, vsyncMode: VsyncMode) =
 
 # }}}
 # {{{ setLaglessVsyncSlices()
-proc setLaglessVsyncSlices(c: Config, vsyncSlices: string) =
+proc setLaglessVsyncSlices(c: UaeConfig, vsyncSlices: string) =
 
   let vsyncMode = case c.cfg.getOrDefault("gfx_vsync", "false"):
     of "autoswitch":
@@ -460,7 +490,7 @@ proc toOpt[T](a: tuple[value: T, set: bool]): Option[T] =
 
 # }}}
 # {{{ applySettings*()
-proc applySettings*(cfg: Config, settings: Settings) =
+proc applySettings*(cfg: UaeConfig, settings: Settings) =
   with settings.display:
     if displayMode.set:
       cfg.setDisplayMode(displayMode.value)

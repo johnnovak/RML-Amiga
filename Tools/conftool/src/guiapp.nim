@@ -1,7 +1,10 @@
 import std/lenientops
+import std/logging as log except Level
 import std/options
 import std/os
+import std/parsecfg
 import std/paths
+import std/strformat
 import std/strutils
 
 import glad/gl
@@ -23,9 +26,16 @@ var vg: NVGContext
 
 type
   App = object
+    config:       Config
     currTab:      MainTab
     applyTarget:  ApplyTarget
     helpText:     string
+
+    logFile:      File
+    activeDialog: Dialog
+
+    errorMsg:         string
+    detailedErrorMsg: string
 
   MainTab = enum
     mtDisplay = "Display"
@@ -37,8 +47,12 @@ type
     atAllGames = "All games"
     atAllDemos = "All demos"
 
-var app: App
+  Dialog = enum
+    dlgNone
+    dlgApplyError
 
+
+var app: App
 
 var settings: Settings
 
@@ -90,8 +104,97 @@ const
 
 # }}}
 
+# {{{ Logging
+
+const LogFileName = "conftool.log"
+
+# {{{ rollLogFile()
+proc rollLogFile() =
+  let fileNames = @[
+    LogFileName & ".bak3",
+    LogFileName & ".bak2",
+    LogFileName & ".bak1",
+    LogFileName
+  ]
+
+  for i, fname in fileNames:
+    if fileExists(fname):
+      if i == 0:
+        discard tryRemoveFile(fname)
+      else:
+        try:
+          moveFile(fname, fileNames[i-1])
+        except CatchableError:
+          discard
+
+# }}}
+# {{{ initLogger()
+proc initLogger() =
+  rollLogFile()
+  app.logFile = open(LogFileName, fmWrite)
+
+  var fileLog = newFileLogger(
+    app.logFile,
+    fmtStr = "[$levelname] $date $time - ",
+    levelThreshold = if defined(DEBUG): lvlDebug else: lvlInfo
+  )
+
+  addHandler(fileLog)
+
+# }}}
+# {{{ logError()
+proc logError(e: ref Exception, msgPrefix: string = "") =
+  var msg = "Error message: " & e.msg & "\n\nStack trace:\n" & getStackTrace(e)
+  if msgPrefix != "":
+    msg = msgPrefix & "\n" & msg
+
+  log.error(msg)
+
+# }}}
+
+# }}}
+
+# {{{ closeDialog()
+proc closeDialog() =
+  koi.closeDialog()
+  app.activeDialog = dlgNone
+
+# }}}
+# {{{ ApplyErrorDialog
+proc openApplyErrorDialog() =
+  app.activeDialog = dlgApplyError
+
+proc applyErrorDialog() =
+  const
+    DlgWidth  = 420.0
+    DlgHeight = 380.0
+    DlgPadX   = 20.0
+
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"Error applying changes")
+
+  var
+    x = DlgPadX
+    y = 50.0
+    w = DlgWidth-DlgPadX*2
+
+  koi.label(x, y, w, h=30, app.errorMsg)
+  y += 40
+
+  koi.textArea(x, y, w, h=DlgHeight-150, app.detailedErrorMsg,
+               disabled=true)
+
+  const ButtonWidth = 75
+  if koi.button(x=(DlgWidth - ButtonWidth) / 2, y=DlgHeight-42, w=75, h=24, "Close"):
+    closeDialog()
+
+  koi.endDialog()
+
+# }}}
+#
 # {{{ applyAction()
-proc applyAction() =
+
+# Returns failed paths
+proc applyAction(): seq[Path] =
   # TODO
   let basePath = "../../Configurations"
 
@@ -102,11 +205,19 @@ proc applyAction() =
 
   let configPaths = getConfigPaths(path.Path)
 
-  for p in configPaths:
-    # TODO error handling
-    let cfg = readConfig(p)
-    cfg.applySettings(settings)
-    cfg.writeConfig(p)
+  var failedPaths: seq[Path] = @[]
+
+  for path in configPaths:
+    try:
+      let cfg = readUaeConfig(path)
+      cfg.applySettings(settings)
+      cfg.write(path)
+
+    except CatchableError as e:
+      logError(e, fmt"Error applying config, path: {path}")
+      failedPaths.add(path)
+
+  failedPaths
 
 # }}}
 
@@ -115,7 +226,8 @@ template setHelpText(s: string) =
   let y = koi.autoLayoutNextY()
   let oy = koi.drawOffset().oy
 
-  if koi.my() >= oy + y and koi.my() <= oy + y + 22:
+  if not koi.isDialogOpen() and (koi.my() >= oy + y and
+                                 koi.my() <= oy + y + 22):
     const text = s.unindent.replace("\n", " ")
     app.helpText = text
 
@@ -322,39 +434,65 @@ proc renderTabs(x, y: float) =
 proc renderUI() =
   koi.beginFrame()
 
+  let winWidth  = koi.winWidth()
+  let winHeight = koi.winHeight()
+
+  const
+    PadX = 25.0
+    ButtonHeight = 24.0
+
   var
-    x = 25.0
+    x = PadX
     y = 25.0
 
   # Clear background
   vg.beginPath()
-  vg.rect(0, 0, koi.winWidth(), koi.winHeight())
+  vg.rect(0, 0, winWidth, winHeight)
   vg.fillColor(gray(0.28))
   vg.fill()
 
   # Tabs
-  koi.radioButtons(x, y, 390, 24, app.currTab)
+  const TabWidth = 390.0
+  x = (winWidth - TabWidth) / 2
+  koi.radioButtons(x, y, w=TabWidth, h=ButtonHeight, app.currTab)
 
+  x = PadX
   y += 60
   renderTabs(x, y)
 
   # Help text
   y += 450
-  koi.textArea(x, y, 390, 150, app.helpText, disabled=true)
+  koi.textArea(x, y, w=winWidth-2*PadX, h=150, app.helpText, disabled=true)
 
   # Action buttons
-  y = koi.winHeight() - 22 - 25
+  y = winHeight - 22 - 25
 
-  if koi.button(x, y, 75, 24, "Reset"):
+  if koi.button(x, y, w=75, h=ButtonHeight, "Reset"):
     discard
 
-  if koi.button(x + 83, y, 75, 24, "Load"):
+  if koi.button(x+83, y, w=75, h=ButtonHeight, "Load"):
     discard
 
-  if koi.button(koi.winWidth() - 90 - x - 98, y, 90, 24, "Apply to"):
-    applyAction()
+  if koi.button(winWidth-90-x-98, y, w=90, h=ButtonHeight, "Apply to"):
+    let failedPaths = applyAction()
 
-  koi.dropDown(koi.winWidth() - 90 - x, y, 90, 24, app.applyTarget)
+    if failedPaths.len > 0:
+      app.errorMsg = "Could not apply changes to the below configs:"
+
+      app.detailedErrorMsg = ""
+      for p in failedPaths:
+        let (path, name, ext) = p.splitFile
+        if app.detailedErrorMsg != "":
+           app.detailedErrorMsg &= "\n"
+        app.detailedErrorMsg &= $name
+
+      openApplyErrorDialog()
+
+  koi.dropDown(winWidth-90-x, y, w=90, h=ButtonHeight, app.applyTarget)
+
+  case app.activeDialog
+  of dlgNone:       discard
+  of dlgApplyError: applyErrorDialog()
 
   koi.endFrame()
 
@@ -377,8 +515,8 @@ proc framebufSizeCb(win: Window, size: tuple[w, h: int32]) =
 # {{{ createWindow()
 proc createWindow(): Window =
   var cfg           = DefaultOpenglWindowConfig
-  cfg.size          = (w: 440, h: 760)
-  cfg.title         = "RML Amiga Configuration Tool"
+  cfg.size          = (w: 480, h: 760)
+  cfg.title         = fmt"RML Amiga Configuration Tool (v{AppVersion})"
   cfg.resizable     = false
   cfg.visible       = false
   cfg.nMultiSamples = 4
@@ -399,8 +537,11 @@ proc loadFonts() =
   proc loadFont(fontName: string, path: string): Font =
     try:
       vg.createFont(fontName, path)
+
     except CatchableError as e:
-      raise newException(IOError, "Cannot load font '{path}'")
+      let msg = "Cannot load font '{path}'"
+      logError(e, msg)
+      raise newException(IOError, msg)
 
   discard         loadFont("sans",       "data" / "Roboto-Regular.ttf")
   let boldFont  = loadFont("sans-bold",  "data" / "Roboto-Bold.ttf")
@@ -497,11 +638,15 @@ proc crashHandler(e: ref Exception) =
   when not defined(DEBUG):
     discard osdialog_message(mblError, mbbOk, msg.cstring)
 
+  logError(e, "A fatal error has occured, exiting program.")
   quit(QuitFailure)
 
 # }}}
+
 # {{{ main()
 proc main() =
+  initLogger()
+
   try:
     let win = init()
 
