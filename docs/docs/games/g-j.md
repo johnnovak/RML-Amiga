@@ -40,12 +40,12 @@
 
 - Needs a gamepad (it's very hard to play with keyboard mappings).
 
-- In this CD32 version, you can only save in the Hall of Worlds by finding a
-  special book. Unfortunately, this saving mechanism is buggy---it's possible
-  to end up in a state where you're unable to revisit other worlds, preventing
-  you from completing the game. Using save states is recommended instead
-  (which isn't considered cheating because you can save anywhere in the OCS
-  and AGA versions).
+- You can only save in the Hall of Worlds by finding a
+  special book. Unfortunately, this saving mechanism is buggy---it's
+  possible to end up in a state where you're unable to revisit other worlds,
+  preventing you from completing the game. Using save states is recommended
+  instead (which isn't considered cheating because you can save anywhere in
+  the OCS and AGA versions).
 
 
 ## IK+
@@ -53,7 +53,19 @@
 - Saves the high scores to the game disk.
 
 
+## Ishar 1: Legend of the Fortress (AGA)
+
+- Multi-language release (English, French, German, Italian).
+
+
+## Ishar 2: Messengers of Doom (AGA)
+
+- Multi-language release (English, French, German).
+
+
 ## Ishar 3: The Seven Gates of Infinity (AGA)
+
+- Multi-language release (English, French, German).
 
 - The intro can't be skipped. Pressing ++esc++ during the intro will hang the
   game; use the "skip intro" save state instead.
