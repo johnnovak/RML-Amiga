@@ -86,6 +86,12 @@
 - This version has the manual-based copy protection removed by the developer.
 
 
+## Simon the Sorcerer (CD32)
+
+- Extras compared to the original: full voice acting.
+- Can be played with the mouse.
+
+
 ## Space Quest I: The Sarien Encounter (AGI)
 
 - Floppy game that saves to the hard drive.
@@ -127,6 +133,11 @@
 ## Total Eclipse
 
 - Saves to the game disk.
+
+
+## Transarctica (AGA)
+
+- Multi-language release (English, French, German).
 
 
 ## Treasures of the Savage Frontier

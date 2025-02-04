@@ -17,6 +17,14 @@
 - Save disk is in drive DF3:
 
 
+## Cannon Fodder (CD32)
+
+- Extras compared to the origina: intro movie.
+
+- Modified version by cd32.co.uk that replaces the MPEG intro with CDXL-format
+  video (can be played on a standard CD32 without the rare FMV module).
+
+
 ## Captive
 
 - v1.2, contains a number important bug and crash fixes.

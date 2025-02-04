@@ -44,6 +44,7 @@
 
 ## Defender of the Crown II (CD32)
 
+- Multi-language release (English, French, German, Spanish, Italian).
 - Use either the mouse or a gamepad in port 2 to control the game.
 
 

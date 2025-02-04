@@ -45,6 +45,11 @@
   from a seriously disadvantaged position.
 
 
+## Pirates! Gold (CD32)
+
+- Best played with a gamepad.
+
+
 ## Pool of Radiance
 
 **WASD movement keys**
