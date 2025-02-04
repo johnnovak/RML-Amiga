@@ -106,10 +106,12 @@ nav:
     - manual/getting-started.md
     - manual/hard-drive-games.md
     - manual/floppy-games.md
+    - manual/cd32-and-cdtv-games.md
     - manual/save-states.md
     - manual/keyboard-shortcuts.md
     # - manual/folder-organisation.md
     - manual/customising-your-setup.md
+    - manual/troubleshooting.md
     - manual/useful-websites.md
     - manual/changelog.md
     - manual/thanks.md

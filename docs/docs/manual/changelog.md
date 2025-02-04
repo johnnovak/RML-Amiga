@@ -2,7 +2,7 @@
 
 ## v1.0
 
-Welcome to the first version of RML-Amiga! This initial release features a
+Welcome to the first version of RML Amiga! This initial release features a
 whopping 214 stone-cold classics for the intelligent gamer, including:
 
 - All **Delphine**, **Horrorsoft/Adventure Soft**, **ICOM**, **Magnetic
