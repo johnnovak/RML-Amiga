@@ -19,6 +19,14 @@
 - Saves to the game disk.
 
 
+## Darkseed (CD32)
+
+- CD32 extras: voice acting
+
+- The CD32 version has reduced 320&times;200 graphics instead of the
+  320&times;400 resolution of the original.
+
+
 ## Death Knights of Krynn
 
 - To start the game, double-click on the **DeathKnightsOfKrynn** disk icon in
@@ -101,9 +109,21 @@
   or when entering the name of your save game).
 
 
+## Dragonstone (CD32)
+
+- CD32 extras: CD Audio music.
+
+- Multi-language release (English, French, German).
+
+
 ## DreamWeb (AGA)
 
 - Uncensored European version.
+
+
+## Driller
+
+- Budget re-release with the manual-based copy protection check removed.
 
 
 ## Dungeon Master (v2.2)

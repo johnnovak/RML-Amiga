@@ -1,5 +1,10 @@
 # C
 
+## Cadaver
+
+- Multi-language release (English, French, German).
+
+
 ## Cadaver - The Last Supper
 
 - **The Last Supper** is an exclusive demo level featured on Zero Coverdisk 15
@@ -11,6 +16,11 @@
   bars); use warp mode to speed it up (press ++end+pause++).
 
 
+## Cadaver: The Payoff
+
+- Multi-language release (English, French, German).
+
+
 ## Cannon Fodder (OCS)
 
 - Supports four floppy drives, no disk swapping necessary.
@@ -19,10 +29,11 @@
 
 ## Cannon Fodder (CD32)
 
-- Extras compared to the origina: intro movie.
+- CD32 extras: intro movie.
 
-- Modified version by cd32.co.uk that replaces the MPEG intro with CDXL-format
-  video (can be played on a standard CD32 without the rare FMV module).
+- Modified version by **cd32.co.uk** that replaces the MPEG intro with
+  CDXL-format video (can be played on a standard CD32 without the rare FMV
+  module).
 
 
 ## Captive

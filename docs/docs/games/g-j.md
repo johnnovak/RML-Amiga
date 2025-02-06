@@ -35,17 +35,31 @@
 
 ## Heimdall 2: Into the Hall of Worlds (CD32)
 
+- CD32 extras: CD Audio music, extra animations.
+
 - This is the best version of the game that features all animations and a full
   CD Audio soundtrack.
 
 - Needs a gamepad (it's very hard to play with keyboard mappings).
 
-- You can only save in the Hall of Worlds by finding a
-  special book. Unfortunately, this saving mechanism is buggy---it's
-  possible to end up in a state where you're unable to revisit other worlds,
-  preventing you from completing the game. Using save states is recommended
-  instead (which isn't considered cheating because you can save anywhere in
-  the OCS and AGA versions).
+- You can only save in the Hall of Worlds by finding a special book.
+  Unfortunately, this saving mechanism is buggy---it's possible to end up in a
+  state where you're unable to revisit other worlds, preventing you from
+  completing the game. Using save states is recommended instead (which isn't
+  considered cheating because you can save anywhere in the OCS and AGA
+  versions).
+
+
+## Inherit the Earth (CD32)
+
+- Unreleased official English version.
+
+- The game is completable with some minor issues: movement is often sluggish,
+  the "use" command sometimes misfires (e.g., it attempts to use the object on
+  itself), and it may oocassionally crash. Make sure to save often.
+
+- To skip the lengthy intro sequence, press the red and blue controller
+  buttons.
 
 
 ## IK+

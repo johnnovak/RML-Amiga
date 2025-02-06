@@ -117,6 +117,11 @@
 - Saves to the game disk.
 
 
+## Push-Over
+
+- Multi-language release (English, French, German, Italian).
+
+
 ## Powermonger: World War 1 Edition
 
 - Insert the **original Powermonger disk** when prompted (press
@@ -171,6 +176,8 @@
 
 
 ## Rome AD92: The Pathway to Power
+
+- Multi-language release (English, French, German, Italian).
 
 - Has a single save slot only (forced "Ironman Mode"); saves the game to the
   first disk (the **boot disk**) on quit. You need to delete the save image of

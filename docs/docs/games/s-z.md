@@ -88,7 +88,8 @@
 
 ## Simon the Sorcerer (CD32)
 
-- Extras compared to the original: full voice acting.
+- CD32 extras: voice acting.
+
 - Can be played with the mouse.
 
 

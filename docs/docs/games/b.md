@@ -66,8 +66,7 @@
 
 ## Battle Chess (CD32)
 
-- Extras compared to the oringal version: CD Audio music, voice-acting, and a
-  tutorial.
+- CD32 extras: CD Audio music, voice-acting, and a tutorial.
 
 
 ## Battle Isle
@@ -85,6 +84,10 @@
 
 
 ## Beneath A Steel Sky (CD32)
+
+- CD32 extras: digitised music, voice acting.
+
+- Multi-language release (English, French, German, Italian).
 
 - This is the best version of the game that features in-game music and full
   voice acting.

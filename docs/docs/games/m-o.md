@@ -62,6 +62,7 @@
 
 ## North & South
 
+- Multi-language release (English, French, German, Spanish, Italian).
 - The action sequences are best played with a digital joystick.
 
 

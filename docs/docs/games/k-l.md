@@ -34,6 +34,14 @@
 - Save disk is in drive DF2:
 
 
+## Liberation: Captive II
+
+- CD32 extras: CD Audio music, voice acting, better graphics.
+
+- The CD32 original is vastly superior in every regard to the later Amiga
+  500/1200 version.
+
+
 ## Lost Treasures of Infocom, The
 
 - Contains all 34 Amiga Infocom releases (the 20 games included in the **The
@@ -46,12 +54,12 @@
   if you're stuck.
 
 - To start a game:
-    <div class="compact" markdown>
+    <ul class="compact" markdown>
     - Double-click on the **Infocom** disk icon.
     - Double-click on one of the category drawers.
     - Double-click on the game's name.
     - Then finally double-click on the game's start icon.
-    </div>
+    </ul>
 
 
 ## Lancelot
@@ -96,20 +104,20 @@
 
 ## Lords of Chaos
 
-The base game features the three original scenarios:
+- Multi-language release (English, French, German).
 
-<div class="compact" markdown>
-- Scenario One: The Many Coloured Land
-- Scenario Two: Slayer's Dungeon
-- Scenario Three: Ragaril's Domain
-</div>
+- The base game features the three original scenarios:
+    <ul class="compact" markdown>
+    - Scenario One: The Many Coloured Land
+    - Scenario Two: Slayer's Dungeon
+    - Scenario Three: Ragaril's Domain
+    </ul>
 
-The included expansion disk has two additional scenarios:
-
-<div class="compact" markdown>
-- Scenario Four: Islands of Iris
-- Scenario Five: Tombs of the Undead
-</div>
+- The included expansion disk has two additional scenarios:
+    <ul class="compact" markdown>
+    - Scenario Four: Islands of Iris
+    - Scenario Five: Tombs of the Undead
+    </ul>
 
 **Using the expansion disk**
 
