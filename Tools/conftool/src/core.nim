@@ -47,7 +47,6 @@ type
     windowHeight*:    tuple[value: string,        set: bool]
     resizableWindow*: tuple[value: bool,          set: bool]
     showOsd*:         tuple[value: bool,          set: bool]
-    showClock*:       tuple[value: bool,          set: bool]
 
     crtEmulation*:    tuple[value: bool,          set: bool]
     shaderQuality*:   tuple[value: ShaderQuality, set: bool]
@@ -55,6 +54,7 @@ type
     ntscScaling*:     tuple[value: NtscScaling,   set: bool]
 
     sharperPal*:      tuple[value: bool,          set: bool]
+    sharperNstc*:     tuple[value: bool,          set: bool]
     interlacing*:     tuple[value: bool,          set: bool]
     vsyncMode*:       tuple[value: VsyncMode,     set: bool]
     vsyncSlices*:     tuple[value: string,        set: bool]

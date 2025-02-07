@@ -27,15 +27,20 @@ var vg: NVGContext
 type
   App = object
     config:       Config
-    currTab:      MainTab
-    applyTarget:  ApplyTarget
-    helpText:     string
 
-    logFile:      File
+    styles:       Styles
+    currTab:      MainTab
+    helpText:     string
+    applyTarget:  ApplyTarget
     activeDialog: Dialog
 
     errorMsg:         string
     detailedErrorMsg: string
+
+    logFile:      File
+
+  Styles = object
+    helpText:     TextAreaStyle
 
   MainTab = enum
     mtDisplay = "Display"
@@ -63,7 +68,6 @@ settings.display = DisplaySettings(
     windowHeight:    ("960", false),
     resizableWindow: (true, false),
     showOsd:         (true, false),
-    showClock:       (true, false),
 
     crtEmulation:    (true, false),
     shaderQuality:   (sqBest, false),
@@ -71,6 +75,7 @@ settings.display = DisplaySettings(
     ntscScaling:     (ntscScaling30, false),
 
     sharperPal:      (false, false),
+    sharperNstc:     (false, false),
     interlacing:     (false, false),
     vsyncMode:       (vmStandard, false),
     vsyncSlices:     ("2", false)
@@ -79,8 +84,8 @@ settings.display = DisplaySettings(
 const
   DialogLayoutParams = AutoLayoutParams(
     itemsPerRow:       2,
-    rowWidth:          340.0,
-    labelWidth:        205.0,
+    rowWidth:          320.0,
+    labelWidth:        190.0,
     sectionPad:        0.0,
     leftPad:           0.0,
     rightPad:          0.0,
@@ -226,8 +231,13 @@ template setHelpText(s: string) =
   let y = koi.autoLayoutNextY()
   let oy = koi.drawOffset().oy
 
-  if not koi.isDialogOpen() and (koi.my() >= oy + y and
-                                 koi.my() <= oy + y + 22):
+  let mouseInsideWindow = koi.mouseInside(x=0, y=0,
+                                          w=koi.winWidth(), h=koi.winHeight())
+
+  if mouseInsideWindow and not koi.isDialogOpen() and
+    (koi.my() >= oy + y and
+     koi.my() <= oy + y + 22):
+
     const text = s.unindent.replace("\n", " ")
     app.helpText = text
 
@@ -248,7 +258,7 @@ proc renderDisplayTab() =
       setHelpText("Set the window size in windowed mode.")
       let y = koi.autoLayoutNextY()
 
-      koi.nextItemWidth(60)
+      koi.nextItemWidth(55)
       koi.textField(
         settings.display.windowWidth.value,
         tooltip = "",
@@ -260,14 +270,14 @@ proc renderDisplayTab() =
         disabled = not settings.display.windowWidth.set
       )
 
-      koi.label(x=256, y, w=20, h=22, "x")
+      koi.label(x=251, y, w=20, h=22, "x")
 
       koi.textField(
-        x=270, y, w=60, h=22,
+        x=265, y, w=55, h=22,
         settings.display.windowHeight.value,
         constraint = TextFieldConstraint(
           kind:   tckInteger,
-          minInt: 640,
+          minInt: 480,
           maxInt: 9999
         ).some,
         disabled = not settings.display.windowWidth.set
@@ -293,14 +303,6 @@ proc renderDisplayTab() =
       koi.nextItemHeight(CheckBoxSize)
       koi.checkBox(settings.display.showOsd.value,
                    disabled=not settings.display.showOsd.set)
-
-      koi.toggleButton(settings.display.showClock.set, "Show clock")
-      setHelpText("""
-        Show clock in the top-right corner.
-      """)
-      koi.nextItemHeight(CheckBoxSize)
-      koi.checkBox(settings.display.showClock.value,
-                   disabled = not settings.display.showClock.set)
 
     group:
       koi.toggleButton(settings.display.palScaling.set, "PAL scaling")
@@ -345,17 +347,29 @@ proc renderDisplayTab() =
       koi.dropDown(settings.display.shaderQuality.value,
                    disabled = not settings.display.shaderQuality.set)
 
-      koi.toggleButton(settings.display.sharperPal.set, "Sharper PAL CRT emulation")
+      koi.toggleButton(settings.display.sharperPal.set, "Sharper PAL emulation")
       setHelpText("""
         Enable maximum horizontal sharpness for PAL CRT emulation. This
         increases the legibility of 80-column text (e.g., in text adventures),
-        but reduces the benefical 'natural antialiasing' effect of the CRT
-        emulation. The option only exists for PAL because the NTSC shader
-        doesn't benefit from it.
-      """)
+        and makes the image appear sharper at higher scaling factors. The
+        drawback is it reduces the benefical 'natural antialiasing' effects of
+        the CRT emulation (the pixels will appear more like distinct
+        rectangles).""")
       koi.nextItemHeight(CheckBoxSize)
       koi.checkBox(settings.display.sharperPal.value,
                    disabled = not settings.display.sharperPal.set)
+
+      koi.toggleButton(settings.display.sharperNstc.set, "Sharper NSTC emulation")
+      setHelpText("""
+        Enable maximum horizontal sharpness for PAL CRT emulation. This
+        increases the legibility of 80-column text (e.g., in text adventures),
+        and makes the image appear sharper at higher scaling factors. The
+        drawback is it reduces the benefical 'natural antialiasing' effects of
+        the CRT emulation (the pixels will appear more like distinct
+        rectangles).""")
+      koi.nextItemHeight(CheckBoxSize)
+      koi.checkBox(settings.display.sharperNstc.value,
+                   disabled = not settings.display.sharperNstc.set)
 
       koi.toggleButton(settings.display.interlacing.set, "Interlacing emulation")
       setHelpText("""
@@ -463,8 +477,9 @@ proc renderUI() =
 
   # Help text
   x= PadX
-  y += 450
-  koi.textArea(x, y, w=winWidth-2*PadX, h=150, app.helpText, disabled=true)
+  y += 460
+  koi.textArea(x, y, w=winWidth-2*PadX, h=150, app.helpText, disabled=true,
+               style=app.styles.helpText)
 
   # Action buttons
   y = winHeight - 22 - 25
@@ -585,6 +600,12 @@ proc setWidgetStyles() =
     align = haLeft
 
   koi.setDefaultToggleButtonStyle(tbs)
+
+  # Help text
+  app.styles.helpText = getDefaultTextAreaStyle()
+  with app.styles.helpText:
+    bgFillColorDisabled = gray(0.22)
+    textColorDisabled   = gray(0.8)
 
 # }}}
 
