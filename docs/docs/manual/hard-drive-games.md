@@ -105,7 +105,7 @@ drive and to apply compatibility fixes to certain Amiga 500 games so they can
 run on later models like the Amiga 1200.
 
 This means WHDLoad conversions are effectively cracked and patched games, not
-originals. RML-Amiga uses WHDLoad games only as a last resort because removing
+originals. RML Amiga uses WHDLoad games only as a last resort because removing
 the copy protection and altering the games' code can introduce all sorts of
 problems (including making the game uncompletable which is really hard to test
 in long 50+ hour RPGs).

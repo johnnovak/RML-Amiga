@@ -11,10 +11,6 @@ import std/tables
 
 import with
 
-# TODO
-import random
-var rand = initRand()
-
 const
   AppVersion* = staticRead("../CURRENT_VERSION").strip
 
@@ -28,10 +24,13 @@ const CommentKeyPrefix = "#comment-"
 # }}}
 # {{{ Settings
 const
-  NoFilter       = "D3D:Point-Prescale.fx"
-  PalFilter      = "D3D:CRT-A2080-PAL.fx"
-  PalSharpFilter = "D3D:CRT-A2080-PAL-Sharp.fx"
-  NtscFilter     = "D3D:CRT-A2080-NTSC.fx"
+  NoFilter        = "D3D:Point-Prescale.fx"
+
+  PalFilter       = "D3D:CRT-A2080-PAL.fx"
+  PalSharpFilter  = "D3D:CRT-A2080-PAL-Sharp.fx"
+
+  NtscFilter      = "D3D:CRT-A2080-NTSC.fx"
+  NtscSharpFilter = "D3D:CRT-A2080-NSTC-Sharp.fx"
 
 type
   Settings* = object
@@ -47,7 +46,6 @@ type
     windowHeight*:    tuple[value: string,        set: bool]
     resizableWindow*: tuple[value: bool,          set: bool]
     showOsd*:         tuple[value: bool,          set: bool]
-    showClock*:       tuple[value: bool,          set: bool]
 
     crtEmulation*:    tuple[value: bool,          set: bool]
     shaderQuality*:   tuple[value: ShaderQuality, set: bool]
@@ -55,6 +53,7 @@ type
     ntscScaling*:     tuple[value: NtscScaling,   set: bool]
 
     sharperPal*:      tuple[value: bool,          set: bool]
+    sharperNtsc*:     tuple[value: bool,          set: bool]
     interlacing*:     tuple[value: bool,          set: bool]
     vsyncMode*:       tuple[value: VsyncMode,     set: bool]
     vsyncSlices*:     tuple[value: string,        set: bool]
@@ -92,14 +91,14 @@ type
   # {{{ Audio settings
   # -------------------------------------------------------------------------
   AudioSettings* = object
-    audioDevice:      AudioDevice
-    sampleRate:       SampleRate
-    soundBufferSize:  SoundBufferSize
-    volume:           Natural
-    stereoSeparation: StereoSeparation
-    floppySounds:     bool
+    audioInterface*:   tuple[value: AudioInterface,    set: bool]
+    sampleRate*:       tuple[value: SampleRate,        set: bool]
+    soundBufferSize*:  tuple[value: SoundBufferSize,   set: bool]
+    volume*:           tuple[value: string,            set: bool]
+    stereoSeparation*: tuple[value: StereoSeparation,  set: bool]
+    floppySounds*:     tuple[value: bool,              set: bool]
 
-  AudioDevice* = enum
+  AudioInterface* = enum
     adDirectSound = "DirectSound"
     adWasapi      = "WASAPI"
 
@@ -247,9 +246,6 @@ proc readUaeConfig*(file: Path): UaeConfig =
 proc write*(c: UaeConfig, path: Path) =
   let f = open($path, fmWrite)
 
-  if rand(10) > 5:
-      raise newException(IOError, "Error writing config")
-
   for (key, val) in c.cfg.pairs():
     if key.startsWith(CommentKeyPrefix):
       f.write(val)
@@ -263,7 +259,73 @@ proc write*(c: UaeConfig, path: Path) =
 
 # }}}
 
+# {{{ toOpt()
+proc toOpt[T](a: tuple[value: T, set: bool]): Option[T] =
+  if a.set: a.value.some
+  else: T.none
+
+# }}}
+# {{{ findByValue()
+proc findByValue[K, V](t: Table[K, V], value: V): Option[K] =
+  for (k, v) in t.pairs:
+    if v == value:
+      return k.some
+  return K.none
+
+# }}}
+
 # {{{ Set display settings
+# {{{ isLaced()
+proc isLaced(c: UaeConfig): bool =
+  c.cfg.getOrDefault("gfx_linemode", "double2") == "none"
+
+# }}}
+# {{{ getScalingFactors()
+proc getScalingFactors(c: UaeConfig): tuple[horiz, vert: int] =
+  const Default = 1000.0
+
+  let h = c.cfg.getOrDefault("gfx_filter_horiz_zoomf", $Default)
+            .parseFloatOrDefault(Default)
+
+  let v = c.cfg.getOrDefault("gfx_filter_vert_zoomf",  $Default)
+            .parseFloatOrDefault(Default)
+
+  (h.int, v.int)
+
+# }}}
+# {{{ getFilter()
+proc getFilter(c: UaeConfig): string =
+  c.cfg.getOrDefault("gfx_filter", "")
+
+# }}}
+# {{{ getPalScaling()
+proc getPalScaling(c: UaeConfig): Option[PalScaling] =
+  let f = c.getScalingFactors()
+  if c.isLaced(): lacedPalScalingFactors.findByValue(f)
+  else:                palScalingFactors.findByValue(f)
+
+# }}}
+# {{{ getNtscScaling()
+proc getNtscScaling(c: UaeConfig): Option[NtscScaling] =
+  let f = c.getScalingFactors()
+  if c.isLaced(): lacedNtscScalingFactors.findByValue(f)
+  else:                ntscScalingFactors.findByValue(f)
+
+# }}}
+# {{{ getVideoStandard()
+type VideoStandard = enum
+  vsPal, vsNtsc, vsNtsc50
+
+proc getVideoStandard(c: UaeConfig): VideoStandard =
+  let isNtsc = c.cfg.getOrDefault("ntsc", "false").parseBoolOrDefault(false)
+  if isNtsc:
+    vsNtsc
+  else:
+    if c.getNtscScaling().isSome: vsNtsc50
+    else: vsPal
+
+# }}}
+
 # {{{ setDisplayMode()
 proc setDisplayMode(c: UaeConfig, dm: DisplayMode) =
   c.cfg["gfx_fullscreen_amiga"] = case dm
@@ -291,59 +353,6 @@ proc setShowOsd(c: UaeConfig, showOsd: bool) =
   c.cfg["show_leds"] = $showOsd
 
 # }}}
-# {{{ isLaced()
-proc isLaced(c: UaeConfig): bool =
-  c.cfg.getOrDefault("gfx_linemode", "double2") == "none"
-
-# }}}
-# {{{ getScalingFactors()
-proc getScalingFactors(c: UaeConfig): tuple[horiz, vert: int] =
-  const Default = 1000.0
-
-  let h = c.cfg.getOrDefault("gfx_filter_horiz_zoomf", $Default)
-            .parseFloatOrDefault(Default)
-
-  let v = c.cfg.getOrDefault("gfx_filter_vert_zoomf",  $Default)
-            .parseFloatOrDefault(Default)
-
-  (h.int, v.int)
-
-# }}}
-# {{{ findByValue()
-proc findByValue[K, V](t: Table[K, V], value: V): Option[K] =
-  for (k, v) in t.pairs:
-    if v == value:
-      return k.some
-  return K.none
-
-# }}}
-# {{{ getPalScaling()
-proc getPalScaling(c: UaeConfig): Option[PalScaling] =
-  let f = getScalingFactors(c)
-  if isLaced(c): lacedPalScalingFactors.findByValue(f)
-  else:               palScalingFactors.findByValue(f)
-
-# }}}
-# {{{ getNtscScaling()
-proc getNtscScaling(c: UaeConfig): Option[NtscScaling] =
-  let f = getScalingFactors(c)
-  if isLaced(c): lacedNtscScalingFactors.findByValue(f)
-  else:               ntscScalingFactors.findByValue(f)
-
-# }}}
-# {{{ getVideoStandard()
-type VideoStandard = enum
-  vsPal, vsNtsc, vsNtsc50
-
-proc getVideoStandard(c: UaeConfig): VideoStandard =
-  let isNtsc = c.cfg.getOrDefault("ntsc", "false").parseBoolOrDefault(false)
-  if isNtsc:
-    vsNtsc
-  else:
-    if getNtscScaling(c).isSome: vsNtsc50
-    else: vsPal
-
-# }}}
 # {{{ setScalingFactors()
 proc setScalingFactors(c: UaeConfig, f: tuple[horiz, vert: int]) =
   c.cfg["gfx_filter_horiz_zoomf"] = fmt"{f.horiz}.000000"
@@ -354,24 +363,24 @@ proc setScalingFactors(c: UaeConfig, f: tuple[horiz, vert: int]) =
 proc setScaling(c: UaeConfig, palScaling:  Option[PalScaling],
                               ntscScaling: Option[NtscScaling]) =
 
-  case getVideoStandard(c)
+  case c.getVideoStandard()
   of vsPal:
     if palScaling.isSome:
       let s = if palScaling.isSome: palScaling.get
-              else: getPalScaling(c).get(palScaling30)
+              else: c.getPalScaling().get(palScaling30)
 
-      let f = if isLaced(c): lacedPalScalingFactors[s]
-              else:               palScalingFactors[s]
-      setScalingFactors(c, f)
+      let f = if c.isLaced(): lacedPalScalingFactors[s]
+              else:                 palScalingFactors[s]
+      c.setScalingFactors(f)
 
   of vsNtsc, vsNtsc50:
     if ntscScaling.isSome:
       let s = if ntscScaling.isSome: ntscScaling.get
-              else: getNtscScaling(c).get(ntscScaling30)
+              else: c.getNtscScaling().get(ntscScaling30)
 
-      let f = if isLaced(c): lacedNtscScalingFactors[s]
+      let f = if c.isLaced(): lacedNtscScalingFactors[s]
               else:               ntscScalingFactors[s]
-      setScalingFactors(c, f)
+      c.setScalingFactors(f)
 
 # }}}
 # {{{ setInterlacing()
@@ -380,51 +389,55 @@ proc setInterlacing(c: UaeConfig, enabled: bool) =
   proc setInterlacing(enabled: bool) =
     c.cfg["gfx_linemode"] = if enabled: "none" else: "double2"
 
-  case getVideoStandard(c)
+  case c.getVideoStandard()
   of vsPal:
-    let s = getPalScaling(c).get(palScaling30)
+    let s = c.getPalScaling().get(palScaling30)
     let f = if enabled: lacedPalScalingFactors[s]
             else:            palScalingFactors[s]
-    setScalingFactors(c, f)
+    c.setScalingFactors(f)
     setInterlacing(enabled)
 
   of vsNtsc, vsNtsc50:
-    let s = getNtscScaling(c).get(ntscScaling30)
+    let s = c.getNtscScaling().get(ntscScaling30)
     let f = if enabled: lacedNtscScalingFactors[s]
             else:            ntscScalingFactors[s]
-    setScalingFactors(c, f)
+    c.setScalingFactors(f)
     setInterlacing(enabled)
+
+# }}}
+# {{{ setFilter()
+proc setFilter(c: UaeConfig, s: string) =
+  c.cfg["gfx_filter"] = s
 
 # }}}
 # {{{ setCrtEmulation()
 proc setCrtEmulation(c: UaeConfig, enabled: bool) =
-
-  proc setFilter(s: string) =
-    c.cfg["gfx_filter"] = s
-
   if enabled:
-    case getVideoStandard(c)
-    of vsPal:            setFilter(PalFilter)
-    of vsNtsc, vsNtsc50: setFilter(NtscFilter)
-  else:                  setFilter(NoFilter)
+    case c.getVideoStandard()
+    of vsPal:            c.setFilter(PalFilter)
+    of vsNtsc, vsNtsc50: c.setFilter(NtscFilter)
+  else:                  c.setFilter(NoFilter)
 
 # }}}
 # {{{ setSharperPal()
 proc setSharperPal(c: UaeConfig, sharperPal: bool) =
-
-  proc getFilter(): string =
-    c.cfg.getOrDefault("gfx_filter", "")
-
-  proc setFilter(s: string) =
-    c.cfg["gfx_filter"] = s
-
-  case getVideoStandard(c)
+  case c.getVideoStandard()
   of vsPal:
-    if getFilter() in @[PalFilter, PalSharpFilter]:
-      setFilter(if sharperPal: PalSharpFilter
-                else:          PalFilter)
+    if c.getFilter() in @[PalFilter, PalSharpFilter]:
+      c.setFilter(if sharperPal: PalSharpFilter else: PalFilter)
   of vsNtsc, vsNtsc50:
     discard
+
+# }}}
+# {{{ setSharperNtsc()
+proc setSharperNtsc(c: UaeConfig, sharperNtsc: bool) =
+  case c.getVideoStandard()
+  of vsPal:
+    discard
+
+  of vsNtsc, vsNtsc50:
+    if c.getFilter() in @[NtscFilter, NtscSharpFilter]:
+      c.setFilter(if sharperNtsc: NtscSharpFilter else: NtscFilter)
 
 # }}}
 # {{{ setShaderQuality()
@@ -483,12 +496,6 @@ proc setLaglessVsyncSlices(c: UaeConfig, vsyncSlices: string) =
 # }}}
 # }}}
 
-# {{{ toOpt()
-proc toOpt[T](a: tuple[value: T, set: bool]): Option[T] =
-  if a.set: a.value.some
-  else: T.none
-
-# }}}
 # {{{ applySettings*()
 proc applySettings*(cfg: UaeConfig, settings: Settings) =
   with settings.display:
@@ -503,15 +510,16 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
 
     if showOsd.set: cfg.setShowOsd(showOsd.value)
 
-    # TODO
-#    if showClock.set: c.setShowClock(showClock.value)
-
     if crtEmulation.set:
       cfg.setCrtEmulation(crtEmulation.value)
 
     if sharperPal.set:
       # Must be called after `setCrtEmulation`
       cfg.setSharperPal(sharperPal.value)
+
+    if sharperNtsc.set:
+      # Must be called after `setCrtEmulation`
+      cfg.setSharperNtsc(sharperNtsc.value)
 
     if shaderQuality.set:
       cfg.setShaderQuality(shaderQuality.value)

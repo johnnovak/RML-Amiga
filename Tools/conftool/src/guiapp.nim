@@ -27,15 +27,20 @@ var vg: NVGContext
 type
   App = object
     config:       Config
-    currTab:      MainTab
-    applyTarget:  ApplyTarget
-    helpText:     string
 
-    logFile:      File
+    styles:       Styles
+    currTab:      MainTab
+    helpText:     string
+    applyTarget:  ApplyTarget
     activeDialog: Dialog
 
     errorMsg:         string
     detailedErrorMsg: string
+
+    logFile:      File
+
+  Styles = object
+    helpText:     TextAreaStyle
 
   MainTab = enum
     mtDisplay = "Display"
@@ -56,31 +61,40 @@ var app: App
 
 var settings: Settings
 
-# default
+# Defaults
 settings.display = DisplaySettings(
-    displayMode:     (dmFullWindow, false),
-    windowWidth:     ("1280", false),
-    windowHeight:    ("960", false),
-    resizableWindow: (true, false),
-    showOsd:         (true, false),
-    showClock:       (true, false),
+  displayMode:      (dmFullWindow,  false),
+  windowWidth:      ("1280",        false),
+  windowHeight:     ("960",         false),
+  resizableWindow:  (true,          false),
+  showOsd:          (true,          false),
 
-    crtEmulation:    (true, false),
-    shaderQuality:   (sqBest, false),
-    palScaling:      (palScaling30, false),
-    ntscScaling:     (ntscScaling30, false),
+  crtEmulation:     (true,          false),
+  shaderQuality:    (sqBest,        false),
+  palScaling:       (palScaling30,  false),
+  ntscScaling:      (ntscScaling30, false),
 
-    sharperPal:      (false, false),
-    interlacing:     (false, false),
-    vsyncMode:       (vmStandard, false),
-    vsyncSlices:     ("2", false)
+  sharperPal:       (false,         false),
+  sharperNtsc:      (false,         false),
+  interlacing:      (false,         false),
+  vsyncMode:        (vmStandard,    false),
+  vsyncSlices:      ("2",           false)
+)
+
+settings.audio = AudioSettings(
+  audioInterface:   (adDirectSound, false),
+  sampleRate:       (sr48000,       false),
+  soundBufferSize:  (sbs4,          false),
+  volume:           ("100",         false),
+  stereoSeparation: (ss50,          false),
+  floppySounds:     (true,          false)
 )
 
 const
   DialogLayoutParams = AutoLayoutParams(
     itemsPerRow:       2,
-    rowWidth:          340.0,
-    labelWidth:        205.0,
+    rowWidth:          320.0,
+    labelWidth:        190.0,
     sectionPad:        0.0,
     leftPad:           0.0,
     rightPad:          0.0,
@@ -190,7 +204,7 @@ proc applyErrorDialog() =
   koi.endDialog()
 
 # }}}
-#
+
 # {{{ applyAction()
 
 # Returns failed paths
@@ -226,184 +240,249 @@ template setHelpText(s: string) =
   let y = koi.autoLayoutNextY()
   let oy = koi.drawOffset().oy
 
-  if not koi.isDialogOpen() and (koi.my() >= oy + y and
-                                 koi.my() <= oy + y + 22):
+  let mouseInsideWindow = koi.mouseInside(x=0, y=0,
+                                          w=koi.winWidth(), h=koi.winHeight())
+
+  if mouseInsideWindow and not koi.isDialogOpen() and
+    (koi.my() >= oy + y and
+     koi.my() <= oy + y + 22):
+
     const text = s.unindent.replace("\n", " ")
     app.helpText = text
 
 # }}}
 # {{{ renderDisplayTab()
 proc renderDisplayTab() =
-    group:
-      koi.toggleButton(settings.display.displayMode.set, "Display mode")
-      setHelpText("""
-        Set the default display mode. You can always toggle between 'Windowed'
-        and 'Full-windowed' with End+12. Use 'Fullscreen' for the best results
-        with lagless vsync enabled.
-      """)
-      koi.dropDown(settings.display.displayMode.value,
-                   disabled = not settings.display.displayMode.set)
+  group:
+    koi.toggleButton(settings.display.displayMode.set, "Display mode")
+    setHelpText("""
+      Set the default display mode. You can always toggle between 'Windowed'
+      and 'Full-windowed' with End+12. Use 'Fullscreen' for the best results
+      with lagless vsync enabled.
+    """)
+    koi.dropDown(settings.display.displayMode.value,
+                 disabled = not settings.display.displayMode.set)
 
-      koi.toggleButton(settings.display.windowWidth.set, "Window size")
-      setHelpText("Set the window size in windowed mode.")
-      let y = koi.autoLayoutNextY()
+    koi.toggleButton(settings.display.windowWidth.set, "Window size")
+    setHelpText("Set the window size in windowed mode.")
+    let y = koi.autoLayoutNextY()
 
-      koi.nextItemWidth(60)
-      koi.textField(
-        settings.display.windowWidth.value,
-        tooltip = "",
-        constraint = TextFieldConstraint(
-          kind:   tckInteger,
-          minInt: 640,
-          maxInt: 9999
-        ).some,
-        disabled = not settings.display.windowWidth.set
-      )
+    koi.nextItemWidth(55)
+    koi.textField(
+      settings.display.windowWidth.value,
+      tooltip = "",
+      constraint = TextFieldConstraint(
+        kind:   tckInteger,
+        minInt: 640,
+        maxInt: 9999
+      ).some,
+      disabled = not settings.display.windowWidth.set
+    )
 
-      koi.label(x=256, y, w=20, h=22, "x")
+    koi.label(x=251, y, w=20, h=22, "x")
 
-      koi.textField(
-        x=270, y, w=60, h=22,
-        settings.display.windowHeight.value,
-        constraint = TextFieldConstraint(
-          kind:   tckInteger,
-          minInt: 640,
-          maxInt: 9999
-        ).some,
-        disabled = not settings.display.windowWidth.set
-      )
+    koi.textField(
+      x=265, y, w=55, h=22,
+      settings.display.windowHeight.value,
+      constraint = TextFieldConstraint(
+        kind:   tckInteger,
+        minInt: 480,
+        maxInt: 9999
+      ).some,
+      disabled = not settings.display.windowWidth.set
+    )
 
-      koi.toggleButton(settings.display.resizableWindow.set, "Resizable window")
-      setHelpText("""
-        Allow resizing the window in windowed mode.
-      """)
-      koi.nextItemHeight(CheckBoxSize)
-      koi.checkBox(settings.display.resizableWindow.value,
-                   disabled = not settings.display.resizableWindow.set)
+    koi.toggleButton(settings.display.resizableWindow.set, "Resizable window")
+    setHelpText("""
+      Allow resizing the window in windowed mode.
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.display.resizableWindow.value,
+                 disabled = not settings.display.resizableWindow.set)
 
-    group:
-      koi.toggleButton(settings.display.showOsd.set, "Show OSD")
-      setHelpText("""
-          Show on-screen display (OSD) in the bottom-right corner that
-          indicates the floppy and hard drive activity of the emulated machine,
-          CPU and audio buffer utilisation, current FPS, pause/warp mode,
-          etc.
-      """)
+    koi.toggleButton(settings.display.showOsd.set, "Show OSD")
+    setHelpText("""
+        Show on-screen display (OSD) in the bottom-right corner that
+        indicates the floppy and hard drive activity of the emulated machine,
+        CPU and audio buffer utilisation, current FPS, pause/warp mode,
+        etc.
+    """)
 
-      koi.nextItemHeight(CheckBoxSize)
-      koi.checkBox(settings.display.showOsd.value,
-                   disabled=not settings.display.showOsd.set)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.display.showOsd.value,
+                 disabled=not settings.display.showOsd.set)
 
-      koi.toggleButton(settings.display.showClock.set, "Show clock")
-      setHelpText("""
-        Show clock in the top-right corner.
-      """)
-      koi.nextItemHeight(CheckBoxSize)
-      koi.checkBox(settings.display.showClock.value,
-                   disabled = not settings.display.showClock.set)
+  group:
+    koi.toggleButton(settings.display.palScaling.set, "PAL scaling")
+    setHelpText("""
+      Set the scaling factor for PAL games and demos. Fractional scaling
+      factors (3.2x in particular) can result in some vertical interference
+      patterns on 1080p screens. This is especially noticeable on fade-in &
+      fade-out effects.
+    """)
+    koi.nextItemWidth(60)
+    koi.dropDown(settings.display.palScaling.value,
+                 disabled = not settings.display.palScaling.set)
 
-    group:
-      koi.toggleButton(settings.display.palScaling.set, "PAL scaling")
-      setHelpText("""
-        Set the scaling factor for PAL games and demos. Fractional scaling
-        factors (3.2x in particular) can result in some vertical interference
-        patterns on 1080p screens. This is especially noticeable on fade-in &
-        fade-out effects.
-      """)
-      koi.nextItemWidth(60)
-      koi.dropDown(settings.display.palScaling.value,
-                   disabled = not settings.display.palScaling.set)
+    koi.toggleButton(settings.display.ntscScaling.set, "NTSC scaling")
+    setHelpText("""
+      Set the scaling factor for NTSC and NTSC50 games. Unlike the PAL
+      shader, the NTSC shader is not prone to vertical interference patterns
+      with fractional scaling factors.
+    """)
+    koi.nextItemWidth(60)
+    koi.dropDown(settings.display.ntscScaling.value,
+                 disabled = not settings.display.ntscScaling.set)
 
-      koi.toggleButton(settings.display.ntscScaling.set, "NTSC scaling")
-      setHelpText("""
-        Set the scaling factor for NTSC and NTSC50 games. Unlike the PAL
-        shader, the NTSC shader is not prone to vertical interference patterns
-        with fractional scaling factors.
-      """)
-      koi.nextItemWidth(60)
-      koi.dropDown(settings.display.ntscScaling.value,
-                   disabled = not settings.display.ntscScaling.set)
+  group:
+    koi.toggleButton(settings.display.crtEmulation.set, "CRT emulation")
+    setHelpText("""
+      Emulate an authentic Commodore CRT monitor. Pixels are rendered as
+      sharp little rectangles if disabled. You might need to disable CRT
+      emulation if you have a really weak GPU and you're getting slowdowns
+      or audio drop-outs.
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.display.crtEmulation.value,
+                 disabled = not settings.display.crtEmulation.set)
 
-    group:
-      koi.toggleButton(settings.display.crtEmulation.set, "CRT emulation")
-      setHelpText("""
-        Emulate an authentic Commodore CRT monitor. Pixels are rendered as
-        sharp little rectangles if disabled. You might need to disable CRT
-        emulation if you have a really weak GPU and you're getting slowdowns
-        or audio drop-outs.
-      """)
-      koi.nextItemHeight(CheckBoxSize)
-      koi.checkBox(settings.display.crtEmulation.value,
-                   disabled = not settings.display.crtEmulation.set)
+    koi.toggleButton(settings.display.shaderQuality.set, "CRT emulation quality")
+    setHelpText("""
+      'Best' is recommended to minimise vertical interference patterns.
+      Only select 'Fast' if you have a weak GPU and you're getting slowdowns
+      and audio drop-outs (it's three times faster than 'Best').
+    """)
+    koi.dropDown(settings.display.shaderQuality.value,
+                 disabled = not settings.display.shaderQuality.set)
 
-      koi.toggleButton(settings.display.shaderQuality.set, "CRT emulation quality")
-      setHelpText("""
-        'Best' is recommended to minimise vertical interference patterns.
-        Only select 'Fast' if you have a weak GPU and you're getting slowdowns
-        and audio drop-outs (it's three times faster than 'Best').
-      """)
-      koi.dropDown(settings.display.shaderQuality.value,
-                   disabled = not settings.display.shaderQuality.set)
+    koi.toggleButton(settings.display.sharperPal.set, "Sharper PAL emulation")
+    setHelpText("""
+      Enable maximum horizontal sharpness for PAL CRT emulation. This
+      increases the legibility of 80-column text (e.g., in text adventures),
+      and makes the image appear sharper at higher scaling factors. The
+      drawback is it reduces the benefical 'natural antialiasing' effects of
+      the CRT emulation (the pixels will appear more like distinct
+      rectangles).""")
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.display.sharperPal.value,
+                 disabled = not settings.display.sharperPal.set)
 
-      koi.toggleButton(settings.display.sharperPal.set, "Sharper PAL CRT emulation")
-      setHelpText("""
-        Enable maximum horizontal sharpness for PAL CRT emulation. This
-        increases the legibility of 80-column text (e.g., in text adventures),
-        but reduces the benefical 'natural antialiasing' effect of the CRT
-        emulation. The option only exists for PAL because the NTSC shader
-        doesn't benefit from it.
-      """)
-      koi.nextItemHeight(CheckBoxSize)
-      koi.checkBox(settings.display.sharperPal.value,
-                   disabled = not settings.display.sharperPal.set)
+    koi.toggleButton(settings.display.sharperNtsc.set, "Sharper NSTC emulation")
+    setHelpText("""
+      Enable maximum horizontal sharpness for PAL CRT emulation. This
+      increases the legibility of 80-column text (e.g., in text adventures),
+      and makes the image appear sharper at higher scaling factors. The
+      drawback is it reduces the benefical 'natural antialiasing' effects of
+      the CRT emulation (the pixels will appear more like distinct
+      rectangles).""")
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.display.sharperNtsc.value,
+                 disabled = not settings.display.sharperNtsc.set)
 
-      koi.toggleButton(settings.display.interlacing.set, "Interlacing emulation")
-      setHelpText("""
-        Enable interlace flicker emulation in hi-res screen modes (400 pixel
-        high NTSC and 512 pixel high PAL modes). Interlacing emulation works
-        best with vsync enabled and a 50 Hz desktop refresh rate for PAL and
-        60 Hz for NTSC, or a VRR monitor.
-      """)
-      koi.nextItemHeight(CheckBoxSize)
-      koi.checkBox(settings.display.interlacing.value,
-                   disabled = not settings.display.interlacing.set)
+  group:
+    koi.toggleButton(settings.display.vsyncMode.set, "Vsync mode")
+    setHelpText("""
+      'Off' is the best option for VRR monitors. On non-VRR monitors, it can
+      add tearing, but reduces input lag. 'Standard' eliminates tearing in
+      both windowed and fullscreen modes on non-VRR monitors, but increases
+      input lag. 'Lagless' drastically reduces input lag but it doesn't work
+      in windowed mode, it needs true fullscreen for the best results, and
+      requires either a VRR monitor or matching 50/60 desktop refresh rates
+      for PAL/NTSC.
+    """)
+    koi.dropDown(settings.display.vsyncMode.value,
+                 disabled = not settings.display.vsyncMode.set)
 
-    group:
-      koi.toggleButton(settings.display.vsyncMode.set, "Vsync mode")
-      setHelpText("""
-        'Off' is the best option for VRR monitors. On non-VRR monitors, it can
-        add tearing, but reduces input lag. 'Standard' eliminates tearing in
-        both windowed and fullscreen modes on non-VRR monitors, but increases
-        input lag. 'Lagless' drastically reduces input lag but it doesn't work
-        in windowed mode, it needs true fullscreen for the best results, and
-        requires either a VRR monitor or matching 50/60 desktop refresh rates
-        for PAL/NTSC.
-      """)
-      koi.dropDown(settings.display.vsyncMode.value,
-                   disabled = not settings.display.vsyncMode.set)
+    koi.toggleButton(settings.display.vsyncSlices.set, "Lagless vsync slices")
+    setHelpText("""
+      Number of frame slices in lagless vsync mode. Higher values reduce
+      latency, values between 2 and 8 and the most useful (setup dependent,
+      you'll need to experiment). Generally, you'll need slightly larger
+      audio buffers in lagless vsync mode.
+    """)
+    koi.nextItemWidth(60)
+    koi.textField(
+      settings.display.vsyncSlices.value,
+      constraint = TextFieldConstraint(
+        kind:   tckInteger,
+        minInt: 1,
+        maxInt: 29
+      ).some,
+      disabled = not settings.display.vsyncSlices.set
+    )
 
-      koi.toggleButton(settings.display.vsyncSlices.set, "Lagless vsync slices")
-      setHelpText("""
-        Number of frame slices in lagless vsync mode. Higher values reduce
-        latency, values between 2 and 8 and the most useful (setup dependent,
-        you'll need to experiment). Generally, you'll need slightly larger
-        audio buffers in lagless vsync mode.
-      """)
-      koi.nextItemWidth(60)
-      koi.textField(
-        settings.display.vsyncSlices.value,
-        constraint = TextFieldConstraint(
-          kind:   tckInteger,
-          minInt: 1,
-          maxInt: 29
-        ).some,
-        disabled = not settings.display.vsyncSlices.set
-      )
+    koi.toggleButton(settings.display.interlacing.set, "Interlacing emulation")
+    setHelpText("""
+      Enable interlace flicker emulation in hi-res screen modes (400 pixel
+      high NTSC and 512 pixel high PAL modes). Interlacing emulation works
+      best with vsync enabled and a 50 Hz desktop refresh rate for PAL and
+      60 Hz for NTSC, or a VRR monitor.
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.display.interlacing.value,
+                 disabled = not settings.display.interlacing.set)
 
 # }}}
 # {{{ renderAudioTab()
 proc renderAudioTab() =
-  discard
+  group:
+    koi.toggleButton(settings.audio.audioInterface.set, "Audio interface")
+    setHelpText("""
+      TODO
+    """)
+    koi.dropDown(settings.audio.audioInterface.value,
+                 disabled = not settings.audio.audioInterface.set)
+
+    koi.toggleButton(settings.audio.sampleRate.set, "Sample rate")
+    setHelpText("""
+      TODO
+    """)
+    koi.nextItemWidth(80)
+    koi.dropDown(settings.audio.sampleRate.value,
+                 disabled = not settings.audio.sampleRate.set)
+
+    koi.toggleButton(settings.audio.soundBufferSize.set, "Sound buffer size")
+    setHelpText("""
+      TODO
+    """)
+    koi.nextItemWidth(60)
+    koi.dropDown(settings.audio.soundBufferSize.value,
+                 disabled = not settings.audio.soundBufferSize.set)
+
+
+  group:
+    koi.toggleButton(settings.audio.volume.set, "Volume")
+    setHelpText("""
+      TODO
+    """)
+    let y = koi.autoLayoutNextY()
+
+    koi.nextItemWidth(60)
+    koi.textField(
+      settings.audio.volume.value,
+      tooltip = "",
+      constraint = TextFieldConstraint(
+        kind: tckInteger, minInt: 1, maxInt: 100
+      ).some,
+      disabled = not settings.audio.volume.set
+    )
+
+    koi.toggleButton(settings.audio.stereoSeparation.set, "Stereo separation")
+    setHelpText("""
+      TODO
+    """)
+    koi.nextItemWidth(60)
+    koi.dropDown(settings.audio.stereoSeparation.value,
+                 disabled = not settings.audio.stereoSeparation.set)
+
+  group:
+    koi.toggleButton(settings.audio.floppySounds.set, "Floppy sounds")
+    setHelpText("""
+      Enable floppy sound emulation.
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.audio.floppySounds.value,
+                 disabled = not settings.audio.floppySounds.set)
 
 # }}}
 # {{{ renderGeneralTab()
@@ -463,8 +542,9 @@ proc renderUI() =
 
   # Help text
   x= PadX
-  y += 450
-  koi.textArea(x, y, w=winWidth-2*PadX, h=150, app.helpText, disabled=true)
+  y += 460
+  koi.textArea(x, y, w=winWidth-2*PadX, h=150, app.helpText, disabled=true,
+               style=app.styles.helpText)
 
   # Action buttons
   y = winHeight - 22 - 25
@@ -585,6 +665,12 @@ proc setWidgetStyles() =
     align = haLeft
 
   koi.setDefaultToggleButtonStyle(tbs)
+
+  # Help text
+  app.styles.helpText = getDefaultTextAreaStyle()
+  with app.styles.helpText:
+    bgFillColorDisabled = gray(0.22)
+    textColorDisabled   = gray(0.8)
 
 # }}}
 
