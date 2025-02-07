@@ -25,8 +25,10 @@ const CommentKeyPrefix = "#comment-"
 # {{{ Settings
 const
   NoFilter        = "D3D:Point-Prescale.fx"
+
   PalFilter       = "D3D:CRT-A2080-PAL.fx"
   PalSharpFilter  = "D3D:CRT-A2080-PAL-Sharp.fx"
+
   NtscFilter      = "D3D:CRT-A2080-NTSC.fx"
   NtscSharpFilter = "D3D:CRT-A2080-NSTC-Sharp.fx"
 
@@ -89,14 +91,14 @@ type
   # {{{ Audio settings
   # -------------------------------------------------------------------------
   AudioSettings* = object
-    audioDevice:      AudioDevice
-    sampleRate:       SampleRate
-    soundBufferSize:  SoundBufferSize
-    volume:           Natural
-    stereoSeparation: StereoSeparation
-    floppySounds:     bool
+    audioInterface*:   tuple[value: AudioInterface,    set: bool]
+    sampleRate*:       tuple[value: SampleRate,        set: bool]
+    soundBufferSize*:  tuple[value: SoundBufferSize,   set: bool]
+    volume*:           tuple[value: string,            set: bool]
+    stereoSeparation*: tuple[value: StereoSeparation,  set: bool]
+    floppySounds*:     tuple[value: bool,              set: bool]
 
-  AudioDevice* = enum
+  AudioInterface* = enum
     adDirectSound = "DirectSound"
     adWasapi      = "WASAPI"
 
@@ -507,9 +509,6 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
       cfg.setResizableWindow(resizableWindow.value)
 
     if showOsd.set: cfg.setShowOsd(showOsd.value)
-
-    # TODO
-#    if showClock.set: c.setShowClock(showClock.value)
 
     if crtEmulation.set:
       cfg.setCrtEmulation(crtEmulation.value)
