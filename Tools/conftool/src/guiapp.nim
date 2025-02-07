@@ -75,7 +75,7 @@ settings.display = DisplaySettings(
     ntscScaling:     (ntscScaling30, false),
 
     sharperPal:      (false, false),
-    sharperNstc:     (false, false),
+    sharperNtsc:     (false, false),
     interlacing:     (false, false),
     vsyncMode:       (vmStandard, false),
     vsyncSlices:     ("2", false)
@@ -359,7 +359,7 @@ proc renderDisplayTab() =
       koi.checkBox(settings.display.sharperPal.value,
                    disabled = not settings.display.sharperPal.set)
 
-      koi.toggleButton(settings.display.sharperNstc.set, "Sharper NSTC emulation")
+      koi.toggleButton(settings.display.sharperNtsc.set, "Sharper NSTC emulation")
       setHelpText("""
         Enable maximum horizontal sharpness for PAL CRT emulation. This
         increases the legibility of 80-column text (e.g., in text adventures),
@@ -368,8 +368,8 @@ proc renderDisplayTab() =
         the CRT emulation (the pixels will appear more like distinct
         rectangles).""")
       koi.nextItemHeight(CheckBoxSize)
-      koi.checkBox(settings.display.sharperNstc.value,
-                   disabled = not settings.display.sharperNstc.set)
+      koi.checkBox(settings.display.sharperNtsc.value,
+                   disabled = not settings.display.sharperNtsc.set)
 
       koi.toggleButton(settings.display.interlacing.set, "Interlacing emulation")
       setHelpText("""
