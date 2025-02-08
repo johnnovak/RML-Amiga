@@ -1,5 +1,10 @@
 # C
 
+## Cadaver
+
+- Multi-language release (English, French, German).
+
+
 ## Cadaver - The Last Supper
 
 - **The Last Supper** is an exclusive demo level featured on Zero Coverdisk 15
@@ -11,10 +16,24 @@
   bars); use warp mode to speed it up (press ++end+pause++).
 
 
+## Cadaver: The Payoff
+
+- Multi-language release (English, French, German).
+
+
 ## Cannon Fodder (OCS)
 
 - Supports four floppy drives, no disk swapping necessary.
 - Save disk is in drive DF3:
+
+
+## Cannon Fodder (CD32)
+
+- CD version extras: intro movie.
+
+- Modified version by **cd32.co.uk** that replaces the MPEG intro with
+  CDXL-format video (can be played on a standard CD32 without the rare FMV
+  module).
 
 
 ## Captive
@@ -31,8 +50,10 @@
 
 ## Castle Master
 
+- Multi-language release (English, French, German).
 - Type **E** then press ++enter++ when prompted to start the game.
-- Saves to the game disk.
+- When loading or saving a game, the music stops and the game freezes for a
+  few seconds; this is normal.
 
 
 ## Castle Master II: The Crypt

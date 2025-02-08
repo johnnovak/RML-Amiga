@@ -58,10 +58,16 @@
   or when entering the name of your save game).
 
 
-## Battle Chess
+## Battle Chess (OCS)
 
 - To start the game, double-click on the **BattleChess** disk icon then on the
   **BattleChess** icon.
+
+
+## Battle Chess (CD32)
+
+- CD version extras: CD Audio music, voice acting, tutorial, no manual-based
+  protection.
 
 
 ## Battle Isle
@@ -80,8 +86,14 @@
 
 ## Beneath A Steel Sky (CD32)
 
+- CD version extras: digitised music, voice acting.
+
+- Multi-language release (English, French, German, Italian).
+
 - This is the best version of the game that features in-game music and full
-  voiceovers.
+  voice acting.
+
+- Can be played with the mouse.
 
 
 ## Black Cauldron, The

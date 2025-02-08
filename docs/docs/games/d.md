@@ -19,6 +19,14 @@
 - Saves to the game disk.
 
 
+## Darkseed (CD32)
+
+- CD version extras: voice acting.
+
+- The CD32 version has reduced 320&times;200 graphics instead of the
+  320&times;400 resolution of the original.
+
+
 ## Death Knights of Krynn
 
 - To start the game, double-click on the **DeathKnightsOfKrynn** disk icon in
@@ -44,6 +52,7 @@
 
 ## Defender of the Crown II (CD32)
 
+- Multi-language release (English, French, German, Spanish, Italian).
 - Use either the mouse or a gamepad in port 2 to control the game.
 
 
@@ -100,9 +109,21 @@
   or when entering the name of your save game).
 
 
+## Dragonstone (CD32)
+
+- CD version extras: CD Audio music.
+
+- Multi-language release (English, French, German).
+
+
 ## DreamWeb (AGA)
 
 - Uncensored European version.
+
+
+## Driller
+
+- Budget re-release with the manual-based copy protection check removed.
 
 
 ## Dungeon Master (v2.2)
@@ -137,6 +158,8 @@
 
 ## Dungeon Master (v3.6)
 
+- Multi-language release (English, French, German).
+
 **WASD movement keys**
 
 - Press ++home+w++ to switch to an alternative input mapping which maps the
@@ -148,6 +171,8 @@
 
 
 ## Dungeon Master: Chaos Strikes Back (v3.5)
+
+- Multi-language release (English, French, German).
 
 - Read the manual carefully for the instructions on how to start the game.
 
