@@ -1,22 +1,21 @@
 # E–F
 
-## Elite (v1.0)
-
-
 ## Elite (v2.0)
 
 - Differences compared to v1.0:
-  - Thargoids yield 40 Cr instead of 15
-  - Military lasers allowed on all sides
-  - Library function
-  - Bug fixes (e.g., you can't engage the docking computer while the hyperspace
-    countdown is proceeding).
+    - Thargoids yield 40 Cr instead of 15
+    - Military lasers allowed on all sides
+    - Library function
+    - Bug fixes (e.g., you can't engage the docking computer while the hyperspace
+      countdown is proceeding).
 
 
 ## Elite (v2.0, Space Legends)
 
 - Same as v2.0 but with the manual-based copy protection removed, so you
   cannot enter cheat codes.
+
+- This is the most recommended version.
 
 
 ## Exile

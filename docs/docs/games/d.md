@@ -19,9 +19,9 @@
 - Saves to the game disk.
 
 
-## Darkseed (CD32)
+## Dark Seed (CD32)
 
-- CD version extras: voice acting.
+- CD version extras: CD Audio music, voice acting.
 
 - The CD32 version has reduced 320&times;200 graphics instead of the
   320&times;400 resolution of the original.
@@ -109,11 +109,18 @@
   or when entering the name of your save game).
 
 
+## Dragonstone (OCS)
+
+- Multi-language release (English, French, German).
+- Supports four floppy drives, no disk swapping necessary.
+- Best played with a digital joystick.
+
+
 ## Dragonstone (CD32)
 
 - CD version extras: CD Audio music.
-
 - Multi-language release (English, French, German).
+- Best played with a digital joystick.
 
 
 ## DreamWeb (AGA)
