@@ -64,7 +64,7 @@
 - Best played with a digital joystick.
 
 
-## SimCity
+## SimCity Collection
 
 - "Ultimate" version compiled from the v1.1 and v1.2.2 releases and various
   extras disks. Includes the 16-colour and 64-colour versions, all city packs,
@@ -84,6 +84,12 @@
 
 - Later 64-colour version (v1.2.2).
 - This version has the manual-based copy protection removed by the developer.
+
+
+## SimCity (CDTV)
+
+- CD version extras: intro video, CD Audio music, enhanced graphics, all city
+  packs, new scenarios.
 
 
 ## Soccer Kid (OCS)
