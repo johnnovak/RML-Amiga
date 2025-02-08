@@ -29,7 +29,7 @@
 
 ## Cannon Fodder (CD32)
 
-- CD32 extras: intro movie.
+- CD version extras: intro movie.
 
 - Modified version by **cd32.co.uk** that replaces the MPEG intro with
   CDXL-format video (can be played on a standard CD32 without the rare FMV
@@ -52,7 +52,8 @@
 
 - Multi-language release (English, French, German).
 - Type **E** then press ++enter++ when prompted to start the game.
-- Saves to the game disk.
+- When loading or saving a game, the music stops and the game freezes for a
+  few seconds; this is normal.
 
 
 ## Castle Master II: The Crypt

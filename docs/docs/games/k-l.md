@@ -36,7 +36,8 @@
 
 ## Liberation: Captive II
 
-- CD32 extras: CD Audio music, voice acting, better graphics.
+- CD version extras: CD Audio music, voice acting, better graphics, no
+  manual-based protection.
 
 - The CD32 original is vastly superior in every regard to the later Amiga
   500/1200 version.

@@ -45,7 +45,8 @@
 
 ## Heimdall 2: Into the Hall of Worlds (CD32)
 
-- CD32 extras: CD Audio music, extra animations.
+- CD version extras: CD Audio music, extra animations, no manual-based
+  protection.
 
 - This is the best version of the game that features all animations and a full
   CD Audio soundtrack.

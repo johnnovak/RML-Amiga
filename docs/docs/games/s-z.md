@@ -86,10 +86,48 @@
 - This version has the manual-based copy protection removed by the developer.
 
 
+## Soccer Kid (OCS)
+
+- Multi-language release (English, French, German, Spanish, Italian).
+
+- Best played with a digital joystick.
+
+- Supports four floppy drives, no disk swapping necessary.
+
+- Pressing any key will skip the intro (e.g., pressing ++alt+tab++ to
+  switch to a different window).
+
+
+## Soccer Kid (AGA)
+
+- Multi-language release (English, French, German, Spanish, Italian).
+
+- Best played with a digital joystick.
+
+- Use the **intro only** save state to watch the intro. When you're at the
+  language selection screen, start the main game config instead to play the
+  game (you can only watch the intro when running the game from the floppies;
+  only the main game can be installed to the hard drive).
+
+- Pressing any key will skip the intro (e.g., pressing ++alt+tab++ to
+  switch to a different window).
+
+- The manual-based protection is removed from this version.
+
+
+## Soccer Kid (CD32)
+
+- CD version extras: different intro, CD Audio music, reworked graphics, no
+  manual-based protection.
+
+- Multi-language release (English, French, German, Spanish, Italian).
+
+- Best played with a digital joystick.
+
+
 ## Simon the Sorcerer (CD32)
 
-- CD32 extras: voice acting.
-
+- CD version extras: voice acting, no manual-based protection.
 - Can be played with the mouse.
 
 
@@ -102,9 +140,16 @@
   folder within the game folder for the save games.
 
 
-## Speedball 2: Brutal Deluxe
+## Speedball 2: Brutal Deluxe (OCS)
 
+- Best played with a digital joystick.
 - Saves high scores to the game disk.
+
+
+## Speedball 2: Brutal Deluxe (CD32)
+
+- CD version extras: CD Audio music, reworked graphics.
+- Best played with a digital joystick.
 
 
 ## Starflight

@@ -21,7 +21,7 @@
 
 ## Darkseed (CD32)
 
-- CD32 extras: voice acting
+- CD version extras: voice acting.
 
 - The CD32 version has reduced 320&times;200 graphics instead of the
   320&times;400 resolution of the original.
@@ -111,7 +111,7 @@
 
 ## Dragonstone (CD32)
 
-- CD32 extras: CD Audio music.
+- CD version extras: CD Audio music.
 
 - Multi-language release (English, French, German).
 

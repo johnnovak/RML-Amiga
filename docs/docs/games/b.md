@@ -66,7 +66,8 @@
 
 ## Battle Chess (CD32)
 
-- CD32 extras: CD Audio music, voice-acting, and a tutorial.
+- CD version extras: CD Audio music, voice acting, tutorial, no manual-based
+  protection.
 
 
 ## Battle Isle
@@ -85,7 +86,7 @@
 
 ## Beneath A Steel Sky (CD32)
 
-- CD32 extras: digitised music, voice acting.
+- CD version extras: digitised music, voice acting.
 
 - Multi-language release (English, French, German, Italian).
 
