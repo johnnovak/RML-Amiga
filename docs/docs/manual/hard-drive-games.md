@@ -37,7 +37,6 @@ for extras like level editors, etc. --- check the [Game
 notes](../games/index.md) for details.
 
 
-
 ## Saving your progress
 
 Most hard drive games store the save games on the hard drive; using the
@@ -62,20 +61,12 @@ playing a new game.
     Never ever reset the emulated Amiga or quit the emulator _immediately_
     after saving your game to the hard drive! Always wait 2-3 seconds and make
     sure the hard drive activity indicator LED in the bottom-right corner
-    isn't flashing red (red means write activity, green means read activity).
-    If you don't do this, there is a good chance you'll lose or corrupt your
-    save!
+    isn't flashing red anymore (red means write activity, green means read
+    activity). If you don't wait, there is a good chance you'll lose or
+    corrupt your save game!
 
-    The reasons for this is that hard drive writes usually happen in a
-    slightly delayed manner on the Amiga. This is how things usually play out:
-
-    - You do something that will cause writes to the hard drive (e.g., click
-      the **Save** button in the save game dialog).
-    - There is no hard drive activity for up to 1-2 seconds.
-    - _After_ these 1-2 seconds, the actual write happens---the hard drive
-      activity indicator is briefly flashing red.
-    - The activity indicator then turns grey (no activity). Now
-      it's safe to turn off you Amiga or quit the emulator.
+    The reason for this is that hard drive writes happen in a slightly delayed
+    manner on the Amiga.
 
 
 ## Key disks
@@ -101,42 +92,32 @@ activity when starting key disk protected games.
 
 A handful of games in the collection use something called WHDLoad. This is a
 tool people invented in the mid-1990s to play disk-only games from the hard
-drive and to apply compatibility fixes to certain Amiga 500 games so they can
-run on later models like the Amiga 1200.
+drive on their later Amiga models (such as the Amiga 1200). The tool was also
+used to apply compatibility fixes to finicky games that only ran correctly on
+a stock (or close-to-stock) Amiga 500.
 
 This means WHDLoad conversions are effectively cracked and patched games, not
 originals. RML Amiga uses WHDLoad games only as a last resort because removing
 the copy protection and altering the games' code can introduce all sorts of
 problems (including making the game uncompletable which is really hard to test
-in long 50+ hour RPGs).
+in long 50+ hour RPGs; consequently, WHDLoad conversions of long and complex
+games are plagued with the most problems).
 
 Back in the day, WHDload was a necessity to allow people enjoy their game
 collections on their new Amigas. But for games that are natively hard drive
 installable (70% of the games in this collection), using WHDLoad is rather
-pointless in an emulator context.
+pointless in an emulator where we can set up every Amiga model imaginable.
 
-Games that support hard drive installations are OS-friendly by nature; they
-must use operating system (OS) routines for hard drive access. But most floppy
-games eschew the use of OS routines and interact with the floppy drive
-controller directly. Therefore, WHDLoad conversions of floppy games running
-from the hard drive have a new problem to solve. The save disk must be
-emulated in memory, then the contents of this emulated disk is written to the
-hard drive when exiting the game. The alternative solution is to do the saving
-immediately in "real-time", but this gets even trickier as the OS and the
-game's code need be swapped in and out of memory repeatedly as writing to the
-hard drive is only possible via OS routines, but most floppy games "kill" the
-OS at the start. The end result is the infamous flickering black screen in
-WHDLoad conversions when saving and restoring a game, and an overall lengthy
-save/restore process. As you can see, both solutions have their problems, but
-saving to the emulated in-memory floppy is less jarring, therefore all WHDLoad
-games in the collection are configured for that.
+!!! important Always quit WHDLoad games to save your progress to disk!
 
-!!! important Always use the "quit key" in WHDLoad games
+    Due to various technical difficulties, WHDLoad games only write the save
+    games to the hard drive when you quit the game (the saves are kept
+    in-memory until then).
 
-    The important point to remember is that you _must_ always exit WHDLoad
-    games by pressing **F11** (the WHDLoad quit key) when you're finished with
-    the game. If you don't do that, you'll lose your saves from the current
-    gaming sessions! The [Game notes](../games/index.md) will remind you of
-    this, and all WHDLoad games will also print out a similar warning before
-    startup.
+    Therefore, you _must_ always quit WHDLoad games by pressing ++F11++ at the
+    end of your gaming session! If you just close WinUAE or load a different
+    game, _you will lose_ the saves you made in your current gaming session!
+    All WHDLoad games in the collection print out a warning message about this
+    at startup, and the [Game notes](../games/index.md) also contains some
+    reminders.
 

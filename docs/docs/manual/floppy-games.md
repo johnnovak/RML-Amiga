@@ -6,7 +6,7 @@ optionally expanded to up to four drives. The first floppy drive is called
 **DF2:**, and the fourth **DF3:**.
 
 Most floppy games are in the **IPF** format (Interchangeable Presentation
-Format), and some in the **RAW** (KyroFlux CT-RAW) format. These are accurate
+Format), and some in the **RAW** (KryoFlux CT-RAW) format. These are accurate
 representations of the original disks with the copy protection intact.
 
 A small set of games are provided as regular **ADF** files (Amiga Disk File).
@@ -17,57 +17,8 @@ form at the time being.
 ## Single-disk games
 
 All floppy game configurations have the first floppy pre-inserted in drive
-DF0: (the first floppy drive). For single-disk games, that's all you need.
-
-
-## Multi-disk games
-
-Multi-disk games fall into two categories: some support multiple floppy
-drives, some only a single drive. The best case scenario is when a game
-supports as many drives as the number of disks it comes on. Such games are
-configured with the game disks pre-inserted into the drives (e.g., the
-two-disk game *Lemmings**; and the four-disk game **Perihelion**).
-
-The other scenario is that the game supports *less* drives than the number of
-disks it has (e.g., a two-disk game supporting a single drive, or a four-disk
-game supporting two drives). In these games, you'll need to swap the disks
-when the game prompts you. Fortunately, WinUAE has a convenient disk swapper
-feature to make this easy:
-
-- Press ++end+1++ to ++9++ to insert floppy number 1 to 9 into drive
-  DF0: (the first floppy drive).
-
-- By default, the disk swapper targets the first floppy drive. To insert a
-  floppy into any of the four drives, you need to select the target drive
-  with ++end+ctrl+1++ to ++4++ first.
-
-For example:
-
-- To insert the second game disk into drive DF0: (first drive), press ++end+2++.
-- To insert the third game disk into drive DF1: (second drive) next, press
-  ++end+ctrl+2++ to select the second drive as the target, then  ++end+3++ to
-  insert the third disk.
-- To insert the fourth game edisk into DF0: again, press ++end+ctrl+1++
-  followed by ++end+4++ .
-
-
-!!! warning "Not all keyboards are created equal"
-
-    You might not be able to use some of the drive selection shortcuts
-    (++end+ctrl+1++ to ++4++) if you do not have a *3-key rollover* (3KRO) or
-    better keyboard.
-
-
-## Workbench
-
-Most floppy games start automatically when you launch their configs, but
-some need to be started manually from the Workbench screen.
-
-The Workbench is the graphical interface of AmigaOS. It is a very simple
-graphical operating environment that resembles the Windows desktop. To launch
-the game from Workbench, usually you need to double-click on a disk icon in
-the upper right corner which opens a window, then double-click on the game's
-icon in that window.
+DF0: (the first floppy drive). For single-disk games, that's all you need
+(e.g., [Dungeon Master](TODO), [Midwinter](TODO), and [Exile](TODO)).
 
 
 ## Speeding up loading times
@@ -93,6 +44,64 @@ warp mode with the ++end+pause++ shortcut.
     If you know what you're doing, you can create a [save
     states](save-states.md) right after the game finished loading. You can
     save this as a new config and use it to start the game instantaneously.
+
+
+## Multi-disk games
+
+Multi-disk games fall into two categories: some support multiple floppy
+drives, some only a single drive. The best case scenario is when a game
+supports as many drives as the number of disks it comes on. Such games are
+configured with the game disks pre-inserted into the drives (e.g., the
+two-disk game [Lemmings](TODO), or the four-disk games [Perihelion](TODO),
+[Hook]()TODO], and [Soccer Kid (OCS)](TODO)).
+
+The other scenario is that the game supports *less* drives than the number of
+disks it has (e.g., a two-disk game supporting a single drive, or a four-disk
+game supporting two drives). In these games, you'll need to swap the disks
+when the game prompts you. Fortunately, WinUAE has a convenient disk swapper
+feature to make this easy:
+
+- Press ++end+1++ to ++9++ to insert floppy number 1 to 9 into drive
+  DF0: (the first floppy drive).
+
+- By default, the disk swapper targets the first floppy drive. To insert a
+  floppy into one of the other three drives, you'll need to select the target
+  drive with ++end+ctrl+1++ to ++4++ first.
+
+For example:
+
+- To insert the second game disk into drive DF0: (first drive), press ++end+2++.
+- To insert the third game disk into drive DF1: (second drive) next, press
+  ++end+ctrl+2++ to select the second drive as the target, then ++end+3++ to
+  insert the third disk.
+- To insert the fourth game edisk into DF0: again, press ++end+ctrl+1++
+  followed by ++end+4++ .
+
+
+!!! warning "Patience is still a virtue"
+
+    Usually, you'll need to wait about 2 seconds until the Amiga recognises the new floppy disk you've just inserted.
+    So, for example, if a game instructs you to insert "disk 2" into DF0:,
+    press
+
+
+!!! warning "Not all keyboards are created equal"
+
+    You might not be able to use some of the drive selection shortcuts
+    (++end+ctrl+1++ to ++4++) if you do not have a *3-key rollover* (3KRO) or
+    better keyboard.
+
+
+## Workbench
+
+Most floppy games start automatically when you launch their configs, but
+some need to be started manually from the Workbench screen.
+
+The Workbench is the graphical interface of AmigaOS. It is a very simple
+graphical operating environment that resembles the Windows desktop. To launch
+the game from Workbench, usually you need to double-click on a disk icon in
+the upper right corner which opens a window, then double-click on the game's
+icon in that window.
 
 
 ## Saving your progress

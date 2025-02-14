@@ -14,15 +14,15 @@
 
 Starting a game
 
-: Start the bundled portable Amiga emulator by running `winuae.exe` (creating
-  an icon for it on your desktop is a good idea). This should bring up the
-  configurations tab. You can always return to the configurations tab by
-  selecting :material-numeric-1-circle:{: .circ-num} **Configurations** in the
-  left pane.
+: Start the bundled portable Amiga emulator called **WinUAE** by running
+  `winuae.exe` (creating an icon for it on your desktop is a good idea). This
+  should bring up the configurations tab. You can always return to the
+  configurations tab by selecting :material-numeric-1-circle:{: .circ-num}
+  **Configurations** in the left pane.
 
     ![Starting games](img/starting-games.png)
 
-    Once you're in the configs tab:
+    Once you're in the configurations tab:
 
     - Make sure **Games\\** is selected in the :material-numeric-2-circle:{: .circ-num}
       **Filter** drop-down. 
@@ -52,11 +52,12 @@ Starting a game
 
 
 Read the game notes
-: Always check the [Game notes](../games/index.md) page first when trying a
-  game for the first time. A few titles need special extra steps to even just
-  start the game---this could be hard to figure out if you've never used an
-  Amiga before. Some of the advice is very hard or impossible to figure out on
-  your own, or the information is deeply buried in the manual. 
+: Always check the [Game notes](../games/index.md) before trying a game for
+  the first time. A few titles need some extra steps to even just start the
+  game---this could be hard to figure out if you've never used an Amiga
+  before. Some of this advice is next to impossible to figure out on your own
+  (you'll need a lot of forum diving to find all this info), or the
+  information is in the manual but it's hard to find.
 
 
 Skipping code checks
@@ -64,7 +65,6 @@ Skipping code checks
   manual-based copy protection check at the start (e.g., `Altered Destiny
   [skip code check]`). It's advised to start the normal config for the first
   time to experience the intro and the original game at least once.
-
 
 Use warp mode
 : You can speed up floppy loading times considerably by entering "warp mode".
@@ -99,25 +99,15 @@ Read the manuals
   lot less standardised in the 1980s and early 90s. You won't get very far in
   most games without reading the manuals, the reference cards, and other
   supplementary materials first. Look for these in the **Manual** and
-  **Extras** sub-folders within the individual game folders.
+  **Extras** sub-folders within the game folders.
 
     The **Manual** folder contains *not* just the manual, but any other items
     included with the original game that are necessary for playing and
-    completing the game (e.g., code wheels, code sheets, or other documents
-    and images you might need to refer to during the course of your
-    playthrough as a form of copy protection).
+    completing the it (e.g., code wheels, code sheets, or other documents
+    and images you might need to refer to as a form of copy protection).
 
     The **Extras** folder contains optional content not strictly necessary to
-    complete the game, and the official hint books for many titles.
-
-Joystick-based games
-
-: Most games in the collection are controlled with the mouse and the keyboard,
-  but a few need a joystick. These games are configured for an emulated
-  joystick: use the regular cursor keys (not the numeric keypad) for movement, and the
-  ++ralt++, ++rshift++, or ++rctrl++ key for the fire button. TODO If you want to
-  use a real joystick or gamepad, press the fire button on the controller
-  after starting the game and WinUAE will auto-detect it.
+    complete the game (e.g., covers, posters, official hint books, etc.).
 
 Floppy games
 : [Hard drive installed games](hard-drive-games.md) are the easiest to deal
@@ -125,18 +115,35 @@ Floppy games
   section for guidance. You can easily recognise a floppy game by the emulated
   floppy drive sounds.
 
+Controller support
+: Most games in the collection are controlled with the mouse and the keyboard,
+  but a few need a joystick. These games are configured for an emulated
+  joystick: use the regular cursor keys (not the numeric keypad) for movement,
+  and the ++ralt++, ++rshift++, or ++rctrl++ keys for the fire button.
+
+  To use a real joystick, press the fire button on your joystick after
+  starting the game. This will "plug" the joystick into either port 1 or port
+  2 of your "virtual Amiga", depending on which fire button you pressed. Most
+  games look for the joystick in port 2, so you might need to use the
+  ++end+j++ **Swap joysticks** hotkey.
+
+  Many CDTV or Amiga CD32 games are best played with the mouse, but some are
+  almost unplayable without a gamepad. To use your controller (e.g., an Xbox
+  360), press the green **A** button on it after starting the game and WinUAE
+  will "plug it" into port 2.
+
 Saving your progress
 : When it comes to saving your game progress, it's a bit of a Wild West
   situation. Every game is slightly different, and floppy games that require
   dedicated save disks are the trickiest. But fear not, help is provided on
-  the [Game notes](../games/index.md) page for these titles. Make sure to read the
-  detailed [Saving your progress](floppy-games.md/#saving-your-progress) section as well for
-  general tips, and don't forget about [Save states](save-states.md) as an
-  alternative saving option.
+  the [Game notes](../games/index.md) page for these titles. Make sure to read
+  the detailed [Saving your progress](floppy-games.md/#saving-your-progress)
+  section as well for general tips, and don't forget about [Save
+  states](save-states.md) as an alternative saving option.
 
 Customising your setup
 : If you're a power user, you should consider configuring the games for proper
-  vertical syncing (vsync) for the best results. This is an advanced topic
+  vertical syncing (vsync) for the best results. TODO This is an advanced topic
   detailed in the [Graphics customisation](customising-your-setup.md#graphics-customisation)
   section.
 
