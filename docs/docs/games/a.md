@@ -72,6 +72,11 @@ above steps.
 - To skip the intro, press ++c++ and enter the `EDJI` continuation code.
 
 
+## Art of GO, The
+
+TODO
+
+
 ## Archipelagos
 
 - Saves the high scores to the game disk.

@@ -21,7 +21,7 @@ theme:
   font:
     text: Open Sans
     code: Roboto Mono
-#  logo: assets/images/dosbox-staging-nobg.svg
+#  logo: assets/images/logo.svg
 #  favicon: assets/images/favicon.ico
 
 # CSS overrides
@@ -116,6 +116,7 @@ nav:
     - manual/useful-websites.md
     - manual/changelog.md
     - manual/thanks.md
+    # - manual/why-amiga-games.md
 
   - Game notes:
     - games/index.md

@@ -11,6 +11,14 @@
   saved gamed.
 
 
+## Secret of Monkey Island, The
+
+- Double-click on the **MonkeyIsland** disk icon, then on the **MonkeyIsland
+  Settlers** icon to start the game.
+
+TODO
+
+
 ## Secret of the Silver Blades
 
 **WASD movement keys**

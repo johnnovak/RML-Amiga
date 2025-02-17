@@ -41,9 +41,10 @@ warp mode with the ++end+pause++ shortcut.
 
 !!! tip "ProTip(tm)"
 
-    If you know what you're doing, you can create a [save
-    states](save-states.md) right after the game finished loading. You can
-    save this as a new config and use it to start the game instantaneously.
+    If you know what you're doing, you can create a
+    [save states](save-states.md) right after the game finished loading. You
+    can save this as a new config and use it to start the game
+    instantaneously.
 
 
 ## Multi-disk games
@@ -53,7 +54,7 @@ drives, some only a single drive. The best case scenario is when a game
 supports as many drives as the number of disks it comes on. Such games are
 configured with the game disks pre-inserted into the drives (e.g., the
 two-disk game [Lemmings](TODO), or the four-disk games [Perihelion](TODO),
-[Hook]()TODO], and [Soccer Kid (OCS)](TODO)).
+[Hook](TODO), and [Soccer Kid (OCS)](TODO)).
 
 The other scenario is that the game supports *less* drives than the number of
 disks it has (e.g., a two-disk game supporting a single drive, or a four-disk
@@ -80,9 +81,9 @@ For example:
 
 !!! warning "Patience is still a virtue"
 
-    Usually, you'll need to wait about 2 seconds until the Amiga recognises the new floppy disk you've just inserted.
-    So, for example, if a game instructs you to insert "disk 2" into DF0:,
-    press
+    Usually, you'll need to wait about 2 seconds until the Amiga recognises
+    the new floppy disk you've just inserted. So, for example, if a game
+    instructs you to insert "disk 2" into DF0:, press
 
 
 !!! warning "Not all keyboards are created equal"
@@ -95,13 +96,9 @@ For example:
 ## Workbench
 
 Most floppy games start automatically when you launch their configs, but
-some need to be started manually from the Workbench screen.
+some need to be started manually from the so-called Workbench screen.
 
-The Workbench is the graphical interface of AmigaOS. It is a very simple
-graphical operating environment that resembles the Windows desktop. To launch
-the game from Workbench, usually you need to double-click on a disk icon in
-the upper right corner which opens a window, then double-click on the game's
-icon in that window.
+See the [Workbench] section of hard drive installed games for further details.
 
 
 ## Saving your progress
@@ -131,7 +128,7 @@ the **C:** drive in Windows.
 
     Always use the save disk included with the game. A regular empty AmigaDOS
     ADF disk image won't work with games that use special encoding schemes
-    (e.g., [Canon Fodder](TODO)). A blank save disk is always included in a
+    (e.g., [Canon Fodder (OCS)](TODO)). A blank save disk is always included in a
     ZIP archive as well, should you want to reset your save disk.
 
 !!! tip "ProTip(tm)"
