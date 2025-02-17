@@ -28,16 +28,6 @@
   illustrations.
 
 
-## Hook
-
-- Multi-language release (English, French, German).
-
-- Supports four floppy drives, no disk swapping necessary.
-
-- To access the save game menu, click on the **Use** icon then on the floppy
-  disk in your inventory.
-
-
 ## Heimdall
 
 - Supports three floppy drives.
@@ -61,6 +51,21 @@
   versions).
 
 
+## Hook
+
+- Multi-language release (English, French, German).
+
+- Supports four floppy drives, no disk swapping necessary.
+
+- To access the save game menu, click on the **Use** icon then on the floppy
+  disk in your inventory.
+
+
+## IK+
+
+- Saves the high scores to the game disk.
+
+
 ## Inherit the Earth (CD32)
 
 - Unreleased official English version.
@@ -71,11 +76,6 @@
 
 - To skip the lengthy intro sequence, press the red and blue controller
   buttons.
-
-
-## IK+
-
-- Saves the high scores to the game disk.
 
 
 ## Ishar 1: Legend of the Fortress (AGA)

@@ -58,6 +58,7 @@ Here are some good examples:
 - [Art of GO, The](TODO)
 - [Battle Chess (OCS)](TODO)
 - [Champions of Krynn](TODO)
+- [Death Knights of Krynn](TODO)
 
 
 ## Saving your progress

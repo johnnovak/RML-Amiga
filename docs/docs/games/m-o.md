@@ -1,9 +1,9 @@
 # M–O
 
+## Maniac Mansion
 
-## Mindshadow
-
-- Saves to the game disk.
+- To start the game, double-click on the **ManiacMansion** disk icon, then on
+  the **Maniac** icon.
 
 
 ## Marble Madness
@@ -12,6 +12,11 @@
   the **MarbleMadness!** icon.
 
 - Saves the high scores to the game disk.
+
+
+## Mindshadow
+
+- Saves to the game disk.
 
 
 ## Mixed-Up Mother Goose (AGI)
