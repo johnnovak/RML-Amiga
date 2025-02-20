@@ -37,7 +37,7 @@
 ## Pirates!
 
 - To start the game, double-click on the **Pirates!** disk icon in the
-  top-right corner (not on **PiratesA below** it), then on the **Pirates!**
+  middle of the screen (not in the top-right corner), then on the **Pirates!**
   icon.
 
 - Make sure to answer the copy protection check correctly when starting a new
@@ -73,6 +73,9 @@
 
 
 ## Populous
+
+- To start the game, double-click on the **Populous** disk icon then, on the
+  appearing image in the window.
 
 - Includes the two data disks **The Promised Lands** and **The Final
   Frontier**. Use the **[start]** save states to play these in conquest
@@ -117,11 +120,6 @@
 - Saves to the game disk.
 
 
-## Push-Over
-
-- Multi-language release (English, French, German, Italian).
-
-
 ## Powermonger: World War 1 Edition
 
 - Insert the **original Powermonger disk** when prompted (press
@@ -133,13 +131,18 @@
 - Information about the copy protection is on page 5 of the manual.
 
 
-## Quest For Glory I: Trial By Fire
+## Push-Over
+
+- Multi-language release (English, French, German, Italian).
+
+
+## Quest for Glory I: So You Want to Be A Hero
 
 - To start the game, double-click on the **QuestForGloryI** disk icon, then on
   the **QuestForGloryI** icon.
 
 
-## Quest For Glory II: Trial By Fire
+## Quest for Glory II: Trial by Fire
 
 - To start the game, double-click on the **QuestForGloryII** disk icon, then
   on the **QuestForGloryII** icon.

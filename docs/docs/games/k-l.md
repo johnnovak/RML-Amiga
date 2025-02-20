@@ -34,35 +34,6 @@
 - Save disk is in drive DF2:
 
 
-## Liberation: Captive II
-
-- CD version extras: CD Audio music, voice acting, better graphics, no
-  manual-based protection.
-
-- The CD32 original is vastly superior in every regard to the later Amiga
-  500/1200 version.
-
-
-## Lost Treasures of Infocom, The
-
-- Contains all 34 Amiga Infocom releases (the 20 games included in the **The
-  Lost Treasures of Infocom** collection, plus the rest except for **Border
-  Zone** which never got an Amiga release).
-
-- **Wishbringer** crashes on quit but otherwise seems to work fine.
-
-- Make sure to check out the interactive InvisiClues in the **Extras** folder
-  if you're stuck.
-
-- To start a game:
-    <ul class="compact" markdown>
-    - Double-click on the **Infocom** disk icon.
-    - Double-click on one of the category drawers.
-    - Double-click on the game's name.
-    - Then finally double-click on the game's start icon.
-    </ul>
-
-
 ## Lancelot
 
 - Use the **SAVE** command to save your game. Press ++enter++ at the
@@ -89,6 +60,15 @@
 
     The game is _not_ compatible with save states---only user regular in-game
     saves!
+
+
+## Liberation: Captive II
+
+- CD version extras: CD Audio music, voice acting, better graphics, no
+  manual-based protection.
+
+- The CD32 original is vastly superior in every regard to the later Amiga
+  500/1200 version.
 
 
 ## Leisure Suit Larry: In the Land of the Lounge Lizards (AGI)
@@ -151,6 +131,26 @@
     saves!
 
 
+## Lost Treasures of Infocom, The
+
+- Contains all 34 Amiga Infocom releases (the 20 games included in the **The
+  Lost Treasures of Infocom** collection, plus the rest except for **Border
+  Zone** which never got an Amiga release).
+
+- **Wishbringer** crashes on quit but otherwise seems to work fine.
+
+- Make sure to check out the interactive InvisiClues in the **Extras** folder
+  if you're stuck.
+
+- To start a game:
+    <ul class="compact" markdown>
+    - Double-click on the **Infocom** disk icon.
+    - Double-click on one of the category drawers.
+    - Double-click on the game's name.
+    - Then finally double-click on the game's start icon.
+    </ul>
+
+
 ## Lure of the Temptress
 
 - Debugged Virgin re-release (1992-08-06). All other versions contain
@@ -163,4 +163,3 @@
 
 - When entering the save and load dialog, the game confusingly refers to the
   save disk as "data disk" (it asks you to insert the "data disk").
-

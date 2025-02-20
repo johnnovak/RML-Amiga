@@ -87,14 +87,13 @@ plugins:
         'games/q.md': 'games/p-r.md'
         'games/r.md': 'games/p-r.md'
 
-        'games/s.md': 'games/s-z.md'
-        'games/t.md': 'games/s-z.md'
-        'games/u.md': 'games/s-z.md'
-        'games/v.md': 'games/s-z.md'
-        'games/w.md': 'games/s-z.md'
-        'games/x.md': 'games/s-z.md'
-        'games/y.md': 'games/s-z.md'
-        'games/z.md': 'games/s-z.md'
+        'games/t.md': 'games/t-z.md'
+        'games/u.md': 'games/t-z.md'
+        'games/v.md': 'games/t-z.md'
+        'games/w.md': 'games/t-z.md'
+        'games/x.md': 'games/t-z.md'
+        'games/y.md': 'games/t-z.md'
+        'games/z.md': 'games/t-z.md'
 
 # Page tree
 nav:
@@ -129,7 +128,8 @@ nav:
     - games/k-l.md
     - games/m-o.md
     - games/p-r.md
-    - games/s-z.md
+    - games/s.md
+    - games/t-z.md
 
 not_in_nav: |
   # To silence the warning about the custom `index.md` front page
