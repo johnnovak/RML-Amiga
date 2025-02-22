@@ -52,13 +52,15 @@ to do so.
 
 Here are some good examples:
 
-- [The Secret of Monkey Island](TODO)
-- [Legend of Faerghail](TODO)
-- [Pirates!](TODO)
-- [Art of GO, The](TODO)
-- [Battle Chess (OCS)](TODO)
-- [Champions of Krynn](TODO)
-- [Death Knights of Krynn](TODO)
+<div class="compact" markdown>
+  - [The Secret of Monkey Island](TODO)
+  - [Legend of Faerghail](TODO)
+  - [Pirates!](TODO)
+  - [Art of GO, The](TODO)
+  - [Battle Chess (OCS)](TODO)
+  - [Champions of Krynn](TODO)
+  - [Death Knights of Krynn](TODO)
+</div>
 
 
 ## Saving your progress
@@ -134,7 +136,7 @@ installable (70% of the games in this collection), using WHDLoad is rather
 pointless in an emulator context where we can set up every Amiga model
 imaginable.
 
-!!! important Always quit WHDLoad games to save your progress to disk!
+!!! important "Always quit WHDLoad games to save your progress to disk!"
 
     Due to various technical difficulties, WHDLoad games only write the save
     games to the hard drive when you quit the game (the saves are kept

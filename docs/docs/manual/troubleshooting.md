@@ -34,7 +34,7 @@ the *Off** vsync mode, then you'll get perfectly smooth scrolling and no
 judder in both PAL and NTSC games.
 
 
-## There is too much input lag
+## Too much input lag
 
 You're probably using the **Standard** vsync mode which noticeably increases
 the input lag. Depending on your sensitivity, this can be annoying even in
@@ -64,7 +64,7 @@ can be another source of the increased input lag. Just do your research and
 get another joystick or adapter with confirmed low input lag.
 
 
-## Weird vsync issues, black screen, or the image being "stuck"
+## Weird vsync issues, black screen, stuck image
 
 You are probably using some global frame limiter, frame capper, or you have
 changed the default global settings of your GPU driver to force vsync in all
@@ -75,7 +75,7 @@ WinUAE, and use the "let the application decide" vsync setting for WinUAE in
 your GPU driver's settings.
 
 
-## Mysterious crashes whenever I start a game
+## Mysterious crashes
 
 If WinUAE starts crashing with mysterious error messages out of the blue when
 you try to start any game, some other program running on your system is
