@@ -90,6 +90,17 @@ settings.audio = AudioSettings(
   floppySounds:     (true,          false)
 )
 
+settings.general = GeneralSettings(
+  confirmQuit:         (true,       false),
+  pauseWhenUnfocused:  (false,      false),
+
+  windowDecorations:   (wdNormal,   false),
+  showToolbar:         (false,      false),
+  captureMouseOnFocus: (true,       false),
+
+  rawScreenshots:      (true,       false)
+)
+
 const
   DialogLayoutParams = AutoLayoutParams(
     itemsPerRow:       2,
@@ -198,7 +209,8 @@ proc applyErrorDialog() =
                disabled=true)
 
   const ButtonWidth = 75
-  if koi.button(x=(DlgWidth - ButtonWidth) / 2, y=DlgHeight-40, w=75, h=24, "OK"):
+  if koi.button(x=(DlgWidth - ButtonWidth) / 2, y=DlgHeight-40,
+                w=75, h=24, "OK"):
     closeDialog()
 
   koi.endDialog()
@@ -263,9 +275,10 @@ proc renderDisplayTab() =
     koi.dropDown(settings.display.displayMode.value,
                  disabled = not settings.display.displayMode.set)
 
+    # Window size
     koi.toggleButton(settings.display.windowWidth.set, "Window size")
     setHelpText("Set the window size in windowed mode.")
-    let y = koi.autoLayoutNextY()
+    var y = koi.autoLayoutNextY()
 
     koi.nextItemWidth(55)
     koi.textField(
@@ -290,6 +303,36 @@ proc renderDisplayTab() =
         maxInt: 9999
       ).some,
       disabled = not settings.display.windowWidth.set
+    )
+
+    # Window position
+    koi.toggleButton(settings.display.windowPosX.set, "Window position")
+    setHelpText("Set the position of the window in windowed mode.")
+    y = koi.autoLayoutNextY()
+
+    koi.nextItemWidth(55)
+    koi.textField(
+      settings.display.windowPosX.value,
+      tooltip = "",
+      constraint = TextFieldConstraint(
+        kind:   tckInteger,
+        minInt: 640,
+        maxInt: 9999
+      ).some,
+      disabled = not settings.display.windowPosX.set
+    )
+
+    koi.label(x=251, y, w=20, h=22, "x")
+
+    koi.textField(
+      x=265, y, w=55, h=22,
+      settings.display.windowPosY.value,
+      constraint = TextFieldConstraint(
+        kind:   tckInteger,
+        minInt: 480,
+        maxInt: 9999
+      ).some,
+      disabled = not settings.display.windowPosY.set
     )
 
     koi.toggleButton(settings.display.resizableWindow.set, "Resizable window")
@@ -428,14 +471,17 @@ proc renderAudioTab() =
   group:
     koi.toggleButton(settings.audio.audioInterface.set, "Audio interface")
     setHelpText("""
-      TODO
+      Set the Windows audio interface used by the emulator. In theory, WASAPI
+      should be the better option, allowing you to use smaller buffer sizes,
+      but in practice DirectSound works better on many common audio hardware.
     """)
     koi.dropDown(settings.audio.audioInterface.value,
                  disabled = not settings.audio.audioInterface.set)
 
     koi.toggleButton(settings.audio.sampleRate.set, "Sample rate")
     setHelpText("""
-      TODO
+      Set the sample rate in Hz. Most audio interfaces use 48000 Hz
+      natively, so that's the best general setting.
     """)
     koi.nextItemWidth(80)
     koi.dropDown(settings.audio.sampleRate.value,
@@ -443,17 +489,21 @@ proc renderAudioTab() =
 
     koi.toggleButton(settings.audio.soundBufferSize.set, "Sound buffer size")
     setHelpText("""
-      TODO
+      Set the size of the sound buffer. If you get distorted audio or
+      occasional glitches and drop-outs, try increasing the buffer size. With
+      lagless vsync enabled, larger buffer sizes might be detrimental; you'll
+      need to find the optimum buffer size that results in glitch-free audio
+      and no vsync tearing.
     """)
     koi.nextItemWidth(60)
     koi.dropDown(settings.audio.soundBufferSize.value,
                  disabled = not settings.audio.soundBufferSize.set)
 
-
   group:
     koi.toggleButton(settings.audio.volume.set, "Volume")
     setHelpText("""
-      TODO
+      Set the global volume of the emulator. This includes the sound of the
+      emulated Amiga, the floppy sound emulation, and CD audio.
     """)
     let y = koi.autoLayoutNextY()
 
@@ -469,7 +519,12 @@ proc renderAudioTab() =
 
     koi.toggleButton(settings.audio.stereoSeparation.set, "Stereo separation")
     setHelpText("""
-      TODO
+      Set the amount of stereo separation between the left and right audio
+      channels. The Amiga has four audio channels: two are connected to the
+      left speaker, and the other two to the right speaker. This is 100%
+      separation which is rather jarring on headphones. 50% stereo separation
+      causes half of the left channels to be mixed into the right channels and
+      vice versa, and 0% separation results in mono audio.
     """)
     koi.nextItemWidth(60)
     koi.dropDown(settings.audio.stereoSeparation.value,
@@ -478,7 +533,10 @@ proc renderAudioTab() =
   group:
     koi.toggleButton(settings.audio.floppySounds.set, "Floppy sounds")
     setHelpText("""
-      Enable floppy sound emulation.
+      Enable authentic emulation of the sounds of the floppy disk drives. This
+      provides additional feedback on the disk drives' activity, and acts as a
+      progress indicator (i.e., loading times can appear subjectively shorter
+      if you're hearing the floppy activity).
     """)
     koi.nextItemHeight(CheckBoxSize)
     koi.checkBox(settings.audio.floppySounds.value,
@@ -487,7 +545,59 @@ proc renderAudioTab() =
 # }}}
 # {{{ renderGeneralTab()
 proc renderGeneralTab() =
-  discard
+  group:
+    koi.toggleButton(settings.general.confirmQuit.set, "Confirm quit")
+    setHelpText("""
+      Ask for confirmation when quitting the emulator.
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.general.confirmQuit.value,
+                 disabled = not settings.general.confirmQuit.set)
+
+    koi.toggleButton(settings.general.pauseWhenUnfocused.set, "Pause when unfocused")
+    setHelpText("""
+      Pause the emulation when the emulator window is unfocused.
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.general.pauseWhenUnfocused.value,
+                 disabled = not settings.general.pauseWhenUnfocused.set)
+
+  group:
+    koi.toggleButton(settings.general.windowDecorations.set, "Window decorations")
+    setHelpText("""
+      TODO
+    """)
+    koi.nextItemWidth(90)
+    koi.dropDown(settings.general.windowDecorations.value,
+                 disabled = not settings.general.windowDecorations.set)
+
+
+    koi.toggleButton(settings.general.showToolbar.set, "Show toolbar")
+    setHelpText("""
+      Show toolbar in windowed mode (even if the OSD is enabled).
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.general.showToolbar.value,
+                 disabled = not settings.general.showToolbar.set)
+
+    koi.toggleButton(settings.general.captureMouseOnFocus.set, "Capture mouse on focus")
+    setHelpText("""
+      Capture the mouse when the emulator windows becomes focused.
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.general.captureMouseOnFocus.value,
+                 disabled = not settings.general.captureMouseOnFocus.set)
+
+  group:
+    koi.toggleButton(settings.general.rawScreenshots.set, "Raw screenshots")
+    setHelpText("""
+      If enabled, the saved screenshots will contain the raw image, not what
+      you see on the screen post-scaling and CRT shaders. If disabled, exactly
+      what you seen on the screen will be saved.
+    """)
+    koi.nextItemHeight(CheckBoxSize)
+    koi.checkBox(settings.general.rawScreenshots.value,
+                 disabled = not settings.general.rawScreenshots.set)
 
 # }}}
 # {{{ renderTabs()
@@ -550,9 +660,11 @@ proc renderUI() =
   y = winHeight - 22 - 25
 
   if koi.button(x, y, w=75, h=ButtonHeight, "Reset"):
+    # TODO
     discard
 
   if koi.button(x+83, y, w=75, h=ButtonHeight, "Load"):
+    # TODO
     discard
 
   if koi.button(winWidth-90-x-98, y, w=90, h=ButtonHeight, "Apply to"):
