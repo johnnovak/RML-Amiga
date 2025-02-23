@@ -4,25 +4,11 @@ import std/os
 import std/strformat
 import std/strutils
 
-var exeName = "conftool".toExe
-
 const Version = staticRead("CURRENT_VERSION").strip
 const GitHash = strutils.strip(staticExec("git rev-parse --short=5 HEAD"))
 
 # Directory containing local copies of the module dependencies
 const NimModules = "/Users/john.novak/dev/jn"
-
-proc setCommonCompileParams() =
-  --deepcopy:on
-  --d:nvgGL3
-  --d:glfwStaticLib
-
-  switch("path", NimModules / "nim-glfw")
-  switch("path", NimModules / "nim-nanovg")
-  switch("path", NimModules / "koi")
-
-  switch "out", exeName
-  setCommand "c", "src/guiapp"
 
 # All tasks must be executed from the project root directory!
 
@@ -35,27 +21,44 @@ task gitHash, "get Git hash":
 task versionAndGitHash, "get version and Git hash":
   echo fmt"{Version}-{GitHash}"
 
-task debug, "compile debug build":
+############# ConfToolGUI #############
+
+proc setConfToolGuiCommonParams() =
+  --deepcopy:on
+  --d:nvgGL3
+  --d:glfwStaticLib
+
+  switch("path", NimModules / "nim-glfw")
+  switch("path", NimModules / "nim-nanovg")
+  switch("path", NimModules / "koi")
+
+  switch "out", "ConfTool"
+  setCommand "c", "src/confToolGui"
+
+task confToolGuiDebug, "compile ConfToolGUI (debug build)":
   --d:debug
-  setCommonCompileParams()
+  setConfToolGuiCommonParams()
 
-task runDebug, "compile & run debug build":
-  debugTask()
-  setCommand "r"
-
-task releaseNoStacktrace, "compile release build (no stacktrace)":
+task confToolGuiRelease, "compile ConfToolGUI (release build)":
   --d:release
   --app:gui
-  setCommonCompileParams()
-
-task release, "compile release build":
   --stacktrace:on
   --linetrace:on
-  releaseNoStacktraceTask()
+  setConfToolGuiCommonParams()
 
-task runRelease, "compile & run release build":
-  releaseTask()
-  setCommand "r"
+############### PkgTool ###############
 
-task clean, "clean everything":
-  rmFile exeName
+proc setPkgToolCommonParams() =
+  switch "out", "PkgTool"
+  setCommand "c", "src/PkgTool"
+
+task pkgToolDebug, "compile PkgTool (debug build)":
+  --d:debug
+  setPkgToolCommonParams()
+
+task pkgToolRelease, "compile PkgTool (release build)":
+  --d:release
+  --stacktrace:on
+  --linetrace:on
+  setPkgToolCommonParams()
+

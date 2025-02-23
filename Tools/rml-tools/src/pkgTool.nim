@@ -1,11 +1,12 @@
 import std/dirs
 import std/files
 import std/paths
-import std/streams
 import std/strformat
 import std/strutils
 import std/sugar
 import std/tables
+
+import core
 
 let ConfigPath = Path("Configurations")
 const ConfigExt = ".uae"
@@ -22,43 +23,6 @@ proc getConfigNames*(path: Path): seq[string] =
       if pc == pcFile:
         let (_, name, ext) = p.splitFile
         if ext == ConfigExt: $name
-
-# TODO common function
-type
-  UaeConfig = ref object
-    cfg: OrderedTable[string, string]
-
-const CommentKeyPrefix = "#comment-"
-
-proc readUaeConfig*(file: Path): UaeConfig =
-  let contents = readFile($file)
-  var
-    stream = newStringStream(contents)
-    line   = ""
-    lineNo = 1
-
-  result = new UaeConfig
-  result.cfg = initOrderedTable[string, string]()
-
-  var filesystem2Index = 0
-
-  while stream.readLine(line):
-    if line.strip().startsWith(";"):
-      result.cfg[fmt"{CommentKeyPrefix}{lineNo}"] = line
-    else:
-      let p = line.find('=')
-      if p > -1:
-        let key = line[0..p-1].strip
-        let val = line[p+1..^1].strip
-
-        if key == "filesystem2":
-          # `filesystem2` can occur multiple times.
-          result.cfg[fmt"{key}#{filesystem2Index}"] = val
-          inc(filesystem2Index)
-        else:
-          result.cfg[key] = val
-
-    inc(lineNo)
 
 
 proc checkPaths(configPath: Path, c: UaeConfig, basePath: Path) =

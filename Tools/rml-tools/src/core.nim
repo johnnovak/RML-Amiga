@@ -16,8 +16,8 @@ const
 
 # {{{ UaeConfig
 type
-  UaeConfig = ref object
-    cfg: OrderedTable[string, string]
+  UaeConfig* = ref object
+    cfg*: OrderedTable[string, string]
 
 const CommentKeyPrefix = "#comment-"
 
