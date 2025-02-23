@@ -10,7 +10,7 @@ of sitting in front of a real Commodore Amiga connected to a classic 15 kHz
 Commodore CRT monitor, playing the uncracked and unaltered originals. Manuals,
 reference cards, interactive code wheels, maps, posters, box art, audio
 recordings, hint books, and various other extras to enjoy the games to the
-fullest are all included. 
+fullest are all included.
 
 No previous Amiga experience is assumed or required---things are kept as
 simple as possible, and everything you need to know is explained in this
@@ -19,13 +19,13 @@ manual.
 Wait a minute, you said "uncracked originals"? Does this mean I'll need to use
 floppies and put up with disk swapping and long loading times? No! Contrary to
 popular belief, the majority of big multi-disk releases are hard drive
-installable. That's most RPGs and adventure games.
+installable. Luckily for us, that's most RPGs and adventure games.
 
 About 70% of the games in the collection run from an emulated hard drive. Most
 of the remaining floppy games require either no disk swapping (because they
-support multiple drives), or only minimal disk swapping. Moreover, most single
-or two-disk floppy releases load rather quickly, and you can always put the
-emulator in "warp mode" to speed up the loading.
+support multiple drives), or only minimal disk swapping. Moreover, most
+floppy-only releases load rather quickly, and you can always put the emulator
+in "warp mode" to speed up the loading.
 
 
 ## Features in detail
@@ -96,6 +96,12 @@ All necessary information included
   play without these materials. Significant effort has been taken to track
   down the best-looking scanned copies for each game.
 
+Workbench
+  TODO
+
+Demos
+  TODO
+
 
 ## Hardware requirements
 
@@ -103,13 +109,16 @@ RML Amiga has been developed and tested on Windows 10 64-bit. It will most
 likely work fine on more recent Windows versions, and probably on Windows 7
 64-bit too. Only 64-bit Windows versions are supported.
 
+TODO test on TV
 The CRT shader setup is optimised for 1080p monitors (1920&times;1080
 resolution), but should work on any display. A variable refresh rate (VRR),
-adaptive-sync display (e.g., Nvidia G-Sync or AMD FreeSync capable) is not
-mandatory but highly recommended for an optimal experience, especially for
-action games.
+adaptive-sync display (e.g., Nvidia G-Sync or AMD FreeSync capable) is highly
+recommended. Fixed-refresh rate monitors will work fine too, but it can be a
+bit more hassle to minimise input lag in action games with vsync enabled on
+such displayes. If you only care about slower-paced games (e.g., RPGs,
+adventures) and watching demos, a fixed-refresh monitor will work great.
 
-A CPU and a dedicated GPU released after 2015 is recommended. Integrated
-graphics adapters will probably work too, but some tweaking of the shaders
-might be required to lessen the load on the GPU (you'll find the instructions
-on how to do this in the [customising-your-setup.md] section).
+A middle-tier or better CPU released in the last ten years or so is
+recommended. A dedicated GPU is recommended but integrated graphics adapters
+will most likely work too, just you might need to lower the CRT shader quality
+(see the [customising-your-setup.md](TODO) section for details).

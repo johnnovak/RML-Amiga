@@ -15,6 +15,9 @@
 
 ## Ambermoon
 
+- To start the game, double-click on the **Ambermoon** disk icon then on the
+  **Ambermoon** icon.
+
 - Official v1.07 English version (never published due to the demise of
   Thalion), plus Meynaf's v1.07 patch.
 
@@ -75,6 +78,12 @@ above steps.
 ## Archipelagos
 
 - Saves the high scores to the game disk.
+
+
+## Art of GO, The
+
+- To start the game, double-click on the **TheArtOfGO** disk icon then on the
+  **The Art of GO** icon.
 
 
 ## Aufschwung Ost

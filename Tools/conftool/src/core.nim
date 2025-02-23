@@ -44,6 +44,8 @@ type
     displayMode*:     tuple[value: DisplayMode,   set: bool]
     windowWidth*:     tuple[value: string,        set: bool]
     windowHeight*:    tuple[value: string,        set: bool]
+    windowPosX*:      tuple[value: string,        set: bool]
+    windowPosY*:      tuple[value: string,        set: bool]
     resizableWindow*: tuple[value: bool,          set: bool]
     showOsd*:         tuple[value: bool,          set: bool]
 
@@ -91,12 +93,12 @@ type
   # {{{ Audio settings
   # -------------------------------------------------------------------------
   AudioSettings* = object
-    audioInterface*:   tuple[value: AudioInterface,    set: bool]
-    sampleRate*:       tuple[value: SampleRate,        set: bool]
-    soundBufferSize*:  tuple[value: SoundBufferSize,   set: bool]
-    volume*:           tuple[value: string,            set: bool]
-    stereoSeparation*: tuple[value: StereoSeparation,  set: bool]
-    floppySounds*:     tuple[value: bool,              set: bool]
+    audioInterface*:   tuple[value: AudioInterface,   set: bool]
+    sampleRate*:       tuple[value: SampleRate,       set: bool]
+    soundBufferSize*:  tuple[value: SoundBufferSize,  set: bool]
+    volume*:           tuple[value: string,           set: bool]
+    stereoSeparation*: tuple[value: StereoSeparation, set: bool]
+    floppySounds*:     tuple[value: bool,             set: bool]
 
   AudioInterface* = enum
     adDirectSound = "DirectSound"
@@ -136,7 +138,19 @@ type
   # {{{ General settings
   # -------------------------------------------------------------------------
   GeneralSettings* = object
-    discard
+    confirmQuit*:         tuple[value: bool,              set: bool]
+    pauseWhenUnfocused*:  tuple[value: bool,              set: bool]
+
+    windowDecorations*:   tuple[value: WindowDecorations, set: bool]
+    showToolbar*:         tuple[value: bool,              set: bool]
+    captureMouseOnFocus*: tuple[value: bool,              set: bool]
+
+    rawScreenshots*:      tuple[value: bool,              set: bool]
+
+  WindowDecorations* = enum
+    wdNone    = "None"
+    wdMinimal = "Minimal"
+    wdNormal  = "Normal"
 
   # }}}
 # }}}
@@ -348,6 +362,13 @@ proc setWindowSize(c: UaeConfig, width, height: string) =
   c.cfg["gfx_height_windowed"] = height
 
 # }}}
+# {{{ setWindowPos()
+proc setWindowPos(c: UaeConfig, x, y: string) =
+  # TODO
+  c.cfg["gfx_pos_x"]  = x
+  c.cfg["gfx_pos_y"] = x
+
+# }}}
 # {{{ setShowOsd()
 proc setShowOsd(c: UaeConfig, showOsd: bool) =
   c.cfg["show_leds"] = $showOsd
@@ -495,6 +516,82 @@ proc setLaglessVsyncSlices(c: UaeConfig, vsyncSlices: string) =
 
 # }}}
 # }}}
+# {{{ Set audio settings
+# {{{ setAudioInterface()
+proc setAudioInterface(c: UaeConfig, audioInterface: AudioInterface) =
+  # TODO
+  c.cfg[""] = $audioInterface
+
+# }}}
+# {{{ setSampleRate()
+proc setSampleRate(c: UaeConfig, sampleRate: SampleRate) =
+  # TODO
+  c.cfg[""] = $sampleRate
+
+# }}}
+# {{{ setSoundBufferSize()
+proc setSoundBufferSize(c: UaeConfig, bufSize: SoundBufferSize) =
+  # TODO
+  c.cfg[""] = $bufSize
+
+# }}}
+# {{{ setVolume()
+proc setVolume(c: UaeConfig, volume: string) =
+  # TODO
+  c.cfg[""] = volume
+
+# }}}
+# {{{ setStereoSeparation()
+proc setStereoSeparation(c: UaeConfig, sep: StereoSeparation) =
+  # TODO
+  c.cfg[""] = $sep
+
+# }}}
+# {{{ setFloppySounds()
+proc setFloppySounds(c: UaeConfig, enabled: bool) =
+  # TODO
+  c.cfg[""] = $enabled
+
+# }}}
+# }}}
+# {{{ Set general settings
+# {{{ setConfirmQuit()
+proc setConfirmQuit(c: UaeConfig, enabled: bool) =
+  # TODO
+  c.cfg[""] = $enabled
+
+# }}}
+# {{{ setPauseWhenUnfocused()
+proc setPauseWhenUnfocused(c: UaeConfig, enabled: bool) =
+  # TODO
+  c.cfg[""] = $enabled
+
+# }}}
+# {{{ setWindowDecorations()
+proc setWindowDecorations(c: UaeConfig, d: WindowDecorations) =
+  # TODO
+  c.cfg[""] = $d
+
+# }}}
+# {{{ setShowToolbar()
+proc setShowToolbar(c: UaeConfig, enabled: bool) =
+  # TODO
+  c.cfg[""] = $enabled
+
+# }}}
+# {{{ setCaptureMouseOnFocus()
+proc setCaptureMouseOnFocus(c: UaeConfig, enabled: bool) =
+  # TODO
+  c.cfg[""] = $enabled
+
+# }}}
+# {{{ setRawScreenshots()
+proc setRawScreenshots(c: UaeConfig, enabled: bool) =
+  # TODO
+  c.cfg[""] = $enabled
+
+# }}}
+# }}}
 
 # {{{ applySettings*()
 proc applySettings*(cfg: UaeConfig, settings: Settings) =
@@ -502,8 +599,11 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
     if displayMode.set:
       cfg.setDisplayMode(displayMode.value)
 
-    if windowWidth.set:
+    if windowWidth.set or windowHeight.set:
       cfg.setWindowSize(windowWidth.value, windowHeight.value)
+
+    if windowPosX.set or windowPosY.set:
+      cfg.setWindowPos(windowPosX.value, windowPosY.value)
 
     if resizableWindow.set:
       cfg.setResizableWindow(resizableWindow.value)
@@ -536,6 +636,53 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
 
     if vsyncSlices.set:
       cfg.setLaglessVsyncSlices(vsyncSlices.value)
+
+
+  with settings.audio:
+    discard
+
+    #[ TODO
+    if audioInterface.set:
+      cfg.setAudioInterface(audioInterface.value)
+
+    if sampleRate.set:
+      cfg.setSampleRate(sampleRate.value)
+
+    if soundBufferSize.set:
+      cfg.setSoundBufferSize(soundBufferSize.value)
+
+    if volume.set:
+      cfg.setVolume(volume.value)
+
+    if stereoSeparation.set:
+      cfg.setStereoSeparation(stereoSeparation.value)
+
+    if floppySounds.set:
+      cfg.setFloppySounds(floppySounds.value)
+    ]#
+
+  with settings.general:
+    discard
+
+    #[ TODO
+    if confirmQuit.set:
+        cfgConfirmQuit.set(confirmQuit.value)
+
+    if pauseWhenUnfocused.set:
+        cfgPauseWhenUnfocused.set(pauseWhenUnfocused.value)
+
+    if windowDecorations.set:
+        cfg.setWindowDecorations(windowDecorations.value)
+
+    if showToolbar.set:
+        cfg.setShowToolbar(showToolbar.value)
+
+    if captureMouseOnFocus.set:
+        cfg.setCaptureMouseOnFocus(captureMouseOnFocus.value)
+
+    if rawScreenshots.set:
+        cfg.setRawScreenshots(rawScreenshots.value)
+    ]#
 
 # }}}
 

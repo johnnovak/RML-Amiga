@@ -5,7 +5,7 @@
 - Multi-language release (English, French, German).
 
 
-## Cadaver - The Last Supper
+## Cadaver: The Last Supper
 
 - **The Last Supper** is an exclusive demo level featured on Zero Coverdisk 15
   (Issue 23, September 1991).

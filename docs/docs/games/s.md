@@ -1,4 +1,4 @@
-# S–T
+# S
 
 ## Scapeghost
 
@@ -9,6 +9,12 @@
 
 - Use the **RESTORE** command and the same process to load your previously
   saved gamed.
+
+
+## Secret of Monkey Island, The
+
+- To start the game, double-click on the **MonkeyIsland** disk icon, then on
+  the **MonkeyIsland** icon.
 
 
 ## Secret of the Silver Blades
@@ -45,6 +51,11 @@
     saves!
 
 
+## Shadow of the Beast
+
+- Best played with a digital joystick.
+
+
 ## Shadowgate
 
 - Floppy game that saves to the hard drive.
@@ -59,9 +70,10 @@
   again to load it.
 
 
-## Shadow of the Beast
+## SimCity (CDTV)
 
-- Best played with a digital joystick.
+- CD version extras: intro video, CD Audio music, enhanced graphics, all city
+  packs, new scenarios.
 
 
 ## SimCity Collection
@@ -86,10 +98,10 @@
 - This version has the manual-based copy protection removed by the developer.
 
 
-## SimCity (CDTV)
+## Simon the Sorcerer (CD32)
 
-- CD version extras: intro video, CD Audio music, enhanced graphics, all city
-  packs, new scenarios.
+- CD version extras: voice acting, no manual-based protection.
+- Can be played with the mouse.
 
 
 ## Soccer Kid (OCS)
@@ -131,12 +143,6 @@
 - Best played with a digital joystick.
 
 
-## Simon the Sorcerer (CD32)
-
-- CD version extras: voice acting, no manual-based protection.
-- Can be played with the mouse.
-
-
 ## Space Quest I: The Sarien Encounter (AGI)
 
 - Floppy game that saves to the hard drive.
@@ -167,52 +173,3 @@
 
 - Use either the code wheel or the launch code generator to pass the
   protection check.
-
-
-## Tass Times in Tonetown
-
-- Very long initial loading time. There's no floppy activity for a long time
-  during loading. You can use the **start** save state to skip the loading.
-
-- Saves to the game disk.
-
-
-## Times of Lore
-
-- Saves to the game disk.
-
-
-## Total Eclipse
-
-- Saves to the game disk.
-
-
-## Transarctica (AGA)
-
-- Multi-language release (English, French, German).
-
-
-## Treasures of the Savage Frontier
-
-**WASD movement keys**
-
-- Press ++home+w++ to switch to an alternative input mapping which maps the
-  cursor keys to the WASD keys.
-
-- Press ++home+q++ to switch back to the normal input mapping (e.g., in menus
-  or when entering the name of your save game).
-
-
-## Uninvited
-
-- Floppy game that saves to the hard drive.
-
-- Type **Save:YourSavegameName** in the dialog when saving the game (you can
-  use any name you like after the **Save:** part).
-
-- When restoring a game, your save games will be listed if you have
-  saved before in this gaming session. If not, you'll need to type **Save:**
-  (with the colon at the end; this is important), then press the **OK**
-  button to list your save games. Click on one to select it and press **OK**
-  again to load it.
-

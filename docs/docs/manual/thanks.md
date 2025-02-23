@@ -19,8 +19,9 @@ these presitgious folks:
     heavy use of.
 
 - **guest.r** for his excellent [CRT shaders for WinUAE](https://github.com/guestrr/WinUAE-Shaders).
-  Not many know that his [early WinUAE work](https://eab.abime.net/showthread.php?t=61776) was the precursor for
-  his the "CRT Guest Advanced" series highly popular in emulation circles today.
+  Not many know that his [early WinUAE work](https://eab.abime.net/showthread.php?t=61776)
+  was the precursor for his the "CRT Guest Advanced" series highly popular in
+  emulation circles today.
 
 - **Crosire** for [ReShade](https://reshade.me/) RML Amiga uses for achieving
   authentic CRT emulation.
@@ -29,14 +30,15 @@ these presitgious folks:
 
 Special thanks to the following people who contributed to turning this into reality:
 
-- **Kaucukovnik** (the creator of the [Amiga Dungeoneering Collection](https://rpgcodex.net/forums/threads/amiga-dungeoneering-collection.84467/))
+- **Kaucukovnik** (the creator of the
+  [Amiga Dungeoneering Collection](https://rpgcodex.net/forums/threads/amiga-dungeoneering-collection.84467/))
   who was my major source of inspriration.
 
 - **TheThirdFall** from the eXoDOS Discord for general morale-boosting and beta
   testing.
 
-- My fellow oldschool Amiga enthusiasts from [RPG
-  Codex](https://rpgcodex.net/) for inspiration.
+- My fellow oldschool Amiga enthusiasts from [RPG Codex](https://rpgcodex.net/)
+  for inspiration.
 
 - **Smiling Spectre** from the eXoDOS team for hunting down pristine manual
   scans for many games.
@@ -48,8 +50,8 @@ Special thanks to the following people who contributed to turning this into real
 <br>
 
 The manual scans, covers, metadata, and various other supplementary materials
-have been sourced from the following websites (non-exhaustive list, sorted
-alphabetically):
+have been sourced from the following websites (non-exhaustive list in
+alphabetical order):
 
 <div class="compact" markdown>
 - [Dungeon Master Encyclopedia](http://dmweb.free.fr/)

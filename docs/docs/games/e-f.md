@@ -18,6 +18,12 @@
 - This is the most recommended version.
 
 
+## Elvira: Mistress of the Dark
+
+- To start the game, double-click on the **Elvira** disk icon, then on
+  the **Elvira** icon.
+
+
 ## Exile
 
 - Galahad/FLT's 100% working crack, confirmed to be completable by himself.

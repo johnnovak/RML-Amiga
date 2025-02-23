@@ -10,7 +10,7 @@ const Version = staticRead("CURRENT_VERSION").strip
 const GitHash = strutils.strip(staticExec("git rev-parse --short=5 HEAD"))
 
 # Directory containing local copies of the module dependencies
-const NimModules = "/Users/john.novak/.jn"
+const NimModules = "/Users/john.novak/dev/jn"
 
 proc setCommonCompileParams() =
   --deepcopy:on
