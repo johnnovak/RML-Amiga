@@ -58,13 +58,10 @@ func addConfigExt(p: Path): Path =
 
 
 # Category is either "Games", "Demos\OCS", or "Demos\AGA"
-proc process(category: string) =
+proc validate(categoryPath: Path, names: seq[Path]) =
   let
-    categoryPath = Path(category)
-    names = getDirNames(categoryPath)
-
     configBasePath = ConfigPath / categoryPath
-    configNames = getConfigNames(configBasePath)
+    configNames    = getConfigNames(configBasePath)
 
   for name in names:
     let
@@ -78,17 +75,45 @@ proc process(category: string) =
           addConfigExt(configBasePath / Path(n))
 
     if not (fileExists(exactConfigPath) or variantConfigPaths.len > 0):
-      echo fmt"*** WARNING: missing config for '{category}/{name}'"
+      echo fmt"*** WARNING: missing config for '{$dataBasePath}'"
       echo ""
 
-    let cfg = readUaeConfig(exactConfigPath)
+    if fileExists(exactConfigPath):
+      let cfg = readUaeConfig(exactConfigPath)
+      checkPaths(exactConfigPath, cfg, dataBasePath)
 
-    checkPaths(exactConfigPath, cfg, dataBasePath)
     for p in variantConfigPaths:
+      let cfg = readUaeConfig(p)
       checkPaths(p, cfg, dataBasePath)
 
 
+proc createPackageScript(category: string, names: seq[Path]): string =
+  result = """set CMD=Tools\7za.exe
+set OUT=package-output
+
+  """
+
+  for name in names:
+    result &= fmt"""%CMD% a -tzip -r %OUT%\"{name}" ^
+	"{category}\{name}" ^
+	"Configurations\{category}\{name}.uae" ^
+	"Configurations\{category}\{name} [*].uae"
+
+"""
+
+
+proc process(category: string) =
+  let
+    categoryPath = Path(category)
+    names        = getDirNames(categoryPath)
+
+  validate(categoryPath, names)
+  let script = createPackageScript(category, names)
+  echo script
+
+
 process("Games")
+
 
 #[
 set CMD=Tools\7za.exe
