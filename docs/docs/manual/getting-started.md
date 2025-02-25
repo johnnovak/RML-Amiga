@@ -59,7 +59,6 @@ Read the game notes
   (you'll need a lot of forum diving to find all this info), or the
   information is in the manual but it's hard to find.
 
-
 Skipping code checks
 : Some games have additional special configs to skip the intro or the
   manual-based copy protection check at the start (e.g., `Altered Destiny
@@ -109,11 +108,13 @@ Read the manuals
     The **Extras** folder contains optional content not strictly necessary to
     complete the game (e.g., covers, posters, official hint books, etc.).
 
+
 Floppy games
 : [Hard drive installed games](hard-drive-games.md) are the easiest to deal
   with, floppy games need a bit of practice. Read the [Floppy games](floppy-games.md)
   section for guidance. You can easily recognise a floppy game by the emulated
   floppy drive sounds.
+
 
 Controller support
 : Most games in the collection are controlled with the mouse and the keyboard,
@@ -132,6 +133,16 @@ Controller support
   360), press the green **A** button on it after starting the game and WinUAE
   will "plug it" into port 2.
 
+
+Learn the keyboard shortcuts
+: There are few important [keyboard shortcuts] you should familiarise yourself
+  with. The three most important are ++pause++ to toggle pausing the
+  emulation, ++end+f12++ to switch between windowed and full windowed mode,
+  and ++end++pause++ to toggle warp mode. ++f12++ stops the emulation and
+  brings up the WinUAE GUI, but don't touch anything there yet if you're a
+  newbie; things will blow up :explosion: :fire:. Just press ++esc++ or the
+  **Ok** button for now to return to the game.
+
 Saving your progress
 : When it comes to saving your game progress, it's a bit of a Wild West
   situation. Every game is slightly different, and floppy games that require
@@ -148,7 +159,6 @@ Customising your setup
   section.
 
 Learn more about Amiga games
-
 : Check out the [Useful websites](useful-websites.md) page to find out more
   about Amiga games. These sites should also help you decide which titles to
   try next.

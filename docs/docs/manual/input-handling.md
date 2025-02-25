@@ -10,6 +10,55 @@ controllers. The mouse usually needs to be plugged into **port 1**, and the
 game controller (typically a joystick) into **port 2**.
 
 
+## Input capturing
+
+When you start a game, the emulator automatically captures your mouse and
+keyboard. What this means is your Windows mouse pointer disappears, and all
+mouse events and keyboard presses are sent to the emulated Amiga instead of
+Windows. Input capturing is indicated in the title bar of the WinUAE window in
+windowed mode TODO 
+
+To uncapture the mouse and keyboard, press the middle button on your mouse, or
+++alt++tab++ to switch to a different window (but "alt-tabbing" only works if
+you have at least on more other window open).
+
+Conversely, to capture the input, "alt-tab" into the WinUAE window, or press
+any mouse button inside it.
+
+!!! warnings 
+
+    Due to a bug, if the WinUAE window is unfocused _and_ you left-click on
+    the title bar of the WinUAE window, the window will rapidly move downwards
+    on the screen until you release the left mouse button. Currently, there is
+    no solution to this minor issue so the advice is simple: just don't do
+    this.
+
+    The bug will be fixed in the next WinUAE version, which will be
+    incorporated into a future RML Amiga release.
+
+
+## Mouse
+
+All stock Amigas came with 2-button mice, so the vast majority of non-action
+games are mouse-operated. Even most text adventures have some rudimentary
+mouse-driven interface---that's how big of a deal built-in mouse support was
+back in the 80s.
+
+As mentioned in the previous section, the middle mouse button is used for
+uncapturing the mouse and keyboard input, otherwise the mouse and the left and
+right mouse buttons act as you'd expecte;q
+;q
+
+
+If you're running WinUAE in windowed mode, you can press the middle mouse
+button to uncapture the mouse (uncapturing means you get back your Windows
+mouse pointer). You can toggle betwenn windowed and full windowed mode with
+++end++f12++. Pressing ++alt+tab++ to switch to another window also
+uncaptures, but the ++alt++ keypress might trigger something in the game
+(e.g., exit from a game intro if it's programmed to accept any keypress to
+skip it).
+
+
 ## Keyboard
 
 Amiga keyboards are very similar to standard PC keyboards. Even the numeric
