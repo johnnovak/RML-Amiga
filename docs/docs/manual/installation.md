@@ -13,35 +13,70 @@ Links to the latest versions of the packs:
 - [RML-Amiga-Demos-v1.0](TODO)
 </div>
 
+
+## Fully automatic installation
+
+The easiest way to install RML Amiga is to download all the five packs and
+`install-full.bat` (it's included in the **Base** pack [here](TODO)), then
+put all of them into a folder where you want the collection to live. This must
+be outside of `C:\Program Files` or similar system folders (e.g.,
+`D:\Emulation\Amiga\RML-Amiga`).
+
+Double-click on `install-full-v10.bat` in Windows Explorer, then wait 5-10 minutes
+until the installation finishes. You will be informed of the progress of
+this in the appearing window.
+
+Once the installation has succeeded, you can start WinUAE (the Amiga
+emulator) by running `winuae.exe` from your RML Amiga folder. It's a good idea
+to create a shortcut to `winuae.exe` on your desktop at this point.
+
+It's important to note that RML Amiga is fully self-contained in this folder
+of your choosing; in other words, it's portable. Using the collection won't
+create or modify any files outside of your RML Amiga folder, so you can move
+it between different drives or even different computers without any problems.
+
+Now let's play some games! Onwards to the
+[Getting started](getting-started.md) section!
+
+
+## Manual installation
+
+This is for people who want complete control over what to install exactly
+(e.g., if you don't want to download all games, just a few), and for those who
+have problems with using certain parts of the collection for whatever reasons
+(e.g., the Kickstart ROMs).
+
 Start by downloading the **Base** and **Systems** packs---these are mandatory.
 The **ROMs** pack is not necessary if you have acquired the ROM files from
 other sources (see
 [Supplying your own Kickstart ROMs](#supplying-your-own-kickstart-roms)).
 
-Download these packs, then extract them into the same folder (e.g.,
-`D:\Emulation\Amiga\RML-Amiga`). We will refer to this folder as `$RML_BASE`
-from now on.
+Once you've downloaded these packs, extract them into a folder you have full
+write access to (e.g., `D:\Emulation\Amiga\RML-Amiga`). We will refer to this
+folder as `$RML_BASE` from now on.
 
 !!! note 
 
-    If you already have WinUAE installed, no problem. The collection uses its own
-    copy of WinUAE in portable mode, so it won't interfere with existing
+    If you already have WinUAE installed, no problem. The collection uses its
+    own copy of WinUAE in portable mode, so it won't interfere with existing
     installations. The included WinUAE will never save any data outside of the
     `$RML_BASE` folder.
 
-After this, download the **Games** pack, and **Demos** if you're interested in
-watching glorious Amiga demoscene productions. Move the **Games** and
-**Demos** ZIP files into `$RML_BASE\Updates`, then run
-`RML_BASE\install-updates.exe` (this will take a while).
+Now download the **Games** pack and `install-games-v10.bat`, and **Demos** and
+`install-demos-v10.bat` if you're interested in watching glorious Amiga
+demoscene productions. Move all these files into `$RML_BASE`, then run
+`install-games-v10.bat` and `install-demos-v10.bat` (the installation will
+take a while).
 
-It's a good idea to create a shortcut for `$RML_BASE\winuae.exe` on your
+It's a good idea to create a shortcut to `$RML_BASE\winuae.exe` on your
 desktop at this point.
 
 !!! note 
 
-    TODO
-    Alternatively, you can grab only the games you're interested in. Each game resides
-    in its own ZIP archive inside the big **Games** ZIP file.
+    Alternatively, you can grab only the games you're interested in. Each game
+    resides in its own ZIP archive inside the big **Games** ZIP file. You can
+    view the list of nested ZIP files on archive.org by clicking on "View
+    Files", then you can download them individually.
 
 !!! warning "This voids your warranty, pal!"
 
@@ -59,18 +94,21 @@ Here is a detailed descriptions of the packs:
 
 - **Systems** --- Minimal Workbench 1.3 and 3.1 hard drive setups as directory
   hard drive. Just the bare minimum required to run games. The Workbench 3.1
-  installation contains WHDLoad as well.
+  installation contains WHDLoad as well. Half the commercial games include
+  similar minimal OS setups on the game disks, so this should not be a problem
+  for anyone.
 
 - **ROMs** --- ROM images (e.g., Kickstart ROMs) necessary to emulate
   the various Amiga models and other required hardware. (Note: The Amiga is
-  *not* a console! Games are *not* called "ROMs" on the Amiga.)
+  *not* a console! Games are *not* called "ROMs" on the Amiga!)
 
-- **Games** --- Each game has its own subfolder which contains the disk images
-  or directory hard drives with the game files, manuals, extras, savedisks,
-  savestates, and the original source media.
+- **Games** --- Nested ZIP archive with each game having its own
+  self-contained ZIP file. Each game lives in its own dedicated subfolder
+  which contains the disk images or directory hard drives, manuals, extras,
+  savedisks, savestates, and the original source media.
 
 - **Demos** --- Glorious demoscene productions from the Amiga's heyday (and
-  beyond!). Each demo has its own subfolder.
+  beyond!). It's a nested ZIP archive, just like the **Games** pack.
 
 
 The **Games** and **Demos** archives will get the most frequent updates, the
@@ -88,8 +126,8 @@ rest only rarely.
     rightholders" (who are far removed from Commodore and the original
     creators of the Amiga) or just download them from somewhere makes very
     little difference in the grand scheme of things. Up to you, really. If you
-    decide to pay for them, you'll need to purchase the full ROM set, not the
-    "value edition".
+    decide to pay for them, make sure to purchase the full ROM set, _not_ just
+    the "value edition".
 
 
 ## Versioning & updates

@@ -96,11 +96,21 @@ All necessary information included
   play without these materials. Significant effort has been taken to track
   down the best-looking scanned copies for each game.
 
-Workbench
-  TODO
+Preserving custom Workbench screens
+: A handful of games feature beautifully designed icons and Workbench screens
+  with custom colour schemes (Workbench is the graphical user interface of
+  AmigaOS). These works of art are worth preserving, and to date RML Amiga is
+  the only games collection that attempts to do so.
 
-Demos
-  TODO
+Curated demoscene collection
+: The Amiga was (and still is) famous for its vibrant demoscene in Europe.
+  Demos are non-interactive audiovisual pieces of art created by Amiga
+  enthusiasts (traditionally teenagers) that showcase their coding and
+  artistic prowess and push the limits of what the machine is capable of. Many
+  elite level programmers and artists of today had been forged in the fires of
+  the early Amiga demoscene. The collection includes a modest selection of
+  demos, with the goal of eventually including all demos presented in the
+  prestigious Amiga demoscene book series (TODO)... and then some more!
 
 
 ## Hardware requirements
