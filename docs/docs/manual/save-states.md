@@ -30,7 +30,8 @@ the day, there is just a single save state format.
 This method is the most useful for "save scumming" over short periods of time.
 You have nine quick save slots available for the currently loaded config.
 
-To save the current state into slots 1--9, press ++end+shift+num1++ -- ++num9++.
+To save the current state into slots 1--9, press
+++end+shift+num1++ -- ++num9++.
 
 To restore the state from slots 1--9, press ++end+num1++ -- ++num9++.
 
@@ -104,8 +105,8 @@ dialog.
 ## Creating config variants
 
 If you want to create your own "skip intro" or "skip code check" config
-variants for existing game configs, this is how to do it. We'll use the imaginary game **Bikini
-Bandits** in our example.
+variants for existing game configs, this is how to do it. We'll use the
+imaginary game **Bikini Bandits** in our example.
 
 
 1. Start the game using the `Bikini Bandits` config.

@@ -1,21 +1,6 @@
 # Customising your setup
 
-
-
 ## Graphics customisation
-
-The output of a 15 kHz home computer CRT monitor is emulated by default. Most
-people used their Amigas with such monitors in the 1980s and 90s (e.g., the
-Commodore 1084S or the Philips CM8833-II). The default 3.0x scaling
-mimics the physical dimensions of such 14" monitors rather closely on 24 to
-27" widescreen desktop displays (measure the diagonal of the image in an NTSC
-game; it will be TODO cm on a 24" screen which is close to the TODO cm image
-diagonal of a typical 14" CRT).
-
-However, you might want to adjust the image size depending on your display
-size, viewing distance, and personal preference. You can do so in the **Host /
-Filter** tab.
-
 
 To set a different scaling factor, use the drop-down to select a preset then
 press the **Load** button. Unfortunately, this will also reset image centering
@@ -36,6 +21,8 @@ result in faint vertical interference patterns (moire patterns) when using
 non-integer scaling factors with the PAL shader. If your GPU can't even handle
 **2x** vertical scaling, you will get horrible vertical interference patterns
 in almost all content, so you should disable the CRT emulation altogether.
+
+### Disabling CRT shaders
 
 Set this to **Point Prescale** to disable the CRT shaders; this will make the
 pixels appear as sharp little rectangles (which is completely inauthentic).

@@ -17,7 +17,3 @@
     - :material-folder-open: **ROMs**
 
 </div>
-
-
-
-

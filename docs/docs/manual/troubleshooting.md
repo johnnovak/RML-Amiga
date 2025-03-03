@@ -90,5 +90,3 @@ TODO and TODO are known to result in some crashes.
 
 The only solution is to disable the OSD feature of these flaky programs and
 report the problems to their authors so they can fix them.
-
-

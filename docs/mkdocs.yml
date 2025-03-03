@@ -103,6 +103,7 @@ nav:
     - manual/introduction.md
     - manual/installation.md
     - manual/getting-started.md
+    - manual/on-crt-shaders.md
     - manual/input-handling.md
     - manual/hard-drive-games.md
     - manual/floppy-games.md

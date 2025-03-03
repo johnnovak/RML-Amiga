@@ -163,5 +163,3 @@ Alternatively, you can delete the `.save_adf` file manually.
     Of course, the resourceful among you can create copies of these save
     images to emulate multiple save points in games that only support a single
     save slot.
-
-

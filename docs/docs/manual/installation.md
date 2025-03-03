@@ -114,6 +114,11 @@ Here is a detailed descriptions of the packs:
 The **Games** and **Demos** archives will get the most frequent updates, the
 rest only rarely.
 
+The folder structure in all packs are relative to the `$RML_BASE` folder. In
+other words, if you expand all archives into `$RML_BASE` (double-expand in
+case of the **Games** and **Demos** packs), you'll get the correct folder
+structure.
+
 !!! note "The practical reality we live in"
 
     The main reason for separating out the Kickstart ROMs and the minimal hard
