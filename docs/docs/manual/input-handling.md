@@ -84,9 +84,10 @@ There are a few minor differences, though:
 ### WASD movement keys
 
 Many RPGs in the first-person dungeon crawler category (e.g., [Dungeon
-Master](TODO) and [Eye of the Beholder](TODO)) only support the standard
-cursor keys or the numeric keypad to move your party around. However, some
-people might prefer to use the **WASD** keys instead.
+Master](../games/d.md#dungeon-master-v36) and
+[Eye of the Beholder](../games/e-f.md#eye-of-the-beholder-ocs)) only support
+the standard cursor keys or the numeric keypad to move your party around.
+However, some people might prefer to use the **WASD** keys instead.
 
 All such RPGs in the collection feature optional WASD-style movement via a
 custom WinUAE input mapping:
@@ -156,7 +157,8 @@ the wrong port, press ++end+j++ to swap the joystick ports.
 
 The Amiga was one of the last machines in a long line of home computers that
 had a healthy dose of two-player games. Many sports and fighting games (e.g.,
-[Speedball 2]() and [IK+]()) support "player vs player" gameplay. 
+[Speedball 2: Brutal Deluxe](../games/s.md#speedball-2-brutal-deluxe-ocs) and
+[IK+](../games/g-j.md#ik)) support "player vs player" gameplay. 
 
 Two-player games are great fun, so make sure to try them if you have two
 joysticks and a friend not afraid of some healthy competition!

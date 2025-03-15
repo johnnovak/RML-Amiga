@@ -14,15 +14,15 @@ point-and-click adventure games).
 
 The CDTV and Amiga CD32 were not very successful, but a few games have really
 cool CD release exclusive content (e.g., CD Audio in-game music
-in [Heimdall 2 (CD32)](TODO), voice acting and a tutorial section in [Battle
-Chess (CDTV)), and there are handful of CD-exclusive titles as well (e.g.,
-[Defender of the Crown II](TODO) and [Pirates! Gold](TODO)).
+in [Heimdall 2: Into the Hall of Worlds](../games/g-j.md#heimdall-2-into-the-hall-of-worlds-cd32), voice acting and a tutorial section in [Battle
+Chess](../games/b.md#battle-chess-cd32), and there are handful of
+CD-exclusive titles as well, such as
+[Defender of the Crown II](../games/d.md#defender-of-the-crown-ii-cd32) and [Pirates! Gold](../games/p-r.md#pirates-gold-cd32)).
 
 
 ## Saving your progress
 
 Most CD32 games support saving your game to the NVRAM, but they might only
 support a limited number of save slots, or only allow you to save the game at
-specific locations (e.g., [Frontier II: Elite (CD32)](TODO)). Then in some
-game the save game implementation is rather buggy (e.g., [Heimdall II
-(CD32)]()).
+specific locations (e.g., **Frontier II: Elite (CD32)**). Then in some
+game the save game implementation is rather buggy (e.g.,  [Heimdall 2: Into the Hall of Worlds](../games/g-j.md#heimdall-2-into-the-hall-of-worlds-cd32)).

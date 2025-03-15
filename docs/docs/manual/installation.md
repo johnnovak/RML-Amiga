@@ -149,68 +149,111 @@ v1.4, and v1.5 update packages _in order_.
 ## Supplying your own Kickstart ROMs
 
 If you've acquired the Kickstart ROMS from alternative sources, this is how to
-install them. Unpack the **Base** and **System** packs first, then do the
-following:
+install them:
 
-- Copy all the Kickstart ROM files you have into `$RML_BASE/ROMs` and
-  WinUAE will auto-detect them by their contents on the first startup (the
-  filenames don't matter). You can force a re-scan by pressing the **Rescan
-  ROMs** button in the **Paths** WinUAE configuration tab.
+- Identify the appropriate ROM files by checking their hashes, then copy them
+  into `$RML_BASE/ROMs`. The file names must be matching _exactly_ the names
+  listed below, so might need to rename them. WinUAE should then detect the
+  available ROM files at first startup. You can force a re-scan by pressing
+  the **Rescan ROMs** button in the **Paths** WinUAE configuration tab.
 
 - Copy the Amiga 500 and Amiga 1200 ROMs into the
-  `$RML_BASE/System-3.1/Devs/Kickstarts` folder. You'll need to name them
+  `$RML_BASE/System-3.1/Devs/Kickstarts` folder, then rename them to
   `kick34005.A500.RTB` and `kick40068.A1200.RTB`, respectively. This is needed
-  for the small handful of WHDLoad games in the collection.
+  for the handful of WHDLoad games in the collection.
 
 
-These are the ROM files needed by the setup:
+These are the ROM files required by the setup:
 
-**Amiga 500**
+### Amiga 500
 
-_Either_ of the following three files are required (only one):
+**Kickstart v1.1**
+
+Only required by very few games.
 
 ```
-Kickstart v1.3 r34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV)[!].rom
+Kickstart-v1.1-rev31.34-1985-Commodore-A1000.NTSC.rom
+SHA-1: 4192c505d130f446b2ada6bdc91dae730acafb4c
+```
+
+**Kickstart v1.2**
+
+Only required by very few games.
+
+```
+Kickstart-v1.2-rev33.166-1986-Commodore-A1000.rom
+SHA-1: 6a7bfb5dbd6b8f179f03da84d8d9528267b6273b
+```
+
+**Kickstart v1.3**
+
+The vast majority of games require Kickstart 1.3.
+
+```
+Kickstart-v1.3-rev34.50-1987-Commodore-A500-A1000-A2000-CDTV.rom
+SHA-1: 891e9a547772fe0c6c19b610baf8bc4ea7fcb785
+```
+
+### Amiga 1200
+
+```
+Kickstart-v3.1-rev40.68-1993-Commodore-A1200.rom
+SHA-1: e21545723fe8374e91342617604f1b3d703094f1
+```
+
+### Commodore CDTV
+
+Same Kickstart v1.3 ROM which is required for the Amiga 500, plus the extended
+CD32 ROM.
+
+
+```
+Kickstart-v1.3-rev34.50-1987-Commodore-A500-A1000-A2000-CDTV.rom
 SHA-1: 891e9a547772fe0c6c19b610baf8bc4ea7fcb785
 ```
 
 ```
-Kickstart v1.3 r34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV)[o].rom
-SHA-1: 90933936cce43ca9bc6bf375662c076b27e3c458
-```
+CDTV Extended-ROM v2.7 (1992)(Commodore)(CDTV).rom
+SHA-1: 5bc114bba29f60a614a311745b3e2464bfa06846 
 
 ```
-amiga-os-130.rom
-(alternative name: kick130.rom)
-SHA-1: c39bd9094d4e5f4e28c1411f3086950406062e87
-```
 
-**Amiga 1200**
-
-```
-Kickstart v3.1 r40.68 (1993)(Commodore)(A1200)[!].rom
-(alternative name: amiga-os-310-a1200.rom)
-SHA-1: e21545723fe8374e91342617604f1b3d703094f1
-```
-
-**CDTV**
-
-TODO
-
-
-**Amiga CD32**
+### Amiga CD32
 
 _Both_ files are required:
 
 ```
-Kickstart v3.1 r40.60 (1993)(Commodore)(CD32).rom
-(alternative name: amiga-os-310-cd32.rom)
+Kickstart-v3.1-rev40.60-1993-Commodore-CD32.rom
 SHA-1: 3525be8887f79b5929e017b42380a79edfee542d
 ```
 
 ```
 CD32 Extended-ROM r40.60 (1993)(Commodore)(CD32).rom
-(alternative name: amiga-ext-310-cd32.rom)
 SHA-1: 5bef3d628ce59cc02a66e6e4ae0da48f60e78f7f
 ```
 
+
+### Roland MT-32
+
+Only required by very few games that support Roland MT-32 sound. These must be
+in `$RML_BASE\ROMs\mt32-roms\`:
+
+```
+ctrl_cm32l_1_02.rom
+SHA-1: a439fbb390da38cada95a7cbb1d6ca199cd66ef8 
+```
+
+```
+ctrl_mt32_1_07.rom
+SHA-1: b083518fffb7f66b03c23b7eb4f868e62dc5a987 
+```
+
+```
+pcm_cm32l.rom
+SHA-1: 289cc298ad532b702461bfc738009d9ebe8025ea 
+```
+
+```
+pcm_mt32.rom
+SHA-1: f6b1eebc4b2d200ec6d3d21d51325d5b48c60252 
+```

@@ -40,10 +40,11 @@ right corner which opens a window, then double-click on the game's icon in
 that window.
 
 A few games have additional icons to launch the game with different options
-(e.g., [King's Quest: Quest for the Crown (SCI)](TODO)), or to start extra
-programs included with the game, such as level editors (e.g.,
-[SimCity Collection](TODO)). So that's one of the reasons why some games don't
-auto-start.
+(e.g., [King's Quest: Quest for the Crown
+(SCI)](../games/k-l.md#kings-quest-quest-for-the-crown-sci)), or to start
+extra programs included with the game, such as level editors (e.g., [SimCity
+Collection](../games/s.md#simcity-collection)). So that's one of the reasons
+why some games don't auto-start.
 
 The other reason is that a handful of games feature beautifully designed icons
 and Workbench screens with custom colour schemes. These works of art are worth
@@ -53,13 +54,13 @@ to do so.
 Here are some good examples:
 
 <div class="compact" markdown>
-  - [The Secret of Monkey Island](TODO)
-  - [Legend of Faerghail](TODO)
-  - [Pirates!](TODO)
-  - [Art of GO, The](TODO)
-  - [Battle Chess (OCS)](TODO)
-  - [Champions of Krynn](TODO)
-  - [Death Knights of Krynn](TODO)
+  - [The Secret of Monkey Island](../games/s.md#secret-of-monkey-island-the)
+  - [Legend of Faerghail](../games/k-l.md#legend-of-faerghail)
+  - [Pirates!](../games/p-r.md#pirates)
+  - [Art of GO, The](../games/a.md#art-of-go-the)
+  - [Battle Chess (OCS)](../games/b.md#battle-chess-ocs)
+  - [Champions of Krynn](../games/c.md#champions-of-krynn)
+  - [Death Knights of Krynn](../games/d.md#death-knights-of-krynn)
 </div>
 
 
@@ -73,7 +74,8 @@ file and lets you to use any location, you should use the **DH1** drive unless
 the [Game notes](../games/index.md) instructs you otherwise.
 
 There are some outliers, though. A handful of games insist on saving to a
-floppy disk even when installed to the hard drive (e.g., [Future Wars](TODO)).
+floppy disk even when installed to the hard drive (e.g.,
+[Future Wars](../games/e-f.md#future-wars-adventures-in-time)).
 Then some RPGs save the "state of the world" to the data files as you keep
 progressing through the game, so starting a new game with a new character
 requires a full reinstall ([Amberstar] and [Demon's Winter] are such games).

@@ -17,8 +17,9 @@ form at the time being.
 ## Single-disk games
 
 All floppy game configurations have the first floppy pre-inserted in drive
-DF0: (the first floppy drive). For single-disk games, that's all you need
-(e.g., [Dungeon Master](TODO), [Midwinter](TODO), and [Exile](TODO)).
+**DF0:** (the first floppy drive). For single-disk games, that's all you need
+(e.g., [Dungeon Master](../games/d.md#dungeon-master-v36), **Midwinter** and
+[Exile (OCS)](../games/e-f.md#exile-ocs)).
 
 
 ## Speeding up loading times
@@ -53,8 +54,9 @@ Multi-disk games fall into two categories: some support multiple floppy
 drives, some only a single drive. The best case scenario is when a game
 supports as many drives as the number of disks it comes on. Such games are
 configured with the game disks pre-inserted into the drives (e.g., the
-two-disk game [Lemmings](TODO), or the four-disk games [Perihelion](TODO),
-[Hook](TODO), and [Soccer Kid (OCS)](TODO)).
+two-disk game **Lemmings**, or the four-disk games
+[Perihelion](../games/p-r.md#perihelion), [Hook](../games/g-j.md#hook), and
+[Soccer Kid (OCS)](../games/s.md#soccer-kid-ocs)).
 
 The other scenario is that the game supports *less* drives than the number of
 disks it has (e.g., a two-disk game supporting a single drive, or a four-disk
@@ -120,16 +122,17 @@ pressing ++end+9++).
 Some games ask you to enter a full path of your save file, e.g.,
 `DF0:MySave1`, or you might need to enter `DF0:` and press enter to list
 the save games on the floppy in the first drive. Make sure *not* to leave the
-semicolon off in such scenarios. The semicolon after **DF0:** signals that
-we're dealing with a drive, not just a file called **DF0**. This is similar to
+semicolon off in such scenarios. The semicolon after `DF0:` signals that
+we're dealing with a drive, not just a file called `DF0`. This is similar to
 the **C:** drive in Windows.
 
 !!! warning "Not all blank disks are created equal"
 
     Always use the save disk included with the game. A regular empty AmigaDOS
     ADF disk image won't work with games that use special encoding schemes
-    (e.g., [Canon Fodder (OCS)](TODO)). A blank save disk is always included in a
-    ZIP archive as well, should you want to reset your save disk.
+    (e.g., [Cannon Fodder (OCS)](../games/c.md#cannon-fodder-ocs)). A blank
+    save disk is always included in a ZIP archive as well, should you want to
+    reset your save disk.
 
 !!! tip "ProTip(tm)"
 

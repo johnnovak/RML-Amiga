@@ -24,7 +24,7 @@
   the **Elvira** icon.
 
 
-## Exile
+## Exile (OCS)
 
 - Galahad/FLT's 100% working crack, confirmed to be completable by himself.
   The official re-releases approved by the Amiga port's creator, Peter J. M.
