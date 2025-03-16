@@ -157,7 +157,7 @@ Learn the keyboard shortcuts
   toggle pausing the emulation, ++end+pause++ to toggle warp mode, and
   ++end+f12++ to switch between windowed and full windowed mode. ++f12++ stops
   the emulation and brings up the WinUAE GUI, but don't touch anything there
-  yet if you're a newbie; things will blow up :bomb: :fire:. Just press
+  yet if you're a newbie; things will blow up! :bomb::fire: Just press
   ++esc++ or the **OK** or **Cancel** button for now to return to the game.
 
 Saving your progress
@@ -171,10 +171,18 @@ Saving your progress
   saving option.
 
 Customising your setup
-: If you're a power user, you should consider configuring the games for proper
-  vertical syncing (vsync) for the best results. TODO This is an advanced topic
-  detailed in the [Customising your
-  setup](customising-your-setup.md#graphics-customisation) section.
+: RML Amiga comes with defaults that aim to recreate the experience of sitting
+  in front of a real Amiga in the 1980s. Some other technical settings have
+  been carefully chosen to ensure all games run without issues on the most
+  people's setups. However, power users might want to tweak these settings for
+  a better experience (e.g., to enable lagless vsync with the minimum possible
+  input latency).
+
+    If you would like to change the defaults (e.g., you'd like to make the
+    image fill the screen, or turn off the CRT shaders or the floppy sounds)
+    or want to fine-tune the technical emulator settings, please refer to the
+    [Customising your setup](customising-your-setup.md#graphics-customisation)
+    section.
 
 Learn more about Amiga games
 : Check out the [Useful websites](useful-websites.md) page to find out more
