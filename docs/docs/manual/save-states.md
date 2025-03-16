@@ -21,7 +21,7 @@ the day, there is just a single save state format.
 
     Make sure to read the [Save state best
     practices](#save-state-best-practices) section carefully before you start
-    using save states in anger, and always check the [Games
+    using save states in anger, and always check the [Game
     notes](../games/index.md)
     to see if a game is incompatible with save states.
 

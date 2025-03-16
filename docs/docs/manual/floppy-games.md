@@ -43,7 +43,7 @@ warp mode with the ++end+pause++ shortcut.
 !!! tip "ProTip(tm)"
 
     If you know what you're doing, you can create a
-    [save states](save-states.md) right after the game finished loading. You
+    [Save states](save-states.md) right after the game finished loading. You
     can save this as a new config and use it to start the game
     instantaneously.
 

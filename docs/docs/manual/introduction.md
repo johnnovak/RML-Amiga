@@ -132,3 +132,29 @@ A middle-tier or better CPU released in the last ten years or so is
 recommended. A dedicated GPU is recommended but integrated graphics adapters
 will most likely work too, just you might need to lower the CRT shader quality
 (see the [customising your setup](customising-your-setup.md) section for details).
+
+
+## On copyright and ethics
+
+All games in this collection have been out of commercial circulation for at
+least three decades. If it wasn't for the exemplary efforts of the [Software
+Preservation Society (SPS)](https://www.softpres.org/) (formerly known as the
+**Classic Amiga Preservation Society (CAPS)**) and the larger Amiga community,
+all those original floppy disks would be unreadable by now and 99% of these
+games would be lost forever.
+
+The goal of this collection is *not* to advocate piracy or to strip creators
+of their livelihood, but to make these games not available via any commercial
+channels accessible and playable for old school Amiga fans and the next
+generation of gamers alike.
+
+For this reason, the collection will *never* include any recent Amiga games
+that are still sold commercially. This is to respect their creators and is
+non-negotiable.
+
+The collection is supposed to be shared freely; selling it for profit is
+considered extremely bad taste and is in no way endorsed by the creators of
+RML Amiga. **Don't do this!**
+
+All games in the collection are copyright of their respective owners. 
+

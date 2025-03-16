@@ -59,7 +59,7 @@ tradeoffs. Even on real CRT monitors, the experience is not the same on larger
 authenticity and image quality, or size and "filling the display". The
 collection chooses the first option by default.
 
- The [customising your
+ The [Customising your
 setup](customising-your-setup.md) shows you how to do that.
 
  This is certainly a fascinating topic; you can read more about it [in my
