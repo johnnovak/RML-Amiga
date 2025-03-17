@@ -1,7 +1,7 @@
 # Floppy games
 
 All Amigas come with one floppy drive as standard equipment, but they can be
-optionally expanded to up to four drives. The first floppy drive is called
+optionally expanded with up to four drives. The first floppy drive is called
 **DF0:** (**D**rive **F**loppy **0**), the second **DF1:**, the third
 **DF2:**, and the fourth **DF3:**.
 
@@ -9,9 +9,9 @@ Most floppy games are in the **IPF** format (Interchangeable Presentation
 Format), and some in the **RAW** (KryoFlux CT-RAW) format. These are accurate
 representations of the original disks with the copy protection intact.
 
-A small set of games are provided as regular **ADF** files (Amiga Disk File).
-These games either don't use copy protection, or are only available in cracked
-form at the time being.
+A handful of games might be only provided as regular **ADF** files (Amiga Disk
+File). These games either don't use disk-based copy protection, or are only
+available in cracked form at the time being.
 
 
 ## Single-disk games
@@ -24,16 +24,17 @@ All floppy game configurations have the first floppy pre-inserted in drive
 
 ## Speeding up loading times
 
-To reduce loading times, use _warp mode_ that speeds up the emulated Amiga to
-faster-than-realtime (as fast as your computer can handle). You can toggle
+To reduce loading times, use **warp mode** that speeds up the emulated Amiga
+to faster-than-realtime (as fast as your computer can handle). You can toggle
 warp mode with the ++end+pause++ shortcut.
 
 !!! warning
 
-    *Never* increase the floppy emulation speed of WinUAE as that will break
-    most disk-based copy protections. It might initially seem that all is
-    fine, but many games *do not* advertise if their protection checks failed!
-    They will casually let you keep playing but put the game silently into an
+    Note for people who know enough about WinUAE to be dangerous: *never*
+    increase the floppy emulation speed of WinUAE as that will break most
+    disk-based copy protections. It might initially seem that all is fine, but
+    many games *do not* advertise when they failed the protection checks! They
+    will casually let you keep playing but put the game silently into an
     unwinnable state.
 
     Warp mode works 100% reliably because it speeds up the whole emulated
@@ -42,10 +43,9 @@ warp mode with the ++end+pause++ shortcut.
 
 !!! tip "ProTip(tm)"
 
-    If you know what you're doing, you can create a
-    [Save states](save-states.md) right after the game finished loading. You
-    can save this as a new config and use it to start the game
-    instantaneously.
+    If you know what you're doing, you can create a [Save
+    states](save-states.md) right after the game finished loading. You can
+    save this as a new config and use it to start the game instantaneously.
 
 
 ## Multi-disk games
@@ -74,18 +74,23 @@ feature to make this easy:
 For example:
 
 - To insert the second game disk into drive DF0: (first drive), press ++end+2++.
+
 - To insert the third game disk into drive DF1: (second drive) next, press
-  ++end+ctrl+2++ to select the second drive as the target, then ++end+3++ to
-  insert the third disk.
+  ++end+ctrl+2++ to select the second drive as the target for the disk
+  swapper, then ++end+3++ to insert the third disk.
+
 - To insert the fourth game edisk into DF0: again, press ++end+ctrl+1++
   followed by ++end+4++ .
 
 
 !!! warning "Patience is still a virtue"
 
-    Usually, you'll need to wait about 2 seconds until the Amiga recognises
-    the new floppy disk you've just inserted. So, for example, if a game
-    instructs you to insert "disk 2" into DF0:, press
+    Usually, you'll need to wait about 2 seconds after inserting a disk into a
+    floppy drive until the Amiga recognises it. So, for example, if a game
+    instructs you to insert "disk 2" into DF0:, press ++end+2++, then wait a
+    few seconds until the floppy drive makes the recognisable "floppy
+    acknowledged" sound. Pay attentio to the emulated floppy drive
+    sounds---you'll learn what sounds to listen for in no time.
 
 
 !!! warning "Not all keyboards are created equal"
