@@ -85,12 +85,12 @@ For example:
 
 !!! warning "Patience is still a virtue"
 
-    Usually, you'll need to wait about 2 seconds after inserting a disk into a
-    floppy drive until the Amiga recognises it. So, for example, if a game
+    Usually, you'll need to wait about two seconds after inserting a disk into
+    a floppy drive until the Amiga recognises it. So, for example, if a game
     instructs you to insert "disk 2" into DF0:, press ++end+2++, then wait a
     few seconds until the floppy drive makes the recognisable "floppy
-    acknowledged" sound. Pay attentio to the emulated floppy drive
-    sounds---you'll learn what sounds to listen for in no time.
+    acknowledged" sound. Pay attention to the emulated floppy drive
+    sounds---you'll learn what to listen for in no time.
 
 
 !!! warning "Not all keyboards are created equal"
@@ -103,9 +103,11 @@ For example:
 ## Workbench
 
 Most floppy games start automatically when you launch their configs, but
-some need to be started manually from the so-called Workbench screen.
+some need to be started manually from the Workbench screen.
 
-See the [Workbench] section of hard drive installed games for further details.
+See the [Workbench](hard-drive-games.md#workbench) section of hard drive
+installed games for further details (most of the information is applicable to
+floppy games as well).
 
 
 ## Saving your progress
@@ -113,61 +115,82 @@ See the [Workbench] section of hard drive installed games for further details.
 Some games give you continuation codes at certain checkpoints, while others
 let your save your progress to disk whenever you want. Some other games don't
 have any built-in continuation or save support---luckily, you can use WinUAE
-[save states](save-states.md) for these.
+[Save states](save-states.md) with these.
 
 ### Save disks
 
-Many floppy games support saving your progress to disk. Most such games
-require you to use a dedicated _save disk_ for this purpose. The collection
-includes blank save disks for these games for convenience. This disk is
-located in the `Savedisk` subfolder of the game's folder, and it's always
-available in the 9th disk swapper slot (so you can insert the save disk by
-pressing ++end+9++).
+Many floppy games support saving your progress to disk. Usually you need to
+prepare a special **save disk** for this purpose, and the instructions to do
+so vary per game. For your convenience, all games that support saving your
+progress to disk include a blank save disk in the 9th disk swapper slot (so
+you can insert it by pressing ++end+9++).
+
+If you want to reset your save disk, a blank save disk is also included in a
+ZIP archive in the `Savedisk` subfolder within the game folder. Just extract
+this ZIP file into the `Disks` folder, overwriting the existing disk image,
+and your save disk will be reset (of course, only do this when WinUAE is not
+running).
 
 Some games ask you to enter a full path of your save file, e.g.,
 `DF0:MySave1`, or you might need to enter `DF0:` and press enter to list
 the save games on the floppy in the first drive. Make sure *not* to leave the
-semicolon off in such scenarios. The semicolon after `DF0:` signals that
-we're dealing with a drive, not just a file called `DF0`. This is similar to
+colon off from **DF0:** in such scenarios. The trailing colon signals that
+we're dealing with a drive, not just a file called **DF0**. This is similar to
 the **C:** drive in Windows.
 
 !!! warning "Not all blank disks are created equal"
 
     Always use the save disk included with the game. A regular empty AmigaDOS
     ADF disk image won't work with games that use special encoding schemes
-    (e.g., [Cannon Fodder (OCS)](../games/c.md#cannon-fodder-ocs)). A blank
-    save disk is always included in a ZIP archive as well, should you want to
-    reset your save disk.
+    (e.g., [Cannon Fodder (OCS)](../games/c.md#cannon-fodder-ocs)). If you
+    want to reset your save disk, use the included blank save disk from
+    the ZIP archive in the `Savedisk` folder.
 
 !!! tip "ProTip(tm)"
 
-    If you know what you're doing, feel free to create your own save disks.
-    You'll need to consult the game's manual to do so as the exact steps vary
-    per game.
+    If you know what you're doing, you can create your own save disks. You'll
+    probably need to consult the game's manual to do so as the exact steps
+    vary per game (e.g., you might need to set a specific disk label).
 
-    Always use _Extended ADF_ images for save disks that are about 2 MB in
-    size. The regular 880 KB ADF images will give you problems in many games.
+    Always use **Extended ADF** images for save disks. These images are about
+    2 MB in size. The regular 880 KB ADF images will give you problems in some
+    games, and you'll invariably only realise this when it's already too late
+    and you've lost your progress...
 
 
 ### Saving to the game disk
 
-Some games save your progress directly to the game disk. These games are
-configured to never modify the original floppy images, but to create
-so-called _save images_ instead that only contain the changes compared to the
-original disks.
+Some games save your progress or high-scores directly to the game disk (e.g.,
+[Pinball Dreams](../games/p-r.md#pinball-dreams) and [Rogue: The Adventure
+Game](../games/p-r.md#rogue-the-adventure-game)). These games are configured
+to never modify the original floppy images, but create a so-called **save
+image** instead which contains the changes compared to the original disk. Save
+images have the `.save_adf` file extension and are located in the `Disks`
+folder within the game folder.
 
-Save images have the `.save_adf` file extension and are located in the
-`Disks` folder within the game folder next to the game disks.
+Do the following if you wish to revert a such "virtually modified" game disk
+to its pristine original state:
 
-If you wish to revert such "virtually modified" game disks to their original
-pristine state, click on the **Delete save image** button in the **Floppy**
-configuration tab TODO. TODO tick
-writeable checkbox?
+- First make sure the game is not running (restarting WinUAE is the safest
+  bet).
+- Go to the **Hardware / Floppy drives** configuration tab in the WinUAE
+  settings window.
+- Click on the **Delete save image** button (usually next to the **DF0:**
+  button).
+- Make sure to untick the **Write protected** checkbox on the same drive to
+  recreate a blank save image.
 
-Alternatively, you can delete the `.save_adf` file manually.
+!!! warning
+
+    Don't forget to untick the **Write protected** checkbox after deleting the
+    save image! Some games won't even start if the game disk is
+    write-protected.
+
 
 !!! tip "ProTip(tm)"
 
-    Of course, the resourceful among you can create copies of these save
-    images to emulate multiple save points in games that only support a single
-    save slot.
+    Of course, the resourceful among you can create several copies of these
+    save images to emulate multiple save points in games that only support a
+    single save slot. Make sure to only make copies of the save images or
+    restore them from your backups when WinUAE is shut down (so never while
+    the game is running).

@@ -38,12 +38,6 @@ single **DH0:** drive which contains both the OS and the game.
 Most hard drive games start automatically when you launch their configs, but
 some you'll need to start manually from the so-called **Workbench** screen.
 
-The Workbench is the graphical interface of AmigaOS. It is a very simple
-graphical operating environment that resembles the Windows desktop. To start a
-game from Workbench, double-click on the disk icon located in the upper right
-corner which will open a window, then double-click on the game's icon in that
-window.
-
 One of the reasons for some games not starting automatically is because they
 have additional icons to start the game with different options (e.g., [King's
 Quest: Quest for the Crown
@@ -158,7 +152,7 @@ experience.
     games to the hard drive when you quit the game---the saves are kept
     in memory until then.
 
-    Therefore, you _must_ always quit WHDLoad games by pressing the ++F11++
+    Therefore, you _must_ always quit WHDLoad games by pressing the ++f11++
     "WHDLoad quit key" at the end of your gaming session! If you just close
     WinUAE or start a different game, _you will lose_ all the saves you made
     in your current gaming session! All WHDLoad games in the collection print

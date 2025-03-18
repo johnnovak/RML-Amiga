@@ -63,7 +63,7 @@ rudimentary mouse-driven interface---that's how big of a deal built-in mouse
 support was back in the 80s.
 
 The left and right mouse buttons work as expected, and the middle mouse is
-used to uncapture the mouse (see [input capturing](#input-capturing)).
+used to uncapture the mouse (see [Input capturing](#input-capturing)).
 
 
 ## Keyboard
@@ -154,15 +154,17 @@ start this game, so you won't need to do the port swapping trick.
 
     There are many USB joysticks available, but quite a few have unacceptably
     high input latencies, so make sure to do your research before buying one.
-    Generally, you're better off with 9-pin DIN plug (DIN-9) digital joysticks
-    also usable with real retro computers and a DIN-to-USB adapter.
+    Generally, you're better off with 9-pin plug (DB9) digital joysticks
+    also usable with real retro computers and a USB DB9 adapter.
 
-    This is not an advertisement, but I can wholeheartedly recommend the TODO
-    USB adapter and the TODO joystick. This combination is relatively cheap
-    and works 100% reliably with very low hardware-like input latencies. It's
-    a dual adapter, so you can connect two DIN-9 joystick to it for two-player
-    games. 
-
+    This is not an advertisement, but I can wholeheartedly recommend the
+    [ArcadeR 9-pin joystick](https://retroradionics.com/ArcadeR-9-pin-ATARI-standard-Joystick-With-new-extra-soft-and-durable-cable-p168982750)
+    by [RetroRadionics](https://retroradionics.com/) and the
+    [DaemonBite DB9 USB adapter](https://github.com/MickGyver/DaemonBite-Retro-Controllers-USB)
+    (sold fully-assembled [here](https://ultimatemister.com/product/deamon-sega-db9/), for example).
+    This combination is relatively cheap and works 100% reliably with
+    hardware-like sub-millisecond input latency. It's a dual adapter, so you
+    can connect two 9-pin digital joystick to it for two-player games. 
 
 !!! note
 
