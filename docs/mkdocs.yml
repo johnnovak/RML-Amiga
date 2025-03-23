@@ -53,6 +53,7 @@ markdown_extensions:
   - smarty
   - toc:
       permalink: true
+      toc_depth: 3
 
 # Plugins
 plugins:
@@ -107,7 +108,7 @@ nav:
     - manual/input-handling.md
     - manual/hard-drive-games.md
     - manual/floppy-games.md
-    - manual/cd32-and-cdtv-games.md
+    - manual/cdtv-and-cd32-games.md
     - manual/save-states.md
     - manual/keyboard-shortcuts.md
     # - manual/folder-organisation.md

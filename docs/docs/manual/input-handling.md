@@ -10,6 +10,8 @@ All Amigas have two **controller ports** for connecting your input devices.
 The mouse usually needs to go into **port 1**, and the game controller
 (typically a joystick) into **port 2**.
 
+TODO photo?
+
 
 ## Input capturing
 
@@ -65,6 +67,8 @@ support was back in the 80s.
 The left and right mouse buttons work as expected, and the middle mouse is
 used to uncapture the mouse (see [Input capturing](#input-capturing)).
 
+TODO mouse photo
+
 
 ## Keyboard
 
@@ -87,6 +91,8 @@ There are a few minor differences, though:
   ++ins++ and ++home++ (either will work). For example, if a game asks you to
   use the left Amiga plus ++s++ key combination to save your game, you'll need
   to press ++lwin++-++s++ or ++home++-++s++.
+
+TODO keyboard photo
 
 
 ### WASD movement keys
@@ -118,6 +124,8 @@ remapped ++s++ key used for movement).
 Refer to the [Game notes](../games/index.md) to learn about the exact WASD
 mode remappings for each game.
 
+TODO dungeon master kb layout scan
+
 
 ## Joysticks
 
@@ -130,6 +138,7 @@ regular cursor keys (*not* the numeric keypad) for movement, and the ++ralt++,
 The vast majority of Amiga games only support single-button joysticks. The
 [Game notes](../games/index.md) will mention if a game supports a two-button
 joystick.
+
 
 ### Using a real joystick
 
@@ -144,6 +153,8 @@ have plugged it into other port than what the game expects. In this case,
 press ++end+j++ to swap the joystick ports. You might also try pressing a
 different physical button on your joystick to auto-detect it the next time you
 start this game, so you won't need to do the port swapping trick.
+
+TODO digital joystick photo
 
 !!! tip 
 
@@ -191,11 +202,18 @@ joysticks and a friend not afraid of some healthy competition!
 
 ## Gamepads
 
-Many Commodore CDTV and Amiga CD32 games are best played with the mouse, but
-some are almost unplayable without a physical gamepad (the keyboard mappings
-tend to be very awkward to use). To use your physical gamepad (e.g., an Xbox
-360 controller), press the green **A** button on it after starting the game
-and WinUAE will auto-plug it into port 2.
+Most [CDTV and Amiga CD32 games](cdtv-and-cd32-games.md) are meant to played
+with the gamepad that came with the console. It's best to use a physical game
+controller with these games as the keyboard mappings for the emulated gamepad
+can be rather awkward. To use your physical gamepad (e.g., an Xbox 360
+controller), press the green **A** button on it after starting the game and
+WinUAE will auto-plug it into port 2 (if you're using some other game
+controller, press the button that is in the same location as the **A** button
+on the Xbox 360 controller).
 
 Similarly to joysticks, you might need to activate the **Swap joystick ports**
 feature with ++end+j++ if your gamepad was auto-plugged into the wrong port.
+
+A smaller number of CDTV and CD32 games support the mouse as well (typically
+point-and-click adventure games). Although you can play these games with a
+gamepad, it's usually more convenient to use the mouse.

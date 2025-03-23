@@ -39,11 +39,10 @@ Most hard drive games start automatically when you launch their configs, but
 some you'll need to start manually from the so-called **Workbench** screen.
 
 One of the reasons for some games not starting automatically is because they
-have additional icons to start the game with different options (e.g., [King's
-Quest: Quest for the Crown
-(SCI)](../games/k-l.md#kings-quest-quest-for-the-crown-sci)), or to run
-extra programs included with the game, such as level editors (e.g., [SimCity
-Collection](../games/s.md#simcity-collection)).
+have additional icons to start the game with different options (e.g.,
+[King's Quest: Quest for the Crown (SCI)](../games/k-l.md#kings-quest-quest-for-the-crown-sci)),
+or to run extra programs included with the game, such as level editors (e.g.,
+[SimCity Collection](../games/s.md#simcity-collection)).
 
 The other reason is that a handful of games feature beautifully designed icons
 and Workbench screens with custom colour schemes. These works of art are worth
@@ -61,6 +60,8 @@ Here are some good custom Workbench examples:
   - [Champions of Krynn](../games/c.md#champions-of-krynn)
   - [Death Knights of Krynn](../games/d.md#death-knights-of-krynn)
 </div>
+
+TODO one or two workbench screenshots
 
 
 ## Saving your progress

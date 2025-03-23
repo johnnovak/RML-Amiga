@@ -1,17 +1,18 @@
 # Save states
 
-WinUAE save states capture the entire state of the emulated machine into a
-file that you can restore later instantaneously. They are useful to save your
-progress in games that don't have built-in save game support. You can also use
-them in most (but not all) games as an alternative saving mechanism.
-
-Compared to other emulators, WinUAE save states are very stable. The latest
-WinUAE can can still load save states created 20 years ago. You can count on
-it that all your save states will continue to work in future WinUAE versions.
+WinUAE save states capture the entire state of the emulated machine and write
+it into a so called **state file** that you can restore later instantaneously.
+They are useful to save your progress in games that don't have built-in save
+game support. You can also use them in most (but not all) games as an
+alternative saving mechanism.
 
 Save state files have the `.uss` extension. You can create them in a few
 slightly different ways that cater for different use cases, but at the end of
 the day, there is just a single save state format.
+
+Compared to other emulators, WinUAE save states are very stable. The latest
+WinUAE can can still load save states created 20 years ago. You can count on
+it that all your save states will continue to work in future WinUAE versions.
 
 !!! danger
 
@@ -19,27 +20,28 @@ the day, there is just a single save state format.
     up royally in some games with save states if you don't know what you're
     doing!
 
-    Make sure to read the [Save state best
-    practices](#save-state-best-practices) section carefully before you start
-    using save states in anger, and always check the [Game
-    notes](../games/index.md)
-    to see if a game is incompatible with save states.
+    Make sure to read the
+    [Save state best practices](#save-state-best-practices) section very
+    carefully before you start using save states in anger, and always check
+    the [Game notes](../games/index.md) to see if a game is incompatible with
+    save states.
 
 
 ## Quick saves
 
 This method is the most useful for "save scumming" over short periods of time.
-You have nine quick save slots available for the currently loaded config.
+You have nine quick save slots available for the currently loaded game config.
 
-To save the current state into slots 1--9, press
-++end+shift+num1++ -- ++num9++.
+  - To save the current state into slots 1--9, press ++end+shift+num1++ --
+    ++num9++.
 
-To restore the state from slots 1--9, press ++end+num1++ -- ++num9++.
+  - To restore the state from slots 1--9, press ++end+num1++ -- ++num9++.
 
 Save states created this way are stored in `$RMLBase\Quicksaves`. The state
-files are named after the currently loaded config and the quick save slot. For
-example, if you loaded the game config **Another World** and then quick saved
-into slots 1, 2, and 5, you'll end up with the following state files:
+files are named after the currently loaded config and the index of the quick
+save slot. For example, if you loaded the game config **Another World** and
+then quick saved into slots 1, 2, and 5, you'll end up with the following
+state files:
 
 <div class="compact" markdown>
 - `$RMLBase\Quicksaves\Another World_1.uss`
@@ -49,19 +51,19 @@ into slots 1, 2, and 5, you'll end up with the following state files:
 
 TODO manual/quick save coupling
 
-!!! warning "Using quick saves with config variants"
+!!! warning "Quick saves and game config variants"
 
-    Quick saves are named after the currently loaded config, but quite a
-    few games have alternative configs to skip the intro or the manual-based
-    copy protection checks.
+    As mentioned, quick saves are named after the currently loaded config, but
+    quite a few games have alternative configs to skip the intro or the
+    manual-based copy protection checks.
 
     For example, the classic cinematic platformer **Another World** has two
     configs named **Another World** and **Another World [skip code check]**.
     If you start the "skip code check" variant and create a quick save in slot
-    1, it will be named as `Another World_1.uss`. Then if you restart WinUAE
-    and run the `Another World` config variant this time, you won't be able to
-    restore the game from quick save slot 1 as the config and quick save file
-    names won't match.
+    1, it will be named as `Another World [skip code check]_1.uss`. Then if
+    you restart WinUAE and run the **Another World** config variant this time,
+    you won't be able to restore the game from quick save slot 1 as WinUAE
+    would be looking for `Another World_1.uss` in the `Quicksaves` folder.
 
     The workaround is load your save state using the [Named save
     states](#named-save-states) method. Alternatively, you can rename the

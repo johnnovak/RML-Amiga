@@ -24,9 +24,12 @@ All floppy game configurations have the first floppy pre-inserted in drive
 
 ## Speeding up loading times
 
-To reduce loading times, use **warp mode** that speeds up the emulated Amiga
-to faster-than-realtime (as fast as your computer can handle). You can toggle
-warp mode with the ++end+pause++ shortcut.
+You can speed up floppy loading times considerably by entering "warp mode".
+You can toggle warp mode with ++end+pause++. This "time-warps" the speed of
+the emulation to the maximum your computer can handle, so you are going at
+"faster than real-time". There is no sound if warp mode is engaged and the
+emulated CPU speed meter is pegged to 100% in the
+[on-screen display](getting-started.md#Meet-the-on-screen-display).
 
 !!! warning
 
@@ -81,6 +84,13 @@ For example:
 
 - To insert the fourth game edisk into DF0: again, press ++end+ctrl+1++
   followed by ++end+4++ .
+
+
+You can view the disk swapper configuration for the currently loaded game
+config in the TODO **Host / Disk swapper** configuration tab of the WinUAE
+settings window.
+
+TODO disk swapper screenshot
 
 
 !!! warning "Patience is still a virtue"
