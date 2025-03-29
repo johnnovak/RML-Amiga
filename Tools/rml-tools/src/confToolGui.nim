@@ -66,24 +66,25 @@ type
 
 
   Dialogs = object
-    activeDialog:     Dialog
+    activeDialog: Dialog
 
-    applyError:       ApplyErrorDialogParams
-    applyDragAndDrop: ApplyDragAndDropDialogParams
+    applyError:   ApplyErrorDialogParams
+    applyConfirm: ApplyConfirmDialogParams
 
   Dialog = enum
     dlgNone
     dlgApplyError
+    dlgApplyConfirm
     dlgResetSettings
-    dlgApplyDragAndDrop
 
   ApplyErrorDialogParams = object
     paths:    seq[Path]
-    pathList: string
+    fileList: string
 
-  ApplyDragAndDropDialogParams = object
+  ApplyConfirmDialogParams = object
+    message:  string
     paths:    seq[Path]
-    pathList: string
+    fileList: string
 
 # }}}
 # {{{ Constants
@@ -108,11 +109,12 @@ let
 
 # Icons
 const
-  NoIcon     = ""
-  IconCheck  = "\ue900"
-  IconClose  = "\ue901"
-  IconFloppy = "\uf0c7"
-  IconTrash  = "\uf1f8"
+  NoIcon       = ""
+  IconCheck    = "\ue900"
+  IconClose    = "\ue901"
+  IconFloppy   = "\uf0c7"
+  IconQuestion = "\ue916"
+  IconTrash    = "\uf1f8"
 
 const
   DlgItemHeight   = 24.0
@@ -277,6 +279,19 @@ func dialogButtonsStartPos(dlgWidth, dlgHeight: float,
   result = (x, y)
 
 # }}}
+# {{{ makeFileList()
+proc makeFileList(paths: seq[Path]): string =
+  var fileList = ""
+
+  for p in paths:
+    let (path, name, ext) = p.splitFile
+    if fileList != "":
+       fileList &= "\n"
+    fileList &= $name
+
+  fileList
+
+# }}}
 
 # {{{ applySettings()
 
@@ -297,7 +312,7 @@ proc applySettings(configPaths: seq[Path]): seq[Path] =
   failedPaths
 
 # }}}
-#
+
 # {{{ Apply error dialog
 
 proc openApplyErrorDialog(failedPaths: seq[Path]) =
@@ -305,16 +320,8 @@ proc openApplyErrorDialog(failedPaths: seq[Path]) =
 
   app.dialogs.activeDialog = dlgApplyError
 
-  var pathList = ""
-
-  for p in failedPaths:
-    let (path, name, ext) = p.splitFile
-    if pathList != "":
-       pathList &= "\n"
-    pathList &= $name
-
   dlg.paths    = failedPaths
-  dlg.pathList = pathList
+  dlg.fileList = makeFileList(failedPaths)
 
 
 proc applyErrorDialog() =
@@ -333,7 +340,7 @@ proc applyErrorDialog() =
   koi.label(x, y, w, h=30, "Could not apply changes to the below configs:")
   y += 40
 
-  koi.textArea(x, y, w, h=DlgHeight-148, dlg.pathList,
+  koi.textArea(x, y, w, h=DlgHeight-148, dlg.fileList,
                disabled=true, style=app.styles.fileList)
 
   const ButtonWidth = 75
@@ -344,51 +351,47 @@ proc applyErrorDialog() =
   koi.endDialog()
 
 # }}}
-# {{{ Apply drag-and-drop dialog
+# {{{ Apply confirm dialog
 
-proc openApplyDragAndDropDialog(paths: seq[Path]) =
-  alias(dlg, app.dialogs.applyDragAndDrop)
+proc openApplyConfirmDialog(paths: seq[Path],
+                            message="Apply settings to the below configs?",
+                            showFileList=true) =
+  alias(dlg, app.dialogs.applyConfirm)
 
-  app.dialogs.activeDialog = dlgApplyDragAndDrop
+  app.dialogs.activeDialog = dlgApplyConfirm
 
-  var pathList = ""
-  for p in paths:
-    let (path, name, ext) = p.splitFile
-    if pathList != "":
-       pathList &= "\n"
-    pathList &= $name
-
+  dlg.message  = message
   dlg.paths    = paths
-  dlg.pathList = pathList
+  dlg.fileList = if showFileList: makeFileList(paths) else: ""
 
 
-proc applyDragAndDropDialog() =
-  alias(dlg, app.dialogs.applyDragAndDrop)
+proc applyConfirmDialog() =
+  alias(dlg, app.dialogs.applyConfirm)
 
-  const
-    DlgWidth  = ConfirmDlgWidth
-    DlgHeight = 374.0
+  const DlgWidth = ConfirmDlgWidth
+  let  DlgHeight = if dlg.fileList != "": 374.0 else: ConfirmDlgHeight
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconTrash}  Apply Settings?")
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconQuestion}  Apply Settings?")
 
   var x = DlgLeftPad
   var y = DlgTopPad
   let w = DlgWidth-DlgLeftPad*2
 
-  koi.label(x, y, w, h=30, "Apply settings to the below configs?")
+  koi.label(x, y, w, h=30, dlg.message)
   y += 40
 
-  koi.textArea(x, y, w, h=DlgHeight-148, dlg.pathList,
-               disabled=true, style=app.styles.fileList)
+  if dlg.fileList != "":
+    koi.textArea(x, y, w, h=DlgHeight-148, dlg.fileList,
+                 disabled=true, style=app.styles.fileList)
 
   proc okAction() =
     let failedPaths = applySettings(dlg.paths)
     if failedPaths.len > 0:
       openApplyErrorDialog(failedPaths)
-
-    closeDialog()
+    else:
+      closeDialog()
 
   proc cancelAction() =
     closeDialog()
@@ -912,19 +915,25 @@ proc renderUI() =
 #    discard
 
   if koi.button(winWidth-90-x-98, y, w=90, h=ButtonHeight, "Apply to"):
-    let configPaths = getConfigPaths(app.applyTarget)
-    let failedPaths = applySettings(configPaths)
+    let paths = getConfigPaths(app.applyTarget)
 
-    if failedPaths.len > 0:
-      openApplyErrorDialog(failedPaths)
+    let target = case app.applyTarget
+                 of atAll:      "ALL"
+                 of atAllGames: "all GAME"
+                 of atAllDemos: "all DEMO"
+
+    let message = fmt"Apply settings to {target} configs?"
+
+    openApplyConfirmDialog(paths, message, showFileList=false)
+
 
   koi.dropDown(winWidth-90-x, y, w=90, h=ButtonHeight, app.applyTarget)
 
   case app.dialogs.activeDialog
-  of dlgNone:             discard
-  of dlgApplyDragAndDrop: applyDragAndDropDialog()
-  of dlgApplyError:       applyErrorDialog()
-  of dlgResetSettings:    resetSettingsDialog()
+  of dlgNone:          discard
+  of dlgApplyConfirm:  applyConfirmDialog()
+  of dlgApplyError:    applyErrorDialog()
+  of dlgResetSettings: resetSettingsDialog()
 
   koi.endFrame()
 
@@ -1041,7 +1050,7 @@ proc dropCb(window: Window, paths: PathDropInfo) =
     let pathSeq = collect:
       for s in paths.items: Path($s)
 
-    openApplyDragAndDropDialog(pathSeq)
+    openApplyConfirmDialog(pathSeq)
 
 # }}}
 # {{{ init()
@@ -1109,7 +1118,7 @@ proc loadAppConfig() =
   app.configsBasePath = Path(".")
 
   try:
-    let conf = loadConfig("conftool.ini")
+    let conf = loadConfig("ConfTool.ini")
 
     app.configsBasePath = Path(conf.getSectionValue("General",
                                                     "configsBasePath"))
