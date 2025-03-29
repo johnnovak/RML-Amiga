@@ -36,8 +36,9 @@ type
     scCancel
 
   App = object
-    config:       Config
-    settings:     Settings
+    configsBasePath: Path
+    config:          Config
+    settings:        Settings
 
     styles:       Styles
     currTab:      MainTab
@@ -471,13 +472,10 @@ proc resetSettingsDialog() =
 
 # {{{ getConfigPaths()
 proc getConfigPaths(applyTarget: ApplyTarget): seq[Path] =
-  # TODO
-  let basePath = "../../Configurations"
-
   let path = case applyTarget
-             of atAll:      basePath
-             of atAllGames: basePath / "Games"
-             of atAllDemos: basePath / "Demos"
+             of atAll:      app.configsBasePath
+             of atAllGames: app.configsBasePath / Path("Games")
+             of atAllDemos: app.configsbasePath / Path("Demos")
 
   getConfigPaths(path.Path)
 
@@ -1106,10 +1104,25 @@ proc crashHandler(e: ref Exception) =
   quit(QuitFailure)
 
 # }}}
+# {{{ loadAppConfig()
+proc loadAppConfig() =
+  app.configsBasePath = Path(".")
 
+  try:
+    let conf = loadConfig("conftool.ini")
+
+    app.configsBasePath = Path(conf.getSectionValue("General",
+                                                    "configsBasePath"))
+    log.info(fmt"Using config base path: '{app.configsBasePath}'")
+
+  except CatchableError as e:
+    log.info("Could not load config")
+
+# }}}
 # {{{ main()
 proc main() =
   initLogger()
+  loadAppConfig()
 
   try:
     let win = init()
@@ -1126,6 +1139,8 @@ proc main() =
   except CatchableError as e:
     when defined(DEBUG): raise e
     else: crashHandler(e)
+
+  log.info("Bye!")
 
 # }}}
 
