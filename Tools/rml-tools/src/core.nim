@@ -1,3 +1,5 @@
+# {{{ Imports
+
 import std/dirs
 import std/options
 import std/os
@@ -10,6 +12,8 @@ import std/syncio
 import std/tables
 
 import with
+
+# }}}
 
 const
   AppVersion* = staticRead("../CURRENT_VERSION").strip
