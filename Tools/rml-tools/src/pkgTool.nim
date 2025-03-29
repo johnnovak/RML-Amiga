@@ -11,12 +11,14 @@ import core
 let ConfigPath = Path("Configurations")
 const ConfigExt = ".uae"
 
-
+# {{{ getDirNames()
 proc getDirNames*(path: Path): seq[Path] =
   collect:
     for (pc, p) in walkDir(path, relative=true):
       if pc == pcDir: p
 
+# }}}
+# {{{ getConfigNames()
 proc getConfigNames*(path: Path): seq[string] =
   collect:
     for (pc, p) in walkDir(path, relative=true):
@@ -24,7 +26,8 @@ proc getConfigNames*(path: Path): seq[string] =
         let (_, name, ext) = p.splitFile
         if ext == ConfigExt: $name
 
-
+# }}}
+# {{{ checkPaths()
 proc checkPaths(configPath: Path, c: UaeConfig, basePath: Path) =
   var warnings = ""
 
@@ -50,15 +53,18 @@ proc checkPaths(configPath: Path, c: UaeConfig, basePath: Path) =
     echo fmt"*** WARNING: Config '{configPath}'"
     echo warnings
 
+# }}}
 
-# We need to append the extension this way, otherwise
-# names with periods wouldn't work (e.g., Dungeon Master (v3.6)).
+# {{{ addConfigExt()
 func addConfigExt(p: Path): Path =
+  # We need to append the extension this way, otherwise
+  # names with periods wouldn't work (e.g., Dungeon Master (v3.6)).
   Path($p & ConfigExt)
 
-
-# Category is either "Games", "Demos\OCS", or "Demos\AGA"
+# }}}
+# {{{ validate()
 proc validate(categoryPath: Path, names: seq[Path]) =
+  # Category is either "Games", "Demos\OCS", or "Demos\AGA"
   let
     configBasePath = ConfigPath / categoryPath
     configNames    = getConfigNames(configBasePath)
@@ -86,7 +92,8 @@ proc validate(categoryPath: Path, names: seq[Path]) =
       let cfg = readUaeConfig(p)
       checkPaths(p, cfg, dataBasePath)
 
-
+# }}}
+# {{{ createPackageScript()
 proc createPackageScript(category: string, names: seq[Path]): string =
   result = """set CMD=Tools\7za.exe
 set OUT=package-output
@@ -101,7 +108,8 @@ set OUT=package-output
 
 """
 
-
+# }}}
+# {{{ process()
 proc process(category: string) =
   let
     categoryPath = Path(category)
@@ -111,6 +119,7 @@ proc process(category: string) =
   let script = createPackageScript(category, names)
   echo script
 
+# }}}
 
 process("Games")
 
