@@ -444,3 +444,4 @@ input.4.keyboard.0.friendlyname=WinUAE keyboard
 input.4.keyboard.0.name=NULLKEYBOARD
 input.4.keyboard.0.custom=true
 gfx_resize_windowed=true
+win32.statusbar=none
