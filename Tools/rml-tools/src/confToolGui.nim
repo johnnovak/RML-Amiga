@@ -117,6 +117,12 @@ const
   IconTrash    = "\uf1f8"
 
 const
+  ThinSp* = "\u2009"
+  HairSp* = "\u200a"
+  EnDash* = "\u2013"
+  EmDash* = "\u2014"
+
+const
   DlgItemHeight   = 24.0
   DlgButtonWidth  = 80.0
   DlgButtonPad    = 10.0
@@ -164,8 +170,7 @@ const DefaultSettings = Settings(
     confirmQuit:         (true,          false),
     pauseWhenUnfocused:  (false,         false),
 
-    windowDecorations:   (wdNormal,      false),
-    showToolbar:         (false,         false),
+    windowDecorations:   (wdMinimal,     false),
     captureMouseOnFocus: (true,          false),
 
     rawScreenshots:      (true,          false)
@@ -485,18 +490,21 @@ proc getConfigPaths(applyTarget: ApplyTarget): seq[Path] =
 # }}}
 
 # {{{ setHelpText()
-template setHelpText(s: string) =
+template setHelpText(s: string, keepNewlines=false) =
   let y = koi.autoLayoutNextY()
   let oy = koi.drawOffset().oy
 
   let mouseInsideWindow = koi.mouseInside(x=0, y=0,
                                           w=koi.winWidth(), h=koi.winHeight())
 
-  if mouseInsideWindow and not koi.isDialogOpen() and
+  if mouseInsideWindow and not koi.isDialogOpen() and koi.hasNoActiveItem() and
     (koi.my() >= oy + y and
      koi.my() <= oy + y + 22):
 
-    const text = s.unindent.replace("\n", " ")
+    var text = s.unindent
+    if not keepNewlines:
+      text = text.replace("\n", " ")
+
     app.helpText = text
 
 # }}}
@@ -553,7 +561,7 @@ proc renderDisplayTab() =
       tooltip = "",
       constraint = TextFieldConstraint(
         kind:   tckInteger,
-        minInt: 640,
+        minInt: 0,
         maxInt: 9999
       ).some,
       disabled = not app.settings.display.windowPosX.set
@@ -566,10 +574,10 @@ proc renderDisplayTab() =
       app.settings.display.windowPosY.value,
       constraint = TextFieldConstraint(
         kind:   tckInteger,
-        minInt: 480,
+        minInt: 0,
         maxInt: 9999
       ).some,
-      disabled = not app.settings.display.windowPosY.set
+      disabled = not app.settings.display.windowPosX.set
     )
 
     koi.toggleButton(app.settings.display.resizableWindow.set,
@@ -811,21 +819,13 @@ proc renderGeneralTab() =
   group:
     koi.toggleButton(app.settings.general.windowDecorations.set,
                      "Window decorations")
-    setHelpText("""
-      TODO
+    setHelpText(fmt"""
+      Set the window decoration style in windowed mode.
     """)
-    koi.nextItemWidth(90)
+    koi.nextItemWidth(160)
     koi.dropDown(app.settings.general.windowDecorations.value,
                  disabled = not app.settings.general.windowDecorations.set)
 
-
-    koi.toggleButton(app.settings.general.showToolbar.set, "Show toolbar")
-    setHelpText("""
-      Show toolbar in windowed mode (even if the OSD is enabled).
-    """)
-    koi.nextItemHeight(CheckBoxSize)
-    koi.checkBox(app.settings.general.showToolbar.value,
-                 disabled = not app.settings.general.showToolbar.set)
 
     koi.toggleButton(app.settings.general.captureMouseOnFocus.set,
                      "Capture mouse on focus")

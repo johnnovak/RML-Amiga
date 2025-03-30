@@ -146,15 +146,15 @@ type
     pauseWhenUnfocused*:  tuple[value: bool,              set: bool]
 
     windowDecorations*:   tuple[value: WindowDecorations, set: bool]
-    showToolbar*:         tuple[value: bool,              set: bool]
     captureMouseOnFocus*: tuple[value: bool,              set: bool]
 
     rawScreenshots*:      tuple[value: bool,              set: bool]
 
   WindowDecorations* = enum
-    wdNone    = "None"
-    wdMinimal = "Minimal"
-    wdNormal  = "Normal"
+    wdBorderless = "Borderless"
+    wdMinimal    = "Title bar only"
+    wdStandard   = "Title and status bar"
+#    wdExtended   = "Extended"
 
   # }}}
 # }}}
@@ -368,9 +368,8 @@ proc setWindowSize(c: UaeConfig, width, height: string) =
 # }}}
 # {{{ setWindowPos()
 proc setWindowPos(c: UaeConfig, x, y: string) =
-  # TODO
-  c.cfg["gfx_pos_x"]  = x
-  c.cfg["gfx_pos_y"] = x
+  c.cfg["gfx_x_windowed"] = x
+  c.cfg["gfx_y_windowed"] = y
 
 # }}}
 # {{{ setShowOsd()
@@ -561,8 +560,7 @@ proc setFloppySounds(c: UaeConfig, enabled: bool) =
 # {{{ Set general settings
 # {{{ setConfirmQuit()
 proc setConfirmQuit(c: UaeConfig, enabled: bool) =
-  # TODO
-  c.cfg[""] = $enabled
+  c.cfg["win32.warn_exit"] = $enabled
 
 # }}}
 # {{{ setPauseWhenUnfocused()
@@ -573,8 +571,19 @@ proc setPauseWhenUnfocused(c: UaeConfig, enabled: bool) =
 # }}}
 # {{{ setWindowDecorations()
 proc setWindowDecorations(c: UaeConfig, d: WindowDecorations) =
-  # TODO
-  c.cfg[""] = $d
+  case d
+  of wdBorderless:
+    c.cfg["win32.borderless"] = "true"
+    c.cfg.del("win32.statusbar")
+
+  of wdMinimal:
+    c.cfg.del("win32.borderless")
+    c.cfg["win32.statusbar"] = "none"
+
+  of wdStandard:
+    c.cfg.del("win32.borderless")
+    c.cfg.del("win32.statusbar")
+#  of wdExtended:   c.cfg["win32.statusbar"]  = "extended"
 
 # }}}
 # {{{ setShowToolbar()
@@ -643,9 +652,6 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
 
 
   with settings.audio:
-    discard
-
-    #[ TODO
     if audioInterface.set:
       cfg.setAudioInterface(audioInterface.value)
 
@@ -663,30 +669,23 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
 
     if floppySounds.set:
       cfg.setFloppySounds(floppySounds.value)
-    ]#
+
 
   with settings.general:
-    discard
-
-    #[ TODO
     if confirmQuit.set:
-        cfgConfirmQuit.set(confirmQuit.value)
+        cfg.setConfirmQuit(confirmQuit.value)
 
     if pauseWhenUnfocused.set:
-        cfgPauseWhenUnfocused.set(pauseWhenUnfocused.value)
+        cfg.setPauseWhenUnfocused(pauseWhenUnfocused.value)
 
     if windowDecorations.set:
         cfg.setWindowDecorations(windowDecorations.value)
-
-    if showToolbar.set:
-        cfg.setShowToolbar(showToolbar.value)
 
     if captureMouseOnFocus.set:
         cfg.setCaptureMouseOnFocus(captureMouseOnFocus.value)
 
     if rawScreenshots.set:
         cfg.setRawScreenshots(rawScreenshots.value)
-    ]#
 
 # }}}
 
