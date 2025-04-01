@@ -148,8 +148,6 @@ type
     windowDecorations*:   tuple[value: WindowDecorations, set: bool]
     captureMouseOnFocus*: tuple[value: bool,              set: bool]
 
-    rawScreenshots*:      tuple[value: bool,              set: bool]
-
   WindowDecorations* = enum
     wdBorderless = "Borderless"
     wdMinimal    = "Title bar only"
@@ -289,6 +287,14 @@ proc findByValue[K, V](t: Table[K, V], value: V): Option[K] =
     if v == value:
       return k.some
   return K.none
+
+# }}}
+# {{{ setTrueOrDelete()
+proc setTrueOrDelete(c: UaeConfig, key: string, enabled: bool) =
+  if enabled:
+    c.cfg[key] = "true"
+  else:
+    c.cfg.del(key);
 
 # }}}
 
@@ -558,15 +564,16 @@ proc setFloppySounds(c: UaeConfig, enabled: bool) =
 # }}}
 # }}}
 # {{{ Set general settings
+
 # {{{ setConfirmQuit()
 proc setConfirmQuit(c: UaeConfig, enabled: bool) =
-  c.cfg["win32.warn_exit"] = $enabled
+  c.setTrueOrDelete("win32.warn_exit", enabled)
 
 # }}}
 # {{{ setPauseWhenUnfocused()
 proc setPauseWhenUnfocused(c: UaeConfig, enabled: bool) =
-  # TODO
-  c.cfg[""] = $enabled
+  c.setTrueOrDelete("win32.inactive_nosound", enabled)
+  c.setTrueOrDelete("win32.inactive_pause",   enabled)
 
 # }}}
 # {{{ setWindowDecorations()
@@ -586,22 +593,9 @@ proc setWindowDecorations(c: UaeConfig, d: WindowDecorations) =
 #  of wdExtended:   c.cfg["win32.statusbar"]  = "extended"
 
 # }}}
-# {{{ setShowToolbar()
-proc setShowToolbar(c: UaeConfig, enabled: bool) =
-  # TODO
-  c.cfg[""] = $enabled
-
-# }}}
 # {{{ setCaptureMouseOnFocus()
 proc setCaptureMouseOnFocus(c: UaeConfig, enabled: bool) =
-  # TODO
-  c.cfg[""] = $enabled
-
-# }}}
-# {{{ setRawScreenshots()
-proc setRawScreenshots(c: UaeConfig, enabled: bool) =
-  # TODO
-  c.cfg[""] = $enabled
+  c.setTrueOrDelete("win32.active_capture_automatically", enabled)
 
 # }}}
 # }}}
@@ -683,9 +677,6 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
 
     if captureMouseOnFocus.set:
         cfg.setCaptureMouseOnFocus(captureMouseOnFocus.value)
-
-    if rawScreenshots.set:
-        cfg.setRawScreenshots(rawScreenshots.value)
 
 # }}}
 

@@ -172,8 +172,6 @@ const DefaultSettings = Settings(
 
     windowDecorations:   (wdMinimal,     false),
     captureMouseOnFocus: (true,          false),
-
-    rawScreenshots:      (true,          false)
   )
 )
 
@@ -835,17 +833,6 @@ proc renderGeneralTab() =
     koi.nextItemHeight(CheckBoxSize)
     koi.checkBox(app.settings.general.captureMouseOnFocus.value,
                  disabled = not app.settings.general.captureMouseOnFocus.set)
-
-  group:
-    koi.toggleButton(app.settings.general.rawScreenshots.set, "Raw screenshots")
-    setHelpText("""
-      If enabled, the saved screenshots will contain the raw image, not what
-      you see on the screen post-scaling and CRT shaders. If disabled, exactly
-      what you seen on the screen will be saved.
-    """)
-    koi.nextItemHeight(CheckBoxSize)
-    koi.checkBox(app.settings.general.rawScreenshots.value,
-                 disabled = not app.settings.general.rawScreenshots.set)
 
 # }}}
 # {{{ renderTabs()
