@@ -158,7 +158,7 @@ const DefaultSettings = Settings(
   ),
 
   audio: AudioSettings(
-    audioInterface:      (adDirectSound, false),
+#    audioInterface:      (adDirectSound, false),
     sampleRate:          (sr48000,       false),
     soundBufferSize:     (sbs4,          false),
     volume:              ("100",         false),
@@ -718,6 +718,7 @@ proc renderDisplayTab() =
 # {{{ renderAudioTab()
 proc renderAudioTab() =
   group:
+#[
     koi.toggleButton(app.settings.audio.audioInterface.set, "Audio interface")
     setHelpText("""
       Set the Windows audio interface used by the emulator. In theory, WASAPI
@@ -726,6 +727,7 @@ proc renderAudioTab() =
     """)
     koi.dropDown(app.settings.audio.audioInterface.value,
                  disabled = not app.settings.audio.audioInterface.set)
+]#
 
     koi.toggleButton(app.settings.audio.sampleRate.set, "Sample rate")
     setHelpText("""
@@ -743,7 +745,9 @@ proc renderAudioTab() =
       occasional glitches and drop-outs, try increasing the buffer size. With
       lagless vsync enabled, larger buffer sizes might be detrimental; you'll
       need to find the optimum buffer size that results in glitch-free audio
-      and no vsync tearing.
+      and no vsync tearing. It's best to keep this setting at 4 or lower.
+      Values above 6 introduce a lot of latency; only use those higher buffer
+      sizes if you absolutely have to.
     """)
     koi.nextItemWidth(60)
     koi.dropDown(app.settings.audio.soundBufferSize.value,

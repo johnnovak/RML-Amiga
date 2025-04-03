@@ -18,10 +18,16 @@ import with
 const
   AppVersion* = staticRead("../CURRENT_VERSION").strip
 
+let ForcedNoFilterConfigs = @[
+  "Wonderland - Dream the Dream",
+  "Magnetic Scrolls Collection, The - Vol. 1"
+]
+
 # {{{ UaeConfig
 type
   UaeConfig* = ref object
-    cfg*: OrderedTable[string, string]
+    name*: string
+    cfg*:  OrderedTable[string, string]
 
 const CommentKeyPrefix = "#comment-"
 
@@ -97,46 +103,46 @@ type
   # {{{ Audio settings
   # -------------------------------------------------------------------------
   AudioSettings* = object
-    audioInterface*:   tuple[value: AudioInterface,   set: bool]
+#    audioInterface*:   tuple[value: AudioInterface,   set: bool]
     sampleRate*:       tuple[value: SampleRate,       set: bool]
     soundBufferSize*:  tuple[value: SoundBufferSize,  set: bool]
     volume*:           tuple[value: string,           set: bool]
     stereoSeparation*: tuple[value: StereoSeparation, set: bool]
     floppySounds*:     tuple[value: bool,             set: bool]
 
-  AudioInterface* = enum
-    adDirectSound = "DirectSound"
-    adWasapi      = "WASAPI"
+#  AudioInterface* = enum
+#    adDirectSound = "DirectSound"
+#    adWasapi      = "WASAPI"
 
   SampleRate* = enum
     sr44100 = "44100"
     sr48000 = "48000"
-    sr88200 = "88200"
-    sr96000 = "96000"
 
   StereoSeparation* = enum
-    ss100 = "100%"
-    ss90  = "90%"
-    ss80  = "80%"
-    ss70  = "70%"
-    ss60  = "60%"
-    ss50  = "50%"
-    ss40  = "40%"
-    ss30  = "30%"
-    ss20  = "20%"
-    ss10  = "10%"
-    ss0   = "0%"
+    ss0   = (0,  "0%")
+    ss10  = (1,  "10%")
+    ss20  = (2,  "20%")
+    ss30  = (3,  "30%")
+    ss40  = (4,  "40%")
+    ss50  = (5,  "50%")
+    ss60  = (6,  "60%")
+    ss70  = (7,  "70%")
+    ss80  = (8,  "80%")
+    ss90  = (9,  "90%")
+    ss100 = (10, "100%")
 
   SoundBufferSize* = enum
-    sbsMin = "Min"
-    sbs1   = "1"
-    sbs2   = "2"
-    sbs3   = "3"
-    sbs4   = "4"
-    sbs5   = "5"
-    sbs6   = "6"
-    sbs7   = "7"
-    sbs8   = "8"
+    sbsMin = (0,  "Min")
+    sbs1   = (1,  "1")
+    sbs2   = (2,  "2")
+    sbs3   = (3,  "3")
+    sbs4   = (4,  "4")
+    sbs5   = (5,  "5")
+    sbs6   = (6,  "6")
+    sbs7   = (7,  "7")
+    sbs8   = (8,  "8")
+    sbs9   = (9,  "9")
+    sbs10  = (10, "10")
 
   # }}}
   # {{{ General settings
@@ -228,16 +234,19 @@ proc getConfigPaths*(path: Path): seq[Path] =
 # }}}
 # {{{ readUaeConfig*()
 proc readUaeConfig*(file: Path): UaeConfig =
+  result = new UaeConfig
+  result.cfg = initOrderedTable[string, string]()
+
+  let (_, name, _) = file.splitFile
+  result.name = $name
+
   let contents = readFile($file)
+
   var
     stream = newStringStream(contents)
     line   = ""
     lineNo = 1
-
-  result = new UaeConfig
-  result.cfg = initOrderedTable[string, string]()
-
-  var filesystem2Index = 0
+    filesystem2Index = 0
 
   while stream.readLine(line):
     if line.strip().startsWith(";"):
@@ -374,8 +383,11 @@ proc setWindowSize(c: UaeConfig, width, height: string) =
 # }}}
 # {{{ setWindowPos()
 proc setWindowPos(c: UaeConfig, x, y: string) =
-  c.cfg["gfx_x_windowed"] = x
-  c.cfg["gfx_y_windowed"] = y
+  if x != "":
+    c.cfg["gfx_x_windowed"] = x
+
+  if y != "":
+    c.cfg["gfx_y_windowed"] = y
 
 # }}}
 # {{{ setShowOsd()
@@ -442,6 +454,10 @@ proc setFilter(c: UaeConfig, s: string) =
 # }}}
 # {{{ setCrtEmulation()
 proc setCrtEmulation(c: UaeConfig, enabled: bool) =
+  for name in ForcedNoFilterConfigs:
+    if c.name.startsWith(name):
+      return
+
   if enabled:
     case c.getVideoStandard()
     of vsPal:            c.setFilter(PalFilter)
@@ -527,39 +543,56 @@ proc setLaglessVsyncSlices(c: UaeConfig, vsyncSlices: string) =
 # }}}
 # {{{ Set audio settings
 # {{{ setAudioInterface()
-proc setAudioInterface(c: UaeConfig, audioInterface: AudioInterface) =
-  # TODO
-  c.cfg[""] = $audioInterface
+#proc setAudioInterface(c: UaeConfig, audioInterface: AudioInterface) =
+#  # TODO
+#  c.cfg[""] = $audioInterface
 
 # }}}
 # {{{ setSampleRate()
 proc setSampleRate(c: UaeConfig, sampleRate: SampleRate) =
-  # TODO
-  c.cfg[""] = $sampleRate
+  c.cfg["sound_frequency"] = $sampleRate
 
 # }}}
 # {{{ setSoundBufferSize()
 proc setSoundBufferSize(c: UaeConfig, bufSize: SoundBufferSize) =
-  # TODO
-  c.cfg[""] = $bufSize
+  let value = case bufSize
+              of sbsMin: 0
+              of sbs1:   1024
+              of sbs2:   2048
+              of sbs3:   3072
+              of sbs4:   4096
+              of sbs5:   6144
+              of sbs6:   8192
+              of sbs7:   12288
+              of sbs8:   16384
+              of sbs9:   32768
+              of sbs10:  65536
+
+  c.cfg["sound_max_buff"] = $value
 
 # }}}
 # {{{ setVolume()
 proc setVolume(c: UaeConfig, volume: string) =
-  # TODO
-  c.cfg[""] = volume
+  c.cfg["sound_volume"] = $(100 - parseInt(volume))
 
 # }}}
 # {{{ setStereoSeparation()
 proc setStereoSeparation(c: UaeConfig, sep: StereoSeparation) =
-  # TODO
-  c.cfg[""] = $sep
+  c.cfg["sound_stereo_separation"] = $ord(sep)
 
 # }}}
 # {{{ setFloppySounds()
 proc setFloppySounds(c: UaeConfig, enabled: bool) =
-  # TODO
-  c.cfg[""] = $enabled
+
+  proc processFloppy(n: int) =
+    let enabled = c.cfg[fmt"floppy{n}sound"]
+    echo enabled
+    if enabled == "0":
+      c.cfg[fmt"floppy{n}soundvolume_disk"]  = "100"
+      c.cfg[fmt"floppy{n}soundvolume_empty"] = "100"
+
+  for n in 0..3:
+    processFloppy(n)
 
 # }}}
 # }}}
@@ -646,8 +679,8 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
 
 
   with settings.audio:
-    if audioInterface.set:
-      cfg.setAudioInterface(audioInterface.value)
+#    if audioInterface.set:
+#      cfg.setAudioInterface(audioInterface.value)
 
     if sampleRate.set:
       cfg.setSampleRate(sampleRate.value)
