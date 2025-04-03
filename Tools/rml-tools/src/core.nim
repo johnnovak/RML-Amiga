@@ -203,6 +203,14 @@ let lacedNtscScalingFactors = {
 
 # }}}
 
+# {{{ parseIntOrDefault()
+func parseIntOrDefault(s: string, default: int): int =
+  try:
+    parseInt(s)
+  except ValueError:
+    default
+
+# }}}
 # {{{ parseFloatOrDefault()
 func parseFloatOrDefault(s: string, default: float): float =
   try:
@@ -573,7 +581,7 @@ proc setSoundBufferSize(c: UaeConfig, bufSize: SoundBufferSize) =
 # }}}
 # {{{ setVolume()
 proc setVolume(c: UaeConfig, volume: string) =
-  c.cfg["sound_volume"] = $(100 - parseInt(volume))
+  c.cfg["sound_volume"] = $(100 - parseIntOrDefault(volume, 100))
 
 # }}}
 # {{{ setStereoSeparation()
@@ -585,13 +593,17 @@ proc setStereoSeparation(c: UaeConfig, sep: StereoSeparation) =
 proc setFloppySounds(c: UaeConfig, enabled: bool) =
 
   proc processFloppy(n: int) =
-    let enabled = c.cfg[fmt"floppy{n}sound"]
-    echo enabled
+    let enabled = c.cfg.getOrDefault(fmt"floppy{n}sound", "0")
     if enabled == "0":
+      c.cfg[fmt"floppy{n}sound"]  = "1"
       c.cfg[fmt"floppy{n}soundvolume_disk"]  = "100"
       c.cfg[fmt"floppy{n}soundvolume_empty"] = "100"
 
-  for n in 0..3:
+  let numFloppies = parseIntOrDefault(
+                      c.cfg.getOrDefault(fmt"nr_floppies", "1"),
+                      1)
+
+  for n in 0..<numFloppies:
     processFloppy(n)
 
 # }}}
