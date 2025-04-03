@@ -1,76 +1,71 @@
 # Customising your setup
 
-## Graphics customisation
+You can customise your RML Amiga game configurations in two ways:
 
-To set a different scaling factor, use the drop-down to select a preset then
-press the **Load** button. Unfortunately, this will also reset image centering
-in the **Host / Display** tab (both will be enabled) and any manual image
-centering settings (the GUI config tool can change only the scaling and leave
-the centering settings alone).
+- By using the special [Configuration tool](#configuration-tool). This is the
+  simplest and safest method, therefore it's the recommended way for most
+  users. The tool also allows you to apply bulk changes to multiple or all
+  configs at once.
 
-These control the vertical and horizontal oversampling of the output image (a
-larger image will be rendered then it will be downscaled; this increases image
-quality). **2x** horizontal and **3x** vertical are recommended for the best
-results. Going above this will yield extremely minor improvements but can
-overtax your GPU.
-
-If you have a really weak GPU that can't keep up (e.g., the screen updates are
-choppy and/or you're getting audio dropouts), try **1x** horizontal and **2x**
-vertical which should be about three times faster. Note this setting could
-result in faint vertical interference patterns (moire patterns) when using
-non-integer scaling factors with the PAL shader. If your GPU can't even handle
-**2x** vertical scaling, you will get horrible vertical interference patterns
-in almost all content, so you should disable the CRT emulation altogether.
-
-### Disabling CRT shaders
-
-Set this to **Point Prescale** to disable the CRT shaders; this will make the
-pixels appear as sharp little rectangles (which is completely inauthentic).
-This shader works best with **3x**/**3x** oversampling (higher values even out the
-pixels a bit more). You'll also want to disable ReShade by quitting WinUAE and
-renaming `dx11.dll` to `dx11.bak` in `$RML_BASE\WinUAE`. If you want to
-re-enable CRT emulation later, restore the `.dll` extension of this file, the
-restore the appropriate shader (**CRT-A2080-PAL** or **CRT-A2080-NTSC**) and
-oversampling factors.
+- By making changes to the configs in the WinUAE settings window directly. The
+  benefit of this approach is that you can customise every aspect of the
+  emulation---only a small subset of these possibilities is exposed in the
+  config tool. The drawback is that you can customise every aspect of the
+  emulation---it's fairly easy to screw things up if you're not an expert
+  WinUAE user. Another drawback is you cannot apply bulk changes to multiple
+  configs this way.
 
 
-## Input customisation
+!!! warning "You break it, you keep it"
 
-TODO
+   You'll lose your warranty _the moment_ you start tinkering with the game
+   configs with the direct WinUAE method (apart from trivial changes like
+   setting which game controller to use). If the config tool makes a mistake,
+   please, by all means report it and I'll fix it. But the direct method is
+   reserved for experts and experts only---that's the "I know what I'm doing"
+   mode, and I won't troubleshoot your mistakes. If you've screwed up one of
+   your game configs, just restore the stock config and try again---maybe by
+   using the config tool this time.
 
-## Sound customisation
+
+## Configuration tool
+
+RML Amiga includes a configuration tool aptly titled `conftool.exe` located in
+your `$RML_BASE` folder. You might want to create a desktop shortcut for it.
+
+The tool allows you to change specific settings of your games configs while
+leaving the rest of the settings alone (e.g., turn off the floppy sounds, set
+a larger graphics scaling factor, use windowed mode by default, etc.)
+
+The tool has a simple single-window interface:
+
+- Config settings are organised into categories; you can switch between them
+  with the radio button :material-numeric-1-circle: at the top of the window.
+
+- The lower part of the window shows the description of the setting
+  :material-numeric-3-circle: currently under the mouse cursor. Make sure to
+  read the these descriptions carefully before you change anything.
+
+- You'll need to create a "plan" for your configuration changes, then you can
+  apply this "change plan" to one of more configs. By default, every setting
+  is grayed-out (like this one :material-numeric-1-circle:). Grayed-out
+  settings will not be modified when you apply the "change plan". If you want
+  to modify a setting, you'll need to enable if first by clicking on its name,
+  which will highlight it :material-numeric-2-circle:, then you can change its
+  value. If you've changed your mind and don't want to modify that setting,
+  click on it again to make it grayed-out (disabled).
+
+- You can specify whether you want to apply the config changes to **All**
+  configs, or only to the **Games** or the **Demos** with the
+  :material-numeric-6-circle: drop-down next to the **Apply** button.
+
+- Press **Apply** to :material-numeric-7-circle: apply the changes to the
+  selected config category.
+
+- Alternatively, you can drag and drop config files onto the config tool
+  window to apply the changes to a single config only, or to any set of
+  configs. A confirmation dialog will appear listing the names of the configs
+  the changes will apply to---you'll figure out the rest :sunglasses:
 
 
-
-You can customise the sound settings in the **Host / Sound** tab.
-
-![Sound settings](img/sound-settings.png)
-
-- **1** -- Adjust the **Master Volume**.
-
-- **2** -- You can try to decrease the **Sound Buffer Size** for lower input latency and
-  better audio-to-video sync, but too low settings might result in audio
-  drop-outs and glitches.
-
-- **3** -- The Amiga has four output channels hard-panned to left and right.
-  The default **Stereo Separation** of 50% gives you a pleasant
-  experience on headphones by mixing 50% of the left channels into the right
-  channels and vice versa. You might want to set this to 100% (no crossfeed)
-  if you're using speakers, or fine-tune the stereo separation to your
-  liking.
-
-- **4** -- Show/adjust **Floppy Drive Sound Emulation** settings for this drive.
-
-- **5** -- You can adjust the floppy drive sound volume here for
-  the drive selected with **6**.
-
-- **6** -- Select **No sound** here to disable floppy sound for the selected
-  drive.
-
-- **7** -- Sound driver to use. **DSOUND** gives a good performance on
-  most systems, but you might want to experiment with **WASAPI** or **WASAPI
-  EX** if you want to achieve the lowest possible latency.
-
-- **8** -- **Sample rate** of the sound emulation. This should be left at
-  48000 (48 Khz) unless your audio device only supports 44.1 kHz, in which
-  case change it to 44100.
+## Restoring configurations

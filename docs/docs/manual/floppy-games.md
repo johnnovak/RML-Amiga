@@ -85,7 +85,6 @@ For example:
 - To insert the fourth game edisk into DF0: again, press ++end+ctrl+1++
   followed by ++end+4++ .
 
-
 You can view the disk swapper configuration for the currently loaded game
 config in the TODO **Host / Disk swapper** configuration tab of the WinUAE
 settings window.
