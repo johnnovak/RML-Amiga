@@ -185,7 +185,7 @@ only use the in-game save feature in such games!
 
 Games that lock you into using a single save slot always belong to this
 category (e.g., **Ultima IV: Quest of the Avatar** and [Rogue: The Adventure
-Game](../games/p-r.md@rogue-the-adventure-game)). Other affected titles might
+Game](../games/q-r.md#rogue-the-adventure-game)). Other affected titles might
 instruct you to create copies of your original game disks or "scenario disks"
 before playing. Note that these games might still support manual save files
 (e.g., [Amberstar](../games/a.md#amberstar),
@@ -200,7 +200,7 @@ area, etc.) Because of this, the save states and the contents of the disks can
 become out of sync, and the game is not expecting this. You can recognise
 these games by the occasional floppy or hard drive write indicators (flashing
 red lights) in the
-[on-screen display](getting-started.md#Meet-the-on-screen-display) in the
+[on-screen display](getting-started.md#on-screen-display) in the
 bottom-right corner. The [Game notes](../games/index.md) also warn you about
 such games, so make sure to check them out before starting your next long RPG.
 

@@ -54,7 +54,7 @@ Here are some good custom Workbench examples:
 <div class="compact" markdown>
   - [The Secret of Monkey Island](../games/s.md#secret-of-monkey-island-the)
   - [Legend of Faerghail](../games/k-l.md#legend-of-faerghail)
-  - [Pirates!](../games/p-r.md#pirates)
+  - [Pirates!](../games/p.md#pirates)
   - [Art of GO, The](../games/a.md#art-of-go-the)
   - [Battle Chess (OCS)](../games/b.md#battle-chess-ocs)
   - [Champions of Krynn](../games/c.md#champions-of-krynn)

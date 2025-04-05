@@ -29,7 +29,7 @@ You can toggle warp mode with ++end+pause++. This "time-warps" the speed of
 the emulation to the maximum your computer can handle, so you are going at
 "faster than real-time". There is no sound if warp mode is engaged and the
 emulated CPU speed meter is pegged to 100% in the
-[on-screen display](getting-started.md#Meet-the-on-screen-display).
+[on-screen display](getting-started.md#on-screen-display).
 
 !!! warning
 
@@ -58,7 +58,7 @@ drives, some only a single drive. The best case scenario is when a game
 supports as many drives as the number of disks it comes on. Such games are
 configured with the game disks pre-inserted into the drives (e.g., the
 two-disk game **Lemmings**, or the four-disk games
-[Perihelion](../games/p-r.md#perihelion), [Hook](../games/g-j.md#hook), and
+[Perihelion](../games/p.md#perihelion), [Hook](../games/g-j.md#hook), and
 [Soccer Kid (OCS)](../games/s.md#soccer-kid-ocs)).
 
 The other scenario is that the game supports *less* drives than the number of
@@ -170,8 +170,8 @@ the **C:** drive in Windows.
 ### Saving to the game disk
 
 Some games save your progress or high-scores directly to the game disk (e.g.,
-[Pinball Dreams](../games/p-r.md#pinball-dreams) and [Rogue: The Adventure
-Game](../games/p-r.md#rogue-the-adventure-game)). These games are configured
+[Pinball Dreams](../games/p.md#pinball-dreams) and [Rogue: The Adventure
+Game](../games/q-r.md#rogue-the-adventure-game)). These games are configured
 to never modify the original floppy images, but create a so-called **save
 image** instead which contains the changes compared to the original disk. Save
 images have the `.save_adf` file extension and are located in the `Disks`

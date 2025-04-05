@@ -13,7 +13,7 @@ voice acting and a tutorial section in
 [Battle Chess](../games/b.md#battle-chess-cd32), and there are a handful of
 CD-exclusive titles as well, such as
 [Defender of the Crown II](../games/d.md#defender-of-the-crown-ii-cd32) and
-[Pirates! Gold](../games/p-r.md#pirates-gold-cd32)).
+[Pirates! Gold](../games/p.md#pirates-gold-cd32)).
 
 TODO cdtv and cd32 pictures
 

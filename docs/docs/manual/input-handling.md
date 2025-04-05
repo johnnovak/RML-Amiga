@@ -185,7 +185,7 @@ TODO digital joystick photo
     in action games.
 
     This is an advanced topic; see the
-    [Customising your setup](customising-your-setup.md#graphics-customisation)
+    [Customising your setup](customising-your-setup.md#graphics-customisations)
     section for details.
 
 

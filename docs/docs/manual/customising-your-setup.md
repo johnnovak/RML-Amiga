@@ -68,4 +68,11 @@ The tool has a simple single-window interface:
   the changes will apply to---you'll figure out the rest :sunglasses:
 
 
+## Graphics customisations
+
+TODO
+
+
 ## Restoring configurations
+
+TODO

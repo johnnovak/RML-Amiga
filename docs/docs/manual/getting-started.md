@@ -12,7 +12,7 @@
     reading as half of the information is emulation-related.
 
 
-#### Starting a game
+### Starting a game
 
 Start the bundled portable Amiga emulator called **WinUAE** by running
 `winuae.exe` (creating a desktop shortcut icon for it would be a good idea).
@@ -53,7 +53,7 @@ to launch the game.
     loaded a config yet... which won't do anything!
 
 
-#### Read the game notes
+### Game notes
 
 Always check the [Game notes](../games/index.md) before trying a game for the
 first time. A few titles need some extra steps to even just start the
@@ -63,7 +63,7 @@ need to do a lot of forum diving to find it), or the information is included
 in the manual but it's easy to miss if you don't read it carefully.
 
 
-#### Skipping code checks
+### Skipping code checks
 
 Some games have additional special configs to skip the intro or the
 manual-based copy protection check at the start of the game (e.g., `Altered
@@ -71,7 +71,7 @@ Destiny [skip code check]`). It's advised to start the normal config for the
 first time to experience the intro and the original game at least once.
 
 
-#### Use warp mode 
+### Warp mode 
 
 You can speed up loading times (especially floppy loading times) considerably
 by entering "warp mode". You can toggle warp mode with ++end+pause++. This
@@ -81,7 +81,7 @@ mode is engaged and the emulated CPU speed meter is pegged to 100% in the
 on-screen display.
 
 
-#### Meet the on-screen display
+### On-screen display
 
 The on-screen display (OSD) in the bottom-right corner is a handy little thing
 that gives you feedback about what the emulator is currently doing.
@@ -115,7 +115,7 @@ that gives you feedback about what the emulator is currently doing.
     the CDTV and the CD32), the rest are optional.
 
 
-#### Read the manuals
+### Manuals
 
 It's important to understand that control schemes and user interfaces were a
 lot less standardised in the 1980s and early 90s. You won't get very far in
@@ -132,7 +132,7 @@ The **Extras** folder contains optional content not strictly necessary to
 complete the game (e.g., covers, posters, maps, hint books, etc.).
 
 
-#### Floppy games
+### Floppy games
 
 [Hard drive games](hard-drive-games.md) are the easiest to deal with, floppy
 games need a bit of practice. Read the [Floppy games](floppy-games.md) section
@@ -140,7 +140,7 @@ for guidance. You can easily recognise a floppy game by the emulated floppy
 drive sounds.
 
 
-#### Controller support
+### Controller support
 
 Most games in the collection are controlled with the mouse and the keyboard,
 but a few need a joystick. These games are configured for an emulated
@@ -159,7 +159,7 @@ controller), press the green **A** button on it after starting the game and
 WinUAE will automatically "plug" it into port 2.
 
 
-#### Learn the keyboard shortcuts
+### Keyboard shortcuts
 
 There are few important [Keyboard shortcuts](keyboard-shortcuts.md) you should
 familiarise yourself with. The three most important are ++pause++ to toggle
@@ -170,7 +170,7 @@ newbie; things will blow up! :bomb::fire: Just press ++esc++ or the **OK** or
 **Cancel** button for now to return to the game.
 
 
-#### Saving your progress
+### Saving your progress
 
 When it comes to saving your game progress, it's a bit of a Wild West
 situation. Every game is slightly different, and floppy games that require
@@ -182,7 +182,7 @@ tips, and don't forget about [Save states](save-states.md) as an alternative
 saving option.
 
 
-#### Customising your setup
+### Customising your setup
 
 RML Amiga comes with defaults that aim to recreate the experience of sitting
 in front of a real Amiga in the 1980s. Some other technical settings have been
@@ -194,10 +194,10 @@ latency).
 If you would like to change the defaults (e.g., you'd like to make the image
 fill the screen, or turn off the CRT shaders or the floppy sounds) or want to
 fine-tune the technical emulator settings, please refer to the [Customising
-your setup](customising-your-setup.md#graphics-customisation) section.
+your setup](customising-your-setup.md#graphics-customisations) section.
 
 
-#### Learn more about Amiga games
+### Further reading
 
 Check out the [Useful websites](useful-websites.md) page to find out more
 about Amiga games. These sites should also help you decide which titles to try

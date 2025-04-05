@@ -18,7 +18,7 @@ features.
 | ++f12++              | Pause emulation and open the WinUAE settings window   |
 | ++end+f12++          | Toggle between windowed and full windowed mode        |
 | ++pause++            | Toggle pausing the emulation                          |
-| ++end+pause++        | Toggle [warp mode](getting-started.md#use-warp-mode) (run the emulation at maximum speed) |
+| ++end+pause++        | Toggle [warp mode](getting-started.md#warp-mode) (run the emulation at maximum speed) |
 | ++end+print-screen++ | Save PNG screenshot to `$RML_BASE\Screenshots`        |
 </div>
 
@@ -64,7 +64,7 @@ features.
 | --------                       | -----------                        |
 | ++end+shift+num1++ -- ++num9++ | [Quick save](save-states.md#quick-saves) state to slot 1--9 |
 | ++end+num1++ -- ++num9++       | Quick restore state from slot 1--9 |
-| ++end+shift+f6++               | Open the save state dialog (see [Named save states](save-states.md#name-save-states) |
+| ++end+shift+f6++               | Open the save state dialog (see [Named save states](save-states.md#named-save-states) |
 | ++end+f6++                     | Open the restore state dialog      |
 </div>
 
