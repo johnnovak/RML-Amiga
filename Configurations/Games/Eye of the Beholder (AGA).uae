@@ -450,7 +450,6 @@ input.4.mouse.0.custom=true
 input.4.keyboard.0.friendlyname=WinUAE keyboard
 input.4.keyboard.0.name=NULLKEYBOARD
 input.4.keyboard.0.custom=true
-gfx_resize_windowed=true
 floppy0sound=1
 floppy0soundvolume_disk=100
 floppy0soundvolume_empty=100
