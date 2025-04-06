@@ -550,7 +550,13 @@ proc renderDisplayTab() =
 
     # Window position
     koi.toggleButton(app.settings.display.windowPosX.set, "Window position")
-    setHelpText("Set the position of the window in windowed mode.")
+    setHelpText("""
+      Set the position of the window in windowed mode. Useful if you want to
+      make the emulator window occupy one half of the screen and have a mapping
+      tool or the user manual open in the other half (tip: set 'Window
+      decorations' to 'Borderless', 'Window size' to 1140x1080, and 'Window
+      position' to 0,0 to achieve this).
+    """)
     y = koi.autoLayoutNextY()
 
     koi.nextItemWidth(55)
@@ -565,7 +571,7 @@ proc renderDisplayTab() =
       disabled = not app.settings.display.windowPosX.set
     )
 
-    koi.label(x=251, y, w=20, h=22, "x")
+    koi.label(x=251, y, w=20, h=22, ",")
 
     koi.textField(
       x=265, y, w=55, h=22,
@@ -659,7 +665,7 @@ proc renderDisplayTab() =
     koi.toggleButton(app.settings.display.sharperNtsc.set,
                      "Sharper NSTC emulation")
     setHelpText("""
-      Enable maximum horizontal sharpness for PAL CRT emulation. This
+      Enable maximum horizontal sharpness for NTSC CRT emulation. This
       increases the legibility of 80-column text (e.g., in text adventures),
       and makes the image appear sharper at higher scaling factors. The
       drawback is it reduces the benefical 'natural antialiasing' effects of
@@ -671,25 +677,20 @@ proc renderDisplayTab() =
 
   group:
     koi.toggleButton(app.settings.display.vsyncMode.set, "Vsync mode")
-    setHelpText("""
-      'Off' is the best option for VRR monitors. On non-VRR monitors, it can
-      add tearing, but reduces input lag. 'Standard' eliminates tearing in
-      both windowed and fullscreen modes on non-VRR monitors, but increases
-      input lag. 'Lagless' drastically reduces input lag but it doesn't work
-      in windowed mode, it needs true fullscreen for the best results, and
-      requires either a VRR monitor or matching 50/60 desktop refresh rates
-      for PAL/NTSC.
-    """)
+    setHelpText(fmt"""
+      'Off' {EmDash} The best option for VRR monitors. On non-VRR monitors, it can add tearing, but reduces input lag.
+      'Standard' {EmDash} Eliminates tearing in both windowed and fullscreen modes on non-VRR monitors, but increases input lag.
+      'Lagless' {EmDash} Drastically reduces input lag but needs true fullscreen mode for the best results. Requires either a VRR monitor or fixed 50/60 Hz desktop refresh rate for PAL/NTSC.""", keepNewlines=true)
     koi.dropDown(app.settings.display.vsyncMode.value,
                  disabled = not app.settings.display.vsyncMode.set)
 
     koi.toggleButton(app.settings.display.vsyncSlices.set,
                      "Lagless vsync slices")
     setHelpText("""
-      Number of frame slices in lagless vsync mode. Higher values reduce
-      latency, values between 2 and 8 and the most useful (setup dependent,
-      you'll need to experiment). Generally, you'll need slightly larger
-      audio buffers in lagless vsync mode.
+      Number of frame slices in 'Lagless' vsync mode. Higher values reduce
+      latency, values between 2 and 8 and the most useful (the best value is
+      setup dependent, you'll need to experiment). Generally, you'll need
+      slightly larger audio buffers in lagless vsync mode.
     """)
     koi.nextItemWidth(60)
     koi.textField(
@@ -741,13 +742,12 @@ proc renderAudioTab() =
     koi.toggleButton(app.settings.audio.soundBufferSize.set,
                      "Sound buffer size")
     setHelpText("""
-      Set the size of the sound buffer. If you get distorted audio or
-      occasional glitches and drop-outs, try increasing the buffer size. With
-      lagless vsync enabled, larger buffer sizes might be detrimental; you'll
+      Set the size of the sound buffer. Try increasing the buffer size If you
+      get distorted audio or drop-outs. With lagless vsync enabled, you'll
       need to find the optimum buffer size that results in glitch-free audio
-      and no vsync tearing. It's best to keep this setting at 4 or lower.
-      Values above 6 introduce a lot of latency; only use those higher buffer
-      sizes if you absolutely have to.
+      and no vsync tearing. It's best to keep this setting at 4 or lower. Only
+      use values above 6 if you absolutely have to as those will introduce a
+      lot of latency.
     """)
     koi.nextItemWidth(60)
     koi.dropDown(app.settings.audio.soundBufferSize.value,
@@ -777,9 +777,9 @@ proc renderAudioTab() =
       Set the amount of stereo separation between the left and right audio
       channels. The Amiga has four audio channels: two are connected to the
       left speaker, and the other two to the right speaker. This is 100%
-      separation which is rather jarring on headphones. 50% stereo separation
-      causes half of the left channels to be mixed into the right channels and
-      vice versa, and 0% separation results in mono audio.
+      separation which is rather jarring in headphones. 50% stereo separation
+      will mix half of the left channels into the right channels and vice
+      versa; 0% separation will result in mono audio.
     """)
     koi.nextItemWidth(60)
     koi.dropDown(app.settings.audio.stereoSeparation.value,
@@ -789,7 +789,7 @@ proc renderAudioTab() =
     koi.toggleButton(app.settings.audio.floppySounds.set, "Floppy sounds")
     setHelpText("""
       Enable authentic emulation of the sounds of the floppy disk drives. This
-      provides additional feedback on the disk drives' activity, and acts as a
+      provides additional feedback on the disk drives' activity and acts as a
       progress indicator (i.e., loading times can appear subjectively shorter
       if you're hearing the floppy activity).
     """)
@@ -902,7 +902,6 @@ proc renderUI() =
     openResetSettingsDialog()
 
 #  if koi.button(x+83, y, w=75, h=ButtonHeight, "Load"):
-#    # TODO
 #    discard
 
   if koi.button(winWidth-90-x-98, y, w=90, h=ButtonHeight, "Apply to"):

@@ -314,6 +314,14 @@ proc setTrueOrDelete(c: UaeConfig, key: string, enabled: bool) =
     c.cfg.del(key);
 
 # }}}
+# {{{ setFalseOrDelete()
+proc setFalseOrDelete(c: UaeConfig, key: string, enabled: bool) =
+  if enabled:
+    c.cfg.del(key);
+  else:
+    c.cfg[key] = "false"
+
+# }}}
 
 # {{{ Set display settings
 # {{{ isLaced()
@@ -376,8 +384,8 @@ proc setDisplayMode(c: UaeConfig, dm: DisplayMode) =
 
 # }}}
 # {{{ setResizableWindow()
-proc setResizableWindow(c: UaeConfig, resizable: bool) =
-  c.cfg["gfx_resize_windowed"] = $resizable
+proc setResizableWindow(c: UaeConfig, enabled: bool) =
+  c.setFalseOrDelete("gfx_resize_windowed", enabled)
 
 # }}}
 # {{{ setWindowSize()
@@ -552,7 +560,6 @@ proc setLaglessVsyncSlices(c: UaeConfig, vsyncSlices: string) =
 # {{{ Set audio settings
 # {{{ setAudioInterface()
 #proc setAudioInterface(c: UaeConfig, audioInterface: AudioInterface) =
-#  # TODO
 #  c.cfg[""] = $audioInterface
 
 # }}}
@@ -591,17 +598,25 @@ proc setStereoSeparation(c: UaeConfig, sep: StereoSeparation) =
 # }}}
 # {{{ setFloppySounds()
 proc setFloppySounds(c: UaeConfig, enabled: bool) =
+  let volume = c.cfg.getOrDefault("floppy_volume", "88")
 
   proc processFloppy(n: int) =
-    let enabled = c.cfg.getOrDefault(fmt"floppy{n}sound", "0")
-    if enabled == "0":
-      c.cfg[fmt"floppy{n}sound"]  = "1"
-      c.cfg[fmt"floppy{n}soundvolume_disk"]  = "100"
-      c.cfg[fmt"floppy{n}soundvolume_empty"] = "100"
+    let soundKey = fmt"floppy{n}sound"
+    if enabled:
+      c.cfg[soundKey] = "1"
+
+      let diskKey = fmt"floppy{n}soundvolume_disk"
+      let emptyKey = fmt"floppy{n}soundvolume_empty"
+
+      if diskKey notin c.cfg:  c.cfg[diskKey]  = volume
+      if emptyKey notin c.cfg: c.cfg[emptyKey] = volume
+
+    else:
+      c.cfg[soundKey] = "0"
+
 
   let numFloppies = parseIntOrDefault(
-                      c.cfg.getOrDefault(fmt"nr_floppies", "1"),
-                      1)
+                      c.cfg.getOrDefault(fmt"nr_floppies", "1"), 1)
 
   for n in 0..<numFloppies:
     processFloppy(n)
