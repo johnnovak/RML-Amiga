@@ -53,7 +53,6 @@ markdown_extensions:
   - smarty
   - toc:
       permalink: true
-      toc_depth: 3
 
 # Plugins
 plugins:
@@ -84,9 +83,8 @@ plugins:
         'games/n.md': 'games/m-o.md'
         'games/o.md': 'games/m-o.md'
 
-        'games/p.md': 'games/p-r.md'
-        'games/q.md': 'games/p-r.md'
-        'games/r.md': 'games/p-r.md'
+        'games/q.md': 'games/q-r.md'
+        'games/r.md': 'games/q-r.md'
 
         'games/t.md': 'games/t-z.md'
         'games/u.md': 'games/t-z.md'
@@ -129,7 +127,8 @@ nav:
     - games/g-j.md
     - games/k-l.md
     - games/m-o.md
-    - games/p-r.md
+    - games/p.md
+    - games/q-r.md
     - games/s.md
     - games/t-z.md
 
