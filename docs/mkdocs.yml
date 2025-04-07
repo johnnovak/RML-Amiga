@@ -13,6 +13,7 @@ theme:
     - navigation.indexes
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.sections
     - navigation.top
     - search.highlight
     - search.share
@@ -68,37 +69,35 @@ plugins:
         #
         'manual/index.md': 'manual/introduction.md'
 
-        'games/e.md': 'games/e-f.md'
-        'games/f.md': 'games/e-f.md'
+        'game-notes/e.md': 'game-notes/e-f.md'
+        'game-notes/f.md': 'game-notes/e-f.md'
 
-        'games/g.md': 'games/g-j.md'
-        'games/h.md': 'games/g-j.md'
-        'games/i.md': 'games/g-j.md'
-        'games/j.md': 'games/g-j.md'
+        'game-notes/g.md': 'game-notes/g-j.md'
+        'game-notes/h.md': 'game-notes/g-j.md'
+        'game-notes/i.md': 'game-notes/g-j.md'
+        'game-notes/j.md': 'game-notes/g-j.md'
 
-        'games/k.md': 'games/k-l.md'
-        'games/l.md': 'games/k-l.md'
+        'game-notes/k.md': 'game-notes/k-l.md'
+        'game-notes/l.md': 'game-notes/k-l.md'
 
-        'games/m.md': 'games/m-o.md'
-        'games/n.md': 'games/m-o.md'
-        'games/o.md': 'games/m-o.md'
+        'game-notes/m.md': 'game-notes/m-o.md'
+        'game-notes/n.md': 'game-notes/m-o.md'
+        'game-notes/o.md': 'game-notes/m-o.md'
 
-        'games/q.md': 'games/q-r.md'
-        'games/r.md': 'games/q-r.md'
+        'game-notes/q.md': 'game-notes/q-r.md'
+        'game-notes/r.md': 'game-notes/q-r.md'
 
-        'games/t.md': 'games/t-z.md'
-        'games/u.md': 'games/t-z.md'
-        'games/v.md': 'games/t-z.md'
-        'games/w.md': 'games/t-z.md'
-        'games/x.md': 'games/t-z.md'
-        'games/y.md': 'games/t-z.md'
-        'games/z.md': 'games/t-z.md'
+        'game-notes/t.md': 'game-notes/t-z.md'
+        'game-notes/u.md': 'game-notes/t-z.md'
+        'game-notes/v.md': 'game-notes/t-z.md'
+        'game-notes/w.md': 'game-notes/t-z.md'
+        'game-notes/x.md': 'game-notes/t-z.md'
+        'game-notes/y.md': 'game-notes/t-z.md'
+        'game-notes/z.md': 'game-notes/t-z.md'
 
 # Page tree
 nav:
   - Manual:
-    - manual/index.md   # dummy page for redirecting
-
     - manual/introduction.md
     - manual/installation.md
     - manual/getting-started.md
@@ -108,29 +107,33 @@ nav:
     - manual/floppy-games.md
     - manual/cdtv-and-cd32-games.md
     - manual/save-states.md
-    - manual/keyboard-shortcuts.md
-    # - manual/folder-organisation.md
     - manual/customising-your-setup.md
     - manual/troubleshooting.md
-    - manual/useful-websites.md
-    - manual/thanks.md
-    - manual/changelog.md
+    # - manual/folder-organisation.md
     # - manual/why-amiga-games.md
 
+    - Appendices:
+      - appendices/keyboard-shortcuts.md
+      - appendices/useful-websites.md
+      - appendices/thanks.md
+
+    - Changelog:
+      - changelog/index.md
+
   - Game notes:
-    - games/index.md
-    - games/a.md
-    - games/b.md
-    - games/c.md
-    - games/d.md
-    - games/e-f.md
-    - games/g-j.md
-    - games/k-l.md
-    - games/m-o.md
-    - games/p.md
-    - games/q-r.md
-    - games/s.md
-    - games/t-z.md
+    - game-notes/index.md
+    - game-notes/a.md
+    - game-notes/b.md
+    - game-notes/c.md
+    - game-notes/d.md
+    - game-notes/e-f.md
+    - game-notes/g-j.md
+    - game-notes/k-l.md
+    - game-notes/m-o.md
+    - game-notes/p.md
+    - game-notes/q-r.md
+    - game-notes/s.md
+    - game-notes/t-z.md
 
 not_in_nav: |
   # To silence the warning about the custom `index.md` front page
