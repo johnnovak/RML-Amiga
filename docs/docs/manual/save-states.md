@@ -22,7 +22,7 @@ it that all your save states will continue to work in future WinUAE versions.
     Make sure to read the
     [Save state best practices](#save-state-best-practices) section very
     carefully before you attempt to use save states in anger, and always check
-    the [Game notes](../games/index.md) to see if a game is incompatible with
+    the [Game notes](../game-notes/index.md) to see if a game is incompatible with
     save states.
 
 
@@ -185,12 +185,12 @@ only use the in-game save feature in such games!
 
 Games that lock you into using a single save slot always belong to this
 category (e.g., **Ultima IV: Quest of the Avatar** and [Rogue: The Adventure
-Game](../games/q-r.md#rogue-the-adventure-game)). Other affected titles might
+Game](../game-notes/q-r.md#rogue-the-adventure-game)). Other affected titles might
 instruct you to create copies of your original game disks or "scenario disks"
 before playing. Note that these games might still support manual save files
-(e.g., [Amberstar](../games/a.md#amberstar),
-[Demon's Winter](../games/d.md#demons-winter)),
-[Legend of Faerghail](../games/k-l.md#legend-of-faerghail),
+(e.g., [Amberstar](../game-notes/a.md#amberstar),
+[Demon's Winter](../game-notes/d.md#demons-winter)),
+[Legend of Faerghail](../game-notes/k-l.md#legend-of-faerghail),
 **Phantasie**, etc.)
 
 The common problem is that these games write to the floppies or the hard drive
@@ -201,7 +201,7 @@ become out of sync, and the game is not expecting this. You can recognise
 these games by the occasional floppy or hard drive write indicators (flashing
 red lights) in the
 [on-screen display](getting-started.md#on-screen-display) in the
-bottom-right corner. The [Game notes](../games/index.md) also warn you about
+bottom-right corner. The [Game notes](../game-notes/index.md) also warn you about
 such games, so make sure to check them out before starting your next long RPG.
 
 

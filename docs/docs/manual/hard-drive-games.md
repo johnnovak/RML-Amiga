@@ -12,6 +12,13 @@ a hard drive by employing a few simple tricks. It's important to note that
 none of these tricks involve modifying the game's executable or data
 files---such hacks are not allowed in RML Amiga.
 
+<figure markdown="span">
+  ![Amiga 500 with GVP A500-HD+ side expansion](img/amiga-500-gvp.jpg)
+  <figcaption>Amiga 500 equipped with the popular GVP A500-HD+ hard drive side
+  expansion running Pool of Radiance</figcaption>
+</figure>
+
+
 ## Hard drive basics
 
 The first hard drive is called **DH0:** (**D**rive **H**ard **0**), the second
@@ -40,9 +47,9 @@ some you'll need to start manually from the so-called **Workbench** screen.
 
 One of the reasons for some games not starting automatically is because they
 have additional icons to start the game with different options (e.g.,
-[King's Quest: Quest for the Crown (SCI)](../games/k-l.md#kings-quest-quest-for-the-crown-sci)),
+[King's Quest: Quest for the Crown (SCI)](../game-notes/k-l.md#kings-quest-quest-for-the-crown-sci)),
 or to run extra programs included with the game, such as level editors (e.g.,
-[SimCity Collection](../games/s.md#simcity-collection)).
+[SimCity Collection](../game-notes/s.md#simcity-collection)).
 
 The other reason is that a handful of games feature beautifully designed icons
 and Workbench screens with custom colour schemes. These works of art are worth
@@ -52,16 +59,19 @@ to do so.
 Here are some good custom Workbench examples:
 
 <div class="compact" markdown>
-  - [The Secret of Monkey Island](../games/s.md#secret-of-monkey-island-the)
-  - [Legend of Faerghail](../games/k-l.md#legend-of-faerghail)
-  - [Pirates!](../games/p.md#pirates)
-  - [Art of GO, The](../games/a.md#art-of-go-the)
-  - [Battle Chess (OCS)](../games/b.md#battle-chess-ocs)
-  - [Champions of Krynn](../games/c.md#champions-of-krynn)
-  - [Death Knights of Krynn](../games/d.md#death-knights-of-krynn)
+  - [The Secret of Monkey Island](../game-notes/s.md#secret-of-monkey-island-the)
+  - [Legend of Faerghail](../game-notes/k-l.md#legend-of-faerghail)
+  - [Pirates!](../game-notes/p.md#pirates)
+  - [Art of GO, The](../game-notes/a.md#art-of-go-the)
+  - [Battle Chess (OCS)](../game-notes/b.md#battle-chess-ocs)
+  - [Champions of Krynn](../game-notes/c.md#champions-of-krynn)
+  - [Death Knights of Krynn](../game-notes/d.md#death-knights-of-krynn)
 </div>
 
-TODO one or two workbench screenshots
+<figure markdown="span">
+  ![The Secret of Monkey Island Workbench start icon](img/wb-monkey-island.jpg)
+  <figcaption>The Secret of Monkey Island Workbench start icon</figcaption>
+</figure>
 
 
 ## Saving your progress
@@ -71,18 +81,18 @@ in-game save and restore functionality is usually straightforward in such
 games (but in some the save game menu is a bit hidden; make sure to consult
 the game's manual if you can't find it). If a game asks you to select the
 location of your save file and lets you to use any location, you should use
-the **DH1:** drive unless the [Game notes](../games/index.md) instruct you
+the **DH1:** drive unless the [Game notes](../game-notes/index.md) instruct you
 otherwise.
 
 There are some outliers, though. A handful of games insist on saving to a
 floppy disk even when installed to the hard drive (e.g.,
-[Future Wars](../games/e-f.md#future-wars-adventures-in-time)).
+[Future Wars](../game-notes/e-f.md#future-wars-adventures-in-time)).
 Then some RPGs save the "state of the world" to the data files as you keep
 progressing through the game, so starting a new game with a new character
-requires a full reinstall ([Amberstar](../games/a.md#amberstar) and
-[Demon's Winter](../games/d.md#demons-winter) are such games).
+requires a full reinstall ([Amberstar](../game-notes/a.md#amberstar) and
+[Demon's Winter](../game-notes/d.md#demons-winter) are such games).
 
-The [Game notes](../games/index.md) contain detailed instructions for these
+The [Game notes](../game-notes/index.md) contain detailed instructions for these
 special snowflakes---make it a habit to always check these notes before
 playing a new game.
 
@@ -158,4 +168,4 @@ experience.
     WinUAE or start a different game, _you will lose_ all the saves you made
     in your current gaming session! All WHDLoad games in the collection print
     out a warning message about this at startup, and the [Game
-    notes](../games/index.md) also contains some reminders.
+    notes](../game-notes/index.md) also contains some reminders.

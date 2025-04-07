@@ -27,6 +27,10 @@ support multiple drives), or only minimal disk swapping. Moreover, most
 floppy-only releases load rather quickly, and you can always put the emulator
 in "warp mode" to speed up the loading.
 
+<figure markdown>
+  ![Amiga 500 running The Settlers](img/amiga-500-beauty.jpg)
+  <figcaption>Typical home setup from the 1990s of an Amiga 500 equipped with a Commodore RGB monitor, running the all-time strategy classic The Settlers (<a href="https://www.forgottencomputer.com/retro/beauty_shots.html">source</a>).</figcaption>
+</figure>
 
 ## Features in detail
 

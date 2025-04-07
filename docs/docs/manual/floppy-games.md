@@ -18,8 +18,8 @@ available in cracked form at the time being.
 
 All floppy game configurations have the first floppy pre-inserted in drive
 **DF0:** (the first floppy drive). For single-disk games, that's all you need
-(e.g., [Dungeon Master](../games/d.md#dungeon-master-v36), **Midwinter** and
-[Exile (OCS)](../games/e-f.md#exile-ocs)).
+(e.g., [Dungeon Master](../game-notes/d.md#dungeon-master-v36), **Midwinter** and
+[Exile (OCS)](../game-notes/e-f.md#exile-ocs)).
 
 
 ## Speeding up loading times
@@ -58,8 +58,8 @@ drives, some only a single drive. The best case scenario is when a game
 supports as many drives as the number of disks it comes on. Such games are
 configured with the game disks pre-inserted into the drives (e.g., the
 two-disk game **Lemmings**, or the four-disk games
-[Perihelion](../games/p.md#perihelion), [Hook](../games/g-j.md#hook), and
-[Soccer Kid (OCS)](../games/s.md#soccer-kid-ocs)).
+[Perihelion](../game-notes/p.md#perihelion), [Hook](../game-notes/g-j.md#hook), and
+[Soccer Kid (OCS)](../game-notes/s.md#soccer-kid-ocs)).
 
 The other scenario is that the game supports *less* drives than the number of
 disks it has (e.g., a two-disk game supporting a single drive, or a four-disk
@@ -86,11 +86,10 @@ For example:
   followed by ++end+4++ .
 
 You can view the disk swapper configuration for the currently loaded game
-config in the TODO **Host / Disk swapper** configuration tab of the WinUAE
+config in the **Host / Disk swapper** configuration tab of the WinUAE
 settings window.
 
-TODO disk swapper screenshot
-
+![Disk swapper](img/disk-swapper.png)
 
 !!! warning "Patience is still a virtue"
 
@@ -151,7 +150,7 @@ the **C:** drive in Windows.
 
     Always use the save disk included with the game. A regular empty AmigaDOS
     ADF disk image won't work with games that use special encoding schemes
-    (e.g., [Cannon Fodder (OCS)](../games/c.md#cannon-fodder-ocs)). If you
+    (e.g., [Cannon Fodder (OCS)](../game-notes/c.md#cannon-fodder-ocs)). If you
     want to reset your save disk, use the included blank save disk from
     the ZIP archive in the `Savedisk` folder.
 
@@ -170,8 +169,8 @@ the **C:** drive in Windows.
 ### Saving to the game disk
 
 Some games save your progress or high-scores directly to the game disk (e.g.,
-[Pinball Dreams](../games/p.md#pinball-dreams) and [Rogue: The Adventure
-Game](../games/q-r.md#rogue-the-adventure-game)). These games are configured
+[Pinball Dreams](../game-notes/p.md#pinball-dreams) and [Rogue: The Adventure
+Game](../game-notes/q-r.md#rogue-the-adventure-game)). These games are configured
 to never modify the original floppy images, but create a so-called **save
 image** instead which contains the changes compared to the original disk. Save
 images have the `.save_adf` file extension and are located in the `Disks`

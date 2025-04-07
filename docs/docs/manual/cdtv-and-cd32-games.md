@@ -8,14 +8,22 @@ released a few months earlier).
 
 These Commodore consoles were not very successful, but a few games have really
 cool CD release exclusive content (e.g., CD Audio in-game music in
-[Heimdall 2: Into the Hall of Worlds](../games/g-j.md#heimdall-2-into-the-hall-of-worlds-cd32),
+[Heimdall 2: Into the Hall of Worlds](../game-notes/g-j.md#heimdall-2-into-the-hall-of-worlds-cd32),
 voice acting and a tutorial section in
-[Battle Chess](../games/b.md#battle-chess-cd32), and there are a handful of
+[Battle Chess](../game-notes/b.md#battle-chess-cd32), and there are a handful of
 CD-exclusive titles as well, such as
-[Defender of the Crown II](../games/d.md#defender-of-the-crown-ii-cd32) and
-[Pirates! Gold](../games/p.md#pirates-gold-cd32)).
+[Defender of the Crown II](../game-notes/d.md#defender-of-the-crown-ii-cd32) and
+[Pirates! Gold](../game-notes/p.md#pirates-gold-cd32)).
 
-TODO cdtv and cd32 pictures
+<figure markdown="span">
+  ![Amiga CD32 and controller](img/amiga-cd32.jpg)
+  <figcaption>Amiga CD32 and the included game controller</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Commodore CDTV and controller](img/cdtv.jpg)
+  <figcaption>A fully decked-out Commodore CDTV with all optional peripherals and a special black Commodore 1084S monitor</figcaption>
+</figure>
 
 
 ## Gamepads
@@ -36,7 +44,15 @@ even the keyboard (these peripherals were available as optional accessories).
 Although you can play these games (typically point-and-click adventures) with
 a gamepad, it's usually more convenient to use the mouse.
 
-TODO cdtv and cd32 controller pictures
+<figure markdown="span">
+  ![Amiga CD32 controller](img/cd32-controller.jpg)
+  <figcaption>Amiga CD32 controller</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Commodore CDTV controller](img/cdtv-controller.jpg)
+  <figcaption>Commodore CDTV controller</figcaption>
+</figure>
 
 
 ## Saving your progress
@@ -68,7 +84,7 @@ Some CD games might only support a limited number of save slots when saving to
 the NVRAM, or only allow you to save at specific in-game locations (e.g.,
 **Frontier II: Elite (CD32)**). Then in some games the save feature is rather
 buggy (e.g., [Heimdall 2: Into the Hall of
-Worlds](../games/g-j.md#heimdall-2-into-the-hall-of-worlds-cd32)).
+Worlds](../game-notes/g-j.md#heimdall-2-into-the-hall-of-worlds-cd32)).
 
 You can sidestep these limitations and issues by ignoring the in-game save
 feature altogether and using [Save states](save-states.md) instead. Save
@@ -81,7 +97,7 @@ exclusively for extra safety.
 A small number of CD-based games also allow you to save to a hard disk, which
 is an optional accessory for the CDTV and CD32. If availabe, this is your best
 option, but hard disk support is rather rare in CD games. The
-[Game notes](../games/index.md) specifically mentions such games.
+[Game notes](../game-notes/index.md) specifically mentions such games.
 
 
 !!! danger

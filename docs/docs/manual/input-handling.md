@@ -6,11 +6,15 @@ games are primarily mouse-operated. The exceptions are action, sports, and
 racing games---these usually need a joystick (or two for "player vs player"
 gaming).
 
-All Amigas have two **controller ports** for connecting your input devices.
-The mouse usually needs to go into **port 1**, and the game controller
-(typically a joystick) into **port 2**.
+All Amigas have two DB9 (9-pin) **joystick ports** for connecting your input devices. The
+mouse usually needs to go into **port 1** (labeled as `1 JOYSTICK`), and the
+game controller (typically a joystick) into **port 2** (labeled as `2
+JOYSTICK`).
 
-TODO photo?
+<figure markdown="span">
+  ![Amiga joystick ports](img/joystick-ports.jpg)
+  <figcaption>Amiga joystick ports</figcaption>
+</figure>
 
 
 ## Input capturing
@@ -67,7 +71,10 @@ support was back in the 80s.
 The left and right mouse buttons work as expected, and the middle mouse is
 used to uncapture the mouse (see [Input capturing](#input-capturing)).
 
-TODO mouse photo
+<figure markdown="span">
+  ![Original Amiga "tank mouse"](img/tank-mouse.jpg)
+  <figcaption>The original Amiga "tank mouse"</figcaption>
+</figure>
 
 
 ## Keyboard
@@ -92,14 +99,17 @@ There are a few minor differences, though:
   use the left Amiga plus ++s++ key combination to save your game, you'll need
   to press ++lwin++-++s++ or ++home++-++s++.
 
-TODO keyboard photo
+<figure markdown="span">
+  ![Amiga 500 with built-in keyboard](img/amiga-500.jpg)
+  <figcaption>Amiga 500 with built-in keyboard</figcaption>
+</figure>
 
 
 ### WASD movement keys
 
 Many RPGs in the first-person dungeon crawler category (e.g.,
-[Dungeon Master](../games/d.md#dungeon-master-v36) and
-[Eye of the Beholder](../games/e-f.md#eye-of-the-beholder-ocs)) only support
+[Dungeon Master](../game-notes/d.md#dungeon-master-v36) and
+[Eye of the Beholder](../game-notes/e-f.md#eye-of-the-beholder-ocs)) only support
 the standard cursor keys or the numeric keypad to move your party around.
 However, some people might prefer to use the **WASD** keys instead.
 
@@ -116,15 +126,13 @@ some text that contains the letters "WASD" (e.g., to name your characters, the
 name of your save game, or when entering a password).
 
 Some game configuration might remap a few more keys in WASD mode. For example,
-in [Dungeon Master](../games/d.md#dungeon-master-v36) you can turn left and
+in [Dungeon Master](../game-notes/d.md#dungeon-master-v36) you can turn left and
 right with the ++q++ and ++e++ keys, respectively, and the ++ctrl+s++ save
 game shortcut has been remapped to ++ctrl+x++ (because it clashes with the
 remapped ++s++ key used for movement).
 
-Refer to the [Game notes](../games/index.md) to learn about the exact WASD
+Refer to the [Game notes](../game-notes/index.md) to learn about the exact WASD
 mode remappings for each game.
-
-TODO dungeon master kb layout scan
 
 
 ## Joysticks
@@ -136,7 +144,7 @@ regular cursor keys (*not* the numeric keypad) for movement, and the ++ralt++,
 ++rshift++, or ++rctrl++ keys for the fire button.
 
 The vast majority of Amiga games only support single-button joysticks. The
-[Game notes](../games/index.md) will mention if a game supports a two-button
+[Game notes](../game-notes/index.md) will mention if a game supports a two-button
 joystick.
 
 
@@ -154,7 +162,13 @@ press ++end+j++ to swap the joystick ports. You might also try pressing a
 different physical button on your joystick to auto-detect it the next time you
 start this game, so you won't need to do the port swapping trick.
 
-TODO digital joystick photo
+<figure markdown="span">
+  ![Competition Pro and Quickshot II digital joysticks](img/joysticks.jpg)
+  <figcaption>The two most popular digital joysticks of all time: the Competition
+  Pro (left), and the Quickshot II (right). Over a 100 million units were sold
+  of these two back in the 80s and 90s.</figcaption>
+</figure>
+
 
 !!! tip 
 
@@ -185,7 +199,7 @@ TODO digital joystick photo
     in action games.
 
     This is an advanced topic; see the
-    [Customising your setup](customising-your-setup.md#graphics-customisations)
+    [Customising your setup](customising-your-setup.md)
     section for details.
 
 
@@ -193,8 +207,8 @@ TODO digital joystick photo
 
 The Amiga was one of the last machines in a long line of home computers that
 had a healthy dose of two-player games. Many sports and fighting games (e.g.,
-[Speedball 2: Brutal Deluxe](../games/s.md#speedball-2-brutal-deluxe-ocs) and
-[IK+](../games/g-j.md#ik)) support "player vs player" gameplay. 
+[Speedball 2: Brutal Deluxe](../game-notes/s.md#speedball-2-brutal-deluxe-ocs) and
+[IK+](../game-notes/g-j.md#ik)) support "player vs player" gameplay. 
 
 Two-player games are great fun, so make sure to try them if you have two
 joysticks and a friend not afraid of some healthy competition!

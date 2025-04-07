@@ -55,7 +55,7 @@ to launch the game.
 
 ### Game notes
 
-Always check the [Game notes](../games/index.md) before trying a game for the
+Always check the [Game notes](../game-notes/index.md) before trying a game for the
 first time. A few titles need some extra steps to even just start the
 game---this could be hard to figure out if you've never used an Amiga before.
 Some of this advice is next to impossible to figure out on your own (you'd
@@ -161,7 +161,7 @@ WinUAE will automatically "plug" it into port 2.
 
 ### Keyboard shortcuts
 
-There are few important [Keyboard shortcuts](keyboard-shortcuts.md) you should
+There are few important [Keyboard shortcuts](../appendices/keyboard-shortcuts.md) you should
 familiarise yourself with. The three most important are ++pause++ to toggle
 pausing the emulation, ++end+pause++ to toggle warp mode, and ++end+f12++ to
 switch between windowed and full windowed mode. ++f12++ stops the emulation
@@ -175,7 +175,7 @@ newbie; things will blow up! :bomb::fire: Just press ++esc++ or the **OK** or
 When it comes to saving your game progress, it's a bit of a Wild West
 situation. Every game is slightly different, and floppy games that require
 dedicated save disks are the trickiest to deal with. But fear not, help is
-provided on the [Game notes](../games/index.md) page for these titles. Make
+provided on the [Game notes](../game-notes/index.md) page for these titles. Make
 sure to read the detailed [Saving your
 progress](floppy-games.md/#saving-your-progress) section as well for general
 tips, and don't forget about [Save states](save-states.md) as an alternative
@@ -194,11 +194,11 @@ latency).
 If you would like to change the defaults (e.g., you'd like to make the image
 fill the screen, or turn off the CRT shaders or the floppy sounds) or want to
 fine-tune the technical emulator settings, please refer to the [Customising
-your setup](customising-your-setup.md#graphics-customisations) section.
+your setup](customising-your-setup.md) section.
 
 
 ### Further reading
 
-Check out the [Useful websites](useful-websites.md) page to find out more
+Check out the [Useful websites](../appendices/useful-websites.md) page to find out more
 about Amiga games. These sites should also help you decide which titles to try
 next.
