@@ -100,6 +100,7 @@ nav:
   - Manual:
     - manual/introduction.md
     - manual/installation.md
+    - manual/why-play-amiga-games.md
     - manual/getting-started.md
     - manual/on-crt-shaders.md
     - manual/input-handling.md
@@ -110,7 +111,6 @@ nav:
     - manual/customising-your-setup.md
     - manual/troubleshooting.md
     # - manual/folder-organisation.md
-    # - manual/why-amiga-games.md
 
     - Appendices:
       - appendices/keyboard-shortcuts.md
