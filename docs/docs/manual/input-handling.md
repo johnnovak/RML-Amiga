@@ -13,7 +13,7 @@ JOYSTICK`).
 
 <figure markdown="span">
   ![Amiga joystick ports](img/joystick-ports.jpg)
-  <figcaption>Amiga joystick ports</figcaption>
+  <figcaption>Joystick ports on the Amiga 500</figcaption>
 </figure>
 
 
