@@ -99,15 +99,15 @@ plugins:
 nav:
   - Manual:
     - manual/introduction.md
-    - manual/installation.md
     - manual/why-play-amiga-games.md
+    - manual/installation.md
     - manual/getting-started.md
-    - manual/on-crt-shaders.md
     - manual/input-handling.md
     - manual/hard-drive-games.md
     - manual/floppy-games.md
     - manual/cdtv-and-cd32-games.md
     - manual/save-states.md
+    - manual/crt-emulation.md
     - manual/customising-your-setup.md
     - manual/troubleshooting.md
     # - manual/folder-organisation.md
