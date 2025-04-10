@@ -43,7 +43,7 @@ Authentic experience
 
 Native hard drive installations
 : Hard drive installations are preferred for games that natively support it.
-  That's most big American releases, and many European RPG, adventure, and
+  That's most big American releases and many European RPG, adventure, and
   strategy titles. Also, quite a few games that don't have official HD
   installers can be persuaded to run from a hard drive with a little Amiga
   knowledge. 70% of the games in the collection run from the hard drive.
@@ -53,7 +53,7 @@ No more bad cracks
   designed to run from floppies, the original floppy images are preferred with
   the disk-based protection intact. Cracks, hacks, WHDLoad, and other fan-made
   content are generally avoided and are only used as a last resort. For the
-  rare cracked versions every effort was taken to confirm the game is
+  rare cracked versions, every effort was taken to confirm the game is
   completable. No more worrying about bad cracks in those 40+ hour RPGs!
 
 Optimal configurations
@@ -64,7 +64,7 @@ Optimal configurations
   for each game is tricky as it requires in-depth Amiga knowledge or manual
   and forum diving---usually all of the above, and this can be tedious even
   for Amiga gurus. The good news is you don't have to worry about any of that;
-  all games have been configured to give you the most the they have to offer.
+  all games have been configured to give you the most they have to offer.
 
 Play floppy games like a boss
 : Every floppy game comes pre-configured to use multiple floppy drives if the
@@ -75,7 +75,7 @@ Play floppy games like a boss
 Authentic CRT monitor emulation
 : Pixel art drawn and intended to be viewed on 15 kHz Commodore CRT monitors
   looks outright broken on modern flat screen with the pixels displayed as
-  razor sharp little rectangles. A CRT shader setup is included that
+  razor-sharp little rectangles. A CRT shader setup is included that
   authentically recreates the look of PAL and NTSC Commodore monitors people
   typically used their Amigas with.
 
@@ -87,7 +87,7 @@ PAL/NTSC & aspect ratio correctness
   typically Atari ST ports and some European multi-platform releases).
 
 Quality-of-life save states
-: Some games subject you to a manual-based protection check at startup, or
+: Some games subject you to a manual-based protection check at startup or
   have an unskippable intro sequence, or might take a really long time to load
   from floppies. For these games, the collection provides save states taken
   right after the protection check or the intro as a quality-of-life
@@ -103,17 +103,17 @@ All necessary information included
 Preserving custom Workbench screens
 : A handful of games feature beautifully designed icons and Workbench screens
   with custom colour schemes (Workbench is the graphical user interface of
-  AmigaOS). These works of art are worth preserving, and to date RML Amiga is
-  the only games collection that attempts to do so.
+  AmigaOS). These works of art are worth preserving, and to date, RML Amiga is
+  the only game collection that attempts to do so.
 
 Curated demoscene collection
 : The Amiga was (and still is) famous for its vibrant demoscene in Europe.
   Demos are non-interactive audiovisual pieces of art created by Amiga
   enthusiasts (traditionally teenagers) that showcase their coding and
   artistic prowess and push the limits of what the machine is capable of. Many
-  elite level programmers and artists of today had been forged in the fires of
+  elite-level programmers and artists of today had been forged in the fires of
   the early Amiga demoscene. The collection includes a modest selection of
-  demos, with the goal of eventually including all demos presented in the
+  demos, with the goal to eventually include all demos presented in the
   prestigious [editions64k](https://www.editions64k.fr/) Amiga demoscene book
   series by ... and then some more!
 
@@ -125,11 +125,11 @@ likely work fine on more recent Windows versions, and probably on Windows 7
 64-bit too. Only 64-bit Windows versions are supported.
 
 The CRT shader setup is optimised for 1080p monitors (1920&times;1080
-resolution), but should work on any display. A variable refresh rate (VRR),
+resolution) but should work on any display. A variable refresh rate (VRR),
 adaptive-sync display (e.g., Nvidia G-Sync or AMD FreeSync capable) is highly
 recommended. Fixed-refresh rate monitors will work fine too, but it can be a
 bit more hassle to minimise input lag in action games with vsync enabled on
-such displayes. If you only care about slower-paced games (e.g., RPGs,
+such displays. If you only care about slower-paced games (e.g., RPGs,
 adventures) and watching demos, a fixed-refresh monitor will work great.
 
 A middle-tier or better CPU released in the last ten years or so is
@@ -149,7 +149,7 @@ games would be lost forever.
 
 The goal of this collection is *not* to advocate piracy or to strip creators
 of their livelihood, but to make these games not available via any commercial
-channels accessible and playable for old school Amiga fans and the next
+channels accessible and playable for old-school Amiga fans and the next
 generation of gamers alike.
 
 For this reason, the collection will *never* include any recent Amiga games

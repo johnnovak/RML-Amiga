@@ -3,7 +3,7 @@
 ## v1.0
 
 Welcome to the first version of RML Amiga! This initial release features over
-whopping 200 stone-cold Amiga classics.
+a whopping 200 stone-cold Amiga classics.
 
 Of course, all games come with manuals, code wheels, hint books, posters, box
 cover scans, and all sorts of other supplementary materials to maximise your
@@ -16,8 +16,8 @@ Main highlights:
 
 
 - All **Delphine**, **Horrorsoft/Adventure Soft**, **ICOM**, **Magnetic
-  Scrolls**, **Lucasfilm/LucasArts**, **Revolution** adventures released on
-  the Amiga.
+  Scrolls**, **Lucasfilm/LucasArts**, and **Revolution** adventures released
+  on the Amiga.
 
 - All **Interplay** Amiga releases (their early adventures, **The Bard's
   Tale** series, **Dragon Wars**, **Neuromancer**, etc.)
@@ -30,7 +30,7 @@ Main highlights:
   **Chaos Strikes Back**, and **Fate: Gates of Dawn**, which are notorious for
   their elaborate copy protections (and lots of bad cracks floating around).
 
-- The Amiga **SSI Gold Box** catalog in its entirety.
+- The Amiga **SSI Gold Box** catalogue in its entirety.
 
 - The original versions of **Eye of the Beholder I & II** and their
   fan-made AGA remakes. These are the definitive editions as they combine

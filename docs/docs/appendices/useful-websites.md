@@ -5,7 +5,7 @@ decide which title to try next:
 
 - [Hall of Light](https://amiga.abime.net/) — The database of Amiga games
 
-- [Amiga Magazine Rack](https://amr.abime.net/) — The ultimate Amiga magazines
+- [Amiga Magazine Rack](https://amr.abime.net/) — The ultimate Amiga magazine
   resource focusing on games (cross-referenced with the Hall of Light)
 
 - [Amiga Reviews](https://amigareviews.leveluphost.com/) — 7811 reviews of

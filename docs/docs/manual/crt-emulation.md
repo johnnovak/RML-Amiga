@@ -13,25 +13,25 @@ monitor. Most people used their Amigas with such monitors in the 1980s and 90s
 default 3.0x scaling mimics the physical dimensions of such 14" CRTs
 rather closely on 24 to 27" widescreen desktop displays. Just grab a ruler and
 measure the diagonal of the image in an NTSC game; it will be about 13" (33 cm)
-on a 24" screen which is close to the diagonal of the viewable aread on a
+on a 24" screen which is close to the diagonal of the viewable area on a
 typical 14" CRT.
 
 So what, you might think. We have bigger and better monitors now, so why
 not make the best of them and let the image fill the screen completely? Well,
 because arguably that wouldn't be the "best" thing to do.
 
-From a normal 1 to 1.5 meter viewing distance, the relatively small screen
+From a normal 1 to 1.5-meter viewing distance, the relatively small screen
 size of a 14" monitor combined with the beneficial smoothing effects of CRTs
 produced an image that looked very smooth and strangely higher resolution than
 it really was. The CRT took off the edges of the "pixels" and added a subtle
 texture to the image (CRTs don't have "pixels", but that's a longer story).
 The perceived quality of 320&times;200 Amiga games on Commodore monitors
 rivalled the experience of 640&times;480 games on much sharper PC CRT
-monitors. Sure, the Amiga image was a bit blurrier and lacked fine detail, but
+monitors. Sure, the Amiga's image was a bit blurrier and lacked fine detail, but
 it was _nowhere near_ the extreme blockiness of how PC monitors presented
-320&times;200 content! Most people moving on from the Amiga to the PC in the
-1990s often complained about low resolution pixel art suddenly appearing
-overly blocky on their comparably sized 14--15" PC monitor.[^1]
+320&times;200 content! People moving on from the Amiga to the PC in the
+1990s often complained about low-resolution pixel art suddenly looking
+overly blocky on their 14--15" PC monitors.[^1]
 
 Let me stress this again: 320&times;200 content on the Amiga was _smooth_, not
 blocky as on the PC! On well-made art, the "pixels" literally melted away; you
@@ -42,29 +42,30 @@ the graphics slightly enlarged. For example, I like playing [Pinball Dreams]()
 with 4.0x scaling so it almost completely fills the screen; it's just more
 immersive for me that way. So by all means, feel free to to adjust the image
 size depending on your display size, viewing distance, and personal
-preference. You also might want to use different scaling factors for different
-games. The [Customising your setup](customising-your-setup.md) shows you how
-to do that.
+preference. You might also want to use different scaling factors for different
+games. The [Customising your setup](customising-your-setup.md) section shows
+you how to do that.
 
-However, be aware that as you start deviating from the "canonical" 14" CRT
-image size (3.0x scaling factor), you will start seeing the "pixels", and the
-beneficial blur of the CRT shaders will also be enlarged, resulting in a
-subjectively blurrier looking image. You can offset this by using the "sharp"
-variants of the shaders which reduce the blurriness substantially, but as they
-take away some of the smoothing effects, the pixels will start looking
-blockier. Moreover, the scanlines are more apparent at higher scaling factors,
-especially with the NTSC shader. You might want to force the PAL shader that
-has more "densely packed" scanlines even in NTSC games to mitigate this.
+Be aware, however, that as you start deviating from the "canonical" 14" CRT
+image size (3.0x scaling factor), you will start seeing the "pixels". The
+beneficial blur of the CRT emulation will also be enlarged, resulting in a
+subjectively less sharp-looking image. You can offset this by using the
+"sharp" variants of the shaders; these will reduce the blurriness
+substantially, but at the expense of the beneficial smoothing effects---the
+pixels will start looking blockier. Moreover, the scanlines will be more
+apparent at higher scaling factors, too, especially with the NTSC shader. You might
+want to force the PAL shader even in NTSC games to mitigate this as that
+renders more "densely packed" scanlines.
 
 As you can see, deviating from the canonical 14" CRT image size is all about
 tradeoffs. Even on real CRT monitors, the experience is not the same on larger
-17--21" displays. You just need to pick what's more important to you:
+17" to 21" displays. You just need to pick what's more important to you:
 authenticity and image quality, or image size and getting rid of the "black
 borders".
 
 This is certainly a fascinating topic; you can read more about it [in my
 article](https://blog.johnnovak.net/2022/04/15/achieving-period-correct-graphics-in-personal-computer-emulators-part-1-the-amiga/)
-that describes the shader setup in detail.
+that describes the CRT emulation setup of RML Amiga in detail.
 
 
 
@@ -78,7 +79,7 @@ that describes the shader setup in detail.
     didn't come anywhere near specialised IBM PC monitors. PC monitors were
     the kings of sharpness, optimised for staring at spreadsheets all day at
     work, but they lacked the qualities of "lesser" CRTs that put pixel art in
-    more favourable light. Being squarely aimed at the business market, they
+    a more favourable light. Being squarely aimed at the business market, they
     were several times more expensive than 15 kHz home computer monitors in
     the 1980s.
 

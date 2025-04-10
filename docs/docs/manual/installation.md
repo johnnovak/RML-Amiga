@@ -25,10 +25,9 @@ For example, `D:\Emulation\Amiga\RML-Amiga` is a good location.
 Now double-click on `install-full-v10.bat` in Windows Explorer to start the
 installation. A window will appear, you'll be asked a few questions, then
 you'll be informed about the progress of the installation. The whole process
-shouldn't take more than 5-10 minutes. I recommend to
-read the [Why play Amiga games?](why-play-amiga-games.md) and [CRT
-emulation](crt-emulation.md) chapters while waiting, especially if you're new
-to the Amiga.
+shouldn't take more than 5-10 minutes. I recommend reading the [Why play Amiga
+games?](why-play-amiga-games.md) and [CRT emulation](crt-emulation.md)
+sections while waiting, especially if you're new to the Amiga.
 
 Once the installation has succeeded, you can start WinUAE (the Amiga
 emulator) by running `winuae.exe` from your RML Amiga folder. It's a good idea
@@ -43,14 +42,14 @@ start it more easily.
     everywhere. This means you can freely move it between different drives or
     even different computers without any problems.
 
-You can safely skip the rest of this section if you went the automatic
+You can safely skip the rest of this section if you go the automatic
 installation route. Now it's time to play some games! Onwards to the [getting
 started](getting-started.md) section!
 
 
 ## About the packs
 
-Here is a detailed descriptions of the packs:
+Here is a detailed description of the packs:
 
 - **Base** --- Contains 64-bit versions of WinUAE, the CAPS IPF disk image
   plugin, a custom-compiled version of ReShade (with auto-updates and the nag
@@ -68,27 +67,27 @@ Here is a detailed descriptions of the packs:
 - **Games** --- Nested ZIP archive with each game having its own
   self-contained ZIP file. Each game lives in its own dedicated subfolder
   which contains the disk images or directory hard drives, manuals, extras,
-  savedisks, savestates, and the original source media.
+  save disks, save states, and the original source media.
 
 - **Demos** --- Demoscene productions from the Amiga's glorious past (and
-  present!). It's a nested ZIP archive, similarly to the **Games** pack.
+  present!). It's a nested ZIP archive, similar to the **Games** pack.
 
 
-The folder structure in all packs are relative to the `$RML_BASE` folder. In
+The folder structure in all packs is relative to the `$RML_BASE` folder. In
 other words, if you expand all archives into `$RML_BASE` (double-expand in
-case of the **Games** and **Demos** packs), you'll get the correct folder
+the case of the **Games** and **Demos** packs), you'll get the correct folder
 structure.
 
 !!! note "The practical reality we live in"
 
     The main reason for separating out the Kickstart ROMs and the minimal hard
     drive-based systems is to be able to share the collection on channels that
-    don't want to risk harassment from the current rightholders of the Amiga
+    don't want to risk harassment from the current rightsholders of the Amiga
     Kickstart ROMs.
 
     In a practical sense, no one gives a damn about these 30+ years old ROMs
     anymore, so whether you purchase them "legally" from the "current
-    rightholders" (who are far removed from Commodore and the original
+    rightsholders" (who are far removed from Commodore and the original
     creators of the Amiga) or just download them from somewhere makes very
     little difference in the grand scheme of things. Up to you, really. If you
     decide to pay for them, make sure to purchase the full ROM set, _not_ just
@@ -164,7 +163,7 @@ install them:
   WinUAE configuration tab. WinUAE will identify the ROM files by their CRC32
   checksums, so the file names don't matter.
 
-- To get WHDLoad working (required by a handful of game), copy the Amiga 500
+- To get WHDLoad working (required by a handful of games), copy the Amiga 500
   (Kickstart 1.3 rev 34.50) and Amiga 1200 (Kickstart 3.1 rev 40.60) ROMs into
   the `$RML_BASE/System-3.1/Devs/Kickstarts` folder, then rename them to
   `kick34005.A500.RTB` and `kick40068.A1200.RTB`, respectively (the below table

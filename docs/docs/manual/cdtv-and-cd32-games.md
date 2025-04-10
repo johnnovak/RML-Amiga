@@ -28,9 +28,9 @@ CD-exclusive titles as well, such as
 
 ## Gamepads
 
-Most CDTV and Amiga CD32 games are meant to played with the gamepad that came
-with the console. It's best to use a physical game controller with these games
-as the keyboard mappings for the emulated gamepad can be rather awkward.
+Most CDTV and Amiga CD32 games are meant to be played with the gamepad that
+came with the console. It's best to use a physical game controller with these
+games as the keyboard mappings for the emulated gamepad can be rather awkward.
 
 To use your physical gamepad (e.g., an Xbox 360 controller), press the green
 **A** button on it after starting the game and WinUAE will auto-plug it into
@@ -82,7 +82,7 @@ extension in the `NVRAM` folder in the game folders).
 
 Some CD games might only support a limited number of save slots when saving to
 the NVRAM, or only allow you to save at specific in-game locations (e.g.,
-**Frontier II: Elite (CD32)**). Then in some games the save feature is rather
+**Frontier II: Elite (CD32)**). Then in some games, the save feature is rather
 buggy (e.g., [Heimdall 2: Into the Hall of
 Worlds](../game-notes/g-j.md#heimdall-2-into-the-hall-of-worlds-cd32)).
 
@@ -95,9 +95,9 @@ exclusively for extra safety.
 ### Hard disk
 
 A small number of CD-based games also allow you to save to a hard disk, which
-is an optional accessory for the CDTV and CD32. If availabe, this is your best
+is an optional accessory for the CDTV and CD32. If available, this is your best
 option, but hard disk support is rather rare in CD games. The
-[Game notes](../game-notes/index.md) specifically mentions such games.
+[Game notes](../game-notes/index.md) specifically mention such games.
 
 
 !!! danger

@@ -7,8 +7,8 @@ racing games---these usually need a joystick (or two for "player vs player"
 gaming).
 
 All Amigas have two DB9 (9-pin) **joystick ports** for connecting your input devices. The
-mouse usually needs to go into **port 1** (labeled as `1 JOYSTICK`), and the
-game controller (typically a joystick) into **port 2** (labeled as `2
+mouse usually needs to go into **port 1** (labelled as `1 JOYSTICK`), and the
+game controller (typically a joystick) into **port 2** (labelled as `2
 JOYSTICK`).
 
 <figure markdown="span">
@@ -22,7 +22,7 @@ JOYSTICK`).
 When you start a game, the emulator automatically captures all your mouse and
 keyboard input. What this means is your Windows mouse pointer disappears, and
 all mouse events and keyboard button presses are sent to the emulated Amiga
-instead of Windows. In windowed mode, input capturing is indicated by the the
+instead of Windows. In windowed mode, input capturing is indicated by the
 following text in the WinUAE window's title bar:
 
 ```
@@ -125,7 +125,7 @@ You'll need to return to the normal keyboard mapping if you want to type in
 some text that contains the letters "WASD" (e.g., to name your characters, the
 name of your save game, or when entering a password).
 
-Some game configuration might remap a few more keys in WASD mode. For example,
+Some game configurations might remap a few more keys in WASD mode. For example,
 in [Dungeon Master](../game-notes/d.md#dungeon-master-v36) you can turn left and
 right with the ++q++ and ++e++ keys, respectively, and the ++ctrl+s++ save
 game shortcut has been remapped to ++ctrl+x++ (because it clashes with the
@@ -152,20 +152,20 @@ joystick.
 
 To use a real joystick, press the fire button on your joystick *after*
 starting the game. WinUAE will auto-detect the joystick and plug it into
-either port 1 or port 2 of your emulated Amiga. The chosen ports depends on
-which fire button you pressed on your physical joystick.
+either port 1 or port 2 of your emulated Amiga. The selected port depends on
+which fire button you press on your physical joystick.
 
 Most games look for the joystick in port 2, but some expect it in port 1. If
 your joystick doesn't do anything or performs the wrong actions, WinUAE must
-have plugged it into other port than what the game expects. In this case,
+have plugged it into the other port than what the game expects. In this case,
 press ++end+j++ to swap the joystick ports. You might also try pressing a
 different physical button on your joystick to auto-detect it the next time you
-start this game, so you won't need to do the port swapping trick.
+start this game, so you won't need to do the port-swapping trick.
 
 <figure markdown="span">
   ![Competition Pro and Quickshot II digital joysticks](img/joysticks.jpg)
   <figcaption>The two most popular digital joysticks of all time: the Competition
-  Pro (left), and the Quickshot II (right). Over a 100 million units were sold
+  Pro (left), and the Quickshot II (right). Over 100 million units were sold
   of these two back in the 80s and 90s.</figcaption>
 </figure>
 
@@ -179,17 +179,17 @@ start this game, so you won't need to do the port swapping trick.
 
     There are many USB joysticks available, but quite a few have unacceptably
     high input latencies, so make sure to do your research before buying one.
-    Generally, you're better off with 9-pin plug (DB9) digital joysticks
-    also usable with real retro computers and a USB DB9 adapter.
+    Generally, you're better off with a 9-pin plug (DB9) digital joystick also
+    usable with real retro computers and a USB DB9 adapter.
 
     This is not an advertisement, but I can wholeheartedly recommend the
     [ArcadeR 9-pin joystick](https://retroradionics.com/ArcadeR-9-pin-ATARI-standard-Joystick-With-new-extra-soft-and-durable-cable-p168982750)
     by [RetroRadionics](https://retroradionics.com/) and the
     [DaemonBite DB9 USB adapter](https://github.com/MickGyver/DaemonBite-Retro-Controllers-USB)
-    (sold fully-assembled [here](https://ultimatemister.com/product/deamon-sega-db9/), for example).
+    (sold fully assembled [here](https://ultimatemister.com/product/deamon-sega-db9/), for example).
     This combination is relatively cheap and works 100% reliably with
     hardware-like sub-millisecond input latency. It's a dual adapter, so you
-    can connect two 9-pin digital joystick to it for two-player games. 
+    can connect two 9-pin digital joysticks to it for two-player games. 
 
 !!! note
 
@@ -216,12 +216,12 @@ joysticks and a friend not afraid of some healthy competition!
 
 ## Gamepads
 
-Most [CDTV and Amiga CD32 games](cdtv-and-cd32-games.md) are meant to played
-with the gamepad that came with the console. It's best to use a physical game
-controller with these games as the keyboard mappings for the emulated gamepad
-can be rather awkward. To use your physical gamepad (e.g., an Xbox 360
-controller), press the green **A** button on it after starting the game and
-WinUAE will auto-plug it into port 2 (if you're using some other game
+Most [CDTV and Amiga CD32 games](cdtv-and-cd32-games.md) are meant to be
+played with the gamepad that came with the console. It's best to use a
+physical game controller with these games as the keyboard mappings for the
+emulated gamepad can be rather awkward. To use your physical gamepad (e.g., an
+Xbox 360 controller), press the green **A** button on it after starting the
+game and WinUAE will auto-plug it into port 2 (if you're using some other game
 controller, press the button that is in the same location as the **A** button
 on the Xbox 360 controller).
 

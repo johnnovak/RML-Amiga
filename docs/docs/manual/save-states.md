@@ -1,7 +1,7 @@
 # Save states
 
 WinUAE save states capture the entire state of the emulated machine and write
-it into a so called **state file** that you can restore later instantaneously.
+it into a so-called **state file** that you can restore later instantaneously.
 They are useful to save your progress in games that don't have built-in save
 game support. You can also use save states as an alternative saving mechanism
 in most (but not all) games.
@@ -11,8 +11,8 @@ slightly different ways that cater for different use cases, but at the end of
 the day, there is just a single save state format.
 
 Compared to other emulators, WinUAE save states are _very_ stable. The latest
-WinUAE can can still load save states created 20 years ago! You can count on
-it that all your save states will continue to work in future WinUAE versions.
+WinUAE can still load save states created 20 years ago! You can count on it
+that all your save states will continue to work in future WinUAE versions.
 
 !!! danger
 
@@ -28,8 +28,8 @@ it that all your save states will continue to work in future WinUAE versions.
 
 ## Quick saves
 
-This method is the most useful for "save scumming" over short periods of time.
-You have nine quick save slots available for the currently loaded game config:
+This method is the most useful for "save scumming" over short periods. You
+have nine quick save slots available for the currently loaded game config:
 
   - To save the current state into slots 1--9, press ++end+shift+num1++--++num9++.
 
@@ -57,13 +57,13 @@ TODO manual/quick save coupling
 
     For example, **Another World** has two configs named **Another World** and
     **Another World [skip code check]**. If you start the "skip code check"
-    variant and create a quick save in slot 1, it will be named as `Another
+    variant and create a quick save in slot 1, it will be named `Another
     World [skip code check]_1.uss`. Then if you restart WinUAE and run the
     **Another World** config variant this time, you won't be able to restore
     the game from quick save slot 1 as WinUAE will be looking for `Another
     World_1.uss` in the `Quicksaves` folder.
 
-    The workaround is load your save state using the [Named save
+    The workaround is to load your save state using the [Named save
     states](#named-save-states) method. Alternatively, you can rename the
     `.uss` files in `$RMLBase\Quicksaves` to make the names match, but that's
     fiddly and error-prone.
@@ -78,11 +78,11 @@ it's better to use the named save states method.
 To create a named save state, press ++end+shift+f6++ to bring up the save
 state dialog. Select the destination folder for your save state, give it a
 name, then press the **Ok** button. It is highly recommended to use the
-dedicated `Savestates` subfolder in your invididual game folders to keep
+dedicated `Savestates` subfolder in your individual game folders to keep
 things organised.
 
-To load a save state, press ++end+f6++ to bring up the the restore state
-dialog the select the state file and press **Ok**.
+To load a save state, press ++end+f6++ to bring up the restore state dialog,
+select the state file, and then press **Ok**.
 
 
 !!! important
@@ -171,7 +171,7 @@ write anything to any disk.
 The overwhelming majority of adventure, strategy, puzzle games, and simulators
 that feature in-game saves are also safe. Generally, you can even mix
 in-game saves with save states, but make sure to _never_ create a save state
-when you're in the in the "disk menu" or the "save menu" of the game, or when
+when you're in the "disk menu" or the "save menu" of the game, or when
 there is any disk activity in progress.
 
 
@@ -179,7 +179,7 @@ there is any disk activity in progress.
 
 Some games, typically complex RPGs, change the data on the disk as you
 progress through the game. Using save states in these games will invariably
-result in crashes, bugs, or the loss of your all your progress. You _must_
+result in crashes, bugs, or the loss of all your progress. You _must_
 only use the in-game save feature in such games!
 
 Games that lock you into using a single save slot always belong to this
@@ -213,11 +213,11 @@ WHDLoad games if you don't like losing your progress!
 
 ### Running games for too long
 
-Certain games can manifest some really weird bugs if you let them to run for
-too long without a restart (or they'll just simply crash). Back in the day,
-people played a game for a few hours or maybe half a day at most, then turned
-off their Amigas. Nobody tested how the game would behave if you kept it
-running for tens of hours or days on end! 
+Certain games can manifest some really weird bugs if you let them run for too
+long without a restart (or they'll just simply crash). Back in the day, people
+played a game for a few hours or maybe half a day at most, then turned off
+their Amigas. Nobody tested how the game would behave if you kept it running
+for tens of hours or days on end! 
 
 The solution is to stay on the safe side and periodically "convert" your
 WinUAE save states to in-game saves, then restart the game and load one of

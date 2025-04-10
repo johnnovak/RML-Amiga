@@ -1,15 +1,15 @@
 # Hard drive games
 
 Hard drive installed games are the easiest to deal with. First of all, they
-load much faster than floppy games and you don't need swap disks. Secondly,
+load much faster than floppy games and you don't need to swap disks. Secondly,
 most of these games can save your progress to the hard drive, so you don't
 need to deal with save disks.
 
 Most of the big multi-disk adventure games and RPGs, especially the ones
 developed by American studios, are hard drive installable. Then a good number
-of games that don't have official HD-installers can be still run cleanly from
-a hard drive by employing a few simple tricks. It's important to note that
-none of these tricks involve modifying the game's executable or data
+of games that don't have official hard drive installers can be still run
+cleanly from a hard drive by employing a few simple tricks. It's important to
+note that none of these tricks involve modifying the game's executable or data
 files---such hacks are not allowed in RML Amiga.
 
 <figure markdown="span">
@@ -43,9 +43,9 @@ single **DH0:** drive which contains both the OS and the game.
 ## Workbench
 
 Most hard drive games start automatically when you launch their configs, but
-some you'll need to start manually from the so-called **Workbench** screen.
+some need to be started manually from the so-called **Workbench** screen.
 
-One of the reasons for some games not starting automatically is because they
+One of the reasons why some games don't start automatically is because they
 have additional icons to start the game with different options (e.g.,
 [King's Quest: Quest for the Crown (SCI)](../game-notes/k-l.md#kings-quest-quest-for-the-crown-sci)),
 or to run extra programs included with the game, such as level editors (e.g.,
@@ -53,7 +53,7 @@ or to run extra programs included with the game, such as level editors (e.g.,
 
 The other reason is that a handful of games feature beautifully designed icons
 and Workbench screens with custom colour schemes. These works of art are worth
-preserving, and to date RML Amiga is the only games collection that attempts
+preserving, and to date, RML Amiga is the only game collection that attempts
 to do so.
 
 Here are some good custom Workbench examples:
@@ -78,14 +78,14 @@ Here are some good custom Workbench examples:
 
 Most hard drive games store the save games on the hard drive; using the
 in-game save and restore functionality is usually straightforward in such
-games (but in some the save game menu is a bit hidden; make sure to consult
+games (but in some, the save game menu is a bit hidden; make sure to consult
 the game's manual if you can't find it). If a game asks you to select the
-location of your save file and lets you to use any location, you should use
-the **DH1:** drive unless the [Game notes](../game-notes/index.md) instruct you
+location of your save file and lets you use any location, you should use the
+**DH1:** drive unless the [Game notes](../game-notes/index.md) instruct you
 otherwise.
 
 There are some outliers, though. A handful of games insist on saving to a
-floppy disk even when installed to the hard drive (e.g.,
+floppy disk even when installed on the hard drive (e.g.,
 [Future Wars](../game-notes/e-f.md#future-wars-adventures-in-time)).
 Then some RPGs save the "state of the world" to the data files as you keep
 progressing through the game, so starting a new game with a new character
@@ -137,21 +137,21 @@ a stock (or close-to-stock) Amiga 500.
 
 This means WHDLoad conversions are not originals but cracked and patched games
 (disk-based protections had to be bypassed and the game's disk access code had
-to be rewritten so it can run from a hard drive).
+to be rewritten so it could run from a hard drive).
 
 RML Amiga uses WHDLoad games only as a last resort because removing the copy
 protection and altering the games' code can introduce all sorts of problems,
-including making the game uncompletable. Issues introduced by these hacks are
+including making the game incompletable. Issues introduced by these hacks are
 really hard to test in long 50+ hour RPGs; consequently, WHDLoad conversions
 of long and complex games are plagued with the most problems because they
 simply don't get enough testing from the hobbyists doing these conversions
 (WHDLoad versions of relative short action games are usually much better
 quality).
 
-Back in the day, WHDLoad was a necessity to allow people enjoy their game
-collections on their new Amigas. It was a means to an end, and an ingenious
-one at that--but not without complications. In an emulator context where we
-can emulate virtual every Amiga model imaginable, much of WHDLoad's positive
+Back in the day, WHDLoad was a necessity to allow people to enjoy their game
+collections on their new Amigas. It was a means to an end and an ingenious one
+at that--but not without complications. In an emulator context where we can
+emulate virtually every Amiga model imaginable, much of WHDLoad's positive
 aspects lose their relevance but the negatives remain. For games that are
 natively hard drive installable (70% of the games in this collection), using
 WHDLoad is especially pointless and generally results in an inferior
@@ -168,4 +168,4 @@ experience.
     WinUAE or start a different game, _you will lose_ all the saves you made
     in your current gaming session! All WHDLoad games in the collection print
     out a warning message about this at startup, and the [Game
-    notes](../game-notes/index.md) also contains some reminders.
+    notes](../game-notes/index.md) also contain some reminders.

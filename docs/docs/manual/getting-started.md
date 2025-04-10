@@ -37,9 +37,9 @@ Once you're in the **Configurations** tab:
     button right of the text field to clear the search filter.
 
   - If you want to play a different game, it's best to quit WinUAE with
-    ++alt+f4++ then start it again.
+    ++alt+f4++ and then start it again.
 
-Alternatively, you can load a configuration by single clicking on it and then
+Alternatively, you can load a configuration by single-clicking on it and then
 pressing the :material-numeric-5-circle:{: .circ-num} **Load** button. You can
 see the name of the currently loaded config in the
 :material-numeric-6-circle:{: .circ-num} title bar. After having loaded the
@@ -76,7 +76,7 @@ first time to experience the intro and the original game at least once.
 You can speed up loading times (especially floppy loading times) considerably
 by entering "warp mode". You can toggle warp mode with ++end+pause++. This
 "time-warps" the speed of the emulation to the maximum your computer can
-handle, so you are going at "faster than real-time". There is no sound if warp
+handle, so you are going "faster than real-time". There is no sound if warp
 mode is engaged and the emulated CPU speed meter is pegged to 100% in the
 on-screen display.
 
@@ -149,7 +149,7 @@ and the ++ralt++, ++rshift++, or ++rctrl++ keys for the fire button.
 
 To use a real joystick, press the fire button on your joystick after starting
 the game. This will "plug" the joystick into either port 1 or port 2 of your
-"virtual Amiga", depending on which fire button you pressed. Most games look
+"virtual Amiga", depending on which fire button you press. Most games look
 for the joystick in port 2, so you might need to use the ++end+j++ **Swap
 joysticks** hotkey if the joystick doesn't work.
 
@@ -161,11 +161,12 @@ WinUAE will automatically "plug" it into port 2.
 
 ### Keyboard shortcuts
 
-There are few important [Keyboard shortcuts](../appendices/keyboard-shortcuts.md) you should
-familiarise yourself with. The three most important are ++pause++ to toggle
-pausing the emulation, ++end+pause++ to toggle warp mode, and ++end+f12++ to
-switch between windowed and full windowed mode. ++f12++ stops the emulation
-and brings up the WinUAE GUI, but don't touch anything there yet if you're a
+There are a few important [Keyboard
+shortcuts](../appendices/keyboard-shortcuts.md) you should familiarise
+yourself with. The three most important are ++pause++ to toggle pausing the
+emulation, ++end+pause++ to toggle warp mode, and ++end+f12++ to switch
+between windowed and full windowed mode. ++f12++ stops the emulation and
+brings up the WinUAE GUI, but don't touch anything there yet if you're a
 newbie; things will blow up! :bomb::fire: Just press ++esc++ or the **OK** or
 **Cancel** button for now to return to the game.
 
@@ -186,7 +187,7 @@ saving option.
 
 RML Amiga comes with defaults that aim to recreate the experience of sitting
 in front of a real Amiga in the 1980s. Some other technical settings have been
-carefully chosen to ensure all games run without issues on the most people's
+carefully chosen to ensure all games run without issues on most people's
 setups. However, power users might want to tweak these settings for a better
 experience (e.g., to enable lagless vsync with the minimum possible input
 latency).

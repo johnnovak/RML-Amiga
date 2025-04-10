@@ -6,11 +6,12 @@ optionally expanded with up to four drives. The first floppy drive is called
 **DF2:**, and the fourth **DF3:**.
 
 Most floppy games are in the **IPF** format (Interchangeable Presentation
-Format), and some in the **RAW** (KryoFlux CT-RAW) format. These are accurate
-representations of the original disks with the copy protection intact.
+Format), and some are in the **RAW** (KryoFlux CT-RAW) format. These are
+accurate representations of the original disks with the copy protection
+intact.
 
 A handful of games might be only provided as regular **ADF** files (Amiga Disk
-File). These games either don't use disk-based copy protection, or are only
+File). These games either don't use disk-based copy protection or are only
 available in cracked form at the time being.
 
 
@@ -26,17 +27,17 @@ All floppy game configurations have the first floppy pre-inserted in drive
 
 You can speed up floppy loading times considerably by entering "warp mode".
 You can toggle warp mode with ++end+pause++. This "time-warps" the speed of
-the emulation to the maximum your computer can handle, so you are going at
+the emulation to the maximum your computer can handle, so you are going
 "faster than real-time". There is no sound if warp mode is engaged and the
-emulated CPU speed meter is pegged to 100% in the
-[on-screen display](getting-started.md#on-screen-display).
+emulated CPU speed meter is pegged to 100% in the [on-screen
+display](getting-started.md#on-screen-display).
 
 !!! warning
 
     Note for people who know enough about WinUAE to be dangerous: *never*
     increase the floppy emulation speed of WinUAE as that will break most
     disk-based copy protections. It might initially seem that all is fine, but
-    many games *do not* advertise when they failed the protection checks! They
+    many games *do not* advertise when they fail the protection checks! They
     will casually let you keep playing but put the game silently into an
     unwinnable state.
 
@@ -47,21 +48,21 @@ emulated CPU speed meter is pegged to 100% in the
 !!! tip "ProTip(tm)"
 
     If you know what you're doing, you can create a [Save
-    states](save-states.md) right after the game finished loading. You can
+    states](save-states.md) right after the game finishes loading. You can
     save this as a new config and use it to start the game instantaneously.
 
 
 ## Multi-disk games
 
 Multi-disk games fall into two categories: some support multiple floppy
-drives, some only a single drive. The best case scenario is when a game
+drives, some only a single drive. The best-case scenario is when a game
 supports as many drives as the number of disks it comes on. Such games are
 configured with the game disks pre-inserted into the drives (e.g., the
 two-disk game **Lemmings**, or the four-disk games
 [Perihelion](../game-notes/p.md#perihelion), [Hook](../game-notes/g-j.md#hook), and
 [Soccer Kid (OCS)](../game-notes/s.md#soccer-kid-ocs)).
 
-The other scenario is that the game supports *less* drives than the number of
+The other scenario is that the game supports *fewer* drives than the number of
 disks it has (e.g., a two-disk game supporting a single drive, or a four-disk
 game supporting two drives). In these games, you'll need to swap the disks
 when the game prompts you. Fortunately, WinUAE has a convenient disk swapper
@@ -114,20 +115,20 @@ Most floppy games start automatically when you launch their configs, but
 some need to be started manually from the Workbench screen.
 
 See the [Workbench](hard-drive-games.md#workbench) section of hard drive
-installed games for further details (most of the information is applicable to
-floppy games as well).
+installed games for further details (most of the information applies to floppy
+games as well).
 
 
 ## Saving your progress
 
 Some games give you continuation codes at certain checkpoints, while others
-let your save your progress to disk whenever you want. Some other games don't
+let you save your progress to disk whenever you want. Some other games don't
 have any built-in continuation or save support---luckily, you can use WinUAE
 [Save states](save-states.md) with these.
 
 ### Save disks
 
-Many floppy games support saving your progress to disk. Usually you need to
+Many floppy games support saving your progress to disk. Usually, you need to
 prepare a special **save disk** for this purpose, and the instructions to do
 so vary per game. For your convenience, all games that support saving your
 progress to disk include a blank save disk in the 9th disk swapper slot (so
@@ -160,7 +161,7 @@ the **C:** drive in Windows.
     probably need to consult the game's manual to do so as the exact steps
     vary per game (e.g., you might need to set a specific disk label).
 
-    Always use **Extended ADF** images for save disks. These images are about
+    Always use **Extended ADF** images save disks. These images are about
     2 MB in size. The regular 880 KB ADF images will give you problems in some
     games, and you'll invariably only realise this when it's already too late
     and you've lost your progress...
@@ -168,7 +169,7 @@ the **C:** drive in Windows.
 
 ### Saving to the game disk
 
-Some games save your progress or high-scores directly to the game disk (e.g.,
+Some games save your progress or high scores directly to the game disk (e.g.,
 [Pinball Dreams](../game-notes/p.md#pinball-dreams) and [Rogue: The Adventure
 Game](../game-notes/q-r.md#rogue-the-adventure-game)). These games are configured
 to never modify the original floppy images, but create a so-called **save
@@ -179,7 +180,7 @@ folder within the game folder.
 Do the following if you wish to revert a such "virtually modified" game disk
 to its pristine original state:
 
-- First make sure the game is not running (restarting WinUAE is the safest
+- First, make sure the game is not running (restarting WinUAE is the safest
   bet).
 - Go to the **Hardware / Floppy drives** configuration tab in the WinUAE
   settings window.

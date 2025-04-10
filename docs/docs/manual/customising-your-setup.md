@@ -45,16 +45,16 @@ The tool has a simple single-window interface:
 
 - The lower part of the window :material-numeric-2-circle:{: .circ-num} shows
   the description of the setting currently under the mouse cursor. Make sure
-  to read the these descriptions carefully before you change anything.
+  to read these descriptions carefully before you change anything.
 
 - You'll need to create a "plan" for your configuration changes, then you can
-  apply this "change plan" to one of more configs. By default, every setting
-  is grayed-out (like this one :material-numeric-3-circle:{: .circ-num}).
-  Grayed-out settings will not be modified when you apply the "change plan".
-  If you want to modify a setting, you'll need to enable if first by clicking
+  apply this "change plan" to one or more configs. By default, every setting
+  is greyed-out (like this one :material-numeric-3-circle:{: .circ-num}).
+  Greyed-out settings will not be modified when you apply the "change plan".
+  If you want to modify a setting, you'll need to enable it first by clicking
   on its name which will highlight it :material-numeric-4-circle:{: .circ-num},
   then you can change its value. If you've changed your mind and
-  don't want to modify that setting, click on it again to make it grayed-out
+  don't want to modify that setting, click on it again to make it greyed-out
   (disabled).
 
 - You can specify whether you want to apply the config changes to **All**
@@ -68,8 +68,8 @@ The tool has a simple single-window interface:
 - Alternatively, you can drag and drop config files onto the config tool
   window to apply the changes to a single config only, or to any set of
   configs. A confirmation dialog will appear listing the names of the configs
-  the changes will be apply to.
+  the changes will be applied to.
 
-- You can reset all settings to their defaults and to the disabled state
+- You can reset all settings to their defaults and the disabled state
   by pressing the **Reset** button :material-numeric-7-circle:{: .circ-num}.
 

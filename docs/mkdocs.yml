@@ -99,8 +99,8 @@ plugins:
 nav:
   - Manual:
     - manual/introduction.md
-    - manual/why-play-amiga-games.md
     - manual/installation.md
+    - manual/why-play-amiga-games.md
     - manual/getting-started.md
     - manual/input-handling.md
     - manual/hard-drive-games.md

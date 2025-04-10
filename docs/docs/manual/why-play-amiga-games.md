@@ -1,6 +1,6 @@
 # Why play Amiga games?
 
-Apart from Amiga-exlusive titles, most of the games in RML Amiga have also
+Apart from Amiga-exclusive titles, most of the games in RML Amiga have also
 been released for MS-DOS. So what's the point then, you might ask; why prefer
 Amiga originals or ports over the DOS versions?
 
@@ -25,7 +25,7 @@ parallel with the CPU, freeing it up to do other tasks. This is similar to how
 modern GPUs operate.
 
 In contrast, IBM PCs running MS-DOS had to do everything on the CPU by
-brute-force. VGA graphics adapters and Sound Blaster cards were rather "dumb"
+brute force. VGA graphics adapters and Sound Blaster cards were rather "dumb"
 compared to the sophisticated custom chips of the Amiga capable of
 semi-autonomous operation, so they needed a lot of CPU horsepower to drive.
 You needed a pretty fast decked-out Pentium to even just approximate what the
@@ -52,7 +52,7 @@ write home about; most of them are low-effort ports of the DOS originals.
 
 The situation in Europe, however, was the exact opposite. The Amiga was vastly
 more successful there than IBM PCs right until the mid-90s when Windows 95
-eventually took over (the German and the UK markets are accounted for about
+eventually took over (the German and the UK markets accounted for about
 60% of total worldwide Amiga sales). Most European developers either adopted an
 "Amiga-first" approach, or at the very least properly utilised the strengths
 of the platform in their multi-platform releases. The biggest differentiating
@@ -80,9 +80,9 @@ make sure to check out this [epic eight-part article series](https://arstechnica
 
 
 [^1]: An Amiga 500 with a Commodore 1084S RGB monitor with reasonably good
-    quality built-in stereo speakers costed about $800 in 1988. You could only
+    quality built-in stereo speakers cost about $800 in 1988. You could only
     get a no-name IBM PC clone with a 286 CPU and no monitor for the same
     amount of money. A still no-name 286 with an EGA monitor and hard drive
-    costed about $1400-1800, and the VGA monitor option would set you back by
+    cost about $1400-1800, and the VGA monitor option would set you back by
     $1700-$2100. And after spending all that money, your brand new machine
     still had no sound card, only a crapy small built-in speaker...
