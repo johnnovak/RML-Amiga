@@ -12,9 +12,9 @@ monitor. Most people used their Amigas with such monitors in the 1980s and 90s
 (e.g., the iconic [Commodore 1084S]() or the [Philips CM8833-II]()). The
 default 3.0x scaling mimics the physical dimensions of such 14" CRTs
 rather closely on 24 to 27" widescreen desktop displays. Just grab a ruler and
-measure the diagonal of the image in an NTSC game; it will be about TODO cm on
-a 24" screen which is close to the TODO cm image diagonal of a typical 14"
-CRT.
+measure the diagonal of the image in an NTSC game; it will be about 13" (33 cm)
+on a 24" screen which is close to the diagonal of the viewable aread on a
+typical 14" CRT.
 
 So what, you might think. We have bigger and better monitors now, so why
 not make the best of them and let the image fill the screen completely? Well,
@@ -62,9 +62,9 @@ tradeoffs. Even on real CRT monitors, the experience is not the same on larger
 authenticity and image quality, or image size and getting rid of the "black
 borders".
 
-
- This is certainly a fascinating topic; you can read more about it [in my
-article](TODO) that describes the shader setup in detail.
+This is certainly a fascinating topic; you can read more about it [in my
+article](https://blog.johnnovak.net/2022/04/15/achieving-period-correct-graphics-in-personal-computer-emulators-part-1-the-amiga/)
+that describes the shader setup in detail.
 
 
 

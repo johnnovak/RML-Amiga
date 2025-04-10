@@ -72,17 +72,17 @@ feature to make this easy:
 
 - By default, the disk swapper targets the first floppy drive. To insert a
   floppy into one of the other three drives, you'll need to select the target
-  drive with ++end+ctrl+1++ to ++4++ first.
+  drive with ++end+lctrl+1++ to ++4++ first.
 
 For example:
 
 - To insert the second game disk into drive DF0: (first drive), press ++end+2++.
 
 - To insert the third game disk into drive DF1: (second drive) next, press
-  ++end+ctrl+2++ to select the second drive as the target for the disk
+  ++end+lctrl+2++ to select the second drive as the target for the disk
   swapper, then ++end+3++ to insert the third disk.
 
-- To insert the fourth game edisk into DF0: again, press ++end+ctrl+1++
+- To insert the fourth game edisk into DF0: again, press ++end+lctrl+1++
   followed by ++end+4++ .
 
 You can view the disk swapper configuration for the currently loaded game
@@ -104,7 +104,7 @@ settings window.
 !!! warning "Not all keyboards are created equal"
 
     You might not be able to use some of the drive selection shortcuts
-    (++end+ctrl+1++ to ++4++) if you do not have a *3-key rollover* (3KRO) or
+    (++end+lctrl+1++ to ++4++) if you do not have a *3-key rollover* (3KRO) or
     better keyboard.
 
 

@@ -48,12 +48,12 @@ features.
 ## Floppy
 
 <div class="compact" markdown>
-| Shortcut                   | Description                                                 |
-| --------                   | -----------                                                 |
-| ++end+ctrl+1++ -- ++4++    | Set target floppy drive to DF0--DF3 for the [disk swapper](../manual/floppy-games.md#multi-disk-games) |
-| ++end+1++ -- ++9++         | Insert disk 1--9 from the swap list into the target drive   |
-| ++end+f1++ -- ++f4++       | Open insert disk (floppy image) dialog into DF0--DF3 dialog |
-| ++end+shift+f1++ -- ++f4++ | Eject disk (floppy image) from DF0--DF3                     |
+| Shortcut                    | Description                                                 |
+| --------                    | -----------                                                 |
+| ++end+lctrl+1++--++4++    | Set target floppy drive to DF0--DF3 for the [disk swapper](../manual/floppy-games.md#multi-disk-games) |
+| ++end+1++--++9++          | Insert disk 1--9 from the swap list into the target drive   |
+| ++end+f1++--++f4++        | Open insert disk (floppy image) dialog into DF0--DF3 dialog |
+| ++end+shift+f1++--++f4++  | Eject disk (floppy image) from DF0--DF3                     |
 </div>
 
 
@@ -62,8 +62,8 @@ features.
 <div class="compact" markdown>
 | Shortcut                       | Description                        |
 | --------                       | -----------                        |
-| ++end+shift+num1++ -- ++num9++ | [Quick save](../manual/save-states.md#quick-saves) state to slot 1--9 |
-| ++end+num1++ -- ++num9++       | Quick restore state from slot 1--9 |
+| ++end+shift+num1++--++num9++ | [Quick save](../manual/save-states.md#quick-saves) state to slot 1--9 |
+| ++end+num1++--++num9++       | Quick restore state from slot 1--9 |
 | ++end+shift+f6++               | Open the save state dialog (see [Named save states](../manual/save-states.md#named-save-states) |
 | ++end+f6++                     | Open the restore state dialog      |
 </div>
@@ -72,19 +72,19 @@ features.
 ## Special Amiga keys
 
 <div class="compact" markdown>
-| Shortcut                      | Description                |
-| --------                      | -----------                |
-| ++lwin++ / ++home++           | Left "Amiga" modifier key  |
-| ++rwin++ / ++ins++ / ++home++ | Right "Amiga" modifier key |
-| ++delete++                    | "Delete" key               |
-| ++next++                      | "Help" key                 |
+| Shortcut                        | Description                |
+| --------                        | -----------                |
+| ++lwin++ or ++home++            | Left "Amiga" modifier key  |
+| ++rwin++ or ++ins++ or ++home++ | Right "Amiga" modifier key |
+| ++delete++                      | "Delete" key               |
+| ++next++                        | "Help" key                 |
 </div>
 
 
 ## Miscellaneous
 
 <div class="compact" markdown>
-| Shortcut                        | Description                             |
-| --------                        | -----------                             |
-| ++lctrl++ / ++lwin++ / ++rwin++ | Three-key "Ctrl+Amiga+Amiga" soft-reset |
+| Shortcut                          | Description                             |
+| --------                          | -----------                             |
+| ++lctrl++ or ++lwin++ or ++rwin++ | Three-key "Ctrl+Amiga+Amiga" soft-reset |
 </div>

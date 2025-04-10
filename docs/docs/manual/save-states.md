@@ -31,10 +31,9 @@ it that all your save states will continue to work in future WinUAE versions.
 This method is the most useful for "save scumming" over short periods of time.
 You have nine quick save slots available for the currently loaded game config:
 
-  - To save the current state into slots 1--9, press ++end+shift+num1++ --
-    ++num9++.
+  - To save the current state into slots 1--9, press ++end+shift+num1++--++num9++.
 
-  - To restore the state from slots 1--9, press ++end+num1++ -- ++num9++.
+  - To restore the state from slots 1--9, press ++end+num1++--++num9++.
 
 Save states created this way are stored in the `$RMLBase\Quicksaves` folder.
 The state files are named after the currently loaded config and the index of

@@ -25,7 +25,10 @@ For example, `D:\Emulation\Amiga\RML-Amiga` is a good location.
 Now double-click on `install-full-v10.bat` in Windows Explorer to start the
 installation. A window will appear, you'll be asked a few questions, then
 you'll be informed about the progress of the installation. The whole process
-shouldn't take more than 5-10 minutes.
+shouldn't take more than 5-10 minutes. I recommend to
+read the [Why play Amiga games?](why-play-amiga-games.md) and [CRT
+emulation](crt-emulation.md) chapters while waiting, especially if you're new
+to the Amiga.
 
 Once the installation has succeeded, you can start WinUAE (the Amiga
 emulator) by running `winuae.exe` from your RML Amiga folder. It's a good idea
