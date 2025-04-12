@@ -9,12 +9,14 @@ the reasoning behind the defaults first before you change anything.
 
 Out-of-the-box, RML Amiga emulates the output of a 15 kHz Commodore CRT
 monitor. Most people used their Amigas with such monitors in the 1980s and 90s
-(e.g., the iconic [Commodore 1084S]() or the [Philips CM8833-II]()). The
+(e.g., the iconic **Commodore 1084S** or the **Philips CM8833-II]**)[^1]. The
 default 3.0x scaling mimics the physical dimensions of such 14" CRTs
 rather closely on 24 to 27" widescreen desktop displays. Just grab a ruler and
 measure the diagonal of the image in an NTSC game; it will be about 13" (33 cm)
 on a 24" screen which is close to the diagonal of the viewable area on a
 typical 14" CRT.
+
+TODO 1084S picture
 
 So what, you might think. We have bigger and better monitors now, so why
 not make the best of them and let the image fill the screen completely? Well,
@@ -37,6 +39,8 @@ Let me stress this again: 320&times;200 content on the Amiga was _smooth_, not
 blocky as on the PC! On well-made art, the "pixels" literally melted away; you
 did not see jagged stairstep edges but smooth curves! 
 
+TODO legend of faerghail
+
 That's all good and well, but some games still look subjectively better with
 the graphics slightly enlarged. For example, I like playing [Pinball Dreams]()
 with 4.0x scaling so it almost completely fills the screen; it's just more
@@ -45,6 +49,8 @@ size depending on your display size, viewing distance, and personal
 preference. You might also want to use different scaling factors for different
 games. The [Customising your setup](customising-your-setup.md) section shows
 you how to do that.
+
+TODO Pinball Dreams 3.5x scaling
 
 Be aware, however, that as you start deviating from the "canonical" 14" CRT
 image size (3.0x scaling factor), you will start seeing the "pixels". The
@@ -67,9 +73,31 @@ This is certainly a fascinating topic; you can read more about it [in my
 article](https://blog.johnnovak.net/2022/04/15/achieving-period-correct-graphics-in-personal-computer-emulators-part-1-the-amiga/)
 that describes the CRT emulation setup of RML Amiga in detail.
 
+TODO eob 1
 
+TODO eob 2
 
-[^1]: This is due to the fundamental design differences between Commodore and
+[^1]: The most popular Amiga model ever, the Amiga 500, had built-in RGB
+    output but no aerial RF or composite connectivity to hook it up to a
+    TV. There was a composite-compatible monochrome connector labeled **Mono**
+    at the back of the machine, but doesn't count; nobody wanted to use their
+    Amigas with a black and white TV. So people were faced with a simple
+    choice: either buy the Commodore 1084S or similar RGB monitor with
+    built-in speakers (this costed about 60-70% of the price of the Amiga 500), or
+    purchase the RF adapter add-on which let you use your machine with a TV.
+    The problem was the RF adapter still costed a non-negligible amount of
+    money (about 25% of the price of the monitor) and had terrible image
+    quality. Parents were not exactly thrilled with the prospect of their kids
+    hogging the family TV all day, so most wanted to get their kids a
+    dedicated display. Put it that way, the choice between a proper RGB monitor or a
+    much worse quality small TV and an RF adapter became a no-brainer as the
+    cost was about the same. Another stopgap solution was to use a special RGB
+    to SCART cable with a SCART-equipped small TV, but the results were not as
+    good (the horizontal resolution on a TV is a lot lower, so you could not
+    read 80-column text easily). Plus you could not control your kid's TV
+    watching habits if they had their own in their room.
+
+[^2]: This is due to the fundamental design differences between Commodore and
     IBM PC CRT monitors. Commodore monitors such as the 1084S were effectively
     small high-quality TV sets with RGB input. Commodore was after the home
     computer and enthusiast market (at least in the beginning), so they found

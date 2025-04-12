@@ -183,6 +183,25 @@ tips, and don't forget about [Save states](save-states.md) as an alternative
 saving option.
 
 
+### Game variants
+
+Some games have some abbreviations after their names in parenthesis, e.g.,
+**Eye of the Beholder (AGA)** and **Eye of the Beholder (OCS)**. These
+generally specify which exact variant of the game are we dealing with if
+multiple different releases exist. Here's a quick rundown of them:
+
+- **OCS** --- This stands for Original Chip Set, which is the graphics chip
+    from the original Amiga line (such as the Amiga 500). About 98% of the
+    games require OCS, so unless the game has other variants, OCS is simply
+    omitted from the name.
+
+- **AGA** --- x
+
+- **CDTV** --- x
+
+- **CD32** --- x
+
+
 ### Customising your setup
 
 RML Amiga comes with defaults that aim to recreate the experience of sitting

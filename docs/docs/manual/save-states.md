@@ -47,8 +47,6 @@ following state files:
 - `$RMLBase\Quicksaves\Another World_5.uss`
 </div>
 
-TODO manual/quick save coupling
-
 !!! warning "Quick saves and game config variants"
 
     As mentioned, quick saves are named after the currently loaded config, but
@@ -83,6 +81,8 @@ things organised.
 
 To load a save state, press ++end+f6++ to bring up the restore state dialog,
 select the state file, and then press **Ok**.
+
+TODO manual/quick save coupling
 
 
 !!! important
