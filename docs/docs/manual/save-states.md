@@ -71,7 +71,6 @@ things organised.
 To load a save state, press ++end+f6++ to bring up the restore state dialog,
 select the state file, and then press **Ok**.
 
-
 !!! important
 
     When restoring a save state, you _must_ be running the _same_ config you
