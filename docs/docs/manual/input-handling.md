@@ -216,18 +216,6 @@ joysticks and a friend not afraid of some healthy competition!
 
 ## Gamepads
 
-Most [CDTV and Amiga CD32 games](cdtv-and-cd32-games.md) are meant to be
-played with the gamepad that came with the console. It's best to use a
-physical game controller with these games as the keyboard mappings for the
-emulated gamepad can be rather awkward. To use your physical gamepad (e.g., an
-Xbox 360 controller), press the green **A** button on it after starting the
-game and WinUAE will auto-plug it into port 2 (if you're using some other game
-controller, press the button that is in the same location as the **A** button
-on the Xbox 360 controller).
-
-Similarly to joysticks, you might need to activate the **Swap joystick ports**
-feature with ++end+j++ if your gamepad was auto-plugged into the wrong port.
-
-A smaller number of CDTV and CD32 games support the mouse as well (typically
-point-and-click adventure games). Although you can play these games with a
-gamepad, it's usually more convenient to use the mouse.
+You won't find many Amiga games that were designed for gamepads, but many CDTV
+and Amiga CD32 games cannot be played without one. See the [CDTV and Amiga
+CD32 games](cdtv-and-cd32-games.md) section for further details.

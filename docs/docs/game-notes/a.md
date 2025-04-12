@@ -60,7 +60,7 @@ can start playing the game.
 
 **Restarting the game with a new character**
 
-Delete the `$RML_AMIGA\Amberstar\Harddisk\AMBERSTAR` folder and repeat the
+Delete the `$RML_BASE\Amberstar\Harddisk\AMBERSTAR` folder and repeat the
 above steps.
 
 

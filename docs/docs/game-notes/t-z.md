@@ -16,6 +16,7 @@
 ## Total Eclipse
 
 - Saves to the game disk.
+- Press ++shift+minus++ to toggle between sound effects and music.
 
 
 ## Transarctica (AGA)
