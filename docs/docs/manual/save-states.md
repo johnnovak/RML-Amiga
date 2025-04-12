@@ -52,7 +52,7 @@ following state files:
     Quick saves behave in a rather unintuitive way with [Special config
     variants](#special-config-variants). Make sure to read that section
     carefully, and the [Quick saves and named
-    saves](quick-saves-and-named-saves) too which describes a way how to
+    saves](#quick-saves-and-named-saves) too which describes a way how to
     reconcile the two save state creation methods.
 
 

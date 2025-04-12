@@ -185,21 +185,30 @@ saving option.
 
 ### Game variants
 
-Some games have some abbreviations after their names in parenthesis, e.g.,
-**Eye of the Beholder (AGA)** and **Eye of the Beholder (OCS)**. These
-generally specify which exact variant of the game are we dealing with if
-multiple different releases exist. Here's a quick rundown of them:
+A few games have some abbreviations after their names in parenthesis, e.g.,
+**Eye of the Beholder (AGA)** and **Eye of the Beholder (OCS)**. These specify
+which variant of the game we're dealing with if multiple different releases
+exist. Here's a quick rundown of them:
 
 - **OCS** --- This stands for Original Chip Set, which is the graphics chip
-    from the original Amiga line (such as the Amiga 500). About 98% of the
-    games require OCS, so unless the game has other variants, OCS is simply
-    omitted from the name.
+    of the original Amiga line (such as the Amiga 500). About 90% of all
+    Amiga only have an OCS version, so if the game has no other variants, OCS
+    is simply omitted from the name.
 
-- **AGA** --- x
+- **AGA** --- Later Amigas (Amiga 1200, 4000, and the CD32) had the Advanced
+    Graphics Architecture chipset capable of displaying more colours on the
+    screen. As AGA games are relatively rare, they always have the AGA suffix
+    in their name.
 
-- **CDTV** --- x
+- **CDTV**, **CD32** --- These denote CD games for the [two ill-fated Amiga
+    consoles](cdtv-and-cd32-games.md). As these are even rarer than AGA games,
+    they all have the CDTV or CD32 suffix.
 
-- **CD32** --- x
+Generally, the collection only contains the best version of the games, unless
+the different versions offer something unique, in which case all are included.
+This is usually the case with later AGA and CD32 re-releases that feature
+different (but not necessarily better) graphics and in some cases a CD Audio
+soundtrack or other CD-only extras.
 
 
 ### Customising your setup

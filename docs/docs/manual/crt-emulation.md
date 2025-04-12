@@ -16,8 +16,6 @@ measure the diagonal of the image in an NTSC game; it will be about 13" (33 cm)
 on a 24" screen which is close to the diagonal of the viewable area on a
 typical 14" CRT.
 
-TODO 1084S picture
-
 So what, you might think. We have bigger and better monitors now, so why
 not make the best of them and let the image fill the screen completely? Well,
 because arguably that wouldn't be the "best" thing to do.
@@ -33,24 +31,26 @@ monitors. Sure, the Amiga's image was a bit blurrier and lacked fine detail, but
 it was _nowhere near_ the extreme blockiness of how PC monitors presented
 320&times;200 content! People moving on from the Amiga to the PC in the
 1990s often complained about low-resolution pixel art suddenly looking
-overly blocky on their 14--15" PC monitors.[^1]
+overly blocky on their 14--15" PC monitors.[^2]
 
 Let me stress this again: 320&times;200 content on the Amiga was _smooth_, not
 blocky as on the PC! On well-made art, the "pixels" literally melted away; you
 did not see jagged stairstep edges but smooth curves! 
 
-TODO legend of faerghail
+<figure markdown="span">
+  ![](img/legend-of-faerghail.png)
+  <figcaption>Legend of Faerghail (PAL, 3.0x scaling)<br>(click on the image
+  to enlarge it)</figcaption>
+</figure>
 
 That's all good and well, but some games still look subjectively better with
 the graphics slightly enlarged. For example, I like playing [Pinball Dreams]()
-with 4.0x scaling so it almost completely fills the screen; it's just more
+with 3.5x scaling so it almost completely fills the screen; it's just more
 immersive for me that way. So by all means, feel free to to adjust the image
 size depending on your display size, viewing distance, and personal
 preference. You might also want to use different scaling factors for different
 games. The [Customising your setup](customising-your-setup.md) section shows
 you how to do that.
-
-TODO Pinball Dreams 3.5x scaling
 
 Be aware, however, that as you start deviating from the "canonical" 14" CRT
 image size (3.0x scaling factor), you will start seeing the "pixels". The
@@ -63,6 +63,12 @@ apparent at higher scaling factors, too, especially with the NTSC shader. You mi
 want to force the PAL shader even in NTSC games to mitigate this as that
 renders more "densely packed" scanlines.
 
+<figure markdown="span">
+  ![](img/pinball-dreams.png)
+  <figcaption>Pinball Dreams (PAL, overscan, 3.5x scaling)<br>(click on the image
+  to enlarge it)</figcaption>
+</figure>
+
 As you can see, deviating from the canonical 14" CRT image size is all about
 tradeoffs. Even on real CRT monitors, the experience is not the same on larger
 17" to 21" displays. You just need to pick what's more important to you:
@@ -72,10 +78,6 @@ borders".
 This is certainly a fascinating topic; you can read more about it [in my
 article](https://blog.johnnovak.net/2022/04/15/achieving-period-correct-graphics-in-personal-computer-emulators-part-1-the-amiga/)
 that describes the CRT emulation setup of RML Amiga in detail.
-
-TODO eob 1
-
-TODO eob 2
 
 [^1]: The most popular Amiga model ever, the Amiga 500, had built-in RGB
     output but no aerial RF or composite connectivity to hook it up to a
