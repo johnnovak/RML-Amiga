@@ -1,3 +1,4 @@
+import std/cmdline
 import std/dirs
 import std/files
 import std/paths
@@ -93,15 +94,17 @@ proc validate(categoryPath: Path, names: seq[Path]) =
       checkPaths(p, cfg, dataBasePath)
 
 # }}}
-# {{{ createPackageScript()
-proc createPackageScript(category: string, names: seq[Path]): string =
-  result = """set CMD=Tools\7za.exe
+# {{{ createPackScript()
+proc createPackScript(category: string, names: seq[Path]): string =
+  result = """
+set CMD=Tools\7za.exe
 set OUT=package-output
 
-  """
+"""
 
   for name in names:
-    result &= fmt"""%CMD% a -tzip -r %OUT%\"{name}" ^
+    result &= fmt"""
+%CMD% a -tzip -r %OUT%\"{name}.zip" ^
 	"{category}\{name}" ^
 	"Configurations\{category}\{name}.uae" ^
 	"Configurations\{category}\{name} [*].uae"
@@ -109,30 +112,95 @@ set OUT=package-output
 """
 
 # }}}
-# {{{ process()
-proc process(category: string) =
+# {{{ createUnpackScript()
+proc createUnpackScript(category: string, names: seq[Path]): string =
+  result = fmt"""
+@echo off
+set CMD=7za.exe
+set TEMP=Temp
+set ARCHIVE=RML-Amiga-{category}-V1.0.zip
+
+"""
+
+  for idx, name in names.pairs():
+    result &= fmt"""
+echo [{(idx+1):>4} / {names.len}] Extracting '{name}'
+%CMD% e -o%TEMP% -y -bso0 %ARCHIVE% "{name}.zip"
+%CMD% x -y -bso0 "%TEMP%\{name}.zip"
+del "%TEMP%\{name}.zip"
+
+"""
+
+  result &= """
+rmdir %TEMP%
+
+echo""
+echo Installation of '%ARCHIVE%' has been completed.
+echo""
+
+pause
+"""
+
+# }}}
+# {{{ processCategory()
+proc processCategory(category: string, outPrefix: string) =
   let
     categoryPath = Path(category)
     names        = getDirNames(categoryPath)
 
   validate(categoryPath, names)
-  let script = createPackageScript(category, names)
-  echo script
+  var content = createPackScript(category, names)
+  writeFile(fmt"{outPrefix}-pack.bat", content)
+
+  content = createUnpackScript(category, names)
+  writeFile(fmt"{outPrefix}-unpack.bat", content)
+
+# }}}
+# {{{ processDir()
+proc processDir(dirName: string, outfile: string) =
+  let (categoryPath, name) = Path(dirName).splitPath
+  let names = @[name]
+
+  validate(categoryPath, @[name])
+  let content = createPackScript($categoryPath, names)
+  writeFile(outfile, content)
 
 # }}}
 
-process("Games")
 
+# {{{ main()
+proc main() =
+  if paramCount() < 3:
+    echo """
+Usage: pkgTool category CATEGORY_NAME OUTPREFIX
+       pkgTool single   DIR_NAME      OUTPREFIX
 
-#[
-set CMD=Tools\7za.exe
-set OUT=package-output
+CATEGORY_NAME must be "Games", "Demos\OCS", or "Demos\AGA".
+CONFIG_NAME must be the full path to the config
+"""
+    quit(1)
 
-%CMD% a -tzip -r %OUT%\"Secret of Monkey Island, The" ^
-	"Games\Secret of Monkey Island, The" ^
-	"Configurations\Games\Secret of Monkey Island, The.uae" ^
-	"Configurations\Games\Secret of Monkey Island, The [*].uae"
+  let mode = paramStr(1)
+  case mode
+  of "category":
+    let
+      category = paramStr(2)
+      outPrefix = paramStr(3)
 
-# vim: et:ts=2:sw=2:fdm=marker
+    processCategory(category, outPrefix)
 
-]#
+  of "single":
+    let
+      dirName = paramStr(2)
+      outPrefix = paramStr(3)
+
+    processDir(dirName, outPrefix)
+
+  else:
+    echo fmt"Invalid mode: '{mode}'"
+    quit(1)
+
+# }}}
+
+main()
+
