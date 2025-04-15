@@ -2,7 +2,7 @@
 
 WinUAE save states capture the entire state of the emulated machine and write
 it into a so-called **state file** that you can restore later instantaneously.
-They are useful to save your progress in games that don't have built-in save
+Save states are useful to save your progress in games that don't have built-in save
 game support. You can also use save states as an alternative saving mechanism
 in most (but not all) games.
 
@@ -35,36 +35,25 @@ have nine quick save slots available for the currently loaded game config:
 
   - To restore the state from slots 1--9, press ++end+num1++--++num9++.
 
-Save states created this way are stored in the `$RMLBase\Quicksaves` folder.
+Save states created this way are stored in the `$RML_BASE\Quicksaves` folder.
 The state files are named after the currently loaded config and the index of
 the quick save slot. For example, if you load the game config **Another
 World** and then quick save into slots 1, 2, and 5, you'll end up with the
 following state files:
 
 <div class="compact" markdown>
-- `$RMLBase\Quicksaves\Another World_1.uss`
-- `$RMLBase\Quicksaves\Another World_2.uss`
-- `$RMLBase\Quicksaves\Another World_5.uss`
+- `$RML_BASE\Quicksaves\Another World_1.uss`
+- `$RML_BASE\Quicksaves\Another World_2.uss`
+- `$RML_BASE\Quicksaves\Another World_5.uss`
 </div>
 
-!!! warning "Quick saves and game config variants"
+!!! warning
 
-    As mentioned, quick saves are named after the currently loaded config, but
-    quite a few games have alternative configs to skip the intro or the
-    manual-based copy protection checks.
-
-    For example, **Another World** has two configs named **Another World** and
-    **Another World [skip code check]**. If you start the "skip code check"
-    variant and create a quick save in slot 1, it will be named `Another
-    World [skip code check]_1.uss`. Then if you restart WinUAE and run the
-    **Another World** config variant this time, you won't be able to restore
-    the game from quick save slot 1 as WinUAE will be looking for `Another
-    World_1.uss` in the `Quicksaves` folder.
-
-    The workaround is to load your save state using the [Named save
-    states](#named-save-states) method. Alternatively, you can rename the
-    `.uss` files in `$RMLBase\Quicksaves` to make the names match, but that's
-    fiddly and error-prone.
+    Quick saves behave in a rather unintuitive way with [Special config
+    variants](#special-config-variants). Make sure to read that section
+    carefully, and the [Quick saves and named
+    saves](#quick-saves-and-named-saves) too which describes a way how to
+    reconcile the two save state creation methods.
 
 
 ## Named save states
@@ -81,9 +70,6 @@ things organised.
 
 To load a save state, press ++end+f6++ to bring up the restore state dialog,
 select the state file, and then press **Ok**.
-
-TODO manual/quick save coupling
-
 
 !!! important
 
@@ -102,7 +88,22 @@ TODO manual/quick save coupling
     configuration.
 
 
-## Creating config variants
+## Special config variants
+
+Quite a few games have special config variants to skip the intro of the game
+or the manual-based copy protection checks. These special configs are
+implemented via the automatic save state loading feature of WinUAE---you
+can create configs that will load a save state immediately after launching
+them.
+
+For example, **Another World** has two configs: **Another World**, which
+starts the game normally, and **Another World [skip code check]**, which loads
+a save state taken right after having passed the code check. All such special
+save states are stored in the `Savestates` subfolder within the individual game
+folders. In this case, the location of the state file is `$RML_BASE\Another
+World\Savestates\SkipCodeCheck.uss`.
+
+### Creating special config variants
 
 If you want to create your own "skip intro" or "skip code check" config
 variants for existing game configs, this is how to do it. We'll use the
@@ -121,7 +122,7 @@ imaginary game **Bikini Bandits** in our example.
 4. Now go to the **Host / Miscellaneous** tab and press the **Save State**
    button. This will bring up the familiar save state file dialog.
 
-5. Navigate to the `$RMLBase\Games\Bikini Bandits\Savestates` folder, enter
+5. Navigate to the `$RML_BASE\Games\Bikini Bandits\Savestates` folder, enter
    `SkipIntro` as the name of the new state file, then press **Ok**.
 
 6. Note that the state file's name now appears in the combo box left of the
@@ -160,6 +161,37 @@ file whenever you want or before quitting the game.
 
 Starting `Bikini Bandits [save]` will then always resume your game from your
 last save point, which is pretty comfortable!
+
+
+## Quick saves and named saves
+
+A small complication is that if you load a named save state, subsequent quick
+saves will use the name and folder of the last loaded named save state. In
+other words, loading a named save state changes the base name of the quick
+save (which is the currently loaded config's name by default) and its destination folder (which
+is `$RML_BASE\Quicksaves` by default).
+
+For example, if you start the **Another World [skip code check]** config
+variant which loads `$RML_BASE\Another World\Savestates\SkipCodeCheck.uss` and
+then create a quick save in slot 1, the quick save will be called as
+`SkipCodeCheck_1.uss` in the folder `$RML_BASE\Another World\Savestates`. Then
+if you restart WinUAE and launch the regular **Another World** config, you
+won't be able to restore the game from quick save slot 1 by pressing
+++end+num1++ as WinUAE will be looking for `Another World_1.uss` in the
+`Quicksaves` folder.
+
+The workaround is to load your quick save using the [Named save
+states](#named-save-states) method, which will set the base name and
+destination folder of the quick saves, then you can use quick saves normally
+from that point.
+
+!!! info
+
+    Admittedly, this is a bit complicated and not the best user experience.
+    Future WinUAE versions will replace the handling of such scenarios with a
+    more intuitive method.
+
+
 
 
 ## Save state best practices
