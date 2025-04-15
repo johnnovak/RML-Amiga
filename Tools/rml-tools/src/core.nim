@@ -44,40 +44,28 @@ const
 
 type
   Settings* = object
-    display*: DisplaySettings
-    audio*:   AudioSettings
-    general*: GeneralSettings
+    graphics*: GraphicsSettings
+    audio*:    AudioSettings
+    window*:   WindowSettings
+    general*:  GeneralSettings
 
-  # {{{ Display settings
+  # {{{ Graphics settings
   # -------------------------------------------------------------------------
-  DisplaySettings* = object
-    displayMode*:     tuple[value: DisplayMode,   set: bool]
-    windowWidth*:     tuple[value: string,        set: bool]
-    windowHeight*:    tuple[value: string,        set: bool]
-    windowPosX*:      tuple[value: string,        set: bool]
-    windowPosY*:      tuple[value: string,        set: bool]
-    resizableWindow*: tuple[value: bool,          set: bool]
+  GraphicsSettings* = object
+    palScaling*:      tuple[value: PalScaling,    set: bool]
+    ntscScaling*:     tuple[value: NtscScaling,   set: bool]
+
     showOsd*:         tuple[value: bool,          set: bool]
 
     crtEmulation*:    tuple[value: bool,          set: bool]
     shaderQuality*:   tuple[value: ShaderQuality, set: bool]
-    palScaling*:      tuple[value: PalScaling,    set: bool]
-    ntscScaling*:     tuple[value: NtscScaling,   set: bool]
-
     sharperPal*:      tuple[value: bool,          set: bool]
     sharperNtsc*:     tuple[value: bool,          set: bool]
+    forcePalShader*:  tuple[value: bool,          set: bool]
+
     interlacing*:     tuple[value: bool,          set: bool]
     vsyncMode*:       tuple[value: VsyncMode,     set: bool]
     vsyncSlices*:     tuple[value: string,        set: bool]
-
-  ShaderQuality* = enum
-    sqFast = "Fast"
-    sqBest = "Best"
-
-  DisplayMode* = enum
-    dmWindowed   = "Windowed"
-    dmFullWindow = "Full-window"
-    dmFullscreen = "Fullscreen"
 
   PalScaling* = enum
     palScaling30 = "3.0x"
@@ -94,6 +82,10 @@ type
     ntscScaling40 = "4.0x"
     ntscScaling42 = "4.2x"
 
+  ShaderQuality* = enum
+    sqFast = "Fast"
+    sqBest = "Best"
+
   VsyncMode* = enum
     vmStandard = "Standard"
     vmLagless  = "Lagless"
@@ -106,8 +98,10 @@ type
 #    audioInterface*:   tuple[value: AudioInterface,   set: bool]
     sampleRate*:       tuple[value: SampleRate,       set: bool]
     soundBufferSize*:  tuple[value: SoundBufferSize,  set: bool]
+
     volume*:           tuple[value: string,           set: bool]
     stereoSeparation*: tuple[value: StereoSeparation, set: bool]
+
     floppySounds*:     tuple[value: bool,             set: bool]
 
 #  AudioInterface* = enum
@@ -145,20 +139,40 @@ type
     sbs10  = (10, "10")
 
   # }}}
-  # {{{ General settings
+  # {{{ Window settings
   # -------------------------------------------------------------------------
-  GeneralSettings* = object
-    confirmQuit*:         tuple[value: bool,              set: bool]
-    pauseWhenUnfocused*:  tuple[value: bool,              set: bool]
+  WindowSettings* = object
+    windowWidth*:       tuple[value: string, set: bool]
+    windowHeight*:      tuple[value: string, set: bool]
 
-    windowDecorations*:   tuple[value: WindowDecorations, set: bool]
-    captureMouseOnFocus*: tuple[value: bool,              set: bool]
+    windowPosX*:        tuple[value: string, set: bool]
+    windowPosY*:        tuple[value: string, set: bool]
+
+    resizableWindow*:   tuple[value: bool,   set: bool]
+
+    windowDecorations*: tuple[value: WindowDecorations, set: bool]
 
   WindowDecorations* = enum
     wdBorderless = "Borderless"
     wdMinimal    = "Title bar only"
     wdStandard   = "Title and status bar"
 #    wdExtended   = "Extended"
+
+  # }}}
+  # {{{ General settings
+  # -------------------------------------------------------------------------
+  GeneralSettings* = object
+    displayMode*:         tuple[value: DisplayMode, set: bool]
+
+    captureMouseOnFocus*: tuple[value: bool, set: bool]
+    pauseWhenUnfocused*:  tuple[value: bool, set: bool]
+
+    confirmQuit*:         tuple[value: bool, set: bool]
+
+  DisplayMode* = enum
+    dmWindowed   = "Windowed"
+    dmFullWindow = "Full-window"
+    dmFullscreen = "Fullscreen"
 
   # }}}
 # }}}
@@ -323,7 +337,7 @@ proc setFalseOrDelete(c: UaeConfig, key: string, enabled: bool) =
 
 # }}}
 
-# {{{ Set display settings
+# {{{ Set graphics settings
 # {{{ isLaced()
 proc isLaced(c: UaeConfig): bool =
   c.cfg.getOrDefault("gfx_linemode", "double2") == "none"
@@ -469,37 +483,26 @@ proc setFilter(c: UaeConfig, s: string) =
 
 # }}}
 # {{{ setCrtEmulation()
-proc setCrtEmulation(c: UaeConfig, enabled: bool) =
+proc setCrtEmulation(c: UaeConfig, enabled: bool,
+                     sharperPal, sharperNtsc, forcePalShader: bool) =
   for name in ForcedNoFilterConfigs:
     if c.name.startsWith(name):
       return
 
+  proc setPal() =
+    c.setFilter(if sharperPal: PalSharpFilter else: PalFilter)
+
   if enabled:
     case c.getVideoStandard()
-    of vsPal:            c.setFilter(PalFilter)
-    of vsNtsc, vsNtsc50: c.setFilter(NtscFilter)
-  else:                  c.setFilter(NoFilter)
+    of vsPal: setPal()
 
-# }}}
-# {{{ setSharperPal()
-proc setSharperPal(c: UaeConfig, sharperPal: bool) =
-  case c.getVideoStandard()
-  of vsPal:
-    if c.getFilter() in @[PalFilter, PalSharpFilter]:
-      c.setFilter(if sharperPal: PalSharpFilter else: PalFilter)
-  of vsNtsc, vsNtsc50:
-    discard
+    of vsNtsc, vsNtsc50:
+      if forcePalShader: setPal()
+      else:
+        c.setFilter(if sharperNtsc: NtscSharpFilter else: NtscFilter)
 
-# }}}
-# {{{ setSharperNtsc()
-proc setSharperNtsc(c: UaeConfig, sharperNtsc: bool) =
-  case c.getVideoStandard()
-  of vsPal:
-    discard
-
-  of vsNtsc, vsNtsc50:
-    if c.getFilter() in @[NtscFilter, NtscSharpFilter]:
-      c.setFilter(if sharperNtsc: NtscSharpFilter else: NtscFilter)
+    else:
+      c.setFilter(NoFilter)
 
 # }}}
 # {{{ setShaderQuality()
@@ -662,37 +665,21 @@ proc setCaptureMouseOnFocus(c: UaeConfig, enabled: bool) =
 
 # {{{ applySettings*()
 proc applySettings*(cfg: UaeConfig, settings: Settings) =
-  with settings.display:
-    if displayMode.set:
-      cfg.setDisplayMode(displayMode.value)
+  with settings.graphics:
+    if palScaling.set or ntscScaling.set:
+      cfg.setScaling(palScaling.toOpt, ntscScaling.toOpt)
 
-    if windowWidth.set or windowHeight.set:
-      cfg.setWindowSize(windowWidth.value, windowHeight.value)
-
-    if windowPosX.set or windowPosY.set:
-      cfg.setWindowPos(windowPosX.value, windowPosY.value)
-
-    if resizableWindow.set:
-      cfg.setResizableWindow(resizableWindow.value)
-
-    if showOsd.set: cfg.setShowOsd(showOsd.value)
+    if showOsd.set:
+      cfg.setShowOsd(showOsd.value)
 
     if crtEmulation.set:
-      cfg.setCrtEmulation(crtEmulation.value)
-
-    if sharperPal.set:
-      # Must be called after `setCrtEmulation`
-      cfg.setSharperPal(sharperPal.value)
-
-    if sharperNtsc.set:
-      # Must be called after `setCrtEmulation`
-      cfg.setSharperNtsc(sharperNtsc.value)
+      cfg.setCrtEmulation(enabled        = crtEmulation.value,
+                          sharperPal     = sharperPal.toOpt.get(false),
+                          sharperNtsc    = sharperNtsc.toOpt.get(false),
+                          forcePalShader = forcePalShader.toOpt.get(false))
 
     if shaderQuality.set:
       cfg.setShaderQuality(shaderQuality.value)
-
-    if palScaling.set or ntscScaling.set:
-      cfg.setScaling(palScaling.toOpt, ntscScaling.toOpt)
 
     if interlacing.set:
       # Must be called after `setScaling`
@@ -725,18 +712,33 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
       cfg.setFloppySounds(floppySounds.value)
 
 
-  with settings.general:
-    if confirmQuit.set:
-        cfg.setConfirmQuit(confirmQuit.value)
+  with settings.window:
+    if windowWidth.set or windowHeight.set:
+      cfg.setWindowSize(windowWidth.value, windowHeight.value)
 
-    if pauseWhenUnfocused.set:
-        cfg.setPauseWhenUnfocused(pauseWhenUnfocused.value)
+    if windowPosX.set or windowPosY.set:
+      cfg.setWindowPos(windowPosX.value, windowPosY.value)
+
+    if resizableWindow.set:
+      cfg.setResizableWindow(resizableWindow.value)
 
     if windowDecorations.set:
         cfg.setWindowDecorations(windowDecorations.value)
 
+
+  with settings.general:
+    if displayMode.set:
+      cfg.setDisplayMode(displayMode.value)
+
+    if pauseWhenUnfocused.set:
+        cfg.setPauseWhenUnfocused(pauseWhenUnfocused.value)
+
     if captureMouseOnFocus.set:
         cfg.setCaptureMouseOnFocus(captureMouseOnFocus.value)
+
+    if confirmQuit.set:
+        cfg.setConfirmQuit(confirmQuit.value)
+
 
 # }}}
 
