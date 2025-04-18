@@ -83,6 +83,11 @@
   folder within the game folder for the save games.
 
 
+## Loom
+
+- Listen to the audio drama in the **Extras** folder before playing the game!
+
+
 ## Lords of Chaos
 
 - Multi-language release (English, French, German).

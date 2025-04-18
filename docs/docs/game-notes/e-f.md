@@ -1,13 +1,22 @@
 # E–F
 
+## Elite (v1.0)
+
+- Read the novella in the **Extras** folder (**The Dark Wheel**) before
+  playing the game.
+
 ## Elite (v2.0)
 
 - Differences compared to v1.0:
     - Thargoids yield 40 Cr instead of 15
     - Military lasers allowed on all sides
     - Library function
-    - Bug fixes (e.g., you can't engage the docking computer while the hyperspace
-      countdown is proceeding).
+    - Bug fixes (e.g., you can't engage the docking computer while the
+      hyperspace countdown is proceeding).
+
+- Read the novella in the **Extras** folder (**The Dark Wheel**) before
+  playing the game.
+
 
 
 ## Elite (v2.0, Space Legends)
@@ -16,6 +25,9 @@
   cannot enter cheat codes.
 
 - This is the most recommended version.
+
+- Read the novella in the **Extras** folder (**The Dark Wheel**) before
+  playing the game.
 
 
 ## Elvira: Mistress of the Dark
@@ -33,6 +45,8 @@
 - The original game asks for security codes that were printed inside
   the sides of the game's box; we can't use the uncracked version until we
   find scans of those codes.
+
+- Read the novella in the **Extras** folder before playing the game!
 
 
 ## Eye of the Beholder (OCS)
