@@ -85,7 +85,8 @@
 
 ## Loom
 
-- Listen to the audio drama in the **Extras** folder before playing the game!
+- Listen to the audio drama in the **Extras** folder and read the **Book of
+  Patterns** _before_ you start the game to enjoy the story to its fullest.
 
 
 ## Lords of Chaos
