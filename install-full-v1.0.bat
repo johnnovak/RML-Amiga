@@ -118,14 +118,14 @@ IF %INSTALL_ROMS%==1 (
 ECHO [92mInstalling games package[0m
 ECHO/
 7za x -y -bso0 RML-Amiga-Games-%VERSION%.zip install-games-%VERSION%.bat || goto :error
-CALL install-games-%VERSION%.bat %DEST_PATH% || goto :error
+CALL install-games-%VERSION%.bat "%DEST_PATH%" || goto :error
 DEL install-games-%VERSION%.bat || goto :error
 
 IF %INSTALL_DEMOS%==1 (
   ECHO [92mInstalling demos package[0m
   ECHO/
   7za x -y -bso0 RML-Amiga-Demos-%VERSION%.zip install-demos-%VERSION%.bat || goto :error
-  CALL install-demos-%VERSION%.bat %DEST_PATH% || goto :error
+  CALL install-demos-%VERSION%.bat "%DEST_PATH%" || goto :error
   DEL install-demos-%VERSION%.bat || goto :error
 )
 
