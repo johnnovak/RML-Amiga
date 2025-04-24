@@ -1,0 +1,4 @@
+set CMD=Tools\7za.exe
+set OUT=package-output
+
+  

@@ -125,10 +125,10 @@ SET CMD=7za.exe
 SET TEMP=Temp
 SET ARCHIVE=RML-Amiga-{category}-v1.0.zip
 
-IF "%1" == "" (
+IF "%~1" == "" (
 	SET OUT_PATH_ARG=
 ) ELSE (
-	SET OUT_PATH_ARG=-o"%1"
+	SET OUT_PATH_ARG=-o"%~1"
 )
 
 """
@@ -147,7 +147,7 @@ DEL "%TEMP%\{name}.zip" || goto :error
 RMDIR %TEMP%
 
 ECHO/
-ECHO [92mInstallation of 'RML-Amiga-{category}-V1.0' completed.[0m
+ECHO [92mInstallation of '%ARCHIVE%' completed.[0m
 ECHO/
 IF NOT DEFINED FULL_INSTALL PAUSE
 EXIT /B 0
