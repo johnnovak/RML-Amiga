@@ -3,48 +3,55 @@
 The collection is split into several packs: **Base**, **Systems**, **ROMs**,
 **Games**, and **Demos**.
 
-Links to the latest versions of the packs:
+You can download the packs from here:
 
 <div class="compact" markdown>
-- [RML-Amiga-Base-v1.0](TODO)
-- [RML-Amiga-Systems-v1.0](TODO)
-- [RML-Amiga-ROMs-v1.0](TODO)
-- [RML-Amiga-Games-v1.0](TODO)
-- [RML-Amiga-Demos-v1.0](TODO)
+- [RML-Amiga-Base-v1.0](https://archive.org/details/rml-amiga-base-v1-0)
+- [RML-Amiga-Systems-v1.0](https://archive.org/details/rml-amiga-systems-v1-0)
+- [RML-Amiga-ROMs-v1.0](https://archive.org/details/rml-amiga-roms-v1-0)
+- [RML-Amiga-Games-v1.0](https://archive.org/details/rml-amiga-games-v1-0)
+- [RML-Amiga-Demos-v1.0](https://archive.org/details/rml-amiga-demos-v1-0)
 </div>
 
 
 ## Automatic installation
 
-The easiest way to install RML Amiga is to download all five packs and
-`install-full.bat` (it's included in the **Base** pack [here](TODO)), then put
-the packs and the batch file into a folder where you want the collection to
-live. This must be outside of `C:\Program Files` or any system folders.
-For example, `D:\Emulation\Amiga\RML-Amiga` is a good location.
+The easiest way to set up RML Amiga is to use the automatic installation
+method. TODO disk space
 
-Now double-click on `install-full-v10.bat` in Windows Explorer to start the
-installation. A window will appear, you'll be asked a few questions, then
-you'll be informed about the progress of the installation. The whole process
-shouldn't take more than 5-10 minutes. I recommend reading the [Why play Amiga
-games?](why-play-amiga-games.md) and [CRT emulation](crt-emulation.md)
-sections while waiting, especially if you're new to the Amiga.
+1. Designate a folder for your portable RML Amiga installation. This must be
+   outside of any system folder such as `C:\Program Files`. For example,
+   `D:\Emulation\RML-Amiga` is a good location. 
 
-Once the installation has succeeded, you can start WinUAE (the Amiga
-emulator) by running `winuae.exe` from your RML Amiga folder. It's a good idea
-to create a shortcut for `winuae.exe` on your desktop at this point so you can
-start it more easily.
+1. Download all five packs into this folder.
+
+1. Download the installation script `install-full-v1.0.bat` and the 7-zip
+   archiver (`7za.exe`) from the [Base pack archive.org
+   item](https://archive.org/details/rml-amiga-base-v1-0) into the same
+   folder. The contents of your folder should look like this:
+
+     TODO
+
+1. Double-click on `install-full-v1.0.bat` to start the installation and
+   follow the instructions in the appearing window.
+
+
+The installation will take about 10 minutes. It's a good idea to read the
+[Why play Amiga games?](why-play-amiga-games.md) and [CRT
+emulation](crt-emulation.md) sections while you're waiting.
+
+Once the installation has been completed, run `WinUAE\winua.exe` within your
+RML Amiga folder to start WinUAE, the Amiga emulator. It's a good idea to
+create a shortcut for `winuae.exe` on your desktop at this point.
+
+You can skip the rest of this section if you're eager to play some Amiga
+games. Onward to the [Getting started](getting-started.md) section!
 
 !!! note "RML Amiga is fully portable"
 
-    RML Amiga is fully self-contained in this folder of your choosing; in
-    other words, it's portable. RML Amiga won't create or modify any files
-    outside of its designated folder and it uses relative file paths
-    everywhere. This means you can freely move it between different drives or
-    even different computers without any problems.
-
-You can safely skip the rest of this section if you go the automatic
-installation route. Now it's time to play some games! Onwards to the [getting
-started](getting-started.md) section!
+    RML Amiga uses relative paths and won't create or modify any files
+    outside of its designated folder. You can move your RML Amiga folder
+    between different drives or even different computers without any problems.
 
 
 ## About the packs
@@ -120,9 +127,9 @@ The **ROMs** pack is not necessary if you have acquired the ROM files from
 elsewhere (see [Supplying your own Kickstart
 ROMs](#supplying-your-own-kickstart-roms)).
 
-Once you've downloaded the packs, extract them into a folder you have full
-write access to (e.g., `D:\Emulation\Amiga\RML-Amiga`). We will refer to this
-folder as `$RML_BASE` from now on.
+Once you've downloaded these packs, extract them into a folder you have full
+write access to (e.g., `D:\Emulation\RML-Amiga`). We will refer to this folder
+as `$RML_BASE` from now on.
 
 !!! note 
 
@@ -131,10 +138,10 @@ folder as `$RML_BASE` from now on.
     installations. The included WinUAE will never save any data outside of the
     `$RML_BASE` folder.
 
-Now download the **Games** pack and `install-games-v10.bat`, then **Demos** and
-`install-demos-v10.bat` if you're interested in watching glorious Amiga
+Now download the **Games** pack and `install-games-v1.0.bat`, then **Demos** and
+`install-demos-v1.0.bat` if you're interested in watching glorious Amiga
 demoscene productions. Move all these files into `$RML_BASE`, then run
-`install-games-v10.bat` and `install-demos-v10.bat` (the installation will
+`install-games-v1.0.bat` and `install-demos-v1.0.bat` (the installation will
 take a while).
 
 It's a good idea to create a shortcut to `$RML_BASE\winuae.exe` on your
