@@ -501,8 +501,8 @@ proc setCrtEmulation(c: UaeConfig, enabled: bool,
       else:
         c.setFilter(if sharperNtsc: NtscSharpFilter else: NtscFilter)
 
-    else:
-      c.setFilter(NoFilter)
+  else:
+    c.setFilter(NoFilter)
 
 # }}}
 # {{{ setShaderQuality()

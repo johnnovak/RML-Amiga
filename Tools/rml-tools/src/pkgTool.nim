@@ -97,15 +97,20 @@ proc validate(categoryPath: Path, names: seq[Path]) =
 # {{{ createPackScript()
 proc createPackScript(category: string, names: seq[Path]): string =
   result = """
-set CMD=Tools\7za.exe
-set OUT=package-output
+SET CMD=Tools\7za.exe
+SET OUT=package-output
 
 """
 
   for name in names:
     result &= fmt"""
-%CMD% a -tzip -r %OUT%\"{name}.zip" ^
+%CMD% a -tzip -r "%OUT%\{name}.zip" ^
 	"{category}\{name}" ^
+	"Configurations\{category}\{name}.uae" ^
+	"Configurations\{category}\{name} [*].uae"
+
+%CMD% rn "%OUT%\{name}.zip" Configurations "Original Configs"
+%CMD% a  "%OUT%\{name}.zip" ^
 	"Configurations\{category}\{name}.uae" ^
 	"Configurations\{category}\{name} [*].uae"
 
@@ -116,29 +121,40 @@ set OUT=package-output
 proc createUnpackScript(category: string, names: seq[Path]): string =
   result = fmt"""
 @echo off
-set CMD=7za.exe
-set TEMP=Temp
-set ARCHIVE=RML-Amiga-{category}-V1.0.zip
+SET CMD=7za.exe
+SET TEMP=Temp
+SET ARCHIVE=RML-Amiga-{category}-v1.0.zip
+
+IF "%1" == "" (
+	SET OUT_PATH_ARG=
+) ELSE (
+	SET OUT_PATH_ARG=-o"%1"
+)
 
 """
 
   for idx, name in names.pairs():
+    let escapedName = ($name).replace("&", "^&")
     result &= fmt"""
-echo [{(idx+1):>4} / {names.len}] Extracting '{name}'
-%CMD% e -o%TEMP% -y -bso0 %ARCHIVE% "{name}.zip"
-%CMD% x -y -bso0 "%TEMP%\{name}.zip"
-del "%TEMP%\{name}.zip"
+ECHO   [{(idx+1):>4} / {names.len}] - Extracting '{escapedName}'
+%CMD% e -o%TEMP% -y -bso0 %ARCHIVE% "{name}.zip" || goto :error
+%CMD% x -y -bso0 %OUT_PATH_ARG% "%TEMP%\{name}.zip" || goto :error
+DEL "%TEMP%\{name}.zip" || goto :error
 
 """
 
   result &= """
-rmdir %TEMP%
+RMDIR %TEMP%
 
-echo""
-echo Installation of '%ARCHIVE%' has been completed.
-echo""
+ECHO/
+ECHO [92mInstallation of 'RML-Amiga-{category}-V1.0' completed.[0m
+ECHO/
+IF NOT DEFINED FULL_INSTALL PAUSE
+EXIT /B 0
 
-pause
+:error
+IF NOT DEFINED FULL_INSTALL PAUSE
+EXIT /B %ERRORLEVEL%
 """
 
 # }}}
