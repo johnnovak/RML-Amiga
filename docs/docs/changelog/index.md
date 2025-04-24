@@ -67,6 +67,7 @@ Included software (all are 64-bit versions):
 
 <div class="compact" markdown>
   - [WinUAE 5.3.1](https://www.winuae.net/)
-  - [ReShade 6.4.1](https://reshade.me/) (with custom patch to remove the nag screen)
   - [SPS Image Support Library 5.1](https://www.softpres.org/download) (CAPS IPF image plugin) 
+  - [ReShade 6.4.1](https://reshade.me/) (with custom patch to disable auto-updates and the nag screen)
+  - [7-zip]() TODO (command line version)
 </div>
