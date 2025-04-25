@@ -1,9 +1,9 @@
 # Installation
 
-The collection is split into several packs: **Base**, **Systems**, **ROMs**,
+The collection is split into five packs: **Base**, **Systems**, **ROMs**,
 **Games**, and **Demos**.
 
-You can download the packs from here:
+You can download the packs from archive.org:
 
 <div class="compact" markdown>
 - [RML-Amiga-Base-v1.0](https://archive.org/details/rml-amiga-base-v1-0)
@@ -13,36 +13,51 @@ You can download the packs from here:
 - [RML-Amiga-Demos-v1.0](https://archive.org/details/rml-amiga-demos-v1-0)
 </div>
 
+The total size of the packs is 16 GB for v1.0, and you'll need about 18 GB for
+the installed collection. So about 36 GB of free disk space should suffice to
+be on the safe side. You can delete the packs after the installation if you
+want to reclaim disk space.
+
+If you're really short on free space, the installer scripts support installing
+RML Amiga to a different drive or partition, so you can download the packs to
+one drive, and install them to another.
+
 
 ## Automatic installation
 
 The easiest way to set up RML Amiga is to use the automatic installation
-method. TODO disk space
+method. 
 
-1. Designate a folder for your portable RML Amiga installation. This must be
-   outside of any system folder such as `C:\Program Files`. For example,
+1. Pick a destination folder for your RML Amiga installation. This must be
+   outside of any system folders such as `C:\Program Files`. For example,
    `D:\Emulation\RML-Amiga` is a good location. 
 
-1. Download all five packs into this folder.
+1. Download all five packs into this folder. (If you're short on free disk
+   space, you can download the packs into a temporary folder on another
+   drive, and then install them into your destination folder from there.)
 
 1. Download the installation script `install-full-v1.0.bat` and the 7-zip
    archiver (`7za.exe`) from the [Base pack archive.org
-   item](https://archive.org/details/rml-amiga-base-v1-0) into the same
-   folder. The contents of your folder should look like this:
+   item](https://archive.org/details/rml-amiga-base-v1-0) into this
+   folder as well. The contents of the folder should now look like this:
 
-     TODO
+     <figure markdown="span">
+       ![Starting games](img/full-install.png){ width="70%" }
+     </figure>
 
 1. Double-click on `install-full-v1.0.bat` to start the installation and
-   follow the instructions in the appearing window.
+   follow the instructions in the appearing window. (Just press ++enter++ when
+   asked for the installation folder if you want to install RML Amiga into the
+   same folder, or enter a different destination folder as per the
+   instructions.)
 
-
-The installation will take about 10 minutes. It's a good idea to read the
+The installation will take about 15-20 minutes. It's a good idea to read the
 [Why play Amiga games?](why-play-amiga-games.md) and [CRT
-emulation](crt-emulation.md) sections while you're waiting.
+emulation](crt-emulation.md) sections while waiting.
 
-Once the installation has been completed, run `WinUAE\winua.exe` within your
-RML Amiga folder to start WinUAE, the Amiga emulator. It's a good idea to
-create a shortcut for `winuae.exe` on your desktop at this point.
+Once the installation has been completed, you can delete the `RML-Amiga-*.zip`
+packs to reclaim disk space. Moving them to a different folder for safekeeping
+is a better idea, though, if you have the spare space.
 
 You can skip the rest of this section if you're eager to play some Amiga
 games. Onward to the [Getting started](getting-started.md) section!
@@ -80,10 +95,9 @@ Here is a detailed description of the packs:
   present!). It's a nested ZIP archive, similar to the **Games** pack.
 
 
-The folder structure in all packs is relative to the `$RML_BASE` folder. In
-other words, if you expand all archives into `$RML_BASE` (double-expand in
-the case of the **Games** and **Demos** packs), you'll get the correct folder
-structure.
+The folder structure in all packs is relative to the `$RML_BASE` folder. If
+you expand all archives into `$RML_BASE` (double-expand in the case of the
+**Games** and **Demos** packs), you'll get the correct folder structure.
 
 !!! note "The practical reality we live in"
 
@@ -129,25 +143,31 @@ ROMs](#supplying-your-own-kickstart-roms)).
 
 Once you've downloaded these packs, extract them into a folder you have full
 write access to (e.g., `D:\Emulation\RML-Amiga`). We will refer to this folder
-as `$RML_BASE` from now on.
-
-!!! note 
-
-    If you already have WinUAE installed, no problem. The collection uses its
-    own copy of WinUAE in portable mode, so it won't interfere with existing
-    installations. The included WinUAE will never save any data outside of the
-    `$RML_BASE` folder.
+as `$RML_BASE` from now on. If you already have WinUAE installed, no problem.
+The collection uses its own copy of WinUAE in portable mode, so it won't
+interfere with existing installations. The included WinUAE will never save any
+data outside of the `$RML_BASE` folder.
 
 Now download the **Games** pack and `install-games-v1.0.bat`, then **Demos** and
 `install-demos-v1.0.bat` if you're interested in watching glorious Amiga
 demoscene productions. Move all these files into `$RML_BASE`, then run
 `install-games-v1.0.bat` and `install-demos-v1.0.bat` (the installation will
-take a while).
+take about 15 minutes for the **Games** pack).
 
-It's a good idea to create a shortcut to `$RML_BASE\winuae.exe` on your
-desktop at this point.
+You can optionally pass the destination folder to the installer scripts as an
+argument. This is handy if you're short on disk space, so you can download the
+archives to one drive or partition and then install them to a different one.
 
 !!! note 
+
+    The **Games** and **Demos** nested archives; each game and demo resides in
+    its own ZIP archive inside the big ZIP archive. You'd need three times the
+    disk space if you wanted to expand these manually. That's why using the
+    installer scripts is recommended because the scripts will expand the
+    nested ZIP files one by one, so you'll only need a bit more than twice the
+    disk space.
+
+!!! tip "Installing only a few games"
 
     Alternatively, you can grab only the games you're interested in. Each game
     resides in its own ZIP archive inside the big **Games** ZIP file. You can

@@ -62,6 +62,38 @@ instruments, while the DOS port often only has synthetic-sounding AdLib/OPL
 music, no sound effects, or some generic MIDI conversion of the original Amiga
 music.
 
+---
+
+<div class="grid" markdown>
+
+<figure markdown="span">
+  ![Uninvited](img/uninvited-title-amiga.png)
+  <figcaption>Uninvited (Amiga, 1987)</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Uninvited](img/uninvited-title-dos.png)
+
+  <figcaption>Uninvited (DOS, CGA, 1988)</figcaption>
+</figure>
+
+
+</div>
+
+<div class="grid" markdown>
+
+<figure markdown="span">
+  ![It Came From the Desert](img/desert-nursie-amiga.png)
+  <figcaption>It Came From the Desert (Amiga, 1989)</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![It Came From the Desert](img/desert-nursie-dos.png)
+  <figcaption>It Came From the Desert (DOS, EGA, 1990)</figcaption>
+</figure>
+
+</div>
+
 ## General recommendations
 
 In short, for pre-1990 games, it's not even a contest---the Amiga almost
