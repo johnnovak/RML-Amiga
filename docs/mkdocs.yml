@@ -1,6 +1,6 @@
 # Project information
 site_name: Rincewind's Magic Luggage Full of Amiga Goodies
-site_url: https://amiga-collection.org/
+site_url: https://rml-amiga.johnnovak.net/
 site_author: Rincewind
 site_description: >-
   It's a magic luggage, full of Amiga goodies
@@ -62,6 +62,10 @@ plugins:
       slide_effect: 'none'
       skip_classes:
         - skip-lightbox
+
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+
   - redirects:
       redirect_maps:
         # Convenience redirects for top level sections (so for example
