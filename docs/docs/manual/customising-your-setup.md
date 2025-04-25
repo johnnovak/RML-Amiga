@@ -36,7 +36,7 @@ a larger graphics scaling factor, use windowed mode by default, etc.)
 The tool has a simple single-window interface:
 
 <figure markdown="span">
-  ![Configuration tool](img/config-tool.png){ align=center }
+  ![Configuration tool](images/config-tool.png){ align=center }
 </figure>
 
 - Config settings are organised into categories; you can switch between them

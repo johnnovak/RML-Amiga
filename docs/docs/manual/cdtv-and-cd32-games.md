@@ -16,12 +16,12 @@ CD-exclusive titles as well, such as
 [Pirates! Gold](../game-notes/p.md#pirates-gold-cd32)).
 
 <figure markdown="span">
-  ![Amiga CD32 and controller](img/amiga-cd32.jpg)
+  ![Amiga CD32 and controller](images/amiga-cd32.jpg)
   <figcaption>Amiga CD32 and the included game controller</figcaption>
 </figure>
 
 <figure markdown="span">
-  ![Commodore CDTV and controller](img/cdtv.jpg)
+  ![Commodore CDTV and controller](images/cdtv.jpg)
   <figcaption>A fully decked-out Commodore CDTV with all optional peripherals and a special black Commodore 1084S monitor</figcaption>
 </figure>
 
@@ -45,12 +45,12 @@ Although you can play these games (typically point-and-click adventures) with
 a gamepad, it's usually more convenient to use the mouse.
 
 <figure markdown="span">
-  ![Amiga CD32 controller](img/cd32-controller.jpg)
+  ![Amiga CD32 controller](images/cd32-controller.jpg)
   <figcaption>Amiga CD32 controller</figcaption>
 </figure>
 
 <figure markdown="span">
-  ![Commodore CDTV controller](img/cdtv-controller.jpg)
+  ![Commodore CDTV controller](images/cdtv-controller.jpg)
   <figcaption>Commodore CDTV controller</figcaption>
 </figure>
 

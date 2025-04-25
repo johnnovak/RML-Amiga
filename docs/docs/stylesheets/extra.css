@@ -116,24 +116,27 @@ small {
 /* Header */
 @media screen and (min-width: 76.25em) {
   .md-header__title {
-    padding-left: 4.2rem;
+    padding-left: 6.2rem;
   }
   .md-tabs__list {
-    padding-left: 4.6rem;
+    padding-left: 6.6rem;
   }
 }
 .md-header__button.md-logo {
   position: absolute;
-  top: 0.1rem;
+  top:  0.00rem;
 }
 .md-header__button.md-logo :-webkit-any(img,svg) {
-  height: 3.4rem;
+  height: 3.6rem;
+  margin-left: -1em;
 }
 .md-header__button.md-logo :-moz-any(img,svg) {
-  height: 3.4rem;
+  height: 3.6rem;
+  margin-left: -1em;
 }
 .md-header__button.md-logo :is(img,svg) {
-  height: 3.4rem;
+  height: 5.0rem;
+  margin-left: -2.0em;
 }
 
 /* Headings */

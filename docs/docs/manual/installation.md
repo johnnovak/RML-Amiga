@@ -42,7 +42,7 @@ method.
    folder as well. The contents of the folder should now look like this:
 
      <figure markdown="span">
-       ![Starting games](img/full-install.png){ width="70%" }
+       ![Starting games](images/full-install.png){ width="70%" }
      </figure>
 
 1. Double-click on `install-full-v1.0.bat` to start the installation and
@@ -171,8 +171,11 @@ archives to one drive or partition and then install them to a different one.
 
     Alternatively, you can grab only the games you're interested in. Each game
     resides in its own ZIP archive inside the big **Games** ZIP file. You can
-    view the list of nested ZIP files on archive.org by clicking on "View
-    Files", then you can download them individually.
+    view the list of nested ZIP files on archive.org by clicking on the "Show
+    All" link in the downloads box on the right side, then on the "View
+    Contents" link next to the ZIP file's name in the file listing. That will
+    take you to the list of nested ZIP archives which you can download one by
+    on by simply clicking on their names.
 
 !!! warning "This voids your warranty, pal!"
 

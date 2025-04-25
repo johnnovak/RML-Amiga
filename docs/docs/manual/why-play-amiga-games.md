@@ -67,12 +67,12 @@ music.
 <div class="grid" markdown>
 
 <figure markdown="span">
-  ![Uninvited](img/uninvited-title-amiga.png)
+  ![Uninvited](images/uninvited-title-amiga.png)
   <figcaption>Uninvited (Amiga, 1987)</figcaption>
 </figure>
 
 <figure markdown="span">
-  ![Uninvited](img/uninvited-title-dos.png)
+  ![Uninvited](images/uninvited-title-dos.png)
 
   <figcaption>Uninvited (DOS, CGA, 1988)</figcaption>
 </figure>
@@ -83,12 +83,12 @@ music.
 <div class="grid" markdown>
 
 <figure markdown="span">
-  ![It Came From the Desert](img/desert-nursie-amiga.png)
+  ![It Came From the Desert](images/desert-nursie-amiga.png)
   <figcaption>It Came From the Desert (Amiga, 1989)</figcaption>
 </figure>
 
 <figure markdown="span">
-  ![It Came From the Desert](img/desert-nursie-dos.png)
+  ![It Came From the Desert](images/desert-nursie-dos.png)
   <figcaption>It Came From the Desert (DOS, EGA, 1990)</figcaption>
 </figure>
 

@@ -12,7 +12,7 @@ game controller (typically a joystick) into **port 2** (labelled as `2
 JOYSTICK`).
 
 <figure markdown="span">
-  ![Amiga joystick ports](img/joystick-ports.jpg)
+  ![Amiga joystick ports](images/joystick-ports.jpg)
   <figcaption>Joystick ports on the Amiga 500</figcaption>
 </figure>
 
@@ -72,7 +72,7 @@ The left and right mouse buttons work as expected, and the middle mouse is
 used to uncapture the mouse (see [Input capturing](#input-capturing)).
 
 <figure markdown="span">
-  ![Original Amiga "tank mouse"](img/tank-mouse.jpg)
+  ![Original Amiga "tank mouse"](images/tank-mouse.jpg)
   <figcaption>The original Amiga "tank mouse"</figcaption>
 </figure>
 
@@ -100,7 +100,7 @@ There are a few minor differences, though:
   to press ++lwin++-++s++ or ++home++-++s++.
 
 <figure markdown="span">
-  ![Amiga 500 with built-in keyboard](img/amiga-500.jpg)
+  ![Amiga 500 with built-in keyboard](images/amiga-500.jpg)
   <figcaption>Amiga 500 with built-in keyboard</figcaption>
 </figure>
 
@@ -163,7 +163,7 @@ different physical button on your joystick to auto-detect it the next time you
 start this game, so you won't need to do the port-swapping trick.
 
 <figure markdown="span">
-  ![Competition Pro and Quickshot II digital joysticks](img/joysticks.jpg)
+  ![Competition Pro and Quickshot II digital joysticks](images/joysticks.jpg)
   <figcaption>The two most popular digital joysticks of all time: the Competition
   Pro (left), and the Quickshot II (right). Over 100 million units were sold
   of these two back in the 80s and 90s.</figcaption>

@@ -13,7 +13,7 @@ note that none of these tricks involve modifying the game's executable or data
 files---such hacks are not allowed in RML Amiga.
 
 <figure markdown="span">
-  ![Amiga 500 with GVP A500-HD+ side expansion](img/amiga-500-gvp.jpg)
+  ![Amiga 500 with GVP A500-HD+ side expansion](images/amiga-500-gvp.jpg)
   <figcaption>Amiga 500 equipped with the popular GVP A500-HD+ hard drive side
   expansion running Pool of Radiance</figcaption>
 </figure>
@@ -69,7 +69,7 @@ Here are some good custom Workbench examples:
 </div>
 
 <figure markdown="span">
-  ![The Secret of Monkey Island Workbench start icon](img/wb-monkey-island.jpg)
+  ![The Secret of Monkey Island Workbench start icon](images/wb-monkey-island.jpg)
   <figcaption>The Secret of Monkey Island Workbench start icon</figcaption>
 </figure>
 

@@ -21,7 +21,7 @@ configurations tab from any other tab by selecting
 :material-numeric-1-circle:{:.circ-num} **Configurations** in the left pane,
 or by just simply restarting WinUAE.
 
-![Starting games](img/starting-games.png)
+![Starting games](images/starting-games.png)
 
 Once you're in the **Configurations** tab:
 
@@ -86,7 +86,7 @@ on-screen display.
 The on-screen display (OSD) in the bottom-right corner is a handy little thing
 that gives you feedback about what the emulator is currently doing.
 
-  ![On-screen display](img/osd.png)
+  ![On-screen display](images/osd.png)
 
   - :material-numeric-1-circle:{: .circ-num} **Audio buffer** utilisation
     meter (if this turns red and you hear distorted audio, you'll need to

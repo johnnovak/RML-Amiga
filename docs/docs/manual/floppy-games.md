@@ -90,7 +90,7 @@ You can view the disk swapper configuration for the currently loaded game
 config in the **Host / Disk swapper** configuration tab of the WinUAE
 settings window.
 
-![Disk swapper](img/disk-swapper.png)
+![Disk swapper](images/disk-swapper.png)
 
 !!! warning "Patience is still a virtue"
 

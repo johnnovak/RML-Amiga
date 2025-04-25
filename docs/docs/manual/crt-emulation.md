@@ -38,7 +38,7 @@ blocky as on the PC! On well-made art, the "pixels" literally melted away; you
 did not see jagged stairstep edges but smooth curves! 
 
 <figure markdown="span">
-  ![](img/legend-of-faerghail.png)
+  ![Legend of Faerghail](images/legend-of-faerghail.png)
   <figcaption>Legend of Faerghail (PAL, 3.0x scaling)<br>(click on the image
   to enlarge it)</figcaption>
 </figure>
@@ -64,7 +64,7 @@ want to force the PAL shader even in NTSC games to mitigate this as that
 renders more "densely packed" scanlines.
 
 <figure markdown="span">
-  ![](img/pinball-dreams.png)
+  ![Pinball Dreams](images/pinball-dreams.png)
   <figcaption>Pinball Dreams (PAL, overscan, 3.5x scaling)<br>(click on the image
   to enlarge it)</figcaption>
 </figure>
