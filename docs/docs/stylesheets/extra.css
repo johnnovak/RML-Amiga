@@ -28,6 +28,10 @@ small {
   }
 }
 
+.md-sidebar {
+  padding-top: 4.5em;
+}
+
 .md-content a {
   font-weight: 600;
 }

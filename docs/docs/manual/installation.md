@@ -6,11 +6,11 @@ The collection is split into five packs: **Base**, **Systems**, **ROMs**,
 You can download the packs from archive.org:
 
 <div class="compact" markdown>
-- [RML-Amiga-Base-v1.0](https://archive.org/details/rml-amiga-base-v1-0)
-- [RML-Amiga-Systems-v1.0](https://archive.org/details/rml-amiga-systems-v1-0)
-- [RML-Amiga-ROMs-v1.0](https://archive.org/details/rml-amiga-roms-v1-0)
-- [RML-Amiga-Games-v1.0](https://archive.org/details/rml-amiga-games-v1-0)
-- [RML-Amiga-Demos-v1.0](https://archive.org/details/rml-amiga-demos-v1-0)
+- [RML-Amiga-Base-v1.0](https://archive.org/details/RML-Amiga-Base-v1-0)
+- [RML-Amiga-Systems-v1.0](https://archive.org/details/RML-Amiga-Systems-v1-0)
+- [RML-Amiga-ROMs-v1.0](https://archive.org/details/RML-Amiga-ROMs-v1-0)
+- [RML-Amiga-Games-v1.0](https://archive.org/details/RML-Amiga-Games-v1-0)
+- [RML-Amiga-Demos-v1.0](https://archive.org/details/RML-Amiga-Demos-v1-0)
 </div>
 
 The total size of the packs is 16 GB for v1.0, and you'll need about 18 GB for
