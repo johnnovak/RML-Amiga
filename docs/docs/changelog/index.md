@@ -69,5 +69,5 @@ Included software (all are 64-bit versions):
   - [WinUAE 5.3.1](https://www.winuae.net/)
   - [SPS Image Support Library 5.1](https://www.softpres.org/download) (CAPS IPF image plugin) 
   - [ReShade 6.4.1](https://reshade.me/) (with custom patch to disable auto-updates and the nag screen)
-  - [7-zip]() TODO (command line version)
+  - [7-zip]() 24.09 (command line version)
 </div>
