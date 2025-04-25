@@ -1,0 +1,705 @@
+// Custom font for headings
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700");
+
+@font-face {
+  font-family: "IBM VGA";
+  src: url('../assets/fonts/Web437_IBM_VGA_8x16.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*--------------------------------------------------------------------------*/
+/* Colour overrides                                                         */
+/*--------------------------------------------------------------------------*/
+/* Instead of setting the 'pink' palette, we'll keep the default palette
+ * and apply customisation based on the 'pink' palette on top of that to keep
+ * things simple. */
+:root {
+  --md-primary-fg-color: #e92063;
+  --md-primary-fg-color--light: #ec417a;
+  --md-primary-fg-color--dark: #c3185d;
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: #ffffffb3;
+  --md-accent-fg-color: #f50056;
+  --md-accent-fg-color--transparent: #f500561a;
+  --md-accent-bg-color: #fff;
+  --md-accent-bg-color--light: #ffffffb3;
+  --md-typeset-kbd-color: #fffffff0;
+}
+:root, [data-md-color-scheme=default] {
+  --md-default-fg-color: #333;
+}
+
+// Additional colour definitions
+:root {
+  --header-bg-color: #242424;
+}
+
+/*--------------------------------------------------------------------------*/
+/* General                                                                  */
+/*--------------------------------------------------------------------------*/
+
+$min-width-2col:    45em;
+$min-width-3col:    60em;
+$max-width-content: 56rem;
+
+body {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+small {
+  font-size: 86%;
+}
+
+.md-content {
+  padding-bottom: 1.5rem;
+
+  @media screen and (min-width: $min-width-3col) {
+    padding-bottom: 3rem;
+  }
+
+  a {
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    list-style: square;
+  }
+  .compact ul li {
+    margin-bottom: 0.1rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/* Dev site banner                                                          */
+/*--------------------------------------------------------------------------*/
+.dev-site {
+  display: none;
+
+  &.banner {
+    background: #cc3010;
+    text-align: center;
+    padding: 0.8rem;
+    position: sticky;
+
+    p {
+      color: #ff9;
+      font-size: 0.80rem;
+      margin: 0.1rem;
+    }
+    a {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+.show {
+  display: block !important;
+}
+
+/*--------------------------------------------------------------------------*/
+/* Header & Navigation                                                      */
+/*--------------------------------------------------------------------------*/
+.md-header {
+
+  background-color: var(--header-bg-color);
+  /*
+   * There's some weird JavaScript that dynamically toggles the header shadow
+   * based on the configuration and some other things... We don't need that, we
+   * always want the header shadow to be visible. Without this hack, the shadow
+   * only appears on the front page when scrolled down to about 70% of the page.
+   */
+  box-shadow: 0 0 .2rem #0000001a,0 .2rem .4rem #0003;
+
+  &__title {
+    font-weight: 700;
+    font-size: 0.98rem;
+  }
+
+  &__button.md-logo {
+    position: absolute;
+    top: 0.1rem;
+    margin-left: -1em;
+
+    :-webkit-any(img,svg) {
+      height: 4.8rem;
+    }
+    :-moz-any(img,svg) {
+      height: 4.8rem;
+    }
+    :is(img,svg) {
+      height: 4.8rem;
+    }
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+.md-nav {
+  font-size: 0.72rem;
+
+}
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title[for=__drawer] {
+    background-color: var(--header-bg-color);
+  }
+}
+
+.md-tabs {
+  background-color: #666;
+
+  &__item {
+    display: inline-block;
+    height: 2.25rem;
+  }
+  &__link {
+    font-size: .76rem;
+    margin-top: .63rem;
+  }
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-header__title {
+    padding-left: 6.4rem;
+  }
+  .md-tabs__list {
+    padding-left: 6.8rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/* Search                                                                   */
+/*--------------------------------------------------------------------------*/
+@media screen and (min-width: $min-width-3col) {
+  .md-search__form {
+    background-color: #ffffff20;
+  }
+  .md-search__form:hover {
+    background-color: #ffffff38;
+  }
+}
+
+/****************************************************************************/
+/* Main content styles                                                      */
+/****************************************************************************/
+
+.md-typeset {
+
+  /*------------------------------------------------------------------------*/
+  /* Headings                                                               */
+  /*------------------------------------------------------------------------*/
+  h1 {
+    font: 1.84rem/1.2 Titillium Web;
+    letter-spacing: 0;
+  }
+  h2 {
+    font: 700 1.30rem/1.4 Titillium Web;
+    letter-spacing: 0;
+    clear: both;
+    margin: 2rem 0 1.0rem;
+  }
+  h3 {
+    font: 600 1.10rem/1.3 Titillium Web;
+    letter-spacing: 0;
+    clear: both;
+  }
+  h4 {
+    font: 600 0.93rem/1.4 Titillium Web;
+    margin-top: 1.2rem;
+    letter-spacing: 0;
+    clear: both;
+  }
+  h5 {
+    font: 600 0.88rem/1.4 Titillium Web;
+    margin-bottom: 0.64rem;
+    letter-spacing: 0;
+    clear: both;
+    text-transform: none;
+    color: var(--md-default-fg-color);
+  }
+  code {
+    font-size: 0.704rem;
+    letter-spacing: 0;
+    clear: both;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  /*------------------------------------------------------------------------*/
+  /* Admonitions                                                            */
+  /*------------------------------------------------------------------------*/
+  .admonition,
+  details {
+    font-size: 90%;
+    border: none;
+    box-shadow: none;
+  }
+  .admonition code {
+    background-color: rgba(0, 0, 0, 0.055);
+  }
+
+  // Note
+  .admonition.note,
+  details.note {
+    background: #448aff1a;
+  }
+  .note {
+    > .admonition-title,
+    > summary {
+        background-color: #448aff30;
+    }
+  }
+
+  // Abstract
+  .admonition.abstract,
+  details.abstract {
+    background: #00b0ff1a;
+  }
+  .abstract {
+    > .admonition-title,
+    > summary {
+        background-color: #00b0ff30;
+    }
+  }
+
+  // Info
+  .admonition.info,
+  details.info {
+    background: #00b8d41a;
+  }
+  .info {
+    > .admonition-title,
+    > summary {
+        background-color: #00b8d430;
+    }
+  }
+
+  // Important
+  .admonition.important,
+  details.important {
+    background: #00bfa51a;
+  }
+  .important {
+    > .admonition-title {
+        background-color: #00bfa530;
+
+        &:before {
+          background-color: #00bfa5;
+        }
+    }
+    > summary {
+        background-color: #00bfa530;
+
+        &:before {
+          background-color: #00bfa5;
+      }
+    }
+  }
+
+  // Tip
+  .admonition.tip,
+  details.tip {
+    background: #00bfa51a;
+  }
+  .tip {
+    > .admonition-title,
+    > summary {
+        background-color: #00bfa530 ;
+    }
+  }
+
+  // Success
+  .admonition.success,
+  details.success {
+    background: #00c8531a;
+  }
+  .success {
+    > .admonition-title,
+    > summary {
+        background-color: #00c85330 ;
+    }
+  }
+
+  // Question
+  .admonition.question,
+  details.question {
+    background: #00b07020;
+  }
+  .question {
+    > .admonition-title,
+    > summary {
+        background-color: #00b07040;
+    }
+  }
+
+  // Warning
+  .admonition.warning,
+  details.warning {
+    background: #ff91001a;
+  }
+  .warning {
+    > .admonition-title,
+    > summary {
+        background-color: #ff910030;
+    }
+  }
+
+  // Danger
+  .admonition.danger,
+  details.danger {
+    background: #f017341a;
+  }
+  .danger {
+    > .admonition-title {
+        background-color: #f0173430;
+
+        &:before {
+          background-color: #ff1744;
+        }
+    }
+    > summary {
+        background-color: #f0173430;
+
+        &:before {
+          background-color: #ff1744;
+        }
+    }
+  }
+
+  // Failure
+  .admonition.failure,
+  details.failure {
+    background: #ff52521a;
+  }
+  .failure {
+    > .admonition-title,
+    > summary {
+        background-color: #ff525230;
+    }
+  }
+
+  // Bug
+  .admonition.bug,
+  details.bug {
+    background: #f500571a;
+  }
+  .bug {
+    > .admonition-title,
+    > summary {
+        background-color: #f5005730;
+    }
+  }
+
+  // Example
+  .admonition.example,
+  details.example {
+    background: #3c10f016;
+  }
+  .example {
+    > .admonition-title,
+    > summary {
+        background-color: #3c10f030;
+    }
+  }
+
+  // Quote
+  .admonition.quote,
+  details.quote {
+    background: #9e9e9e20;
+  }
+  .quote {
+    > .admonition-title,
+    > summary {
+        background-color: #9e9e9e40;
+    }
+  }
+
+  // Admonition - Question, Help, FAQ
+  :-webkit-any(.question,.help,.faq)>:-webkit-any(.admonition-title,summary):before,
+  :-moz-any(.question,.help,.faq)>:-moz-any(.admonition-title,summary):before,
+  :is(.question,.help,.faq)>:is(.admonition-title, summary):before {
+    background-color: #00b070;
+  }
+
+  /*------------------------------------------------------------------------*/
+  /* Tables                                                                 */
+  /*------------------------------------------------------------------------*/
+  .center-table {
+    text-align: center;
+
+    :is(td,th):not([align]) {
+      // Reset alignment for table cells */
+      text-align: initial;
+    }
+  }
+
+  table:not([class]) {
+    font-size: 0.78rem;
+    border: none;
+
+    th, td {
+      padding: 0.55rem 0.62rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+    ul {
+      margin-left: 0;
+    }
+  }
+  .compact table:not([class]) {
+    th, td {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+    }
+  }
+
+  /*------------------------------------------------------------------------*/
+  /* Images                                                                 */
+  /*------------------------------------------------------------------------*/
+  figure {
+    max-width: 1200px;
+
+    margin: 0.5rem auto 1rem auto;
+
+    p {
+      margin: 0;
+    }
+    img {
+      margin: 0.5rem auto;
+    }
+    audio {
+      width: 17rem;
+    }
+  }
+  figcaption {
+    max-width: 28rem;
+    margin: 0 auto;
+    color: #777;
+    font-size: 95%;
+
+    p {
+      margin: 0.4rem 0 1.2rem 0;
+    }
+  }
+
+  h2 .twemoji {
+    height: 2.1rem;
+    margin-right: 0.4rem;
+  }
+
+  /*------------------------------------------------------------------------*/
+  /* Misc                                                                   */
+  /*------------------------------------------------------------------------*/
+  kbd {
+    display: inline-block;
+    padding: 0 6px;
+    margin: 0 2px;
+    border-radius: 2px;
+    box-shadow:
+      0  0px   0 1px var(--md-typeset-kbd-border-color),
+      0  3px   0 1px var(--md-typeset-kbd-border-color),
+      0 -2px 4px     var(--md-typeset-kbd-accent-color) inset;
+  }
+
+  // Definition lists
+  dl {
+    dt {
+      font-weight: 600;
+    }
+    dd {
+      margin-top: 0.25rem;
+    }
+  }
+
+  /*
+  dl {
+    dd {
+      p {
+        margin-top: 0.7em;
+        margin-bottom: 0.7em;
+      }
+      ul {
+        margin-top: 0.8em;
+        margin-bottom: 0.8em;
+      }
+    }
+    dt {
+      a {
+        font-size: 1.15em;
+        font-family: Titillium Web;
+        color: var(--md-default-fg-color);
+
+        &:hover {
+          color: var(--md-default-fg-color);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  */
+
+  // Tags
+  em.default {
+    position: relative;
+    top: -0.05rem;
+    margin-right: 0.1rem;
+    padding: 0.05rem 0.25rem;
+
+    border-radius: 0.13rem;
+
+    font-size: 0.6rem;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02rem;
+
+    background: #888;
+    color: var(--md-primary-bg-color);
+  }
+
+  // DOS prompt
+  .dos-prompt pre>code {
+    padding: 0.67rem 0.8rem 0.5rem 0.8rem;
+    font: 1rem IBM VGA;
+    background: #000;
+    color: #aaa;
+  }
+
+  /*
+  // External links
+  a[external]:after {
+    font-family: "icons" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 65%;
+    content: "  \e900 ";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  */
+}
+
+@media screen and (min-width: 30em) {
+  .md-typeset {
+    .image-grid {
+      display: flex;
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0;
+
+      figure {
+        margin: 0;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/* Footer                                                                   */
+/*--------------------------------------------------------------------------*/
+
+.md-footer-meta {
+
+  font-size: .76rem;
+
+  .links ul {
+    list-style: none;
+    margin: 0.7rem 0 0 0.7rem;
+
+    li {
+      display: inline;
+      padding: 0;
+      margin: 0 1.1rem 0 0;
+    }
+  }
+
+  .credits {
+    color: #666;
+    font-size: .68rem;
+    margin: 0.78rem 0.72rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/* Front page                                                               */
+/*--------------------------------------------------------------------------*/
+
+.front-page {
+  background: linear-gradient(#ccc, #fff);
+
+  & + .md-main {
+    .md-main__inner {
+      margin-top: 0;
+    }
+  }
+
+  .front-page-inner {
+    max-width: $max-width-content;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    font-size: .76rem;
+  }
+
+  .headerlink {
+    display: none;
+
+    @media screen and (min-width: $min-width-2col) {
+      display: inline;
+    }
+  }
+
+  .big-button {
+    display: inline-block;
+    padding: 0.5rem 1.3rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: 2rem;
+    background: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+
+    &:hover {
+      background: var(--md-primary-fg-color--light);
+      color: var(--md-primary-bg-color);
+    }
+  }
+
+  section {
+    margin-top: 2.0rem;
+    text-align: center;
+
+    & > h1 {
+      margin: 0 1.0rem 1.4rem 1.0rem;
+      font: 400 1.75rem/1.2 Titillium Web;
+      text-align: center;
+      color: #333;
+    }
+    & > p {
+      margin: 0 auto 0.7rem auto;
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.55rem;
+      max-width: 34rem;
+      color: #333;
+    }
+
+    @media screen and (min-width: $min-width-2col) {
+      margin-top: 2.5rem;
+
+      & > p {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+}
