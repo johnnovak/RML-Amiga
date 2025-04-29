@@ -23,7 +23,7 @@ theme:
     text: Open Sans
     code: Roboto Mono
   logo: assets/images/logo.svg
-    favicon: assets/images/favicon.ico
+  favicon: assets/images/favicon-32x32.png
 
 # CSS overrides
 extra_css:
@@ -119,6 +119,7 @@ nav:
 
     - Appendices:
       - appendices/keyboard-shortcuts.md
+      - appendices/games-list.md
       - appendices/useful-websites.md
       - appendices/thanks.md
 

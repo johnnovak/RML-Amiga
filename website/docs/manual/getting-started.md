@@ -237,6 +237,12 @@ fine-tune the technical emulator settings, please refer to the [Customising
 your setup](customising-your-setup.md) section.
 
 
+### Games list
+
+[Google Sheets]https://docs.google.com/spreadsheets/d/16KTV3oIyYMOPncK9JF5epr2yWMGsqBiU2V6Al6MzVK4
+
+
+
 ### Further reading
 
 Check out the [Useful websites](../appendices/useful-websites.md) page to find out more

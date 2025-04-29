@@ -26,7 +26,7 @@ prestigious folks:
 - **Crosire** for [ReShade](https://reshade.me/) RML Amiga uses for achieving
   authentic CRT emulation.
 
-<br>
+---
 
 Special thanks to the following people who contributed to turning this into reality:
 
@@ -43,11 +43,15 @@ Special thanks to the following people who contributed to turning this into real
 - **Smiling Spectre** from the eXoDOS team for hunting down pristine manual
   scans for many games.
 
-- The inhabitants of the **English Amiga Board** (far too numerous to mention
+- The inhabitants of the [English Amiga Board](https://eab.abime.net/) (far too numerous to mention
   individually) for tips and advice on how to get some of the trickier Amiga
   games running.
 
-<br>
+- **Toni Bratincevic** for the [awesome art](https://www.interstation3d.com/per_gal_generator.php?item=16-bit%20memories) on the front page.
+
+- **Adam Podstawczyński** for the [beautiful Amiga photographs](https://www.forgottencomputer.com/retro/beauty_shots.html).
+
+---
 
 The manual scans, covers, metadata, and various other supplementary materials
 have been sourced from the following websites (non-exhaustive list in
@@ -59,7 +63,7 @@ alphabetical order):
 - [eXoDOS](https://www.retro-exo.com/exodos.html)
 - [Flux Capacity: The Hagstrom Collection](https://archive.org/details/@paulhagstrom)
 - [GameBase Amiga](http://gbamiga.elowar.com/)
-- [Hall of Light -- The database of Amiga games](https://amiga.abime.net/)
+- [Hall of Light --- The database of Amiga games](https://amiga.abime.net/)
 - [Infocom Documentation Project, The](https://infodoc.plover.net/)
 - [Infocom Gallery, The](https://gallery.guetech.org/greybox.html)
 - [Internet Archive](https://archive.org/])
@@ -73,6 +77,6 @@ alphabetical order):
 - [Sierra Chest, The](https://sierrachest.com/)
 - [Sierra Help Pages, The](http://www.sierrahelp.com/)
 - [Thalion Software Webshrine](http://thalion.exotica.org.uk/)
-- [Turran FTP -- The ultimate retro repository for Amiga nuts](https://grandis.nu/turran/)
+- [Turran FTP --- The ultimate retro repository for Amiga nuts](https://grandis.nu/turran/)
 - [WHDLoad](https://www.whdload.de/)
 </div>
