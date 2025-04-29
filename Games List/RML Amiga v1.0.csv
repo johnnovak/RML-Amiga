@@ -1,0 +1,492 @@
+Title,Year,Genre,Developer,HD / Floppy,PAL / NTSC,Model,Notes,Source,HD install notes,"No. of disks
+(if floppy game)"
+Agony,1992,Action,Art & Magic,Floppy,PAL,A500,"Needs joystick.
+Supports at least 2 floppy drives.",SPS 0960,,3
+Altered Destiny,1991,Adventure,Accolade,HD,NTSC,A500,Very long initial loading time. Use warp mode or the provided save state to get past that and the codewheel check as well.,SPS 0237,Has HD Installer.,
+Ambermoon,1993,RPG,Thalion,HD,PAL,A500,"Official v1.07 English version (never published due to the demise of Thalion), plus Meynaf's v1.07 patch.
+
+The game is configured for a fast processor and plenty of memory, so you should be able to enable the display of the ground and the ceiling in 3D areas in the game's options menu.
+
+To start the game, double-click on the Ambermoon disk icon then on the Ambermoon icon.","Disk images from the Thalion Webshrine:
+http://thalion.exotica.org.uk/games/ambermoon/credits/credits.html",Has HD Installer.,
+Amberstar,1992,RPG,Thalion,HD,PAL,A500,"v1.96 English release
+
+Starting a new game
+
+This game is quite special; you can only create your character as part of the hard drive installation process. You must follow the below steps before you can start playing the game.
+
+1. Start the ""Amberstar [start new game]"" configuration.
+
+2. Double-click on the ""Amber_A"" disk icon, then double-click on the ""Install to HD"" icon. Wait until the character loading screen appears (use warp mode; it takes a long time).
+
+3. Create your character, then press OK.
+
+4. Click on the right HD icon when the “Install where?” question appears. Enter DH1:AMBERSTAR for the path name.
+
+5. Turn on warp mode again and wait a few minutes until the “Installation complete” message appears. Press the left mouse button to exit the installer.
+
+6. Now you can start the game with the ""Amberstar"" configuration.
+
+Restarting the game with a new character
+
+Delete the ""$RML_AMIGA\Amberstar\Harddisk\AMBERSTAR"" folder and repeat the
+above steps.",SPS 1969,Has HD Installer.,
+Another World,1991,Adventure,Platformer,HD,PAL,A500,"To skip the intro, press C and enter the EDJI continuation code.
+
+Original release with the copy protection intact. The Kixxx/Delphine Classic Collection re-release has the copy protection bypassed (cracked), but the end credits are buggy (some names are missing).",SPS 0425,Copied files to HD as per instructions.,
+Antheads: It Came From the Desert II,1990,Adventure,Cinemaware,HD,NTSC,A500,Uses CopyLock.,"""ICFTD1and2-HD [It Came From The Desert 1 & 2 merged binaries, and HD installable].lzx"" from the EAB file server",Fan-made HD installer.,
+Arazok's Tomb,1987,Adventure,The Next Frontier,HD,NTSC,A500,AmigaBASIC game.,"Abaddon's ""unofficial"" IPF image.","No HD installer; copied files to HD manually (Amiga BASIC game, no disk-based protection).",
+Archipelagos,1989,Puzzle,Astral,Floppy,PAL,A500,Uses CopyLock.,SPS 0627,,1
+Archon: The Light and the Dark,1986,Strategy,Free Fall Associates,Floppy,NTSC,A500,,SPS 2778,,1
+Arkanoid,1987,Action,Taito,Floppy,NTSC,A500,,SPS 1519,,1
+"Art of GO, The",1987,Board,"James R. Logan, Jr",HD,NTSC,A500,,"Abaddon's ""unofficial"" IPF image.",No HD installer; copied files to HD manually (has no disk-based copy protection according to the manual).,
+Aufschwung Ost,1993,Strategy,Sunflowers Interactive,Floppy,PAL,A500,"Has disk-based protection.
+Can use only DF0: for the game disk, but you can set the save disk location to DF1: or DF2: in the options menu.",SPS 0429,,2
+Balance of Power: Geopolitics in the Nuclear Age,1986,Strategy,Chris Crawford,Floppy,NTSC,A500,"A ""disk invalid"" dialog will pop-up 3-4 times; this is normal, just keep pressing cancel.
+Once the pop-ups are gone, double-click on the BOP disk icon, then on the Balance of Power icon to start the game.
+No mouse pointer on more than 512 KB Chip RAM.",SPS 2374,,1
+Balance of Power: The 1990 Edition,1989,Strategy,Chris Crawford,Floppy,NTSC,A500,,SPS 1818,No HD installer; copied files to HD manually.,1
+"Bard's Tale II, The: The Destiny Knight",1988,RPG,Interplay,HD,NTSC,A500,Has no disk-based protection according to the manual.,SPS 0046,No HD installer; copied files to HD manually and made the necessary assigns.,
+"Bard's Tale III, The: Thief of Fate",1991,RPG,Interplay,HD,NTSC,A500,,SPS 0300,Has HD installer.,
+"Bard's Tale, The: Tales of the Unknown",1986,RPG,Interplay,Floppy,NTSC,A500,"A blank character disk in in DF1: (the manual describes how to create one).
+
+If you accidentally clicked on the left icon in the top-right corner and you're now on the blue Workbench screen, this is how to return to the game screen:
+
+1. Shrink the window by clicking and dragging its bottom-right handle.
+2. Drag it down by its titlebar to expose the top bar with Workbench screen written on it.
+3. Click on the first icon in the top-right corner on the Workbench screen bar.",SPS 1978,,1
+Battle Chess (CD32),1994,Board,Interplay,CD,NTSC,CD32,Same as CDTV version.,"TOSEC-ISO
+Battle Chess (1994)(Interplay)[!]",,
+Battle Chess (OCS),1988,Board,Interplay,HD,NTSC,A500,Double-click on the BattleChess disk icon then on the BattleChess icon to start the game.,SPS 0263,Has HD installer.,
+Battle Chess II: Chinese Chess,1990,Board,Interplay,HD,NTSC,A500,,SPS 0264,Has HD installer.,
+Battle Isle,1991,Strategy,Blue Byte,HD,PAL,A500,"Double-click on the BattleIsle disk icon then on the Start icon to start the game, or the Intro icon to watch the intro then start the game.",SPS 1991,Has HD installer.,
+Battle Isle '93: The Moon Of Chromos,1993,Strategy,Blue Byte,HD,PAL,A500,"Double-click on the BattleIsle disk icon then on the Start icon to start the game, or the Intro icon to watch the intro then start the game.",SPS 0667,Has HD installer.,
+Battle Isle: Scenario Disk 1 – Air-Land-Sea,1992,Strategy,Blue Byte,HD,PAL,A500,,"SPS 1991
+SPS 0460",Has HD installer.,
+Beneath a Steel Sky (CD32),1994,Adventure,Revolution,CD,PAL,CD32,,"TOSEC-ISO
+Beneath a Steel Sky (1994)(Virgin)(M4)[!].zip",,
+"Black Cauldron, The",1987,Adventure,Sierra,Floppy,NTSC,A500,"Floppy game that saves to the hard disk.
+When save or restoring the game, enter Save: for the volume name, with the semicolon at the end (this is important).",SPS 2057,,1
+Black Crypt,1992,RPG,Raven,HD,NTSC,A500,,SPS 0281,Has HD installer.,
+Block Out,1990,Puzzle,PZK,HD,NTSC,A500,,SPS 0280,No HD installer; copied files to HD manually.,
+BloodNet (AGA),1994,Adventure,MicroProse,HD,NTSC,A1200,,SPS 1667,Has HD installer.,
+Borrowed Time,1986,Adventure,Interplay,Floppy,NTSC,A500,Saves to the game disk.,SPS 2933,,1
+Boston Bomb Club,1991,Puzzle,Silmarils,Floppy,NTSC50,A500,,SPS 1502,,1
+Buck Rogers: Countdown to Doomsday,1990,RPG,SSI,HD,NTSC,A500,,SPS 1994,Has HD installer.,
+Budokan: The Martial Spirit,1989,Action,Electronic Arts,Floppy,NTSC50,A500,,SPS 1215,,2
+Cadaver,1990,Adventure,Bitmap Brothers,Floppy,NTSC50,A500,,SPS 2876,,2
+Cadaver: The Last Supper,1991,Adventure,Bitmap Brothers,Floppy,NTSC50,A500,"Exclusive demo level featured on Zero Coverdisk 15 (Issue 23, September 1991).
+Type 3 when prompted to start the game.","Zero Coverdisk 15 (Issue 23, September 1991)",,1
+Cadaver: The Payoff,1991,Adventure,Bitmap Brothers,Floppy,NTSC50,A500,Levels disk for the original game.,"SPS 2876
+SPS 0820",,2
+Cannon Fodder (CD32),1994,Strategy,Sensible,CD,PAL,CD32,Modified version by cd32.co.uk that replaces the MPEG intro with CDXL-format video (can be played on a standard CD32 without the rare FMV module).,Cannon Fodder Standalone (2015-05-28)(Virgin)[f www.cd32.co.uk][CDXL].zip,,
+Cannon Fodder (OCS),1993,Strategy,Sensible,Floppy,PAL,A500,"Supports 4 floppy drives.
+No disk swapping necessary, save disk is in DF3:",SPS 0860,,3
+Captain Blood,1988,Adventure,ERE Informatique,Floppy,NTSC50,A500,,SPS 0443,,1
+Captive,1990,RPG,Mindscape,Floppy,PAL,A500,"v1.2, contains a number important bug and crash fixes.
+Supports 4 floppy drives.
+No disk swapping necessary, save disk is in DF1:
+Uses CopyLock.",SPS 2164,,1
+"Case of the Cautious Condor, The (CDTV)",1991,Adventure,Tiger Media,CD,NTSC50,CDTV,You can use either the mouse or a gamepad in port 2 to control the game.,"Non-TOSEC ISO
+Case of the Cautious Condor, The (1990)(Tiger Media)[!].zip",,
+Castle Master,1990,Adventure,Incentive,HD,PAL,A500,"Type E then press Enter when prompted to start the game.
+Saves to the game hard drive.
+Original uses CopyLock, but this is the 1992 The Hit Squad re-release which has the disk-based protection removed.",SPS 2773,No HD installer; copied files to HD manually (this budget re-release has the disk-based copy protection removed).,1
+Castle Master II: The Crypt,1990,Adventure,Incentive,Floppy,PAL,A500,"Type 2 then press Enter when prompted to start the game.
+Saves to the game disk.
+Uses CopyLock",SPS 0612,,1
+Castles,1992,Strategy,Interplay,HD,NTSC,A500,"Contains the Northern Campaigns scenario expansion.
+","SPS 2381
+CastlesNorthernC [Castles Northern Campaign Original Disk (startup) + the generated ones.].zip from the EAB file server",Has HD installer.,
+Centurion: Defender of Rome,1991,Strategy,Bits of Magic,HD,NTSC,A500,,SPS 1945,Has HD installer.,
+Champions of Krynn,1990,RPG,SSI,HD,NTSC,A500,"To start the game, double-click on the ChampionsOfKrynn disk icon, then on the ChampionsOfKrynn icon.",SPS 0986,Has HD installer.,
+Code Name: ICEMAN,1990,Adventure,Sierra,HD,NTSC,A500,,SPS 0468,Has HD installer.,
+"Colonels' Bequest, The",1990,Adventure,Sierra,HD,NTSC,A500,,SPS 0796,Has HD installer.,
+Conquests of Camelot: The Search for the Grail,1990,Adventure,Sierra,HD,NTSC,A500,"To start the game, double-click on the Camelot disk icon, then on the Camelot icon.",SPS 1112,Has HD installer.,
+Corruption,1988,Adventure,Magnetic Scrolls,HD,PAL,A500,"Needs OCS; the intro screen is corrupted on ECS Agnus.
+Right-click on the top of the screen and drag it down to see the illustrations.
+Make sure to listen to the audio tape in the Extras folder.",SPS 0308,Copied files to HD as per instructions.,
+Cruise for A Corpse,1991,Adventure,Delphine,HD,NTSC50,A500,This is a rare hard drive installed game that can only save to a floppy in DF0: or the RAM: drive,SPS 1884,Copied files to HD as per instructions.,
+Curse of the Azure Bonds,1991,RPG,SSI,HD,NTSC,A500,,SPS 0982,Has HD installer.,
+"Dark Queen of Krynn, The",1992,RPG,SSI,HD,NTSC,A500,"Plays different music with 2 MB Fast RAM available.
+To start the game, double-click on the TheDarkQueenOfKrynn disk icon, then on the TheDarkQueenOfKrynn icon.",SPS 0988,Has HD installer.,
+Dark Seed (CD32),1994,Adventure,Cyberdreams,CD,NTSC,CD32,,"Non-TOSEC ISO
+Darkseed v1.1 (1994)(Cyberdreams)[NTSC_full_fix_Ross].zip",,
+Dark Side,1989,Adventure,Incentive,Floppy,PAL,A500,"Saves to the game disk.
+Uses CopyLock.",SPS 1099,,1
+Death Knights of Krynn,1991,RPG,SSI,HD,NTSC,A500,"To start the game, double-click on the DeathKnightsOfKrynn disk icon in the middle, then on the DeathKnightsOfKrynn icon.
+Configured to load Champions of Krynn save games when selecting CHAMPIONS in the load game menu.",SPS 0987,Has HD installer.,
+Defender of the Crown (CDTV),1991,Strategy,Cinemaware,CD,NTSC,CDTV,,Defender of the Crown (Europe).zip,,
+Defender of the Crown (OCS),1986,Strategy,Cinemaware,Floppy,NTSC,A500,"Supports 2 floppy drives.
+Uses CopyLock.",SPS 0902,,2
+Defender of the Crown II (CD32),1993,Strategy,Sach Enterprises,CD,NTSC,CD32,You can use either the mouse or a gamepad in port 2 to control the game.,"Non-TOSEC ISO, US release
+Defender of the Crown II (USA) (En,Fr,De,Es,It).zip",,
+Deja Vu II: Lost in Las Vegas!!,1989,Adventure,ICOM,HD,NTSC,A500,The game disk must be present in DF0: when you start the game for the disk-based copy protection check.,"Abaddon's ""unofficial"" CT-RAW image.",Has HD installer.,
+Deja Vu: A Nightmare Comes True!!,1986,Adventure,ICOM,Floppy,NTSC,A500,"Type Save:YourSavegameName in the dialog when saving the game (you can
+use any name you like after the Save: part).","Abaddon's ""unofficial"" IPF image.",,1
+Demon's Winter,1989,RPG,SSI,HD,NTSC,A500,"The game files get modified as you progress through the game, so it's recommended to delete the Harddisk folder and restore it from Sources\DemonsWinter_Harddisk.zip when starting a new game.
+
+Spell list used for the copy protection check is in Appendix D of the manual (page 26).",SPS 1995,No HD installer; copied files to HD manually (has no disk-based copy protection according to the manual).,
+Distant Armies: A Playing History of Chess,1988,Board,Eagle Tree,HD,NTSC,A500,"Needs narrator.device for the speech.
+To start the game, double-click on the DistantArmies disk icon, then on the DistantArmies icon.",SPS 2551,Copied files to HD as per instructions (has no disk-based copy protection according to the manual).,
+Dragon Wars,1990,RPG,Interplay,HD,NTSC50,A500,"v1.2 EU release, crashes on any encounter when an NTSC chipset is used (it's either a bug or some crude for or region locking)",SPS 3098,Copied files to HD as per instructions.,
+Dragonstone (CD32),1994,RPG,Core Design,CD,PAL,CD32,,"Redump
+Dragonstone (Europe) (En,Fr,De)",,
+Dragonstone (OCS),1994,RPG,Core Design,Floppy,PAL,A500,"Supports four floppy drives, no disk swapping necessary.",SPS 0471,,4
+DreamWeb (AGA),1994,Adventure,Creative Reality,HD,PAL,A1200,Uncensored European version.,SPS 1815,Has HD installer.,
+Driller,1988,Adventure,Incentive,HD,PAL,A500,"1992 Kixx release; non-encrypted executable, manual check bypassed, protection-free",SPS 2256,"No HD installer; copied files to HD manually from the Kixx budget release.
+Needed to re-assign SYS: to the game directory for the save games.",
+Dune,1992,Strategy,Cryo,HD,NTSC50,A500,,SPS 1156,Has HD installer.,
+Dungeon Master (v2.2),1988,RPG,FTL Games,Floppy,NTSC,A500,"This is supposed to be a 100% bug-free dump of the original game with the nefarious disk-based copy protection intact. If you notice any weird issues, please report it.","Emulator-only IPF file that uses the ""diamond flux"" trick to represent the DM copy protection (uploaded to EAB file server on 2023-01-30). Confirmed working but needs extra confirmation upon completing the game.",,1
+Dungeon Master (v3.60),1988,RPG,FTL Games,Floppy,NTSC,A500,Version 3.60 with no copy protection.,SPS 0833,,2
+Dungeon Master 2: The Legend of Skullkeep,1995,RPG,FTL Games,HD,NTSC,A1200,,SPS 0899,,
+Dungeon Master: Chaos Strikes Back (v3.5),1990,RPG,FTL Games,Floppy,NTSC,A500,"Read the manual carefully for the instructions on how to start the game.
+Save disk is in DF1:
+
+This is supposed to be a 100% bug-free dump of the original game with the nefarious disk-based copy protection intact. If you notice any weird issues, please report it.
+
+If the copy protection has been triggered, any of the following may happen:
+
+- The game hangs while loading (although there might be causes other than the copy protection)
+- Game crashes (although there might be causes other than the copy protection)
+- Unable to save the game
+- ""SYSTEM ERROR 60"" message
+- Dungeon animation stops: doors do not open/close, thrown objects remain in the air
+- ""THAT'S NOT THE MASTER DISK!"" message displayed endlessly
+- Mouse clicks are completely ignored
+- The whole party of champions dies instantaneously. After that, the button to restart from a saved game is not present. You must reboot from scratch.
+- Altar of VI does not work anymore to resurrect a dead champion","Emulator-only IPF file that uses the ""diamond flux"" trick to represent the DM copy protection (uploaded to EAB file server on 2023-01-30). Confirmed working but needs extra confirmation upon completing the game.",,2
+Elite (v1.0),1988,Strategy,"Ian Bell, David Braben",Floppy,PAL,A500,v1.0 (also known as Elite Plus),SPS 0115,,1
+"Elite (v2.0, Space Legends)",1993,Strategy,"Ian Bell, David Braben",Floppy,PAL,A500,"Space Legends compilation version (v2.0, also known as Elite Plus)
+
+Same as v2.0 but with the manual-based copy protection removed, so you cannot enter cheat codes.",SPS 1572,,1
+Elite (v2.0),1988,Strategy,"Ian Bell, David Braben",Floppy,PAL,A500,"v2.0 (also known as Elite Plus)
+
+Differences compared to v1.0:
+- Thargoids yield 40 Cr instead of 15
+- Military lasers allowed on all sides
+- Library function
+- Bug fixes (e.g., you can't engage the docking computer while the hyperspace countdown is proceeding).
+",SPS 0811,,1
+Elvira II: The Jaws of Cerberus,1992,Adventure,Horrorsoft,HD,NTSC50,A500,,SPS 2242,Has HD installer.,
+Elvira: Mistress of the Dark,1990,Adventure,Horrorsoft,HD,NTSC50,A500,"Music replayer is very sensitive to faster than A500 CPU speeds.
+
+To start the game, double-click on the Elvira disk icon, then on the Elvira icon.",SPS 0267,Has HD installer.,
+Exile (OCS),1991,Adventure,Audiogenic,Floppy,PAL,A500,"Uses CopyLock.
+Entering the wrong security codes in the uncracked original will alter the game in subtle ways, making it impossible to complete.","Can't use SPS 0032 because couldn't find scans of the sides of the box that contain the security codes.
+
+Galahad/FLT's 100% working crack is used instead that he verified himself by completing the game.
+
+All the official re-releases approved by the Amiga port's creator, Peter J. M. Irvin, are bad cracks done by The Company.
+
+More info here:
+http://www.thunderpeel2001.com/exile/",,1
+Eye of the Beholder (AGA),1991,RPG,Westwood,HD,NTSC,A1200,"Fan conversion that combines the 256-colours graphics of the DOS original with the superior sound of the Amiga version. It also adds the Amiga outro missing from the DOS version and an automap.
+The definitive version of the game; it's essentially bug-free.",Retroplay WHDLoad version,WHDLoad,
+Eye of the Beholder (OCS),1991,RPG,Westwood,HD,NTSC,A500,8x CPU speed recommended.,SPS 0116,Has HD installer.,
+Eye of the Beholder II:  The Legend of Darkmoon (OCS),1991,RPG,Westwood,HD,NTSC,A500,"Needs 1MB Chip RAM.
+8x CPU speed recommended.
+
+Transferring characters
+
+To transfer characters from the first game, copy the EOBDATA.SAV savegame file over into the game folder, then use the transfer option in the menu.",SPS 0834,Has HD installer.,
+Eye of the Beholder II: The Legend of Darkmoon (AGA),1991,RPG,Westwood,HD,NTSC,A1200,"Fan conversion that combines the 256-colours graphics of the DOS original with the superior sound of the Amiga version. The definitive version of the game.
+
+If you get corrupted graphics (the colours appear wrong), just save your game, then reload it. You might be required to restart the game before reloading. This can only occur a few times in certain later areas during a full walkthrough and it's not game breaking, only a minor inconvenience.
+
+Transferring characters
+
+To transfer characters from the first game, you need to perform the transfer using the ECS version (yes, you can load the AGA
+save files into the ECS original). Once you're done with the transfer, create a new save in the first slot. Copy the resulting EOBDATA0.SAV over to the vga-data directory of the AGA version, then load the savegame from the first slot normally.
+
+Note the 0 at the end of the file name; that's the EoB II save file and it must be 46897 bytes long! EOBDATA.SAV (without the 0) is 33107 bytes; that's the EoB I save file you used for the transfer. If you get an error when loading the save game in EoB II AGA, you must have copied over EOBDATA.SAV by mistake.",Retroplay WHDLoad version,WHDLoad,
+"Faery Tale Adventure, The",1986,RPG,MicroIllusions,Floppy,NTSC,A500,"Has save disk in DF1:
+The save disk must be in DF1: to prevent bugs.
+Needs only 512K Chip RAM to prevent bugs.
+Just press enter at the copy protection question after the intro.","Faery Tale Adventure, The (1986)(MicroIllusions)[cr_fix_v2 ross] [v2 - For EAB members!].zip by ross from the EAB file server (fixes the garbled intro music for later than A1000 models and bypasses the manual check).
+Confirmed to be completable.
+
+https://eab.abime.net/showthread.php?t=34675",,1
+Fate: Gates of Dawn,1991,RPG,reLINE,HD,PAL,A500,Pay special attention to answer the manual-based copy protection questions correctly later in the game. Failing these checks too many times will cause the game to slowly deterioriate over the next few hours until it becomes unplayable and impossible to finish.,"Uncensored English version reconstructed from these sources (the SPS images contain write errors that have been fixed in the WHDLoad packs):
+
+SPS 2842
+SPS 0544
+RetroPlay WHDLoad conversions",Has HD installer.,
+Fish!,1988,Adventure,Magnetic Scrolls,HD,PAL,A500,Right-click on the top of the screen and drag it down to see the illustrations.,SPS 0484,Copied files to HD as per instructions.,
+Flashback,1992,Adventure,Delphine,HD,PAL,A500,,SPS 1885,Copied files to HD as per instructions.,
+Future Wars: Adventures in Time,1989,Adventure,Delphine,HD,NTSC50,A500,"If you fail the protection check at the start, you will be asked to insert the game disk into DF0: when running from the HDD. Ignore this; reboot and try again.
+
+Even when running from the HDD, the game only lets you save to a floppy. The saving part of this works, but the game hangs when you try to load it back. Loading works fine when running the game from floppies. The solution for the HDD install is to only use save states.",SPS 1882,Copied files to HD as per instructions.,
+Gateway to the Savage Frontier,1991,RPG,SSI,HD,NTSC,A500,,SPS 2160,Has HD installer.,
+Gold Rush!,1989,Adventure,Sierra,Floppy,NTSC,A500,"Floppy game that saves to the hard disk.
+When saving or restoring the game, enter Save: for the volume name, with the colon at the end (this is important).",SPS 2909,,1
+"Guild of Thieves, The",1987,Adventure,Magnetic Scrolls,HD,PAL,A500,"Needs OCS; the intro screen is corrupted on ECS Agnus.
+Right-click on the top of the screen and drag it down to see the illustrations.",SPS 0334,Copied files to HD as per instructions.,
+Heimdall,1991,RPG,The 8th Day,Floppy,PAL,A500,"Supports 3 floppy drives.
+Uses CopyLock.",SPS 0234,,5
+Heimdall 2: Into the Hall of Worlds (CD32),1994,RPG,The 8th Day,CD,PAL,CD32,"Best played with a gamepad.
+
+In this CD32 version, you can only save in the Hall of Worlds by finding a special book. Unfortunately, this saving mechanism is buggy---it's possible to end up in a state where you're unable to revisit other worlds, preventing you from completing the game. Using save states is recommended instead (which isn't considered cheating because you can save anywhere in the OCS and AGA versions).","Non-TOSEC ISO, EU release
+Heimdall 2 - Into the Hall of Worlds (Europe).zip",,
+Hillsfar,1989,RPG,SSI,HD,NTSC,A500,,SPS 0981,Copied files to HD as per instructions.,
+Hollywood Poker Pro,1989,Board,reLINE,Floppy,PAL,A500,Supports a single drive only.,SPS 2205,,2
+Hook,1992,Adventure,Ocean,Floppy,PAL,A500,"Uses CopyLock.
+Supports four floppy drives, no disk swapping necessary.
+To access the save game menu, click on the Use icon then on the floppy
+disk in your inventory.
+It's a very well coded game that uses all available memory as a cache for already loaded data to avoid disk access.",SPS 0887,,4
+IK+,1988,Action,System 3,Floppy,NTSC50,A500,"Needs joystick.
+Uses CopyLock.",SPS 2063,,1
+Indiana Jones and the Fate of Atlantis,1992,Adventure,LucasArts,HD,NTSC,A500,8x CPU speed recommended.,SPS 0851,Has HD installer.,
+Indiana Jones and the Last Crusade,1989,Adventure,LucasArts,HD,NTSC,A500,"Faster than 4x CPU speed results in uneven sound and eventually the game freezing.
+4x CPU speed seems fine and it helps with the animations.",SPS 1990,Copied files to HD as per instructions.,
+Ishar 2: Messengers of Doom (AGA),1993,RPG,Silmarils,HD,NTSC50,A1200,,SPS 0787,Copied files to HD as per instructions.,
+Ishar 3: The Seven Gates of Infinity (AGA),1994,RPG,Silmarils,HD,NTSC50,A1200,The intro can't be skipped. Pressing Esc during the intro will hang the game.,SPS 2245,Has HD installer.,
+Ishar: Legend of the Fortress (AGA),1992,RPG,Silmarils,Floppy,NTSC50,A1200,,"""Unofficial"" CT RAW dump from the EAB file server",,2
+It Came From the Desert,1989,Adventure,Cinemaware,HD,NTSC,A500,,"ICFTD1and2-HD [It Came From The Desert 1 & 2 merged binaries, and HD installable].lzx from the EAB file server (cracked version with the disk-check removed, can run from HDD).
+",Fan-made HD installer.,
+Jinxter,1987,Adventure,Magnetic Scrolls,HD,PAL,A500,Right-click on the top of the screen and drag it down to see the illustrations.,SPS 0963 (check),Copied files to HD as per instructions.,
+King's Bounty,1990,Strategy,New World Computing,HD,NTSC,A500,,"Abaddon's ""unofficial"" CT RAW dump.",Has HD installer.,
+King's Quest II: Romancing the Throne,1987,Adventure,Sierra,HD,NTSC,A500,Budget re-release with no disk-based protection.,SPS 2126,No HD installer; copied files to HD manually.,
+King's Quest III: To Heir is Human,1987,Adventure,Sierra,Floppy,NTSC,A500,"Floppy game that saves to the hard disk.
+When saving or restoring the game, enter Save: for the volume name, with the colon at the end (this is important). ",SPS 1333,,1
+King's Quest IV: The Perils of Rosella,1990,Adventure,Sierra,HD,NTSC,A500,,SPS 0822,Has HD installer.,
+"King's Quest VI: Heir Today, Gone Tomorrow",1994,Adventure,Revolution,HD,NTSC50,A500,,SPS 1178,Has HD installer.,
+King's Quest: Quest for the Crown (AGI),1986,Adventure,Sierra,Floppy,NTSC,A500,"Floppy game that saves to the hard disk.
+When saving or restoring the game, enter Save: for the volume name, with the colon at the end (this is important).",SPS 1333,,1
+King's Quest: Quest for the Crown (SCI),1990,Adventure,Sierra,HD,NTSC,A500,"To start the game, double-click on the KingsQuest1 disk icon, then on the KingsQuest1 icon.
+There are two more icons to set Amiga or MT-32 sound before starting the game.
+
+Floppy game that saves to the hard disk.
+When saving or restoring the game, enter Save: for the volume name, with the colon at the end (this is important). ",SPS 1436,Has HD installer.,
+Knightmare,1991,RPG,Mindscape,Floppy,PAL,A500,"Supports 4 floppy drives.
+No disk swapping necessary, save disk is in DF2:
+Uses custom save disk format which must be formatted in-game.
+Uses CopyLock.",SPS 0966,,2
+Lancelot,1988,Adventure,Level 9,HD,PAL,A500,"Use the SAVE command to save your game, just press enter at the ""insert save disc"" prompt, then enter save:your_save_name to save the game under your chosen name. The save games are stored in the Harddisk\Lacelot\save folder.
+Use RESTORE and the same process to load your savegame.",SPS 0216,Copied files to HD as per instructions.,
+Legend of Faerghail,1990,RPG,Electronic Design Hannover,HD,PAL,A500,"v2.0e 17.10.90 English version. All other English versions contain game-breaking bugs.
+Needs 512K Chip and 512K Slow RAM.
+After watching the intro, double-click on the LEGEND.0 icon, then on the LOF icon to start the game.",SPS 2844,Has HD installer.,
+"Legend of Robin Hood, The - Conquests of the Longbow",1992,Adventure,Sierra,HD,NTSC,A500,,SPS 1968,Has HD installer.,
+Leisure Suit Larry 2: Leisure Suit Larry Goes Looking for Love,1989,Adventure,Sierra,HD,NTSC,A500,Has no disk-based protection.,SPS 0193,No HD installer; copied files to HD manually.,
+Leisure Suit Larry 3: Passionate Patti in Pursuit of the Pulsating Pectorals!,1990,Adventure,Sierra,HD,NTSC,A500,,SPS 0690,Has HD installer.,
+Leisure Suit Larry 1: In the Land of the Lounge Lizards (AGI),1987,Adventure,Sierra,Floppy,NTSC,A500,"Enter at least 18 at the age prompt, then press Alt+X at the first age verification question to bypass the checks.
+
+Floppy game that saves to the hard disk.
+When saving or restoring the game, enter Save: for the volume name, with the colon at the end (this is important).",SPS 0349,,1
+Lemmings,1991,Puzzle,DMA Design,Floppy,PAL,A500,"Supports 2 floppy drives.
+Uses CopyLock.",SPS 0132,,2
+Liberation: Captive II (CD32),1993,RPG,Byte Engineers,CD,PAL,CD32,"Best version with CD Audio music, voice acting, and better graphics than the later OCS/AGA release.","TOSEC-ISO
+Liberation - Captive II v2.02-2.00c (1994-04-08)(Mindscape)[!][CDD3716].zip ",,
+Loom,1990,Adventure,LucasArts,HD,NTSC,A500,Faster than 2x CPU speed results in slightly garbled music.,SPS 0618,Copied files to HD as per instructions.,
+"Lord of the Rings, The - Vol. 1",1991,RPG,Interplay,HD,NTSC,A500,"Had to delete the file ""three.id"" from the installation folder, otherwise the game keeps crashing at startup. The file contained this text: ""Present on 720k version only.""",SPS 1299,Has HD installer.,
+Lords of Chaos,1991,Strategy,Mythos,Floppy,PAL,A500,"The original LORDS OF CHAOS game features the first 3 scenarios:
+- Scenario One: The Many Coloured Land
+- Scenario Two: Slayer's Dungeon
+- Scenario Three: Ragaril's Domain
+
+Expansion disk features 2 additional scenarios:
+- Scenario Four: Islands of Iris
+- Scenario Five: Tombs of the Undead
+
+LORDS OF CHAOS: 'ESCAPE FROM ZOL', an exclusively designed scenario, appeared on Zero Coverdisk 14 (Issue 21, Aug 91)
+- - -
+Loading Expansion Kit One: Load the main program as usual and then put the expansion kit in the disk drive. If the main program disk, or a saved games and wizards disk, is in the disk drive then remove that disk and put the expansion kit in the disk drive instead. Select the 'Load Scenario' option and type 4 to load scenario four, or type 5 to load scenario five.
+- - -
+Please also be aware that in Level 4 ""Islands Of Iris"", the treasure maps in the Commodore Amiga version were graphically corrupted (shown below) which was a fault even when running on an actual Commodore Amiga.
+---
+If you press Esc in the Load Scenario menu, the game crashes. Just press Enter to exit the menu.","SPS 1568
+Lords Of Chaos Expansion Kit One & Escape from Zol from here: https://amigalordsofchaos.tripod.com/",,1 (plus 2 scenario disks)
+Lords of the Rising Sun,1989,Strategy,Cinemaware,HD,NTSC,A500,"Needs the first floppy present in any drive when run from the HD.
+Uses CopyLock.",SPS 1779,Has HD installer.,
+"Lost Treasures of Infocom, The",198x,Adventure,Infocom,HD,NTSC,A500,"Contains all 34 Amiga Infocom releases (the 20 games included in the The Lost Treasures of Incofom collection, plus the rests except for Border Zone which never got an Amiga release).
+All games save to the hard disk.
+Wishbringer crashes on quit, but otherwise seems to work fine.
+
+To start a game:
+
+- Double-click on the Infocom disk icon
+- Double-click on one of the category drawers
+- Double-click on the game’s name
+- Then finally double-click on the game’s start icon 
+
+Make sure to check out the interactive InvisiClues in the Extras folder if you're stuck!","Official SPS images
+Lost Treasures of Infocom, The (SPS 0928)
+Arthur - The Quest for Excalibur (SPS 1401)
+Bureaucracy (SPS 1493)
+Cutthroats (SPS 2683)
+Hollywood Hijinx (SPS 1492)
+James Clavell's Shogun (SPS 1257)
+Journey - The Quest Begins (SPS 0499)
+Nord and Bert Couldn't Make Head or Tail of It (SPS 1406)
+Seastalker (SPS 2684)
+Trinity (SPS 2541)
+Wishbringer (SPS 2543)
+
+CT RAW / IPF images from the EAB file server
+Leather Goddesses of Phobos (1986)(Infocom)(US)[Amiga].zip
+Plundered Hearts_WD-IR1_Infocom[AMIGA]_IPF.7z
+Sherlock - The Riddle of The Crown Jewels_WD-CS1-04_Infocom[AMIGA]_IPF.7z",Copied files to HD as per instructions.,
+Lure of the Temptress,1992,Adventure,Revolution,Floppy,PAL,A500,"Debugged ""VERSION 2"" Virgin re-release (1992-08-06). Earlier editions have a game-breaking bug that manifests near the end of the game.
+Supports 4 floppy drives.",SPS 2030,,4
+"Magnetic Scrolls Collection, The - Vol. 1",1991,Adventure,Magnetic Scrolls,HD,PAL,A500,,SPS 0271,Has HD installer.,
+Manhunter 2: San Francisco,1989,Adventure,Sierra,HD,NTSC,A500,Has no disk-based protection.,SPS 1199,No HD installer; copied files to HD manually.,
+Manhunter: New York,1989,Adventure,Sierra,HD,NTSC,A500,Has no disk-based protection.,SPS 0354,No HD installer; copied files to HD manually.,
+Maniac Mansion,1989,Adventure,LucasArts,HD,NTSC,A500,"Faster than stock 2x CPU speed results in comically fast (and incorrect) animations.
+Original retail release. The 1993 Kixx XL re-release has the executable hacked to pass the codebook check, but with a side effect (unable to save).
+
+To start the game, double-click on the ManiacMansion disk icon, then on the Maniac icon.",SPS 1571,Copied files to HD as per instructions.,
+Marble Madness,1986,Action,Atari,Floppy,NTSC,A500,"Double-click on the MarbleMadness! disk icon, then on the MarbleMadness! icon.",SPS 0013,,1
+Midwinter,1990,Strategy,Maelstrom,Floppy,NTSC50,A500,"Atari ST port.
+""VR Vol. 1"" re-release with the manual-based protection removed.",SPS 1582,,1
+Mindshadow,1985,Adventure,Interplay,Floppy,NTSC,A500,Saves to the game disk.,SPS 2546,,1
+Mixed-Up Mother Goose (AGI),1988,Adventure,Sierra,Floppy,NTSC,A500,,"""Unofficial"" CT-RAW image from the EAB file server",,1
+Mixed-Up Mother Goose (SCI),1991,Adventure,Sierra,HD,NTSC,A500,"To start the game, double-click on the MotherGoose disk icon, then on the MotherGoose icon.
+There are two more icons to set Amiga or MT-32 sound before starting the game.",SPS 2608,Has HD installer.,
+Monkey Island 2: LeChuck's Revenge,1992,Adventure,LucasArts,HD,NTSC,A500,,SPS 0020,Has HD installer.,
+Moonstone: A Hard Days Knight,1991,RPG,Mindscape,Floppy,PAL,A500,"Hold Esc key while the credits are loading to skip the intro.
+Supports 3 floppy drives.
+Needs joystick.
+Uses CopyLock.
+
+The developers did not have enough time to properly finish the game so it is quite buggy. Certain actions or game events will inevitably result in crashes. The solution is to evade these actions. Use save states a lot, and in time you'll develop a feel for it what triggers the crashes.",SPS 0360,,3
+Myth (Magnetic Scrolls),1989,Adventure,Magnetic Scrolls,HD,PAL,A500,"Enter LISTER6657 and the VOAPQI for the password at the start, or use the provided save state to skip the code check.",SPS 2455,Copied files to HD as per instructions.,
+Neuromancer,1989,Adventure,Interplay,HD,NTSC,A500,"Has no disk-based protection as per the manual. 
+The upper half of the border will disappear when loading a saved game if Fast RAM is present.
+
+The game runs from an emulated hard drive, but it can save to its own specially formatted save disk only. You'll need to put the game disk back into drive DF0: after saving or loading as the game instructs you (this is a form of copy protection).",SPS 2604,"No HD installer; copied files to HD manually.
+The game disk needs to be in DF0:",
+North & South,1989,Strategy,Infogrames,Floppy,NTSC50,A500,Needs joystick.,SPS 2397,,1
+Odyssey,1995,Adventure,Unconscious Minds,Floppy,PAL,A500,"Supports 2 floppy drives.
+Uses CopyLock.","SPS 2854
+Version aud304312c (1997-06-02)",,2
+Operation Stealth,1990,Adventure,Delphine,HD,NTSC50,A500,,SPS 1883,Copied files to HD as per instructions.,
+"Pawn, The",1986,Adventure,Magnetic Scrolls,HD,PAL,A500,Right-click on the top of the screen and drag it down to see the illustrations.,SPS 0709,Copied files to HD as per instructions.,
+"Perfect General, The",1991,Strategy,White Wolf,HD,NTSC,A500,"v1.02 that fixes a number of bugs.
+Has no disk-based protection.
+Just press enter at the manual-based check.
+Includes scenarios from the ""World War II Battle Set"" scenario disk.","Base game files copied from the Aladin WHDLoad pack (has pre-cracked executable).
+The WWII scenarios installed using the offical installer from the_perfect_general_world_war_ii_nemesis_fast_eddie.adf",Has HD installer.,
+Perihelion,1993,RPG,Morbid Visions,Floppy,PAL,A500,"Supports 4 floppy drives.
+
+Information about the spells and runes of the game's PSI-power system are in the manual. This was an anti-piracy measure; it's almost impossible to get through the first battle without this knowledge.
+
+Check out the Extras folder for a comprehensive summary of the PSI-power system compiled by one of the game's authors.",SPS 0799,,4
+Personal Nightmare,1989,Adventure,Horrorsoft,Floppy,NTSC50,A500,Uses CopyLock.,SPS 2650,,3
+Pinball Dreams,1992,Action,Digital Illusions,Floppy,PAL,A500,Supports 2 floppy drives.,SPS 0377,,2
+Pirates!,1990,Strategy,MicroProse,HD,NTSC,A500,"To start the game, double-click on the Pirates! disk icon in the middle of the screen (not in the top-right corner), then on the Pirates! icon.
+Uses CopyLock.",SPS 0552,Has HD installer.,
+Pirates! Gold (CD32),1994,Strategy,MicroProse,CD,NTSC,CD32,,"TOSEC-ISO
+Pirates! Gold (1993)(MicroProse)[!]",,
+Police Quest II: The Vengeance,1990,Adventure,Sierra,HD,NTSC,A500,,SPS 1849,Has HD installer.,
+Police Quest: In Pursuit of the Death Angel,1987,Adventure,Sierra,HD,NTSC,A500,Budget re-release with the disk-based protection removed.,SPS 2262,No HD installer; copied files to HD manually.,
+Pool of Radiance,1990,RPG,SSI,HD,NTSC,A500,Faster than stock A500 CPU speed results in sound corruption and too fast animations.,SPS 0555,Has HD installer.,
+Pools of Darkness,1992,RPG,SSI,HD,NTSC,A500,,SPS 0984,Has HD installer.,
+Populous,1989,Strategy,Bullfrog,Floppy,PAL,A500,"Includes the two data disks The Promised Lands and The Final Frontier.
+Follow the instructions on how to use the data disks (it's complicated), or use the included save states.
+Uses CopyLock.
+
+To start the game, double-click on the Populous disk icon then, on the appearing image in the window.","SPS 2898
+SPS 1217
+CT RAW dump Populous-FinalFrontierDisk.7z from the EAB file server",,1
+Populous II: Trials of the Olympian Gods,1991,Strategy,Bullfrog,HD,PAL,A500,"Includes The Challenge Games expansion.
+
+Double-click on the PopulousII HD disk icon in the top-right corner, then double-click on the the PopulousII icon to start the base game, or the Challenge icon to start The Challenge Games expansion. You can also double-click on the credits icons to watch the credits.
+
+Only double-click once on the game icons, then wait (don't keep double-clicking). You might want to enter warp mode (press End+Pause) to speed up the startup process.
+
+Uses CopyLock.","SPS 0079
+SPS 2775",Has HD installer.,
+Portal: A Computer Novel,1986,Adventure,Nexa,Floppy,NTSC,A500,"Saves to game disk.
+The game will get stuck after entering your name if the disk is write protected.",SPS 1979,,3
+Ports of Call,1987,Strategy,International Software Development,Floppy,PAL,A500,"To start the game, double-click on the PoC disk icon, then on the PortsOfCall icon.
+Saves to the game disk.",SPS 2489,,1
+Powermonger,1990,Strategy,Bullfrog,Floppy,PAL,A500,,SPS 0081,,1
+Powermonger: World War 1 Edition,1991,Strategy,Bullfrog,Floppy,PAL,A500,Insert the base game and WW1 data disk when prompted.,SPS 0614,,1
+Push-Over,1992,Puzzle,Red Rat,Floppy,NTSC,A500,Uses CopyLock.,SPS 1267,,1
+Quest for Glory I: So You Want to Be A Hero,1990,Adventure,Sierra,HD,NTSC,A500,"To start the game, double-click on the QuestForGloryI disk icon, then on the QuestForGloryI icon.",SPS 0795,Has HD installer.,
+Quest for Glory II: Trial by Fire,1991,Adventure,Sierra,HD,NTSC,A500,"To start the game, double-click on the QuestForGloryII disk icon, then on the QuestForGloryII icon.
+There are two more icons to set Amiga or MT-32 sound before starting the game.",SPS 1868,Has HD installer.,
+Rick Dangerous,1989,Action,Core Design,Floppy,PAL,A500,Uses CopyLock.,SPS 2294,,1
+Rick Dangerous 2,1990,Action,Core Design,Floppy,PAL,A500,Uses CopyLock.,SPS 1877,,1
+Rock Star Ate My Hamster,1989,Strategy,Codemasters,Floppy,PAL,A500,Uses CopyLock.,SPS 2459,,1
+Rogue: The Adventure Game,1986,RPG,A.I. Design,Floppy,NTSC,A500,Reassembled & bugfixed version by dennis2342,"Rogue - The Adventure Game (1986)(Epyx)[h titlescreen original colours ross][f denis2342 - Crashdisk].zip from the EAB file server (reassembled & bugfixed version by dennis2342)
+
+More info:
+https://eab.abime.net/showthread.php?t=113852
+https://forum.amiga.org/index.php?&topic=75893.0
+https://github.com/denis2342/Rogue",,1
+Rome AD 92: The Pathway to Power,1992,Adventure,Firstlight,Floppy,PAL,A500,"Has a single save slot only (forced “Ironman Mode”); saves the game to the first disk (the boot disk) on quit. You need to delete the save image of the first disk to start a new game.
+
+Supports two floppy drives.",SPS 0780,,3
+Scapeghost,1989,Adventure,Magnetic Scrolls,HD,PAL,A500,,Copied files from the Retroplay WHDLoad version,No HD installer; copied files to HD manually.,
+"Secret of Monkey Island, The",1990,Adventure,LucasArts,HD,NTSC,A500,"8x CPU speed recommended.
+The game was coded with accelerators in mind; e.g., below 4x CPU speeds, there are no  animated clouds in the intro sequence.
+
+To start the game, double-click on the MonkeyIsland disk icon, then on the MonkeyIsland icon.",SPS 1625,Has HD installer.,
+Secret of the Silver Blades,1990,RPG,SSI,HD,NTSC,A500,,SPS 0983,Has HD installer.,
+"Sentinel, The",1988,Puzzle,Geoff Crammond,Floppy,PAL,A500,,SPS 3025,,1
+"Settlers, The",1993,Strategy,Blue Byte,HD,PAL,A500,,SPS 0143,Has HD installer.,
+Seven Cities of Gold,1985,Strategy,Ozark Softscape,Floppy,NTSC,A500,,SPS 0908,,1
+Shadow of the Beast,1989,Action,Reflections,Floppy,PAL,A500,Needs joystick.,SPS 1357,,2
+Shadowgate,1987,Adventure,ICOM,Floppy,NTSC,A500,"Type Save:YourSavegameName in the dialog when saving the game (you can
+use any name you like after the Save: part).","Abaddon's ""unofficial"" CT-RAW game & hint disk images.",,1
+SimCity (CDTV),1991,Strategy,Maxis,CD,NTSC,CDTV,"CD version extras: intro video, CD Audio music, enhanced graphics, all city packs, new scenarios.
+","Redump
+SimCity (Europe) (En,Fr,De,Es,It).zip",,
+SimCity Collection,1989,Strategy,Maxis,HD,NTSC,A500,"""Ultimate"" version compiled from the v1.1 and v1.2.2 releases and extras disks. Includes the 16-colour and 64-colour versions, all city packs, the terrain editor, utilities, and all official extra maps.
+
+SimCity512K
+
+Initial 16-colour version (v1.1) for 512K Amigas. Has manual-based copy protection; refer to the protection codes PDF. The first symbol of the 3-symbol codes is in the top right corner of each page.
+
+SimCity1.2
+
+Later 64-colour version (v1.2.2) that requires 1MB RAM. This version has the manual-based copy protection removed by the developer.","SPS 1954
+SPS 2192
+""SimCity64Complete [Sim City 64EHB Complete HD ready. Please dont sue us )].lha"" from the EAB file server (copy of v1.2.2)
+""SimCityComplete [SimCity 1.2 + Terrain Editor + Utils + Ancient-Future Cities Packs].lha""",Copied files to HD as per instructions.,
+Simon the Sorcerer (AGA),1994,Adventure,Adventure Soft,HD,NTSC50,A1200,,SPS 0898,"Has HD installer.
+The CLI startup instructions are wrong; should use the launch command from startup-sequence on disk 1.",
+Simon the Sorcerer (CD32),1994,Adventure,Adventure Soft,CD,NTSC50,CD32,Best version with sample-based music and digital speech,"TOSEC-ISO
+Simon the Sorcerer (1994)(Adventure Soft)[!].zip",,
+Soccer Kid (AGA),1993,Krisalis,Platformer,HD,PAL,A1220,Pressing any key will skip the intro (including pressing Alt+Tab switch to a different window).,SPS 1150,Has HD installer.,
+Soccer Kid (CD32),1994,Krisalis,Platformer,CD,PAL,CD32,,"TOSEC-ISO
+Soccer Kid (1994)(Krisalis)(M5)[!].zip",,
+Soccer Kid (OCS),1993,Krisalis,Platformer,Floppy,PAL,A500,"Multi-language release (English, French, German, Spanish, Italian).
+Supports four floppy drives; no disk swapping is necessary.
+Pressing any key will skip the intro (including pressing Alt+Tab switch to a different window).",SPS 1129,,4
+Space Quest I: The Sarien Encounter (AGI),1986,Adventure,Sierra,Floppy,NTSC,A500,"Floppy game that saves to the hard disk.
+When save or restoring the game, enter Save: for the volume name, with the semicolon at the end (this is important).",SPS 1484,,1
+Space Quest II: Vorhaul's Revenge,1988,Adventure,Sierra,HD,NTSC,A500,Has no disk-based protection.,SPS 1053,No HD installer; copied files to HD manually.,
+Space Quest III: The Pirates of Pestulon,1989,Adventure,Sierra,HD,NTSC,A500,,SPS 0292,Has HD installer.,
+Speedball 2: Brutal Deluxe (CD32),1995,Sports,Bitmap Brothers,CD,PAL,CD32,Needs joystick.,"TOSEC-ISO
+Speedball 2 (1995)(Renegade)[!].zip",,
+Speedball 2: Brutal Deluxe (OCS),1990,Sports,Bitmap Brothers,Floppy,PAL,A500,"Needs joystick.
+Uses CopyLock.
+The 1994 Kixx release used a scene crack (better to avoid it).",SPS 2897,,1
+Starflight,1989,Adventure,Binary Systems,HD,NTSC,A500,"Needs 16x CPU speed; some parts of the game are very slow at stock A500 speeds.
+
+Every time you leave the starport, you will be asked to enter the correct launch codes. This is a form of copy protection; if you enter the wrong code, the game will let you play for a while, but eventually the space police will catch you and will destroy your ship.",SPS 0855,No HD installer; copied files to HD manually (has no disk-based copy protection according to the manual).,
+Storm Master,1992,Strategy,Silmaris,Floppy,NTSC50,A500,,SPS 0620,,1
+Street Rod,1990,Racing,PZK,HD,NTSC,A500,Needs to be started from a default 40-column workbench screen otherwise you'll get corrupted graphics on the racing screen.,"""Unofficial"" CT-RAW dump from the EAB file server.",No HD installer; copied files to HD manually.,
+Street Rod 2: The Next Generation,1991,Racing,PZK,HD,NTSC,A500,,"""Unofficial"" CT-RAW dump from the EAB file server.",No HD installer; copied files to HD manually.,
+Tass Times in Tonetown,1986,Adventure,Interplay,Floppy,NTSC,A500,"Takes a very long time to load, even with warp mode enabled. There's no floppy activity for a long time during loading.
+Needs 512K Chip RAM only. Use the ""start"" config that loads a savestate after the loading has finished.
+Saves to the game disk.",SPS 0390,,1
+Times of Lore,1989,RPG,Origin,Floppy,NTSC,A500,"Saves to the game disk.
+Needs a joystick.",SPS 2777,,1
+Total Eclipse,1989,Adventure,Incentive,Floppy,PAL,A500,"Saves to the game disk.
+Uses CopyLock.",SPS 1973,,1
+Transarctica (AGA),1993,Strategy,Silmarils,HD,NTSC50,A1200,"The first disk must be inserted into DF0: before starting the game to pass the protection check.
+This is the French release that has multi-language support but assumes an AZERTY keyboard, so the config remaps that to the QWERTY layout (this only affects entering the name of your saved game).","""Unofficial"" IPF from the EAB file server.",Copied files to HD as per instructions.,
+Treasures of the Savage Frontier,1992,RPG,SSI,HD,NTSC,A500,,SPS 0992,No HD installer; copied files to HD manually.,
+Uninvited,1987,Adventure,ICOM,Floppy,NTSC,A500,"Type Save:YourSavegameName in the dialog when saving the game (you can
+use any name you like after the Save: part).","Abaddon's ""unofficial"" IPF image.",,1
+WaxWorks,1993,Adventure,Horrorsoft,HD,NTSC50,A500,,SPS 2274,Has HD installer.,
+Windwalker,1990,RPG,Origin,HD,NTSC,A500,8x CPU speed seems to work fine and speed up the game a little.,SPS 1391,No HD installer; copied files to HD manually.,
+Wonderland: Dream the Dream...,1990,Adventure,Magnetic Scrolls,HD,PAL,A500,,SPS 0277,Has HD installer.,
+Zak McKracken and the Alien Mindbenders,1988,Adventure,LucasArts,HD,NTSC,A500,"4x CPU speed seems to be fine and helps with the animations a bit.
+
+To start the game, double-click on the ZakMcKracken disk icon, then on the Zak icon.",SPS 0596,Copied files to HD as per instructions.,
