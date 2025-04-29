@@ -1,0 +1,144 @@
+# Project information
+site_name: Rincewind's Magic Luggage Full of Amiga Goodies
+site_url: https://rml-amiga.johnnovak.net/
+site_author: Rincewind
+site_description: >-
+  It's a magic luggage, full of Amiga goodies
+
+# Theme configuration
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  font:
+    text: Open Sans
+    code: Roboto Mono
+  logo: assets/images/logo.svg
+
+# CSS overrides
+extra_css:
+  - stylesheets/extra.css
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.betterem
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.saneheaders
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - sane_lists
+  - smarty
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search
+  - glightbox:
+      slide_effect: 'none'
+      skip_classes:
+        - skip-lightbox
+
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+
+  - redirects:
+      redirect_maps:
+        # Convenience redirects for top level sections (so for example
+        # `/manual/` takes you to `manual/introduction/` instead of a 404).
+        #
+        'manual/index.md': 'manual/introduction.md'
+
+        'game-notes/e.md': 'game-notes/e-f.md'
+        'game-notes/f.md': 'game-notes/e-f.md'
+
+        'game-notes/g.md': 'game-notes/g-j.md'
+        'game-notes/h.md': 'game-notes/g-j.md'
+        'game-notes/i.md': 'game-notes/g-j.md'
+        'game-notes/j.md': 'game-notes/g-j.md'
+
+        'game-notes/k.md': 'game-notes/k-l.md'
+        'game-notes/l.md': 'game-notes/k-l.md'
+
+        'game-notes/m.md': 'game-notes/m-o.md'
+        'game-notes/n.md': 'game-notes/m-o.md'
+        'game-notes/o.md': 'game-notes/m-o.md'
+
+        'game-notes/q.md': 'game-notes/q-r.md'
+        'game-notes/r.md': 'game-notes/q-r.md'
+
+        'game-notes/t.md': 'game-notes/t-z.md'
+        'game-notes/u.md': 'game-notes/t-z.md'
+        'game-notes/v.md': 'game-notes/t-z.md'
+        'game-notes/w.md': 'game-notes/t-z.md'
+        'game-notes/x.md': 'game-notes/t-z.md'
+        'game-notes/y.md': 'game-notes/t-z.md'
+        'game-notes/z.md': 'game-notes/t-z.md'
+
+# Page tree
+nav:
+  - Home: index.md
+  - Manual:
+    - manual/introduction.md
+    - manual/installation.md
+    - manual/why-play-amiga-games.md
+    - manual/getting-started.md
+    - manual/input-handling.md
+    - manual/hard-drive-games.md
+    - manual/floppy-games.md
+    - manual/cdtv-and-cd32-games.md
+    - manual/save-states.md
+    - manual/crt-emulation.md
+    - manual/customising-your-setup.md
+    - manual/troubleshooting.md
+    # - manual/folder-organisation.md
+
+    - Appendices:
+      - appendices/keyboard-shortcuts.md
+      - appendices/useful-websites.md
+      - appendices/thanks.md
+
+    - Changelog:
+      - changelog/index.md
+
+  - Game notes:
+    - game-notes/index.md
+    - game-notes/a.md
+    - game-notes/b.md
+    - game-notes/c.md
+    - game-notes/d.md
+    - game-notes/e-f.md
+    - game-notes/g-j.md
+    - game-notes/k-l.md
+    - game-notes/m-o.md
+    - game-notes/p.md
+    - game-notes/q-r.md
+    - game-notes/s.md
+    - game-notes/t-z.md
+
+not_in_nav: |
+  # To silence the warning about the custom `index.md` front page
+  /index.md
