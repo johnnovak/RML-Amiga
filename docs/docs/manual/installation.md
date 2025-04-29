@@ -14,27 +14,26 @@ You can download the packs from archive.org:
 </div>
 
 The total size of the packs is 16 GB for v1.0, and you'll need about 18 GB for
-the installed collection. So about 36 GB of free disk space should suffice to
-be on the safe side. You can delete the packs after the installation if you
-want to reclaim disk space.
+the installed collection. So about 36 GB of free disk space is needed to
+install RML Amiga. 
 
-If you're really short on free space, the installer scripts support installing
-RML Amiga to a different drive or partition, so you can download the packs to
-one drive, and install them to another.
+If you're short on free space but you have multiple drives or partitions, you
+can download the packs to one drive, then install to another. The installer
+scripts allows you to install RML Amiga to a different drive or partition.
 
+You can delete the packs after the installation if you want to reclaim disk
+space.
 
 ## Automatic installation
 
 The easiest way to set up RML Amiga is to use the automatic installation
-method. 
+method via the installer script.
 
 1. Pick a destination folder for your RML Amiga installation. This must be
    outside of any system folders such as `C:\Program Files`. For example,
    `D:\Emulation\RML-Amiga` is a good location. 
 
-1. Download all five packs into this folder. (If you're short on free disk
-   space, you can download the packs into a temporary folder on another
-   drive, and then install them into your destination folder from there.)
+1. Download all five packs into this folder.
 
 1. Download the installation script `install-full-v1.0.bat` and the 7-zip
    archiver (`7za.exe`) from the [Base pack archive.org
@@ -46,10 +45,10 @@ method.
      </figure>
 
 1. Double-click on `install-full-v1.0.bat` to start the installation and
-   follow the instructions in the appearing window. (Just press ++enter++ when
-   asked for the installation folder if you want to install RML Amiga into the
-   same folder, or enter a different destination folder as per the
-   instructions.)
+   follow the instructions in the appearing window. Read the instructions
+   carefully; you'll be able to specify an alternative installation location
+   if you want to install RML Amiga to a different drive.
+
 
 The installation will take about 15-20 minutes. It's a good idea to read the
 [Why play Amiga games?](why-play-amiga-games.md) and [CRT
@@ -57,7 +56,7 @@ emulation](crt-emulation.md) sections while waiting.
 
 Once the installation has been completed, you can delete the `RML-Amiga-*.zip`
 packs to reclaim disk space. Moving them to a different folder for safekeeping
-is a better idea, though, if you have the spare space.
+is an even better idea, though.
 
 You can skip the rest of this section if you're eager to play some Amiga
 games. Onward to the [Getting started](getting-started.md) section!
