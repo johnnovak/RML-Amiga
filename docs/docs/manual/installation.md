@@ -95,7 +95,7 @@ Here is a detailed description of the packs:
 
 
 The folder structure in all packs is relative to the `$RML_BASE` folder. If
-you expand all archives into `$RML_BASE` (double-expand in the case of the
+you expand all packages into `$RML_BASE` (double-expand in the case of the
 **Games** and **Demos** packs), you'll get the correct folder structure.
 
 !!! note "The practical reality we live in"
@@ -110,21 +110,21 @@ you expand all archives into `$RML_BASE` (double-expand in the case of the
     rightsholders" (who are far removed from Commodore and the original
     creators of the Amiga) or just download them from somewhere makes very
     little difference in the grand scheme of things. Up to you, really. If you
-    decide to pay for them, make sure to purchase the full ROM set, _not_ just
+    decide to pay for them, make sure to purchase the full ROM set, not just
     the "value edition".
 
 
 ## Versioning & updates
 
-"Point zero" versions of packages (e.g., v1.0, v2.0, v3.0, etc.) always
-contain a snapshot of all the files in the collection.
+"Point zero" package versions (e.g., v1.0, v2.0, etc.) always contain a
+snapshot of all the files in the collection.
 
-"Point releases" (e.g., v1.1, v1.2. v1.3, etc.) are updates; they need to be
+"Point release" packages (e.g., v1.1, v1.2. etc.) are updates; they need to be
 applied in order. So, for example, if you're currently on **Games** v1.2 and
 you want to upgrade to the latest v1.5 release, you'll need to apply the v1.3,
 v1.4, and v1.5 update packages _in order_.
 
-The **Games** and **Demos** archives will get the most frequent updates, the
+The **Games** and **Demos** packages will get the most frequent updates, the
 rest only rarely.
 
 
@@ -173,8 +173,8 @@ archives to one drive or partition and then install them to a different one.
     view the list of nested ZIP files on archive.org by clicking on the "Show
     All" link in the downloads box on the right side, then on the "View
     Contents" link next to the ZIP file's name in the file listing. That will
-    take you to the list of nested ZIP archives which you can download one by
-    on by simply clicking on their names.
+    take you to the list of nested ZIP archives which you can download
+    individually by simply clicking on their names.
 
 !!! warning "This voids your warranty, pal!"
 

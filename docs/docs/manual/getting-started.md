@@ -53,6 +53,17 @@ to launch the game.
     loaded a config yet... which won't do anything!
 
 
+### User manual
+
+The latest version of the user manual you're reading now is available on the
+[RML Amiga website](https://rml-amiga.johnnovak.net/). Make sure to read it in
+its entirety to get the most out of the collection. A local version that you
+can read without an internet connection is included in the **Documentation**
+folder of your RML Amiga installation. Just double-click on `index.html` in
+that folder and the manual will open in your default browser. The full-text
+search works in the local version too.
+
+
 ### Game notes
 
 Always check the [Game notes](../game-notes/index.md) before trying a game for the
