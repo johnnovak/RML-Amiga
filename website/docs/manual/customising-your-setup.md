@@ -26,7 +26,7 @@ You can customise your RML Amiga game configurations in two ways:
 
 ## Configuration tool
 
-RML Amiga includes a configuration tool aptly titled `conftool.exe` located in
+RML Amiga includes a configuration tool aptly titled `ConfTool.exe` located in
 your `$RML_BASE` folder. You might want to create a desktop shortcut for it.
 
 The tool allows you to change specific settings of your configs while

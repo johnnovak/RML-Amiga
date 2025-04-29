@@ -15,7 +15,7 @@
 ### Starting a game
 
 Start the bundled portable Amiga emulator called **WinUAE** by running
-`winuae.exe` (creating a desktop shortcut icon for it would be a good idea).
+`winuae64.exe` (creating a desktop shortcut icon for it would be a good idea).
 WinUAE always shows the configuration tab after startup. You can return to the
 configurations tab from any other tab by selecting
 :material-numeric-1-circle:{:.circ-num} **Configurations** in the left pane,
@@ -60,8 +60,7 @@ The latest version of the user manual you're reading now is available on the
 its entirety to get the most out of the collection. A local version that you
 can read without an internet connection is included in the **Documentation**
 folder of your RML Amiga installation. Just double-click on `index.html` in
-that folder and the manual will open in your default browser. The full-text
-search in only available in the online version.
+that folder and the manual will open in your default browser.
 
 
 ### Game notes
@@ -235,12 +234,6 @@ If you would like to change the defaults (e.g., you'd like to make the image
 fill the screen, or turn off the CRT shaders or the floppy sounds) or want to
 fine-tune the technical emulator settings, please refer to the [Customising
 your setup](customising-your-setup.md) section.
-
-
-### Games list
-
-[Google Sheets]https://docs.google.com/spreadsheets/d/16KTV3oIyYMOPncK9JF5epr2yWMGsqBiU2V6Al6MzVK4
-
 
 
 ### Further reading
