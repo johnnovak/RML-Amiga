@@ -1,0 +1,1911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="It's a magic luggage, full of Amiga goodies">
+      
+      
+        <meta name="author" content="Rincewind">
+      
+      
+        <link rel="canonical" href="https://rml-amiga.johnnovak.net/manual/getting-started/">
+      
+      
+        <link rel="prev" href="../why-play-amiga-games/">
+      
+      
+        <link rel="next" href="../input-handling/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Getting started - Rincewind's Magic Luggage Full of Amiga Goodies</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="header.title"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../.."
+      title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies"
+      class="md-header__button md-logo"
+      aria-label="Rincewind's Magic Luggage Full of Amiga Goodies"
+      data-md-component="logo"
+    >
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../game-notes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Game notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies" class="md-nav__button md-logo" aria-label="Rincewind's Magic Luggage Full of Amiga Goodies" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Rincewind's Magic Luggage Full of Amiga Goodies
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-play-amiga-games/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why play Amiga games?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a game
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      User manual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-code-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skipping code checks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warp-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warp mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-screen-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      On-screen display
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manuals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floppy-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Floppy games
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard shortcuts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-your-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving your progress
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game variants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customising-your-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customising your setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hard-drive-games/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hard drive games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../floppy-games/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Floppy games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdtv-and-cd32-games/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CDTV and Amiga CD32 games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../save-states/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Save states
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crt-emulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRT emulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customising-your-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customising your setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/keyboard-shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/useful-websites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful websites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/thanks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thanks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../changelog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../game-notes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Game notes
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Game notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    D
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/e-f/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E–F
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/g-j/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G–J
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/k-l/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K–L
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/m-o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    M–O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    P
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/q-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Q–R
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/t-z/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T–Z
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a game
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      User manual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-code-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skipping code checks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warp-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warp mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-screen-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      On-screen display
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manuals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floppy-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Floppy games
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard shortcuts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-your-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving your progress
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game variants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customising-your-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customising your setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<div class="admonition danger">
+<p class="admonition-title">HALT! &mdash; No one shall pass before reading this first!</p>
+<p>If you&rsquo;ve never used an Amiga before, you will <em>not</em> get very far without
+reading this getting started section. You will probably not even make it
+past the intro of your very first game!</p>
+<p>So please <strong>read these instructions <em>very carefully!</em></strong></p>
+<p>Seasoned Amiga veterans who know the Amiga inside out should also keep
+reading as half of the information is emulation-related.</p>
+</div>
+<h3 id="starting-a-game">Starting a game<a class="headerlink" href="#starting-a-game" title="Permanent link">&para;</a></h3>
+<p>Start the bundled portable Amiga emulator called <strong>WinUAE</strong> by running
+<code>winuae.exe</code> (creating a desktop shortcut icon for it would be a good idea).
+WinUAE always shows the configuration tab after startup. You can return to the
+configurations tab from any other tab by selecting
+<span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7zm2-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>Configurations</strong> in the left pane,
+or by just simply restarting WinUAE.</p>
+<p><a class="glightbox" href="../images/starting-games.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Starting games" src="../images/starting-games.png" /></a></p>
+<p>Once you&rsquo;re in the <strong>Configurations</strong> tab:</p>
+<ul>
+<li>
+<p>Make sure <strong>Games\</strong> is selected in the <span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 0 0-2 2v4h6v-2h-4v-2h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span>
+    <strong>Filter</strong> drop-down. </p>
+</li>
+<li>
+<p>To start a game, double-click on its name in the
+    <span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 0 0-1.5-1.5 1.5 1.5 0 0 0 1.5-1.5V9a2 2 0 0 0-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 0 0 2-2M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> configurations list. Note some
+    games might take a bit of time to load.</p>
+</li>
+<li>
+<p>To narrow down the list, start typing into the
+    <span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v4h2V7h-2v4h-2V7zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>Search</strong> box. Click on the <strong>X</strong>
+    button right of the text field to clear the search filter.</p>
+</li>
+<li>
+<p>If you want to play a different game, it&rsquo;s best to quit WinUAE with
+    <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f4">F4</kbd></span> and then start it again.</p>
+</li>
+</ul>
+<p>Alternatively, you can load a configuration by single-clicking on it and then
+pressing the <span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v2H9v2h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2V9h4V7zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>Load</strong> button. You can
+see the name of the currently loaded config in the
+<span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 7a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2V9h4V7zm0 6h2v2h-2zm1-11a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> title bar. After having loaded the
+config, click on the <span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11 17 4-8V7H9v2h4l-4 8zm1-15a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>Start</strong> button
+to launch the game.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You <em>must</em> press <strong>Load</strong> before pressing <strong>Start</strong>, otherwise WinUAE
+will use the <em>last</em> loaded config, or the default one if you haven&rsquo;t
+loaded a config yet&hellip; which won&rsquo;t do anything!</p>
+</div>
+<h3 id="user-manual">User manual<a class="headerlink" href="#user-manual" title="Permanent link">&para;</a></h3>
+<p>The latest version of the user manual you&rsquo;re reading now is available on the
+<a href="https://rml-amiga.johnnovak.net/">RML Amiga website</a>. Make sure to read it in
+its entirety to get the most out of the collection. A local version that you
+can read without an internet connection is included in the <strong>Documentation</strong>
+folder of your RML Amiga installation. Just double-click on <code>index.html</code> in
+that folder and the manual will open in your default browser. The full-text
+search in only available in the online version.</p>
+<h3 id="game-notes">Game notes<a class="headerlink" href="#game-notes" title="Permanent link">&para;</a></h3>
+<p>Always check the <a href="../../game-notes/">Game notes</a> before trying a game for the
+first time. A few titles need some extra steps to even just start the
+game&mdash;this could be hard to figure out if you&rsquo;ve never used an Amiga before.
+Some of this advice is next to impossible to figure out on your own (you&rsquo;d
+need to do a lot of forum diving to find it), or the information is included
+in the manual but it&rsquo;s easy to miss if you don&rsquo;t read it carefully.</p>
+<h3 id="skipping-code-checks">Skipping code checks<a class="headerlink" href="#skipping-code-checks" title="Permanent link">&para;</a></h3>
+<p>Some games have additional special configs to skip the intro or the
+manual-based copy protection check at the start of the game (e.g., <code>Altered
+Destiny [skip code check]</code>). It&rsquo;s advised to start the normal config for the
+first time to experience the intro and the original game at least once.</p>
+<h3 id="warp-mode">Warp mode<a class="headerlink" href="#warp-mode" title="Permanent link">&para;</a></h3>
+<p>You can speed up loading times (especially floppy loading times) considerably
+by entering &ldquo;warp mode&rdquo;. You can toggle warp mode with <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-media-pause">Pause</kbd></span>. This
+&ldquo;time-warps&rdquo; the speed of the emulation to the maximum your computer can
+handle, so you are going &ldquo;faster than real-time&rdquo;. There is no sound if warp
+mode is engaged and the emulated CPU speed meter is pegged to 100% in the
+on-screen display.</p>
+<h3 id="on-screen-display">On-screen display<a class="headerlink" href="#on-screen-display" title="Permanent link">&para;</a></h3>
+<p>The on-screen display (OSD) in the bottom-right corner is a handy little thing
+that gives you feedback about what the emulator is currently doing.</p>
+<p><a class="glightbox" href="../images/osd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="On-screen display" src="../images/osd.png" /></a></p>
+<ul>
+<li>
+<p><span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7zm2-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>Audio buffer</strong> utilisation
+    meter (if this turns red and you hear distorted audio, you&rsquo;ll need to
+    increase the audio buffer sizes with the configuration tool)</p>
+</li>
+<li>
+<p><span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 0 0-2 2v4h6v-2h-4v-2h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>CPU</strong> utilisation meter (it&rsquo;s
+    pegged to <strong>100</strong> in warp mode)</p>
+</li>
+<li>
+<p><span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 0 0-1.5-1.5 1.5 1.5 0 0 0 1.5-1.5V9a2 2 0 0 0-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 0 0 2-2M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>FPS</strong> meter (shows the letter
+    <strong>P</strong> if the emulation is paused; jumps up to the 150-300+ FPS range in
+    warp mode)</p>
+</li>
+<li>
+<p><span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v4h2V7h-2v4h-2V7zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>Power LED</strong> of the emulated
+    Amiga (usually blinks a few times if the machine reboots automatically
+    because of a program crashing)</p>
+</li>
+<li>
+<p><span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v2H9v2h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2V9h4V7zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>Hard disk</strong> activity LED
+    (blue on reads, red on writes; only shown for hard drive games)</p>
+</li>
+<li>
+<p><span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 7a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2V9h4V7zm0 6h2v2h-2zm1-11a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>CD-ROM</strong> activity (only shown
+    for CD32 and CDTV games).</p>
+</li>
+<li>
+<p><span class="twemoji circ-num"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11 17 4-8V7H9v2h4l-4 8zm1-15a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> <strong>Floppy drive</strong> activity of
+    the four floppy drives (green on reads, red on writes; the number
+    indicates the current track). The first drive is always present (except on
+    the CDTV and the CD32), the rest are optional.</p>
+</li>
+</ul>
+<h3 id="manuals">Manuals<a class="headerlink" href="#manuals" title="Permanent link">&para;</a></h3>
+<p>It&rsquo;s important to understand that control schemes and user interfaces were a
+lot less standardised in the 1980s and early 90s. You won&rsquo;t get very far in
+most games without reading the manuals, the reference cards, and other
+supplementary materials first. Look for these in the <strong>Manual</strong> and <strong>Extras</strong>
+sub-folders within the game folders.</p>
+<p>The <strong>Manual</strong> folder contains <em>not</em> just the manual, but any other items
+included with the original game that are necessary for playing and completing
+it (e.g., code wheels, code sheets, or other documents and images you&rsquo;ll need
+to refer to during your playthrough as a form of copy protection).</p>
+<p>The <strong>Extras</strong> folder contains optional content not strictly necessary to
+complete the game (e.g., covers, posters, maps, hint books, etc.).</p>
+<h3 id="floppy-games">Floppy games<a class="headerlink" href="#floppy-games" title="Permanent link">&para;</a></h3>
+<p><a href="../hard-drive-games/">Hard drive games</a> are the easiest to deal with, floppy
+games need a bit of practice. Read the <a href="../floppy-games/">Floppy games</a> section
+for guidance. You can easily recognise a floppy game by the emulated floppy
+drive sounds.</p>
+<h3 id="controller-support">Controller support<a class="headerlink" href="#controller-support" title="Permanent link">&para;</a></h3>
+<p>Most games in the collection are controlled with the mouse and the keyboard,
+but a few need a joystick. These games are configured for an emulated
+joystick: use the regular cursor keys (<em>not</em> the numeric keypad) for movement,
+and the <span class="keys"><kbd class="key-right-alt">Right Alt</kbd></span>, <span class="keys"><kbd class="key-right-shift">Right Shift</kbd></span>, or <span class="keys"><kbd class="key-right-control">Right Ctrl</kbd></span> keys for the fire button.</p>
+<p>To use a real joystick, press the fire button on your joystick after starting
+the game. This will &ldquo;plug&rdquo; the joystick into either port 1 or port 2 of your
+&ldquo;virtual Amiga&rdquo;, depending on which fire button you press. Most games look
+for the joystick in port 2, so you might need to use the <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-j">J</kbd></span> <strong>Swap
+joysticks</strong> hotkey if the joystick doesn&rsquo;t work.</p>
+<p>Many CDTV or Amiga CD32 games are best played with the mouse, but some are
+almost unplayable without a gamepad. To use your controller (e.g., an Xbox 360
+controller), press the green <strong>A</strong> button on it after starting the game and
+WinUAE will automatically &ldquo;plug&rdquo; it into port 2.</p>
+<h3 id="keyboard-shortcuts">Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permanent link">&para;</a></h3>
+<p>There are a few important <a href="../../appendices/keyboard-shortcuts/">Keyboard
+shortcuts</a> you should familiarise
+yourself with. The three most important are <span class="keys"><kbd class="key-media-pause">Pause</kbd></span> to toggle pausing the
+emulation, <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-media-pause">Pause</kbd></span> to toggle warp mode, and <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> to switch
+between windowed and full windowed mode. <span class="keys"><kbd class="key-f12">F12</kbd></span> stops the emulation and
+brings up the WinUAE GUI, but don&rsquo;t touch anything there yet if you&rsquo;re a
+newbie; things will blow up! <img alt="💣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a3.svg" title=":bomb:" /><img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /> Just press <span class="keys"><kbd class="key-escape">Esc</kbd></span> or the <strong>OK</strong> or
+<strong>Cancel</strong> button for now to return to the game.</p>
+<h3 id="saving-your-progress">Saving your progress<a class="headerlink" href="#saving-your-progress" title="Permanent link">&para;</a></h3>
+<p>When it comes to saving your game progress, it&rsquo;s a bit of a Wild West
+situation. Every game is slightly different, and floppy games that require
+dedicated save disks are the trickiest to deal with. But fear not, help is
+provided on the <a href="../../game-notes/">Game notes</a> page for these titles. Make
+sure to read the detailed <a href="../floppy-games/#saving-your-progress">Saving your
+progress</a> section as well for general
+tips, and don&rsquo;t forget about <a href="../save-states/">Save states</a> as an alternative
+saving option.</p>
+<h3 id="game-variants">Game variants<a class="headerlink" href="#game-variants" title="Permanent link">&para;</a></h3>
+<p>A few games have some abbreviations after their names in parenthesis, e.g.,
+<strong>Eye of the Beholder (AGA)</strong> and <strong>Eye of the Beholder (OCS)</strong>. These specify
+which variant of the game we&rsquo;re dealing with if multiple different releases
+exist. Here&rsquo;s a quick rundown of them:</p>
+<ul>
+<li>
+<p><strong>OCS</strong> &mdash; This stands for Original Chip Set, which is the graphics chip
+    of the original Amiga line (such as the Amiga 500). About 90% of all
+    Amiga only have an OCS version, so if the game has no other variants, OCS
+    is simply omitted from the name.</p>
+</li>
+<li>
+<p><strong>AGA</strong> &mdash; Later Amigas (Amiga 1200, 4000, and the CD32) had the Advanced
+    Graphics Architecture chipset capable of displaying more colours on the
+    screen. As AGA games are relatively rare, they always have the AGA suffix
+    in their name.</p>
+</li>
+<li>
+<p><strong>CDTV</strong>, <strong>CD32</strong> &mdash; These denote CD games for the <a href="../cdtv-and-cd32-games/">two ill-fated Amiga
+    consoles</a>. As these are even rarer than AGA games,
+    they all have the CDTV or CD32 suffix.</p>
+</li>
+</ul>
+<p>Generally, the collection only contains the best version of the games, unless
+the different versions offer something unique, in which case all are included.
+This is usually the case with later AGA and CD32 re-releases that feature
+different (but not necessarily better) graphics and in some cases a CD Audio
+soundtrack or other CD-only extras.</p>
+<h3 id="customising-your-setup">Customising your setup<a class="headerlink" href="#customising-your-setup" title="Permanent link">&para;</a></h3>
+<p>RML Amiga comes with defaults that aim to recreate the experience of sitting
+in front of a real Amiga in the 1980s. Some other technical settings have been
+carefully chosen to ensure all games run without issues on most people&rsquo;s
+setups. However, power users might want to tweak these settings for a better
+experience (e.g., to enable lagless vsync with the minimum possible input
+latency).</p>
+<p>If you would like to change the defaults (e.g., you&rsquo;d like to make the image
+fill the screen, or turn off the CRT shaders or the floppy sounds) or want to
+fine-tune the technical emulator settings, please refer to the <a href="../customising-your-setup/">Customising
+your setup</a> section.</p>
+<h3 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h3>
+<p>Check out the <a href="../../appendices/useful-websites/">Useful websites</a> page to find out more
+about Amiga games. These sites should also help you decide which titles to try
+next.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav
+      class="md-footer__inner md-grid"
+      aria-label="footer.title"
+      
+    >
+
+      <!-- Link to previous page -->
+      
+        
+        <a
+          href="../why-play-amiga-games/"
+          class="md-footer__link md-footer__link--prev"
+          aria-label="Previous: Why play Amiga games?"
+          rel="prev"
+        >
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Why play Amiga games?
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a
+          href="../input-handling/"
+          class="md-footer__link md-footer__link--next"
+          aria-label="Next: Input handling"
+          rel="next"
+        >
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Input handling
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/johnnovak/rml-amiga">GitHub</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

@@ -1,0 +1,1850 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="It's a magic luggage, full of Amiga goodies">
+      
+      
+        <meta name="author" content="Rincewind">
+      
+      
+        <link rel="canonical" href="https://rml-amiga.johnnovak.net/manual/installation/">
+      
+      
+        <link rel="prev" href="../introduction/">
+      
+      
+        <link rel="next" href="../why-play-amiga-games/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Installation - Rincewind's Magic Luggage Full of Amiga Goodies</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="header.title"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../.."
+      title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies"
+      class="md-header__button md-logo"
+      aria-label="Rincewind's Magic Luggage Full of Amiga Goodies"
+      data-md-component="logo"
+    >
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../game-notes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Game notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies" class="md-nav__button md-logo" aria-label="Rincewind's Magic Luggage Full of Amiga Goodies" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Rincewind's Magic Luggage Full of Amiga Goodies
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-packs" class="md-nav__link">
+    <span class="md-ellipsis">
+      About the packs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioning &amp; updates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supplying-your-own-kickstart-roms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supplying your own Kickstart ROMs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supplying your own Kickstart ROMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roms" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROMs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roland-mt-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roland MT-32
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-play-amiga-games/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why play Amiga games?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hard-drive-games/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hard drive games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../floppy-games/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Floppy games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdtv-and-cd32-games/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CDTV and Amiga CD32 games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../save-states/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Save states
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crt-emulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRT emulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customising-your-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customising your setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/keyboard-shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/useful-websites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful websites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/thanks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thanks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../changelog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../game-notes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Game notes
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Game notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    D
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/e-f/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E–F
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/g-j/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G–J
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/k-l/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K–L
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/m-o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    M–O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    P
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/q-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Q–R
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-notes/t-z/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T–Z
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-packs" class="md-nav__link">
+    <span class="md-ellipsis">
+      About the packs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioning &amp; updates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supplying-your-own-kickstart-roms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supplying your own Kickstart ROMs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supplying your own Kickstart ROMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roms" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROMs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roland-mt-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roland MT-32
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<p>The collection is split into five packs: <strong>Base</strong>, <strong>Systems</strong>, <strong>ROMs</strong>,
+<strong>Games</strong>, and <strong>Demos</strong>.</p>
+<p>You can download the packs from archive.org:</p>
+<div class="compact">
+<ul>
+<li><a href="https://archive.org/details/RML-Amiga-Base-v1-0">RML-Amiga-Base-v1.0</a></li>
+<li><a href="https://archive.org/details/RML-Amiga-Systems-v1-0">RML-Amiga-Systems-v1.0</a></li>
+<li><a href="https://archive.org/details/RML-Amiga-ROMs-v1-0">RML-Amiga-ROMs-v1.0</a></li>
+<li><a href="https://archive.org/details/RML-Amiga-Games-v1-0">RML-Amiga-Games-v1.0</a></li>
+<li><a href="https://archive.org/details/RML-Amiga-Demos-v1-0">RML-Amiga-Demos-v1.0</a></li>
+</ul>
+</div>
+<p>The total size of the packs is 16 GB for v1.0, and you&rsquo;ll need about 18 GB for
+the installed collection. So about 36 GB of free disk space is needed to
+install RML Amiga. </p>
+<p>If you&rsquo;re short on free space but you have multiple drives or partitions, you
+can download the packs to one drive, then install to another. The installer
+scripts allows you to install RML Amiga to a different drive or partition.</p>
+<p>You can delete the packs after the installation if you want to reclaim disk
+space.</p>
+<h2 id="automatic-installation">Automatic installation<a class="headerlink" href="#automatic-installation" title="Permanent link">&para;</a></h2>
+<p>The easiest way to set up RML Amiga is to use the automatic installation
+method via the installer script.</p>
+<ol>
+<li>
+<p>Pick a destination folder for your RML Amiga installation. This must be
+   outside of any system folders such as <code>C:\Program Files</code>. For example,
+   <code>D:\Emulation\RML-Amiga</code> is a good location. </p>
+</li>
+<li>
+<p>Download all five packs into this folder.</p>
+</li>
+<li>
+<p>Download the installation script <code>install-full-v1.0.bat</code> and the 7-zip
+   archiver (<code>7za.exe</code>) from the <a href="https://archive.org/details/rml-amiga-base-v1-0">Base pack archive.org
+   item</a> into this
+   folder as well. The contents of the folder should now look like this:</p>
+<p><figure markdown="span">
+   <a class="glightbox" href="../images/full-install.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Starting games" src="../images/full-install.png" width="70%" /></a>
+ </figure></p>
+</li>
+<li>
+<p>Double-click on <code>install-full-v1.0.bat</code> to start the installation and
+   follow the instructions in the appearing window. Read the instructions
+   carefully; you&rsquo;ll be able to specify an alternative installation location
+   if you want to install RML Amiga to a different drive.</p>
+</li>
+</ol>
+<p>The installation will take about 15-20 minutes. It&rsquo;s a good idea to read the
+<a href="../why-play-amiga-games/">Why play Amiga games?</a> and <a href="../crt-emulation/">CRT
+emulation</a> sections while waiting.</p>
+<p>Once the installation has been completed, you can delete the <code>RML-Amiga-*.zip</code>
+packs to reclaim disk space. Moving them to a different folder for safekeeping
+is an even better idea, though.</p>
+<p>You can skip the rest of this section if you&rsquo;re eager to play some Amiga
+games. Onward to the <a href="../getting-started/">Getting started</a> section!</p>
+<div class="admonition note">
+<p class="admonition-title">RML Amiga is fully portable</p>
+<p>RML Amiga uses relative paths and won&rsquo;t create or modify any files
+outside of its designated folder. You can move your RML Amiga folder
+between different drives or even different computers without any problems.</p>
+</div>
+<h2 id="about-the-packs">About the packs<a class="headerlink" href="#about-the-packs" title="Permanent link">&para;</a></h2>
+<p>Here is a detailed description of the packs:</p>
+<ul>
+<li>
+<p><strong>Base</strong> &mdash; Contains 64-bit versions of WinUAE, the CAPS IPF disk image
+  plugin, a custom-compiled version of ReShade (with auto-updates and the nag
+  screen disabled), and the CRT shader setup.</p>
+</li>
+<li>
+<p><strong>Systems</strong> &mdash; Minimal Workbench 1.3 and 3.1 hard drive setups as directory
+  hard drives. Just the bare minimum required to run games (these files are
+  included on many AmigaDOS floppy games as well). The Workbench 3.1
+  installation contains WHDLoad too.</p>
+</li>
+<li>
+<p><strong>ROMs</strong> &mdash; ROM images (e.g., Kickstart ROMs) necessary to emulate
+  the various Amiga models and other required hardware. (Note: The Amiga is
+  <em>not</em> a console! Games are <em>not</em> called &ldquo;ROMs&rdquo; on the Amiga!)</p>
+</li>
+<li>
+<p><strong>Games</strong> &mdash; Nested ZIP archive with each game having its own
+  self-contained ZIP file. Each game lives in its own dedicated subfolder
+  which contains the disk images or directory hard drives, manuals, extras,
+  save disks, save states, and the original source media.</p>
+</li>
+<li>
+<p><strong>Demos</strong> &mdash; Demoscene productions from the Amiga&rsquo;s glorious past (and
+  present!). It&rsquo;s a nested ZIP archive, similar to the <strong>Games</strong> pack.</p>
+</li>
+</ul>
+<p>The folder structure in all packs is relative to the <code>$RML_BASE</code> folder. If
+you expand all packages into <code>$RML_BASE</code> (double-expand in the case of the
+<strong>Games</strong> and <strong>Demos</strong> packs), you&rsquo;ll get the correct folder structure.</p>
+<div class="admonition note">
+<p class="admonition-title">The practical reality we live in</p>
+<p>The main reason for separating out the Kickstart ROMs and the minimal hard
+drive-based systems is to be able to share the collection on channels that
+don&rsquo;t want to risk harassment from the current rightsholders of the Amiga
+Kickstart ROMs.</p>
+<p>In a practical sense, no one gives a damn about these 30+ years old ROMs
+anymore, so whether you purchase them &ldquo;legally&rdquo; from the &ldquo;current
+rightsholders&rdquo; (who are far removed from Commodore and the original
+creators of the Amiga) or just download them from somewhere makes very
+little difference in the grand scheme of things. Up to you, really. If you
+decide to pay for them, make sure to purchase the full ROM set, not just
+the &ldquo;value edition&rdquo;.</p>
+</div>
+<h2 id="versioning-updates">Versioning &amp; updates<a class="headerlink" href="#versioning-updates" title="Permanent link">&para;</a></h2>
+<p>&ldquo;Point zero&rdquo; package versions (e.g., v1.0, v2.0, etc.) always contain a
+snapshot of all the files in the collection.</p>
+<p>&ldquo;Point release&rdquo; packages (e.g., v1.1, v1.2. etc.) are updates; they need to be
+applied in order. So, for example, if you&rsquo;re currently on <strong>Games</strong> v1.2 and
+you want to upgrade to the latest v1.5 release, you&rsquo;ll need to apply the v1.3,
+v1.4, and v1.5 update packages <em>in order</em>.</p>
+<p>The <strong>Games</strong> and <strong>Demos</strong> packages will get the most frequent updates, the
+rest only rarely.</p>
+<h2 id="manual-installation">Manual installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h2>
+<p>This is for people who want complete control over their installation (e.g., if
+you don&rsquo;t want to download all games, just a few), and for those who have
+problems with using certain parts of the collection for whatever reasons
+(e.g., the Kickstart ROMs).</p>
+<p>Start by downloading the <strong>Base</strong> and <strong>Systems</strong> packs&mdash;these are mandatory.
+The <strong>ROMs</strong> pack is not necessary if you have acquired the ROM files from
+elsewhere (see <a href="#supplying-your-own-kickstart-roms">Supplying your own Kickstart
+ROMs</a>).</p>
+<p>Once you&rsquo;ve downloaded these packs, extract them into a folder you have full
+write access to (e.g., <code>D:\Emulation\RML-Amiga</code>). We will refer to this folder
+as <code>$RML_BASE</code> from now on. If you already have WinUAE installed, no problem.
+The collection uses its own copy of WinUAE in portable mode, so it won&rsquo;t
+interfere with existing installations. The included WinUAE will never save any
+data outside of the <code>$RML_BASE</code> folder.</p>
+<p>Now download the <strong>Games</strong> pack and <code>install-games-v1.0.bat</code>, then <strong>Demos</strong> and
+<code>install-demos-v1.0.bat</code> if you&rsquo;re interested in watching glorious Amiga
+demoscene productions. Move all these files into <code>$RML_BASE</code>, then run
+<code>install-games-v1.0.bat</code> and <code>install-demos-v1.0.bat</code> (the installation will
+take about 15 minutes for the <strong>Games</strong> pack).</p>
+<p>You can optionally pass the destination folder to the installer scripts as an
+argument. This is handy if you&rsquo;re short on disk space, so you can download the
+archives to one drive or partition and then install them to a different one.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Games</strong> and <strong>Demos</strong> nested archives; each game and demo resides in
+its own ZIP archive inside the big ZIP archive. You&rsquo;d need three times the
+disk space if you wanted to expand these manually. That&rsquo;s why using the
+installer scripts is recommended because the scripts will expand the
+nested ZIP files one by one, so you&rsquo;ll only need a bit more than twice the
+disk space.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Installing only a few games</p>
+<p>Alternatively, you can grab only the games you&rsquo;re interested in. Each game
+resides in its own ZIP archive inside the big <strong>Games</strong> ZIP file. You can
+view the list of nested ZIP files on archive.org by clicking on the &ldquo;Show
+All&rdquo; link in the downloads box on the right side, then on the &ldquo;View
+Contents&rdquo; link next to the ZIP file&rsquo;s name in the file listing. That will
+take you to the list of nested ZIP archives which you can download
+individually by simply clicking on their names.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">This voids your warranty, pal!</p>
+<p>The games are only guaranteed to work with the bundled WinUAE version.
+Switching to any other version is asking for trouble&mdash;don&rsquo;t do it.</p>
+</div>
+<h2 id="supplying-your-own-kickstart-roms">Supplying your own Kickstart ROMs<a class="headerlink" href="#supplying-your-own-kickstart-roms" title="Permanent link">&para;</a></h2>
+<p>If you&rsquo;ve acquired the Kickstart ROMS from alternative sources, this is how to
+install them:</p>
+<ul>
+<li>
+<p>The easiest way is to copy all your ROM files into <code>$RML_BASE/ROMs</code>, then
+  force a re-scan by pressing the <strong>Rescan ROMs</strong> button in the <strong>Paths</strong>
+  WinUAE configuration tab. WinUAE will identify the ROM files by their CRC32
+  checksums, so the file names don&rsquo;t matter.</p>
+</li>
+<li>
+<p>To get WHDLoad working (required by a handful of games), copy the Amiga 500
+  (Kickstart 1.3 rev 34.50) and Amiga 1200 (Kickstart 3.1 rev 40.60) ROMs into
+  the <code>$RML_BASE/System-3.1/Devs/Kickstarts</code> folder, then rename them to
+  <code>kick34005.A500.RTB</code> and <code>kick40068.A1200.RTB</code>, respectively (the below table
+  shows their typical file names in Kickstart ROM collections).</p>
+</li>
+</ul>
+<h3 id="roms">ROMs<a class="headerlink" href="#roms" title="Permanent link">&para;</a></h3>
+<p>These are all the ROM files used by setup with their CRC32 checksums:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Filename</th>
+<th>CRC32</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kickstart-v1.1-rev31.34-1985-Commodore-A1000.NTSC.rom</td>
+<td><code>D060572A</code></td>
+</tr>
+<tr>
+<td>Kickstart-v1.2-rev33.166-1986-Commodore-A1000.rom</td>
+<td><code>9ED783D0</code></td>
+</tr>
+<tr>
+<td>Kickstart-v1.3-rev34.50-1987-Commodore-A500-A1000-A2000-CDTV.rom</td>
+<td><code>C4F0F55F</code></td>
+</tr>
+<tr>
+<td>Kickstart-v3.1-rev40.68-1993-Commodore-A1200.rom</td>
+<td><code>1483A091</code></td>
+</tr>
+<tr>
+<td>Kickstart-v3.1-rev40.60-1993-Commodore-CD32.rom</td>
+<td><code>1E62D4A5</code></td>
+</tr>
+<tr>
+<td>CDTV Extended-ROM v2.7 (1992)(Commodore)(CDTV).rom</td>
+<td><code>CEAE68D2</code></td>
+</tr>
+<tr>
+<td>CD32 Extended-ROM rev 40.60 (1993)(Commodore)(CD32).rom</td>
+<td><code>87746BE2</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="roland-mt-32">Roland MT-32<a class="headerlink" href="#roland-mt-32" title="Permanent link">&para;</a></h3>
+<p>These are only required by a handful of games that support Roland MT-32 sound.
+You must copy these into <code>$RML_BASE\ROMs\mt32-roms\</code> and the file names must
+match:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Filename</th>
+<th>CRC32</th>
+<th>SHA-1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl_cm32l_1_02.rom</td>
+<td><code>B998047E</code></td>
+<td><code>a439fbb390da38cada95a7cbb1d6ca199cd66ef8</code></td>
+</tr>
+<tr>
+<td>ctrl_mt32_1_07.rom</td>
+<td><code>A7C1531B</code></td>
+<td><code>b083518fffb7f66b03c23b7eb4f868e62dc5a987</code></td>
+</tr>
+<tr>
+<td>pcm_cm32l.rom</td>
+<td><code>4B961EBA</code></td>
+<td><code>289cc298ad532b702461bfc738009d9ebe8025ea</code></td>
+</tr>
+<tr>
+<td>pcm_mt32.rom</td>
+<td><code>573E31CC</code></td>
+<td><code>f6b1eebc4b2d200ec6d3d21d51325d5b48c60252</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav
+      class="md-footer__inner md-grid"
+      aria-label="footer.title"
+      
+    >
+
+      <!-- Link to previous page -->
+      
+        
+        <a
+          href="../introduction/"
+          class="md-footer__link md-footer__link--prev"
+          aria-label="Previous: Introduction"
+          rel="prev"
+        >
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a
+          href="../why-play-amiga-games/"
+          class="md-footer__link md-footer__link--next"
+          aria-label="Next: Why play Amiga games?"
+          rel="next"
+        >
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Why play Amiga games?
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/johnnovak/rml-amiga">GitHub</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
