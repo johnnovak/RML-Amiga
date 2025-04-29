@@ -1,0 +1,1874 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="It's a magic luggage, full of Amiga goodies">
+      
+      
+        <meta name="author" content="Rincewind">
+      
+      
+        <link rel="canonical" href="https://rml-amiga.johnnovak.net/manual/save-states.html">
+      
+      
+        <link rel="prev" href="cdtv-and-cd32-games.html">
+      
+      
+        <link rel="next" href="crt-emulation.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Save states - Rincewind's Magic Luggage Full of Amiga Goodies</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#save-states" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="header.title"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../index.html"
+      title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies"
+      class="md-header__button md-logo"
+      aria-label="Rincewind's Magic Luggage Full of Amiga Goodies"
+      data-md-component="logo"
+    >
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="introduction.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../game-notes/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Game notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies" class="md-nav__button md-logo" aria-label="Rincewind's Magic Luggage Full of Amiga Goodies" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Rincewind's Magic Luggage Full of Amiga Goodies
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="why-play-amiga-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why play Amiga games?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="input-handling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hard-drive-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hard drive games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="floppy-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Floppy games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cdtv-and-cd32-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CDTV and Amiga CD32 games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Save states
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="save-states.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Save states
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-saves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick saves
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#named-save-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Named save states
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-config-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special config variants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special config variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-special-config-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating special config variants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emulating-resume-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emulating &ldquo;resume game&rdquo;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-saves-and-named-saves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick saves and named saves
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-state-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save state best practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Save state best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persistent-game-worlds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistent game worlds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whdload-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      WHDLoad games
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-games-for-too-long" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running games for too long
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="crt-emulation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRT emulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="customising-your-setup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customising your setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/keyboard-shortcuts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/useful-websites.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful websites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/thanks.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thanks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../changelog/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../game-notes/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Game notes
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Game notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    D
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/e-f.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E–F
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/g-j.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G–J
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/k-l.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K–L
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/m-o.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    M–O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/p.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    P
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/q-r.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Q–R
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/s.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/t-z.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T–Z
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-saves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick saves
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#named-save-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Named save states
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-config-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special config variants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special config variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-special-config-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating special config variants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emulating-resume-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emulating &ldquo;resume game&rdquo;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-saves-and-named-saves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick saves and named saves
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-state-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save state best practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Save state best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persistent-game-worlds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistent game worlds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whdload-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      WHDLoad games
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-games-for-too-long" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running games for too long
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="save-states">Save states<a class="headerlink" href="#save-states" title="Permanent link">&para;</a></h1>
+<p>WinUAE save states capture the entire state of the emulated machine and write
+it into a so-called <strong>state file</strong> that you can restore later instantaneously.
+Save states are useful to save your progress in games that don&rsquo;t have built-in save
+game support. You can also use save states as an alternative saving mechanism
+in most (but not all) games.</p>
+<p>Save state files have the <code>.uss</code> extension. You can create them in a few
+slightly different ways that cater for different use cases, but at the end of
+the day, there is just a single save state format.</p>
+<p>Compared to other emulators, WinUAE save states are <em>very</em> stable. The latest
+WinUAE can still load save states created 20 years ago! You can count on it
+that all your save states will continue to work in future WinUAE versions.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Not all games are compatible with save states, and you can mess things up
+royally with save states if you don&rsquo;t know what you&rsquo;re doing!</p>
+<p>Make sure to read the
+<a href="#save-state-best-practices">Save state best practices</a> section very
+carefully before you attempt to use save states in anger, and always check
+the <a href="../game-notes/index.html">Game notes</a> to see if a game is incompatible with
+save states.</p>
+</div>
+<h2 id="quick-saves">Quick saves<a class="headerlink" href="#quick-saves" title="Permanent link">&para;</a></h2>
+<p>This method is the most useful for &ldquo;save scumming&rdquo; over short periods. You
+have nine quick save slots available for the currently loaded game config:</p>
+<ul>
+<li>
+<p>To save the current state into slots 1&ndash;9, press <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-num1">Num 1</kbd></span>&ndash;<span class="keys"><kbd class="key-num9">Num 9</kbd></span>.</p>
+</li>
+<li>
+<p>To restore the state from slots 1&ndash;9, press <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-num1">Num 1</kbd></span>&ndash;<span class="keys"><kbd class="key-num9">Num 9</kbd></span>.</p>
+</li>
+</ul>
+<p>Save states created this way are stored in the <code>$RML_BASE\Quicksaves</code> folder.
+The state files are named after the currently loaded config and the index of
+the quick save slot. For example, if you load the game config <strong>Another
+World</strong> and then quick save into slots 1, 2, and 5, you&rsquo;ll end up with the
+following state files:</p>
+<div class="compact">
+<ul>
+<li><code>$RML_BASE\Quicksaves\Another World_1.uss</code></li>
+<li><code>$RML_BASE\Quicksaves\Another World_2.uss</code></li>
+<li><code>$RML_BASE\Quicksaves\Another World_5.uss</code></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Quick saves behave in a rather unintuitive way with <a href="#special-config-variants">Special config
+variants</a>. Make sure to read that section
+carefully, and the <a href="#quick-saves-and-named-saves">Quick saves and named
+saves</a> too which describes a way how to
+reconcile the two save state creation methods.</p>
+</div>
+<h2 id="named-save-states">Named save states<a class="headerlink" href="#named-save-states" title="Permanent link">&para;</a></h2>
+<p>The above quick save method is great for save scumming to get over a difficult
+part in a game (especially in action games), but for more &ldquo;permanent&rdquo; saves,
+it&rsquo;s better to use the named save states method.</p>
+<p>To create a named save state, press <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f6">F6</kbd></span> to bring up the save
+state dialog. Select the destination folder for your save state, give it a
+name, then press the <strong>Ok</strong> button. It is highly recommended to use the
+dedicated <code>Savestates</code> subfolder in your individual game folders to keep
+things organised.</p>
+<p>To load a save state, press <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-f6">F6</kbd></span> to bring up the restore state dialog,
+select the state file, and then press <strong>Ok</strong>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When restoring a save state, you <em>must</em> be running the <em>same</em> config you
+used when creating it. Failing to do so will likely result in a crash of
+the emulated machine or the game misbehaving.</p>
+<p>This is why putting your save states in the <code>Savestates</code> subfolder within
+the game&rsquo;s folder is the recommended best practice.</p>
+<p>Again, <em>always start the game first</em> before loading a save state!</p>
+<p>Save states created with different config variants of the same game are
+compatible with each other (e.g., <code>Another World</code> and <code>Another World [skip
+code check]</code>). That&rsquo;s because they use the exact same emulated machine
+configuration.</p>
+</div>
+<h2 id="special-config-variants">Special config variants<a class="headerlink" href="#special-config-variants" title="Permanent link">&para;</a></h2>
+<p>Quite a few games have special config variants to skip the intro of the game
+or the manual-based copy protection checks. These special configs are
+implemented via the automatic save state loading feature of WinUAE&mdash;you
+can create configs that will load a save state immediately after launching
+them.</p>
+<p>For example, <strong>Another World</strong> has two configs: <strong>Another World</strong>, which
+starts the game normally, and <strong>Another World [skip code check]</strong>, which loads
+a save state taken right after having passed the code check. All such special
+save states are stored in the <code>Savestates</code> subfolder within the individual game
+folders. In this case, the location of the state file is <code>$RML_BASE\Another
+World\Savestates\SkipCodeCheck.uss</code>.</p>
+<h3 id="creating-special-config-variants">Creating special config variants<a class="headerlink" href="#creating-special-config-variants" title="Permanent link">&para;</a></h3>
+<p>If you want to create your own &ldquo;skip intro&rdquo; or &ldquo;skip code check&rdquo; config
+variants for existing game configs, this is how to do it. We&rsquo;ll use the
+imaginary game <strong>Bikini Bandits</strong> in our example.</p>
+<ol>
+<li>
+<p>Start the game using the existing <code>Bikini Bandits</code> config.</p>
+</li>
+<li>
+<p>Wait until the game loads, then bring up the WinUAE settings window by
+   pressing <span class="keys"><kbd class="key-f12">F12</kbd></span>.</p>
+</li>
+<li>
+<p>Go to the <strong>Configurations</strong> tab, create a new config variant by changing
+   the config name to <code>Bikini Bandits [skip intro]</code> (or whatever else you
+   fancy), then press the <strong>Save</strong> button.</p>
+</li>
+<li>
+<p>Now go to the <strong>Host / Miscellaneous</strong> tab and press the <strong>Save State</strong>
+   button. This will bring up the familiar save state file dialog.</p>
+</li>
+<li>
+<p>Navigate to the <code>$RML_BASE\Games\Bikini Bandits\Savestates</code> folder, enter
+   <code>SkipIntro</code> as the name of the new state file, then press <strong>Ok</strong>.</p>
+</li>
+<li>
+<p>Note that the state file&rsquo;s name now appears in the combo box left of the
+   state management buttons, and the checkbox right to it is ticked. This
+   is a &ldquo;hidden feature&rdquo;; it means the state file will be immediately loaded
+   after starting the config.</p>
+</li>
+<li>
+<p>Go back to the <strong>Configurations</strong> tab, make sure the name field still
+   shows <code>Bikini Bandits [skip intro]</code>, then press the <strong>Save</strong> button to
+   update your config.</p>
+</li>
+</ol>
+<p>To test your new config, restart WinUAE and load your new <code>Bikini Bandits
+[skip intro]</code> config. The game should now start from the saved state
+instantaneously.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>Always</em> create the new config first in the <strong>Configurations</strong> tab and
+make sure you press the <strong>Save</strong> button <em>before</em> going to the
+<strong>Miscellaneous</strong> tab!</p>
+<p>If you don&rsquo;t save the new config first, the config name will revert to the
+last loaded (or saved) config when returning to the <strong>Configurations</strong>
+tab, so you&rsquo;ll need to type it in again. This is rather error-prone; it&rsquo;s
+very easy to overwrite your original config by mistake if you&rsquo;re doing
+things this way.</p>
+</div>
+<h3 id="emulating-resume-game">Emulating &ldquo;resume game&rdquo;<a class="headerlink" href="#emulating-resume-game" title="Permanent link">&para;</a></h3>
+<p>You can use this method to emulate a &ldquo;resume game&rdquo; feature in games that have
+no save game support. Just create <code>Bikini Bandits [save]</code> or something similar
+with the above method, then use <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f6">F6</kbd></span> to update your save state
+file whenever you want or before quitting the game.</p>
+<p>Starting <code>Bikini Bandits [save]</code> will then always resume your game from your
+last save point, which is pretty comfortable!</p>
+<h2 id="quick-saves-and-named-saves">Quick saves and named saves<a class="headerlink" href="#quick-saves-and-named-saves" title="Permanent link">&para;</a></h2>
+<p>A small complication is that if you load a named save state, subsequent quick
+saves will use the name and folder of the last loaded named save state. In
+other words, loading a named save state changes the base name of the quick
+save (which is the currently loaded config&rsquo;s name by default) and its destination folder (which
+is <code>$RML_BASE\Quicksaves</code> by default).</p>
+<p>For example, if you start the <strong>Another World [skip code check]</strong> config
+variant which loads <code>$RML_BASE\Another World\Savestates\SkipCodeCheck.uss</code> and
+then create a quick save in slot 1, the quick save will be called as
+<code>SkipCodeCheck_1.uss</code> in the folder <code>$RML_BASE\Another World\Savestates</code>. Then
+if you restart WinUAE and launch the regular <strong>Another World</strong> config, you
+won&rsquo;t be able to restore the game from quick save slot 1 by pressing
+<span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-num1">Num 1</kbd></span> as WinUAE will be looking for <code>Another World_1.uss</code> in the
+<code>Quicksaves</code> folder.</p>
+<p>The workaround is to load your quick save using the <a href="#named-save-states">Named save
+states</a> method, which will set the base name and
+destination folder of the quick saves, then you can use quick saves normally
+from that point.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Admittedly, this is a bit complicated and not the best user experience.
+Future WinUAE versions will replace the handling of such scenarios with a
+more intuitive method.</p>
+</div>
+<h2 id="save-state-best-practices">Save state best practices<a class="headerlink" href="#save-state-best-practices" title="Permanent link">&para;</a></h2>
+<p>Using save states is 100% safe in games with no in-game save support
+(virtually all action games), or to state it differently, in games that never
+write anything to any disk.</p>
+<p>The overwhelming majority of adventure, strategy, puzzle games, and simulators
+that feature in-game saves are also safe. Generally, you can even mix
+in-game saves with save states, but make sure to <em>never</em> create a save state
+when you&rsquo;re in the &ldquo;disk menu&rdquo; or the &ldquo;save menu&rdquo; of the game, or when
+there is any disk activity in progress.</p>
+<h3 id="persistent-game-worlds">Persistent game worlds<a class="headerlink" href="#persistent-game-worlds" title="Permanent link">&para;</a></h3>
+<p>Some games, typically complex RPGs, change the data on the disk as you
+progress through the game. Using save states in these games will invariably
+result in crashes, bugs, or the loss of all your progress. You <em>must</em>
+only use the in-game save feature in such games!</p>
+<p>Games that lock you into using a single save slot always belong to this
+category (e.g., <strong>Ultima IV: Quest of the Avatar</strong> and <a href="../game-notes/q-r.html#rogue-the-adventure-game">Rogue: The Adventure
+Game</a>). Other affected titles might
+instruct you to create copies of your original game disks or &ldquo;scenario disks&rdquo;
+before playing. Note that these games might still support manual save files
+(e.g., <a href="../game-notes/a.html#amberstar">Amberstar</a>,
+<a href="../game-notes/d.html#demons-winter">Demon&rsquo;s Winter</a>),
+<a href="../game-notes/k-l.html#legend-of-faerghail">Legend of Faerghail</a>,
+<strong>Phantasie</strong>, etc.)</p>
+<p>The common problem is that these games write to the floppies or the hard drive
+after performing certain in-game actions without you explicitly saving the
+game (e.g., when entering or exiting battles, when entering a city or a new
+area, etc.) Because of this, the save states and the contents of the disks can
+become out of sync, and the game is not expecting this. You can recognise
+these games by the occasional floppy or hard drive write indicators (flashing
+red lights) in the
+<a href="getting-started.html#on-screen-display">on-screen display</a> in the
+bottom-right corner. The <a href="../game-notes/index.html">Game notes</a> also warn you about
+such games, so make sure to check them out before starting your next long RPG.</p>
+<h3 id="whdload-games">WHDLoad games<a class="headerlink" href="#whdload-games" title="Permanent link">&para;</a></h3>
+<p>WHDLoad games perform in-game saves to memory only, then write these cached
+save games to disk when you exit the game with the <span class="keys"><kbd class="key-f10">F10</kbd></span> key. The same sync
+issues explained in the previous section apply&mdash;<em>never</em> use save states with
+WHDLoad games if you don&rsquo;t like losing your progress!</p>
+<h3 id="running-games-for-too-long">Running games for too long<a class="headerlink" href="#running-games-for-too-long" title="Permanent link">&para;</a></h3>
+<p>Certain games can manifest some really weird bugs if you let them run for too
+long without a restart (or they&rsquo;ll just simply crash). Back in the day, people
+played a game for a few hours or maybe half a day at most, then turned off
+their Amigas. Nobody tested how the game would behave if you kept it running
+for tens of hours or days on end! </p>
+<p>The solution is to stay on the safe side and periodically &ldquo;convert&rdquo; your
+WinUAE save states to in-game saves, then restart the game and load one of
+your in-game saves. It&rsquo;s recommended to do this after every 5-10 hours of
+using save states exclusively.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav
+      class="md-footer__inner md-grid"
+      aria-label="footer.title"
+      
+    >
+
+      <!-- Link to previous page -->
+      
+        
+        <a
+          href="cdtv-and-cd32-games.html"
+          class="md-footer__link md-footer__link--prev"
+          aria-label="Previous: CDTV and Amiga CD32 games"
+          rel="prev"
+        >
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              CDTV and Amiga CD32 games
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a
+          href="crt-emulation.html"
+          class="md-footer__link md-footer__link--next"
+          aria-label="Next: CRT emulation"
+          rel="next"
+        >
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              CRT emulation
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/johnnovak/rml-amiga">GitHub</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

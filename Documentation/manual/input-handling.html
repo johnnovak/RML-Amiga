@@ -1,0 +1,1800 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="It's a magic luggage, full of Amiga goodies">
+      
+      
+        <meta name="author" content="Rincewind">
+      
+      
+        <link rel="canonical" href="https://rml-amiga.johnnovak.net/manual/input-handling.html">
+      
+      
+        <link rel="prev" href="getting-started.html">
+      
+      
+        <link rel="next" href="hard-drive-games.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Input handling - Rincewind's Magic Luggage Full of Amiga Goodies</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#input-handling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="header.title"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../index.html"
+      title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies"
+      class="md-header__button md-logo"
+      aria-label="Rincewind's Magic Luggage Full of Amiga Goodies"
+      data-md-component="logo"
+    >
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="introduction.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../game-notes/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Game notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies" class="md-nav__button md-logo" aria-label="Rincewind's Magic Luggage Full of Amiga Goodies" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Rincewind's Magic Luggage Full of Amiga Goodies
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="why-play-amiga-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why play Amiga games?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Input handling
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="input-handling.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input handling
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#input-capturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input capturing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keyboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wasd-movement-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      WASD movement keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joysticks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joysticks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Joysticks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-real-joystick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a real joystick
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-player-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-player games
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gamepads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gamepads
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hard-drive-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hard drive games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="floppy-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Floppy games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cdtv-and-cd32-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CDTV and Amiga CD32 games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="save-states.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Save states
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="crt-emulation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRT emulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="customising-your-setup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customising your setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/keyboard-shortcuts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/useful-websites.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful websites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/thanks.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thanks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../changelog/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../game-notes/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Game notes
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Game notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    D
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/e-f.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E–F
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/g-j.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G–J
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/k-l.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K–L
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/m-o.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    M–O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/p.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    P
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/q-r.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Q–R
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/s.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/t-z.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T–Z
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#input-capturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input capturing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keyboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wasd-movement-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      WASD movement keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joysticks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joysticks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Joysticks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-real-joystick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a real joystick
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-player-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-player games
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gamepads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gamepads
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="input-handling">Input handling<a class="headerlink" href="#input-handling" title="Permanent link">&para;</a></h1>
+<p>All Amiga computers came with a keyboard and a mouse. Including a mouse as a
+standard accessory was a big selling point back in the day, so most Amiga
+games are primarily mouse-operated. The exceptions are action, sports, and
+racing games&mdash;these usually need a joystick (or two for &ldquo;player vs player&rdquo;
+gaming).</p>
+<p>All Amigas have two DB9 (9-pin) <strong>joystick ports</strong> for connecting your input devices. The
+mouse usually needs to go into <strong>port 1</strong> (labelled as <code>1 JOYSTICK</code>), and the
+game controller (typically a joystick) into <strong>port 2</strong> (labelled as <code>2
+JOYSTICK</code>).</p>
+<figure>
+  <a class="glightbox" href="images/joystick-ports.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Amiga joystick ports" src="images/joystick-ports.jpg" /></a>
+  <figcaption>Joystick ports on the Amiga 500</figcaption>
+</figure>
+<h2 id="input-capturing">Input capturing<a class="headerlink" href="#input-capturing" title="Permanent link">&para;</a></h2>
+<p>When you start a game, the emulator automatically captures all your mouse and
+keyboard input. What this means is your Windows mouse pointer disappears, and
+all mouse events and keyboard button presses are sent to the emulated Amiga
+instead of Windows. In windowed mode, input capturing is indicated by the
+following text in the WinUAE window&rsquo;s title bar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ALT+TAB or middle mouse button untraps the mouse - F12 opens settings]
+</code></pre></div>
+<p>This tells you how to uncapture the mouse and keyboard: either press the
+middle mouse button or <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span> to switch to a different window (but
+&ldquo;alt-tabbing&rdquo; only works if you have at least on more other window open).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Pressing the <span class="keys"><kbd class="key-alt">Alt</kbd></span> key might trigger something in the game when
+attempting to &ldquo;alt-tab&rdquo; out of the WinUAE window. For example, many games
+skip the intro sequence if you press any key on the keyboard, including
+the <span class="keys"><kbd class="key-alt">Alt</kbd></span> key. Using the middle mouse button is the 100% safe way as
+middle button presses are not forwarded to the emulated Amiga.</p>
+</div>
+<p>To capture the input again, &ldquo;alt-tab&rdquo; into the WinUAE window, or press any
+mouse button inside it.</p>
+<p>Now, not all games support the mouse or display a mouse pointer. If you see
+neither the Windows mouse pointer nor the &ldquo;emulated&rdquo; mouse pointer in the
+WinUAE window with the mouse captured, it means you&rsquo;re dealing with such a
+game.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to a bug, if the WinUAE window is unfocused <em>and</em> you left-click on
+the title bar of the WinUAE window, the window will rapidly move downwards
+on the screen as long as you&rsquo;re holding the left mouse button pressed.
+Currently, there is no solution to this minor issue so the advice is
+simple: just don&rsquo;t do this.</p>
+<p>The bug will be fixed in the next WinUAE version, which will be
+incorporated into a future RML Amiga release.</p>
+</div>
+<h2 id="mouse">Mouse<a class="headerlink" href="#mouse" title="Permanent link">&para;</a></h2>
+<p>All Amigas came with a 2-button mouse, so the vast majority of games that are
+not action games are mouse-operated. Even most text adventures have some
+rudimentary mouse-driven interface&mdash;that&rsquo;s how big of a deal built-in mouse
+support was back in the 80s.</p>
+<p>The left and right mouse buttons work as expected, and the middle mouse is
+used to uncapture the mouse (see <a href="#input-capturing">Input capturing</a>).</p>
+<figure>
+  <a class="glightbox" href="images/tank-mouse.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Original Amiga &quot;tank mouse&quot;" src="images/tank-mouse.jpg" /></a>
+  <figcaption>The original Amiga "tank mouse"</figcaption>
+</figure>
+<h2 id="keyboard">Keyboard<a class="headerlink" href="#keyboard" title="Permanent link">&para;</a></h2>
+<p>Amiga keyboards are very similar to standard PC keyboards. Even the numeric
+keypad is present on most Amiga models. This means you can use your normal PC
+keyboard rather seamlessly to control your emulated Amiga.</p>
+<p>There are a few minor differences, though:</p>
+<ul>
+<li>
+<p>There are only 10 function keys in the top row (<span class="keys"><kbd class="key-f1">F1</kbd></span> to <span class="keys"><kbd class="key-f10">F10</kbd></span>).</p>
+</li>
+<li>
+<p>The special <strong>Help</strong> Amiga key is mapped to the <span class="keys"><kbd class="key-page-down">Page Down</kbd></span> key, and the
+  <strong>Delete</strong> Amiga key to the (surprise!) <span class="keys"><kbd class="key-delete">Del</kbd></span> key above the standard
+  cursor keys.</p>
+</li>
+<li>
+<p>Similarly to the Windows keys, all Amiga keyboards have two special &ldquo;Amiga
+  keys&rdquo; (the keys in the bottom row with the big <strong>A</strong> letters on them, next
+  to the <strong>Alt</strong> keys). The left Amiga key is mapped to the <span class="keys"><kbd class="key-left-windows">Left Win</kbd></span> and
+  <span class="keys"><kbd class="key-home">Home</kbd></span> keys (you can use either), and the right Amiga key to <span class="keys"><kbd class="key-right-windows">Right Win</kbd></span>,
+  <span class="keys"><kbd class="key-insert">Ins</kbd></span> and <span class="keys"><kbd class="key-home">Home</kbd></span> (either will work). For example, if a game asks you to
+  use the left Amiga plus <span class="keys"><kbd class="key-s">S</kbd></span> key combination to save your game, you&rsquo;ll need
+  to press <span class="keys"><kbd class="key-left-windows">Left Win</kbd></span>-<span class="keys"><kbd class="key-s">S</kbd></span> or <span class="keys"><kbd class="key-home">Home</kbd></span>-<span class="keys"><kbd class="key-s">S</kbd></span>.</p>
+</li>
+</ul>
+<figure>
+  <a class="glightbox" href="images/amiga-500.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Amiga 500 with built-in keyboard" src="images/amiga-500.jpg" /></a>
+  <figcaption>Amiga 500 with built-in keyboard</figcaption>
+</figure>
+<h3 id="wasd-movement-keys">WASD movement keys<a class="headerlink" href="#wasd-movement-keys" title="Permanent link">&para;</a></h3>
+<p>Many RPGs in the first-person dungeon crawler category (e.g.,
+<a href="../game-notes/d.html#dungeon-master-v36">Dungeon Master</a> and
+<a href="../game-notes/e-f.html#eye-of-the-beholder-ocs">Eye of the Beholder</a>) only support
+the standard cursor keys or the numeric keypad to move your party around.
+However, some people might prefer to use the <strong>WASD</strong> keys instead.</p>
+<p>All such RPGs in the collection feature optional WASD-style movement via a
+custom WinUAE keyboard mapping:</p>
+<ul>
+<li>
+<p>Press <span class="keys"><kbd class="key-home">Home</kbd><span>+</span><kbd class="key-w">W</kbd></span> to switch to the alternative keyboard mapping which maps
+  the party-movement keys (usually the cursor keys) to the WASD keys.</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-home">Home</kbd><span>+</span><kbd class="key-q">Q</kbd></span> to restore the normal keyboard mapping.</p>
+</li>
+</ul>
+<p>You&rsquo;ll need to return to the normal keyboard mapping if you want to type in
+some text that contains the letters &ldquo;WASD&rdquo; (e.g., to name your characters, the
+name of your save game, or when entering a password).</p>
+<p>Some game configurations might remap a few more keys in WASD mode. For example,
+in <a href="../game-notes/d.html#dungeon-master-v36">Dungeon Master</a> you can turn left and
+right with the <span class="keys"><kbd class="key-q">Q</kbd></span> and <span class="keys"><kbd class="key-e">E</kbd></span> keys, respectively, and the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span> save
+game shortcut has been remapped to <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> (because it clashes with the
+remapped <span class="keys"><kbd class="key-s">S</kbd></span> key used for movement).</p>
+<p>Refer to the <a href="../game-notes/index.html">Game notes</a> to learn about the exact WASD
+mode remappings for each game.</p>
+<h2 id="joysticks">Joysticks<a class="headerlink" href="#joysticks" title="Permanent link">&para;</a></h2>
+<p>Most games in the collection are controlled with the mouse and the keyboard,
+but a few need a joystick. Games that support or need a joystick are
+configured for an emulated joystick (usually in port 2). You can use the
+regular cursor keys (<em>not</em> the numeric keypad) for movement, and the <span class="keys"><kbd class="key-right-alt">Right Alt</kbd></span>,
+<span class="keys"><kbd class="key-right-shift">Right Shift</kbd></span>, or <span class="keys"><kbd class="key-right-control">Right Ctrl</kbd></span> keys for the fire button.</p>
+<p>The vast majority of Amiga games only support single-button joysticks. The
+<a href="../game-notes/index.html">Game notes</a> will mention if a game supports a two-button
+joystick.</p>
+<h3 id="using-a-real-joystick">Using a real joystick<a class="headerlink" href="#using-a-real-joystick" title="Permanent link">&para;</a></h3>
+<p>To use a real joystick, press the fire button on your joystick <em>after</em>
+starting the game. WinUAE will auto-detect the joystick and plug it into
+either port 1 or port 2 of your emulated Amiga. The selected port depends on
+which fire button you press on your physical joystick.</p>
+<p>Most games look for the joystick in port 2, but some expect it in port 1. If
+your joystick doesn&rsquo;t do anything or performs the wrong actions, WinUAE must
+have plugged it into the other port than what the game expects. In this case,
+press <span class="keys"><kbd class="key-end">End</kbd><span>+</span><kbd class="key-j">J</kbd></span> to swap the joystick ports. You might also try pressing a
+different physical button on your joystick to auto-detect it the next time you
+start this game, so you won&rsquo;t need to do the port-swapping trick.</p>
+<figure>
+  <a class="glightbox" href="images/joysticks.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Competition Pro and Quickshot II digital joysticks" src="images/joysticks.jpg" /></a>
+  <figcaption>The two most popular digital joysticks of all time: the Competition
+  Pro (left), and the Quickshot II (right). Over 100 million units were sold
+  of these two back in the 80s and 90s.</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Some action games are next to unplayable with the virtual joystick
+keyboard mappings (typically sports and fighting games). You really need
+to use a <strong>digital joystick</strong> to play these games (analog sticks found on
+game controllers won&rsquo;t do).</p>
+<p>There are many USB joysticks available, but quite a few have unacceptably
+high input latencies, so make sure to do your research before buying one.
+Generally, you&rsquo;re better off with a 9-pin plug (DB9) digital joystick also
+usable with real retro computers and a USB DB9 adapter.</p>
+<p>This is not an advertisement, but I can wholeheartedly recommend the
+<a href="https://retroradionics.com/ArcadeR-9-pin-ATARI-standard-Joystick-With-new-extra-soft-and-durable-cable-p168982750">ArcadeR 9-pin joystick</a>
+by <a href="https://retroradionics.com/">RetroRadionics</a> and the
+<a href="https://github.com/MickGyver/DaemonBite-Retro-Controllers-USB">DaemonBite DB9 USB adapter</a>
+(sold fully assembled <a href="https://ultimatemister.com/product/deamon-sega-db9/">here</a>, for example).
+This combination is relatively cheap and works 100% reliably with
+hardware-like sub-millisecond input latency. It&rsquo;s a dual adapter, so you
+can connect two 9-pin digital joysticks to it for two-player games. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As noted, the input latency can be increased by the USB joystick adapter
+and the joystick themselves, but also by certain vertical syncing (vsync)
+methods. Both need to be kept low if you want hardware-like low latencies
+in action games.</p>
+<p>This is an advanced topic; see the
+<a href="customising-your-setup.html">Customising your setup</a>
+section for details.</p>
+</div>
+<h3 id="two-player-games">Two-player games<a class="headerlink" href="#two-player-games" title="Permanent link">&para;</a></h3>
+<p>The Amiga was one of the last machines in a long line of home computers that
+had a healthy dose of two-player games. Many sports and fighting games (e.g.,
+<a href="../game-notes/s.html#speedball-2-brutal-deluxe-ocs">Speedball 2: Brutal Deluxe</a> and
+<a href="../game-notes/g-j.html#ik">IK+</a>) support &ldquo;player vs player&rdquo; gameplay. </p>
+<p>Two-player games are great fun, so make sure to try them if you have two
+joysticks and a friend not afraid of some healthy competition!</p>
+<h2 id="gamepads">Gamepads<a class="headerlink" href="#gamepads" title="Permanent link">&para;</a></h2>
+<p>You won&rsquo;t find many Amiga games that were designed for gamepads, but many CDTV
+and Amiga CD32 games cannot be played without one. See the <a href="cdtv-and-cd32-games.html">CDTV and Amiga
+CD32 games</a> section for further details.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav
+      class="md-footer__inner md-grid"
+      aria-label="footer.title"
+      
+    >
+
+      <!-- Link to previous page -->
+      
+        
+        <a
+          href="getting-started.html"
+          class="md-footer__link md-footer__link--prev"
+          aria-label="Previous: Getting started"
+          rel="prev"
+        >
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Getting started
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a
+          href="hard-drive-games.html"
+          class="md-footer__link md-footer__link--next"
+          aria-label="Next: Hard drive games"
+          rel="next"
+        >
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Hard drive games
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/johnnovak/rml-amiga">GitHub</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

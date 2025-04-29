@@ -1,0 +1,1686 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="It's a magic luggage, full of Amiga goodies">
+      
+      
+        <meta name="author" content="Rincewind">
+      
+      
+        <link rel="canonical" href="https://rml-amiga.johnnovak.net/manual/hard-drive-games.html">
+      
+      
+        <link rel="prev" href="input-handling.html">
+      
+      
+        <link rel="next" href="floppy-games.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Hard drive games - Rincewind's Magic Luggage Full of Amiga Goodies</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hard-drive-games" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="header.title"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../index.html"
+      title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies"
+      class="md-header__button md-logo"
+      aria-label="Rincewind's Magic Luggage Full of Amiga Goodies"
+      data-md-component="logo"
+    >
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            Rincewind's Magic Luggage Full of Amiga Goodies
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="introduction.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../game-notes/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Game notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Rincewind&#39;s Magic Luggage Full of Amiga Goodies" class="md-nav__button md-logo" aria-label="Rincewind's Magic Luggage Full of Amiga Goodies" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Rincewind's Magic Luggage Full of Amiga Goodies
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="why-play-amiga-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why play Amiga games?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="input-handling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Hard drive games
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="hard-drive-games.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hard drive games
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hard-drive-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hard drive basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-your-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving your progress
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key disks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whdload-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      WHDLoad games
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="floppy-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Floppy games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cdtv-and-cd32-games.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CDTV and Amiga CD32 games
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="save-states.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Save states
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="crt-emulation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRT emulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="customising-your-setup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customising your setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/keyboard-shortcuts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/useful-websites.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful websites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/thanks.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thanks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../changelog/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../game-notes/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Game notes
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Game notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    D
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/e-f.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E–F
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/g-j.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G–J
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/k-l.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K–L
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/m-o.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    M–O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/p.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    P
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/q-r.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Q–R
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/s.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-notes/t-z.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T–Z
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hard-drive-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hard drive basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-your-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving your progress
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key disks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whdload-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      WHDLoad games
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="hard-drive-games">Hard drive games<a class="headerlink" href="#hard-drive-games" title="Permanent link">&para;</a></h1>
+<p>Hard drive installed games are the easiest to deal with. First of all, they
+load much faster than floppy games and you don&rsquo;t need to swap disks. Secondly,
+most of these games can save your progress to the hard drive, so you don&rsquo;t
+need to deal with save disks.</p>
+<p>Most of the big multi-disk adventure games and RPGs, especially the ones
+developed by American studios, are hard drive installable. Then a good number
+of games that don&rsquo;t have official hard drive installers can be still run
+cleanly from a hard drive by employing a few simple tricks. It&rsquo;s important to
+note that none of these tricks involve modifying the game&rsquo;s executable or data
+files&mdash;such hacks are not allowed in RML Amiga.</p>
+<figure>
+  <a class="glightbox" href="images/amiga-500-gvp.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Amiga 500 with GVP A500-HD+ side expansion" src="images/amiga-500-gvp.jpg" /></a>
+  <figcaption>Amiga 500 equipped with the popular GVP A500-HD+ hard drive side
+  expansion running Pool of Radiance</figcaption>
+</figure>
+<h2 id="hard-drive-basics">Hard drive basics<a class="headerlink" href="#hard-drive-basics" title="Permanent link">&para;</a></h2>
+<p>The first hard drive is called <strong>DH0:</strong> (<strong>D</strong>rive <strong>H</strong>ard <strong>0</strong>), the second
+<strong>DH1:</strong>, and so on. These are analogous to the <strong>C:</strong> and <strong>D:</strong> drives on
+Windows. Most hard drive games in the collection use a two hard
+drive configuration:</p>
+<ul>
+<li>
+<p><strong>DH0:</strong> contains a heavily stripped-down AmigaOS&mdash;just the bare minimum
+  necessary for running games. This drive has the <strong>System</strong> label.</p>
+</li>
+<li>
+<p><strong>DH1:</strong> contains the game itself and usually has the label <strong>Game</strong>, but
+  this can vary (e.g., <strong>ChampionsOfKrynn</strong>, <strong>PopulousII HD</strong>, <strong>LEGEND.0</strong>,
+  etc.). This drive is mapped to the <code>Harddisk</code> folder inside the game folder,
+  which is just a regular folder; you have full access to its contents from
+  Windows. This is handy if you want to back up your save games or to transfer
+  your characters in RPG series.</p>
+</li>
+</ul>
+<p>A small number of games that need very specific AmigaOS setups only use a
+single <strong>DH0:</strong> drive which contains both the OS and the game.</p>
+<h2 id="workbench">Workbench<a class="headerlink" href="#workbench" title="Permanent link">&para;</a></h2>
+<p>Most hard drive games start automatically when you launch their configs, but
+some need to be started manually from the so-called <strong>Workbench</strong> screen.</p>
+<p>One of the reasons why some games don&rsquo;t start automatically is because they
+have additional icons to start the game with different options (e.g.,
+<a href="../game-notes/k-l.html#kings-quest-quest-for-the-crown-sci">King&rsquo;s Quest: Quest for the Crown (SCI)</a>),
+or to run extra programs included with the game, such as level editors (e.g.,
+<a href="../game-notes/s.html#simcity-collection">SimCity Collection</a>).</p>
+<p>The other reason is that a handful of games feature beautifully designed icons
+and Workbench screens with custom colour schemes. These works of art are worth
+preserving, and to date, RML Amiga is the only game collection that attempts
+to do so.</p>
+<p>Here are some good custom Workbench examples:</p>
+<div class="compact">
+<ul>
+<li><a href="../game-notes/s.html#secret-of-monkey-island-the">The Secret of Monkey Island</a></li>
+<li><a href="../game-notes/k-l.html#legend-of-faerghail">Legend of Faerghail</a></li>
+<li><a href="../game-notes/p.html#pirates">Pirates!</a></li>
+<li><a href="../game-notes/a.html#art-of-go-the">Art of GO, The</a></li>
+<li><a href="../game-notes/b.html#battle-chess-ocs">Battle Chess (OCS)</a></li>
+<li><a href="../game-notes/c.html#champions-of-krynn">Champions of Krynn</a></li>
+<li><a href="../game-notes/d.html#death-knights-of-krynn">Death Knights of Krynn</a></li>
+</ul>
+</div>
+<figure>
+  <a class="glightbox" href="images/wb-monkey-island.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="The Secret of Monkey Island Workbench start icon" src="images/wb-monkey-island.jpg" /></a>
+  <figcaption>The Secret of Monkey Island Workbench start icon</figcaption>
+</figure>
+<h2 id="saving-your-progress">Saving your progress<a class="headerlink" href="#saving-your-progress" title="Permanent link">&para;</a></h2>
+<p>Most hard drive games store the save games on the hard drive; using the
+in-game save and restore functionality is usually straightforward in such
+games (but in some, the save game menu is a bit hidden; make sure to consult
+the game&rsquo;s manual if you can&rsquo;t find it). If a game asks you to select the
+location of your save file and lets you use any location, you should use the
+<strong>DH1:</strong> drive unless the <a href="../game-notes/index.html">Game notes</a> instruct you
+otherwise.</p>
+<p>There are some outliers, though. A handful of games insist on saving to a
+floppy disk even when installed on the hard drive (e.g.,
+<a href="../game-notes/e-f.html#future-wars-adventures-in-time">Future Wars</a>).
+Then some RPGs save the &ldquo;state of the world&rdquo; to the data files as you keep
+progressing through the game, so starting a new game with a new character
+requires a full reinstall (<a href="../game-notes/a.html#amberstar">Amberstar</a> and
+<a href="../game-notes/d.html#demons-winter">Demon&rsquo;s Winter</a> are such games).</p>
+<p>The <a href="../game-notes/index.html">Game notes</a> contain detailed instructions for these
+special snowflakes&mdash;make it a habit to always check these notes before
+playing a new game.</p>
+<div class="admonition danger">
+<p class="admonition-title">Patience is a virtue</p>
+<p><em>Never ever</em> reset the emulated Amiga or quit WinUAE <em>immediately after</em>
+saving your game to the hard drive! Always wait 2-3 seconds and make sure
+the hard drive activity LED indicator in the OSD in the bottom-right
+corner isn&rsquo;t flashing red anymore (red means write activity; green means
+read activity). If you don&rsquo;t wait, there is a good chance you will lose or
+corrupt your save game!</p>
+<p>The reason for this is that hard drive writes happen in a slightly delayed
+manner on the Amiga&mdash;it&rsquo;s just a quirk of the platform you will need to
+get used to.</p>
+</div>
+<h2 id="key-disks">Key disks<a class="headerlink" href="#key-disks" title="Permanent link">&para;</a></h2>
+<p>One of the major selling points of the collection is preferring uncracked
+originals. Some hard drive installable games need a so-called &ldquo;key disk&rdquo;
+(usually the first game disk) to be present in drive DF0: (the first floppy
+drive). This is a form of copy protection; the key disk contains some special
+areas that cannot be copied by standard Amiga floppy drives. The game checks
+the key disk at startup and perhaps even at later points during the game, and
+if it&rsquo;s not present or an illegitimate copy is detected, Bad Things&trade; will
+happen. This can range from polite error messages to outright crashes, black
+screens, and hard reboots.</p>
+<p>Such games have the key disk already pre-inserted in DF0: so you don&rsquo;t need to
+do anything. This is just worth calling out as some people might be confused
+by the floppy activity when starting key disk protected hard drive games.</p>
+<h2 id="whdload-games">WHDLoad games<a class="headerlink" href="#whdload-games" title="Permanent link">&para;</a></h2>
+<p>A handful of games in the collection use something called WHDLoad. This is a
+tool people invented in the mid-1990s to play disk-only games from the hard
+drive on their later Amiga models (such as the Amiga 1200). The tool was also
+used to apply compatibility fixes to finicky games that only ran correctly on
+a stock (or close-to-stock) Amiga 500.</p>
+<p>This means WHDLoad conversions are not originals but cracked and patched games
+(disk-based protections had to be bypassed and the game&rsquo;s disk access code had
+to be rewritten so it could run from a hard drive).</p>
+<p>RML Amiga uses WHDLoad games only as a last resort because removing the copy
+protection and altering the games&rsquo; code can introduce all sorts of problems,
+including making the game incompletable. Issues introduced by these hacks are
+really hard to test in long 50+ hour RPGs; consequently, WHDLoad conversions
+of long and complex games are plagued with the most problems because they
+simply don&rsquo;t get enough testing from the hobbyists doing these conversions
+(WHDLoad versions of relative short action games are usually much better
+quality).</p>
+<p>Back in the day, WHDLoad was a necessity to allow people to enjoy their game
+collections on their new Amigas. It was a means to an end and an ingenious one
+at that&ndash;but not without complications. In an emulator context where we can
+emulate virtually every Amiga model imaginable, much of WHDLoad&rsquo;s positive
+aspects lose their relevance but the negatives remain. For games that are
+natively hard drive installable (70% of the games in this collection), using
+WHDLoad is especially pointless and generally results in an inferior
+experience.</p>
+<div class="admonition important">
+<p class="admonition-title">Always quit WHDLoad games to save your progress to disk!</p>
+<p>Due to various technical complications, WHDLoad games only write the save
+games to the hard drive when you quit the game&mdash;the saves are kept
+in memory until then.</p>
+<p>Therefore, you <em>must</em> always quit WHDLoad games by pressing the <span class="keys"><kbd class="key-f11">F11</kbd></span>
+&ldquo;WHDLoad quit key&rdquo; at the end of your gaming session! If you just close
+WinUAE or start a different game, <em>you will lose</em> all the saves you made
+in your current gaming session! All WHDLoad games in the collection print
+out a warning message about this at startup, and the <a href="../game-notes/index.html">Game
+notes</a> also contain some reminders.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav
+      class="md-footer__inner md-grid"
+      aria-label="footer.title"
+      
+    >
+
+      <!-- Link to previous page -->
+      
+        
+        <a
+          href="input-handling.html"
+          class="md-footer__link md-footer__link--prev"
+          aria-label="Previous: Input handling"
+          rel="prev"
+        >
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Input handling
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a
+          href="floppy-games.html"
+          class="md-footer__link md-footer__link--next"
+          aria-label="Next: Floppy games"
+          rel="next"
+        >
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Floppy games
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/johnnovak/rml-amiga">GitHub</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
