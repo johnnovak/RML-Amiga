@@ -26,12 +26,13 @@ You can customise your RML Amiga game configurations in two ways:
 
 ## Configuration tool
 
-RML Amiga includes a configuration tool aptly titled `conftool.exe` located in
-your `$RML_BASE` folder. You might want to create a desktop shortcut for it.
+RML Amiga includes a configuration tool aptly titled `ConfTool.exe` located in
+your `$RML_BASE/Tools` folder. You might want to create a desktop shortcut for
+it.
 
-The tool allows you to change specific settings of your configs while
-leaving the rest of the settings alone (e.g., turn off the floppy sounds, set
-a larger graphics scaling factor, use windowed mode by default, etc.)
+The tool allows you to change specific settings of your configs while leaving
+the rest alone (e.g., turn off the floppy sounds, set a larger graphics
+scaling factor, use windowed mode by default, etc.)
 
 The tool has a simple single-window interface:
 
@@ -44,7 +45,7 @@ The tool has a simple single-window interface:
   the window.
 
 - The lower part of the window :material-numeric-2-circle:{: .circ-num} shows
-  the description of the setting currently under the mouse cursor. Make sure
+  the description of the setting currently under the mouse pointer. Make sure
   to read these descriptions carefully before you change anything.
 
 - You'll need to create a "plan" for your configuration changes, then you can
@@ -66,10 +67,11 @@ The tool has a simple single-window interface:
   changes to the selected config category.
 
 - Alternatively, you can drag and drop config files onto the config tool
-  window to apply the changes to a single config only, or to any set of
-  configs. A confirmation dialog will appear listing the names of the configs
-  the changes will be applied to.
+  window to apply the changes to a single config only or to a set of configs.
+  A confirmation dialog will appear listing the names of the configs the
+  changes will be applied to.
 
-- You can reset all settings to their defaults and the disabled state
-  by pressing the **Reset** button :material-numeric-7-circle:{: .circ-num}.
+- You can reset the "change plan"   by pressing the **Reset** button
+  :material-numeric-7-circle:{: .circ-num}. This will reset all settings to
+  their defaults and will make them greyed-out (disabled).
 
