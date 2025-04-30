@@ -13,7 +13,7 @@ SET RESET=[0m
 CLS
 ECHO/
 ECHO ==============================================================================
-ECHO                         RML-Amiga %VERSION% full installer
+ECHO                         RML Amiga %VERSION% full installer
 ECHO ==============================================================================
 ECHO/
 
@@ -84,7 +84,7 @@ IF %CAN_INSTALL%==0 (
 )
 
 SET DEST_PATH=
-ECHO Please enter the name of the folder where you want RML-Amiga to be installed,
+ECHO Please enter the name of the folder where you want RML Amiga to be installed,
 ECHO or just press Enter% to use the current folder.
 ECHO/
 ECHO Alternatively, drag ^& drop a folder onto this window from Windows Explorer
