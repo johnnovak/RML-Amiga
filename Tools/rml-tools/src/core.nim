@@ -40,7 +40,7 @@ const
   PalSharpFilter  = "D3D:CRT-A2080-PAL-Sharp.fx"
 
   NtscFilter      = "D3D:CRT-A2080-NTSC.fx"
-  NtscSharpFilter = "D3D:CRT-A2080-NSTC-Sharp.fx"
+  NtscSharpFilter = "D3D:CRT-A2080-NTSC-Sharp.fx"
 
 type
   Settings* = object
@@ -483,26 +483,49 @@ proc setFilter(c: UaeConfig, s: string) =
 
 # }}}
 # {{{ setCrtEmulation()
-proc setCrtEmulation(c: UaeConfig, enabled: bool,
-                     sharperPal, sharperNtsc, forcePalShader: bool) =
+proc setCrtEmulation(c: UaeConfig, enabled, sharperPal, sharperNtsc,
+                                   forcePalShader: Option[bool]) =
+
+  proc getFilter(c: UaeConfig): string =
+    c.cfg["gfx_filter"]
+
+  func isCrtFilter(): bool =
+    c.getFilter().startsWith("D3D:CRT-")
+
+  func isSharpCrtFilter(): bool =
+    c.getFilter().contains("-Sharp")
+
   for name in ForcedNoFilterConfigs:
     if c.name.startsWith(name):
       return
 
   proc setPal() =
-    c.setFilter(if sharperPal: PalSharpFilter else: PalFilter)
+    c.setFilter(if sharperPal.get(isSharpCrtFilter()): PalSharpFilter
+                else: PalFilter)
 
-  if enabled:
-    case c.getVideoStandard()
-    of vsPal: setPal()
+  proc setNtsc() =
+    c.setFilter(if sharperNtsc.get(isSharpCrtFilter()): NtscSharpFilter
+                else: NtscFilter)
 
-    of vsNtsc, vsNtsc50:
-      if forcePalShader: setPal()
-      else:
-        c.setFilter(if sharperNtsc: NtscSharpFilter else: NtscFilter)
+  proc setForcedPalOrNtsc() =
+    if forcePalShader.get(false): setPal() else: setNtsc()
 
-  else:
-    c.setFilter(NoFilter)
+  case c.getVideoStandard()
+  of vsPal:
+    if enabled.isSome:
+      if enabled.get: setPal()
+      else: c.setFilter(NoFilter)
+    else:
+      if isCrtFilter() and sharperPal.isSome:
+        setPal()
+
+  of vsNtsc, vsNtsc50:
+    if enabled.isSome:
+      if enabled.get: setForcedPalOrNtsc()
+      else: c.setFilter(NoFilter)
+    else:
+      if isCrtFilter() and (sharperNtsc.isSome or forcePalShader.isSome):
+        setForcedPalOrNtsc()
 
 # }}}
 # {{{ setShaderQuality()
@@ -672,11 +695,12 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
     if showOsd.set:
       cfg.setShowOsd(showOsd.value)
 
-    if crtEmulation.set:
-      cfg.setCrtEmulation(enabled        = crtEmulation.value,
-                          sharperPal     = sharperPal.toOpt.get(false),
-                          sharperNtsc    = sharperNtsc.toOpt.get(false),
-                          forcePalShader = forcePalShader.toOpt.get(false))
+    if crtEmulation.set or sharperPal.set or sharperNtsc.set or
+       forcePalShader.set:
+      cfg.setCrtEmulation(enabled        = crtEmulation.toOpt,
+                          sharperPal     = sharperPal.toOpt,
+                          sharperNtsc    = sharperNtsc.toOpt,
+                          forcePalShader = forcePalShader.toOpt)
 
     if shaderQuality.set:
       cfg.setShaderQuality(shaderQuality.value)
