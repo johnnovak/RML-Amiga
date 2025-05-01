@@ -3,12 +3,14 @@
 
 ## Restoring configs
 
-A copy of the original configurations is stored in the `$RML_BASE\Original
-Configurations` folder. These configs are never changed. To revert one or more
-configs, copy them from `Original Configurations` to `Configurations`.
+Copy of the original configurations are stored in the `$RML_BASE\Original
+Configs` folder. These configs are never changed by WinUAE or the
+[Configuration tool](customising-your-setup.md/#configuration-tool). To revert
+one or more configs, copy them from `Original Configs` to `Configurations`,
+overwriting the existing files.
 
 To revert all configs, delete the `Configurations` folder, make a copy of
-`Original Configurations`, then rename the copy `Configuration`.
+`Original Configs`, then rename the copy to `Configurations`.
 
 
 ## Scrolling jitter with vsync enabled

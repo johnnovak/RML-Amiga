@@ -36,9 +36,10 @@ method via the installer script.
 1. Download all five packs into this folder.
 
 1. Download the installation script `install-full-v1.0.bat` and the 7-zip
-   archiver (`7za.exe`) from the [Base pack archive.org
-   item](https://archive.org/details/rml-amiga-base-v1-0) into this
-   folder as well. The contents of the folder should now look like this:
+   archiver (`7za.exe`) from the
+   [Base pack archive.org item](https://archive.org/download/RML-Amiga-Base-v1-0)
+   into this folder as well. The contents of the folder should now look like
+   this:
 
      <figure markdown="span">
        ![Starting games](images/full-install.png){ width="70%" }
@@ -81,8 +82,8 @@ Here is a detailed description of the packs:
   included on many AmigaDOS floppy games as well). The Workbench 3.1
   installation contains WHDLoad too.
 
-- **ROMs** --- ROM images (e.g., Kickstart ROMs) necessary to emulate
-  the various Amiga models and other required hardware. (Note: The Amiga is
+- **ROMs** --- Amiga Kickstart ROM images necessary to emulate
+  the various Amiga models and the Roland MT-32 ROMs. (Note: The Amiga is
   *not* a console! Games are *not* called "ROMs" on the Amiga!)
 
 - **Games** --- Nested ZIP archive with each game having its own
@@ -137,8 +138,7 @@ problems with using certain parts of the collection for whatever reasons
 
 Start by downloading the **Base** and **Systems** packs---these are mandatory.
 The **ROMs** pack is not necessary if you have acquired the ROM files from
-elsewhere (see [Supplying your own Kickstart
-ROMs](#supplying-your-own-kickstart-roms)).
+elsewhere (see [Supplying your own ROM files](#supplying-your-own-rom-files)).
 
 Once you've downloaded these packs, extract them into a folder you have full
 write access to (e.g., `D:\Emulation\RML-Amiga`). We will refer to this folder
@@ -147,15 +147,20 @@ The collection uses its own copy of WinUAE in portable mode, so it won't
 interfere with existing installations. The included WinUAE will never save any
 data outside of the `$RML_BASE` folder.
 
-Now download the **Games** pack and `install-games-v1.0.bat`, then **Demos** and
-`install-demos-v1.0.bat` if you're interested in watching glorious Amiga
-demoscene productions. Move all these files into `$RML_BASE`, then run
+Now download the **Games** pack and `install-games-v1.0.bat`, then **Demos**
+and `install-demos-v1.0.bat` if you're interested in watching glorious Amiga
+demoscene productions. The scripts are not shown on the main page of the
+archive.org items; you need to click on the "Show All" link in the "Downloads
+options" box on the right side to see the full file list.
+
+Move the packs and the scripts into `$RML_BASE`, then run
 `install-games-v1.0.bat` and `install-demos-v1.0.bat` (the installation will
 take about 15 minutes for the **Games** pack).
 
-You can optionally pass the destination folder to the installer scripts as an
-argument. This is handy if you're short on disk space, so you can download the
-archives to one drive or partition and then install them to a different one.
+You can optionally pass the destination folder to the installer scripts as a
+command line argument. This is handy if you're short on disk space, so you can
+download the archives to one drive or partition and then install them to a
+different one.
 
 !!! note 
 
@@ -171,10 +176,11 @@ archives to one drive or partition and then install them to a different one.
     Alternatively, you can grab only the games you're interested in. Each game
     resides in its own ZIP archive inside the big **Games** ZIP file. You can
     view the list of nested ZIP files on archive.org by clicking on the "Show
-    All" link in the downloads box on the right side, then on the "View
-    Contents" link next to the ZIP file's name in the file listing. That will
-    take you to the list of nested ZIP archives which you can download
-    individually by simply clicking on their names.
+    All" link in the "Downloads options" box on the right side, then on the
+    "View Contents" link next to the ZIP file's name in the file listing. That
+    will take you to the list of nested ZIP archives which you can download
+    individually by simply clicking on their names. Then you just simply need
+    to unpack these ZIP files into `$RML_BASE`.
 
 !!! warning "This voids your warranty, pal!"
 
@@ -182,15 +188,17 @@ archives to one drive or partition and then install them to a different one.
     Switching to any other version is asking for trouble---don't do it.
 
 
-## Supplying your own Kickstart ROMs
+## Supplying your own ROM files
 
-If you've acquired the Kickstart ROMS from alternative sources, this is how to
-install them:
+If you've acquired the ROM files from alternative sources, this is how to
+install them.
 
-- The easiest way is to copy all your ROM files into `$RML_BASE/ROMs`, then
-  force a re-scan by pressing the **Rescan ROMs** button in the **Paths**
-  WinUAE configuration tab. WinUAE will identify the ROM files by their CRC32
-  checksums, so the file names don't matter.
+### Kickstart ROMs
+
+- The easiest way is to copy all your Amiga Kickstart ROM files into
+  `$RML_BASE/ROMs`, then force a re-scan by pressing the **Rescan ROMs**
+  button in the **Paths** WinUAE configuration tab. WinUAE will identify the
+  ROM files by their CRC32 checksums, so the file names don't matter.
 
 - To get WHDLoad working (required by a handful of games), copy the Amiga 500
   (Kickstart 1.3 rev 34.50) and Amiga 1200 (Kickstart 3.1 rev 40.60) ROMs into
@@ -198,8 +206,6 @@ install them:
   `kick34005.A500.RTB` and `kick40068.A1200.RTB`, respectively (the below table
   shows their typical file names in Kickstart ROM collections).
 
-
-### ROMs
 
 These are all the ROM files used by setup with their CRC32 checksums:
 
@@ -216,7 +222,7 @@ These are all the ROM files used by setup with their CRC32 checksums:
 </div>
 
 
-### Roland MT-32
+### Roland MT-32 ROMs
 
 These are only required by a handful of games that support Roland MT-32 sound.
 You must copy these into `$RML_BASE\ROMs\mt32-roms\` and the file names must

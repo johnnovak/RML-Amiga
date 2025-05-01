@@ -122,4 +122,5 @@ on the subject.
     amount of money. A still no-name 286 with an EGA monitor and hard drive
     cost about $1400-1800, and the VGA monitor option would set you back by
     $1700-$2100. And after spending all that money, your brand new machine
-    still had no sound card, only a crapy small built-in speaker...
+    still had no sound card, only a small crappy built-in speaker that was
+    mostly only capable of producing primitive monotonic beeps...

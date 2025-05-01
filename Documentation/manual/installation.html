@@ -515,28 +515,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supplying-your-own-kickstart-roms" class="md-nav__link">
+  <a href="#supplying-your-own-rom-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Supplying your own Kickstart ROMs
+      Supplying your own ROM files
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Supplying your own Kickstart ROMs">
+    <nav class="md-nav" aria-label="Supplying your own ROM files">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#roms" class="md-nav__link">
+  <a href="#kickstart-roms" class="md-nav__link">
     <span class="md-ellipsis">
-      ROMs
+      Kickstart ROMs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#roland-mt-32" class="md-nav__link">
+  <a href="#roland-mt-32-roms" class="md-nav__link">
     <span class="md-ellipsis">
-      Roland MT-32
+      Roland MT-32 ROMs
     </span>
   </a>
   
@@ -1441,28 +1441,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supplying-your-own-kickstart-roms" class="md-nav__link">
+  <a href="#supplying-your-own-rom-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Supplying your own Kickstart ROMs
+      Supplying your own ROM files
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Supplying your own Kickstart ROMs">
+    <nav class="md-nav" aria-label="Supplying your own ROM files">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#roms" class="md-nav__link">
+  <a href="#kickstart-roms" class="md-nav__link">
     <span class="md-ellipsis">
-      ROMs
+      Kickstart ROMs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#roland-mt-32" class="md-nav__link">
+  <a href="#roland-mt-32-roms" class="md-nav__link">
     <span class="md-ellipsis">
-      Roland MT-32
+      Roland MT-32 ROMs
     </span>
   </a>
   
@@ -1524,9 +1524,10 @@ method via the installer script.</p>
 </li>
 <li>
 <p>Download the installation script <code>install-full-v1.0.bat</code> and the 7-zip
-   archiver (<code>7za.exe</code>) from the <a href="https://archive.org/details/rml-amiga-base-v1-0">Base pack archive.org
-   item</a> into this
-   folder as well. The contents of the folder should now look like this:</p>
+   archiver (<code>7za.exe</code>) from the
+   <a href="https://archive.org/download/RML-Amiga-Base-v1-0">Base pack archive.org item</a>
+   into this folder as well. The contents of the folder should now look like
+   this:</p>
 <p><figure markdown="span">
    <a class="glightbox" href="images/full-install.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Starting games" src="images/full-install.png" width="70%" /></a>
  </figure></p>
@@ -1567,8 +1568,8 @@ between different drives or even different computers without any problems.</p>
   installation contains WHDLoad too.</p>
 </li>
 <li>
-<p><strong>ROMs</strong> &mdash; ROM images (e.g., Kickstart ROMs) necessary to emulate
-  the various Amiga models and other required hardware. (Note: The Amiga is
+<p><strong>ROMs</strong> &mdash; Amiga Kickstart ROM images necessary to emulate
+  the various Amiga models and the Roland MT-32 ROMs. (Note: The Amiga is
   <em>not</em> a console! Games are <em>not</em> called &ldquo;ROMs&rdquo; on the Amiga!)</p>
 </li>
 <li>
@@ -1615,22 +1616,25 @@ problems with using certain parts of the collection for whatever reasons
 (e.g., the Kickstart ROMs).</p>
 <p>Start by downloading the <strong>Base</strong> and <strong>Systems</strong> packs&mdash;these are mandatory.
 The <strong>ROMs</strong> pack is not necessary if you have acquired the ROM files from
-elsewhere (see <a href="#supplying-your-own-kickstart-roms">Supplying your own Kickstart
-ROMs</a>).</p>
+elsewhere (see <a href="#supplying-your-own-rom-files">Supplying your own ROM files</a>).</p>
 <p>Once you&rsquo;ve downloaded these packs, extract them into a folder you have full
 write access to (e.g., <code>D:\Emulation\RML-Amiga</code>). We will refer to this folder
 as <code>$RML_BASE</code> from now on. If you already have WinUAE installed, no problem.
 The collection uses its own copy of WinUAE in portable mode, so it won&rsquo;t
 interfere with existing installations. The included WinUAE will never save any
 data outside of the <code>$RML_BASE</code> folder.</p>
-<p>Now download the <strong>Games</strong> pack and <code>install-games-v1.0.bat</code>, then <strong>Demos</strong> and
-<code>install-demos-v1.0.bat</code> if you&rsquo;re interested in watching glorious Amiga
-demoscene productions. Move all these files into <code>$RML_BASE</code>, then run
+<p>Now download the <strong>Games</strong> pack and <code>install-games-v1.0.bat</code>, then <strong>Demos</strong>
+and <code>install-demos-v1.0.bat</code> if you&rsquo;re interested in watching glorious Amiga
+demoscene productions. The scripts are not shown on the main page of the
+archive.org items; you need to click on the &ldquo;Show All&rdquo; link in the &ldquo;Downloads
+options&rdquo; box on the right side to see the full file list.</p>
+<p>Move the packs and the scripts into <code>$RML_BASE</code>, then run
 <code>install-games-v1.0.bat</code> and <code>install-demos-v1.0.bat</code> (the installation will
 take about 15 minutes for the <strong>Games</strong> pack).</p>
-<p>You can optionally pass the destination folder to the installer scripts as an
-argument. This is handy if you&rsquo;re short on disk space, so you can download the
-archives to one drive or partition and then install them to a different one.</p>
+<p>You can optionally pass the destination folder to the installer scripts as a
+command line argument. This is handy if you&rsquo;re short on disk space, so you can
+download the archives to one drive or partition and then install them to a
+different one.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <strong>Games</strong> and <strong>Demos</strong> nested archives; each game and demo resides in
@@ -1645,25 +1649,27 @@ disk space.</p>
 <p>Alternatively, you can grab only the games you&rsquo;re interested in. Each game
 resides in its own ZIP archive inside the big <strong>Games</strong> ZIP file. You can
 view the list of nested ZIP files on archive.org by clicking on the &ldquo;Show
-All&rdquo; link in the downloads box on the right side, then on the &ldquo;View
-Contents&rdquo; link next to the ZIP file&rsquo;s name in the file listing. That will
-take you to the list of nested ZIP archives which you can download
-individually by simply clicking on their names.</p>
+All&rdquo; link in the &ldquo;Downloads options&rdquo; box on the right side, then on the
+&ldquo;View Contents&rdquo; link next to the ZIP file&rsquo;s name in the file listing. That
+will take you to the list of nested ZIP archives which you can download
+individually by simply clicking on their names. Then you just simply need
+to unpack these ZIP files into <code>$RML_BASE</code>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">This voids your warranty, pal!</p>
 <p>The games are only guaranteed to work with the bundled WinUAE version.
 Switching to any other version is asking for trouble&mdash;don&rsquo;t do it.</p>
 </div>
-<h2 id="supplying-your-own-kickstart-roms">Supplying your own Kickstart ROMs<a class="headerlink" href="#supplying-your-own-kickstart-roms" title="Permanent link">&para;</a></h2>
-<p>If you&rsquo;ve acquired the Kickstart ROMS from alternative sources, this is how to
-install them:</p>
+<h2 id="supplying-your-own-rom-files">Supplying your own ROM files<a class="headerlink" href="#supplying-your-own-rom-files" title="Permanent link">&para;</a></h2>
+<p>If you&rsquo;ve acquired the ROM files from alternative sources, this is how to
+install them.</p>
+<h3 id="kickstart-roms">Kickstart ROMs<a class="headerlink" href="#kickstart-roms" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>The easiest way is to copy all your ROM files into <code>$RML_BASE/ROMs</code>, then
-  force a re-scan by pressing the <strong>Rescan ROMs</strong> button in the <strong>Paths</strong>
-  WinUAE configuration tab. WinUAE will identify the ROM files by their CRC32
-  checksums, so the file names don&rsquo;t matter.</p>
+<p>The easiest way is to copy all your Amiga Kickstart ROM files into
+  <code>$RML_BASE/ROMs</code>, then force a re-scan by pressing the <strong>Rescan ROMs</strong>
+  button in the <strong>Paths</strong> WinUAE configuration tab. WinUAE will identify the
+  ROM files by their CRC32 checksums, so the file names don&rsquo;t matter.</p>
 </li>
 <li>
 <p>To get WHDLoad working (required by a handful of games), copy the Amiga 500
@@ -1673,7 +1679,6 @@ install them:</p>
   shows their typical file names in Kickstart ROM collections).</p>
 </li>
 </ul>
-<h3 id="roms">ROMs<a class="headerlink" href="#roms" title="Permanent link">&para;</a></h3>
 <p>These are all the ROM files used by setup with their CRC32 checksums:</p>
 <div class="compact">
 <table>
@@ -1715,7 +1720,7 @@ install them:</p>
 </tbody>
 </table>
 </div>
-<h3 id="roland-mt-32">Roland MT-32<a class="headerlink" href="#roland-mt-32" title="Permanent link">&para;</a></h3>
+<h3 id="roland-mt-32-roms">Roland MT-32 ROMs<a class="headerlink" href="#roland-mt-32-roms" title="Permanent link">&para;</a></h3>
 <p>These are only required by a handful of games that support Roland MT-32 sound.
 You must copy these into <code>$RML_BASE\ROMs\mt32-roms\</code> and the file names must
 match:</p>
