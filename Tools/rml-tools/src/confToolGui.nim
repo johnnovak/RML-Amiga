@@ -519,6 +519,23 @@ template setHelpText(s: string, keepNewlines=false) =
 # {{{ renderGraphicsTab()
 proc renderGraphicsTab() =
   group:
+    koi.toggleButton(app.settings.graphics.monitor.set, "Monitor")
+    setHelpText("""
+      The monitor where the WinUAE window will appear after startup. The
+      selected monitor will be used for fullscreen mode as well.
+    """)
+    koi.dropDown(app.settings.graphics.monitor.value,
+                 disabled = not app.settings.graphics.monitor.set)
+
+    koi.toggleButton(app.settings.graphics.screenResolution.set, "Screen resolution")
+    setHelpText("""
+      Vertical screen resolution of the selected monitor. If the image appears
+      too small, you're using an incorrect resolution setting for the monitor.
+    """)
+    koi.dropDown(app.settings.graphics.screenResolution.value,
+                 disabled = not app.settings.graphics.screenResolution.set)
+
+  group:
     koi.toggleButton(app.settings.graphics.palScaling.set, "PAL scaling")
     setHelpText("""
       Set the scaling factor for PAL games and demos. Fractional scaling
@@ -921,7 +938,7 @@ proc renderUI() =
 
   # Help text
   x= PadX
-  y += 387
+  y += 448
   koi.textArea(x, y, w=winWidth-2*PadX, h=223, app.helpText, disabled=true,
                style=app.styles.helpText)
 
@@ -976,7 +993,7 @@ proc framebufSizeCb(win: Window, size: tuple[w, h: int32]) =
 # {{{ createWindow()
 proc createWindow(): Window =
   var cfg            = DefaultOpenglWindowConfig
-  cfg.size           = (w: 480, h: 760)
+  cfg.size           = (w: 480, h: 824)
   cfg.title          = fmt"RML Amiga Configuration Tool v{AppVersion}"
   cfg.resizable      = false
   cfg.scaleToMonitor = true
@@ -1155,7 +1172,7 @@ proc loadAppConfig() =
     log.info("Could not load config")
 
 # }}}
-#
+
 # {{{ main()
 proc main() =
   initLogger()

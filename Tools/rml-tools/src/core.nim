@@ -52,6 +52,9 @@ type
   # {{{ Graphics settings
   # -------------------------------------------------------------------------
   GraphicsSettings* = object
+    monitor*:          tuple[value: Monitor, set: bool]
+    screenResolution*: tuple[value: ScreenResolution, set: bool]
+
     palScaling*:      tuple[value: PalScaling,    set: bool]
     ntscScaling*:     tuple[value: NtscScaling,   set: bool]
 
@@ -66,6 +69,19 @@ type
     interlacing*:     tuple[value: bool,          set: bool]
     vsyncMode*:       tuple[value: VsyncMode,     set: bool]
     vsyncSlices*:     tuple[value: string,        set: bool]
+
+  Monitor* = enum
+    monitor0 = (0, "Default")
+    monitor1 = (1, "1")
+    monitor2 = (2, "2")
+    monitor3 = (3, "3")
+    monitor4 = (4, "4")
+
+  ScreenResolution* = enum
+    screenRes1080p = "1080p"
+    screenRes1440p = "1440p"
+    screenRes2160p = "2160p (4K)"
+    screenRes2880p = "2880p (5K)"
 
   PalScaling* = enum
     palScaling30 = "3.0x"
@@ -431,6 +447,23 @@ proc setScalingFactors(c: UaeConfig, f: tuple[horiz, vert: int]) =
   c.cfg["gfx_filter_vert_zoomf"]  = fmt"{f.vert}.000000"
 
 # }}}
+# {{{ setMonitor()
+proc setMonitor(c: UaeConfig, monitor: Monitor) =
+  c.cfg["gfx_display"]  = $monitor
+
+# }}}
+# {{{ setScreenResolution()
+proc setScreenResolution(c: UaeConfig, screenResolution: ScreenResolution) =
+  let f = case screenResolution
+  of screenRes1080p: "1.000000"
+  of screenRes1440p: "1.333333"
+  of screenRes2160p: "2.000000"
+  of screenRes2880p: "2.666667"
+
+  c.cfg["gfx_filter_vert_zoom_multf"]  = f
+  c.cfg["gfx_filter_horiz_zoom_multf"] = f
+
+# }}}
 # {{{ setScaling()
 proc setScaling(c: UaeConfig, palScaling:  Option[PalScaling],
                               ntscScaling: Option[NtscScaling]) =
@@ -689,6 +722,12 @@ proc setCaptureMouseOnFocus(c: UaeConfig, enabled: bool) =
 # {{{ applySettings*()
 proc applySettings*(cfg: UaeConfig, settings: Settings) =
   with settings.graphics:
+    if monitor.set:
+      cfg.setMonitor(monitor.value)
+
+    if screenResolution.set:
+      cfg.setScreenResolution(screenResolution.value)
+
     if palScaling.set or ntscScaling.set:
       cfg.setScaling(palScaling.toOpt, ntscScaling.toOpt)
 
