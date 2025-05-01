@@ -975,15 +975,16 @@ proc framebufSizeCb(win: Window, size: tuple[w, h: int32]) =
 
 # {{{ createWindow()
 proc createWindow(): Window =
-  var cfg           = DefaultOpenglWindowConfig
-  cfg.size          = (w: 480, h: 760)
-  cfg.title         = fmt"RML Amiga Configuration Tool v{AppVersion}"
-  cfg.resizable     = false
-  cfg.visible       = false
-  cfg.nMultiSamples = 4
-  cfg.bits          = (r: some(8'i32), g: some(8'i32), b: some(8'i32),
-                       a: some(8'i32),
-                       stencil: some(8'i32), depth: some(16'i32))
+  var cfg            = DefaultOpenglWindowConfig
+  cfg.size           = (w: 480, h: 760)
+  cfg.title          = fmt"RML Amiga Configuration Tool v{AppVersion}"
+  cfg.resizable      = false
+  cfg.scaleToMonitor = true
+  cfg.visible        = false
+  cfg.nMultiSamples  = 4
+  cfg.bits           = (r: some(8'i32), g: some(8'i32), b: some(8'i32),
+                        a: some(8'i32),
+                        stencil: some(8'i32), depth: some(16'i32))
 
   when defined(macosx):
     cfg.version = glv32
@@ -1064,6 +1065,11 @@ proc setWidgetStyles() =
 
 # }}}
 
+# {{{ contentScaleCb()
+proc contentScaleCb(window: Window, xscale, yscale: float) =
+  koi.setScale(window.contentScale.xScale)
+
+# }}}
 # {{{ dropCb()
 proc dropCb(window: Window, paths: PathDropInfo) =
   if paths.len > 0:
@@ -1107,6 +1113,7 @@ proc init(): Window =
 
   win.pos = (cx, cy)
   win.dropCb = dropCb
+  win.windowContentScaleCb = contentScaleCb
 
   wrapper.showWindow(win.getHandle())
 
@@ -1148,6 +1155,7 @@ proc loadAppConfig() =
     log.info("Could not load config")
 
 # }}}
+#
 # {{{ main()
 proc main() =
   initLogger()
@@ -1155,6 +1163,7 @@ proc main() =
 
   try:
     let win = init()
+    koi.setScale(win.contentScale.xScale)
 
     while not win.shouldClose:
       if koi.shouldRenderNextFrame():
