@@ -15,9 +15,12 @@
 ### Starting a game
 
 Start the bundled portable Amiga emulator called **WinUAE** by running
-`winuae64.exe` (creating a desktop shortcut icon for it would be a good idea).
-WinUAE always shows the configuration tab after startup. You can return to the
-configurations tab from any other tab by selecting
+`winuae64.exe` located in the `WinUAE` folder inside your RML Amiga
+installation folder. Creating a desktop shortcut icon for it would be a good
+idea.
+
+WinUAE always shows the configurations tab after startup. You can return to
+this tab from any other tab by selecting
 :material-numeric-1-circle:{:.circ-num} **Configurations** in the left pane,
 or by just simply restarting WinUAE.
 

@@ -20,8 +20,8 @@ You can customise your RML Amiga game configurations in two ways:
      The direct method is reserved for experts and experts only. You'll lose
      your warranty the moment you start tinkering with the game configs with
      the direct WinUAE method. If you've screwed up one of your game configs,
-     just restore the stock config and try again---maybe by using the config
-     tool this time.
+     just [restore the original config](troubleshooting.md/#restoring-configs)
+     and try again---maybe by using the config tool this time.
 
 
 ## Configuration tool

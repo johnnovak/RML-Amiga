@@ -82,8 +82,8 @@ Here is a detailed description of the packs:
   included on many AmigaDOS floppy games as well). The Workbench 3.1
   installation contains WHDLoad too.
 
-- **ROMs** --- ROM images (e.g., Kickstart ROMs) necessary to emulate
-  the various Amiga models and other required hardware. (Note: The Amiga is
+- **ROMs** --- Amiga Kickstart ROM images necessary to emulate
+  the various Amiga models and the Roland MT-32 ROMs. (Note: The Amiga is
   *not* a console! Games are *not* called "ROMs" on the Amiga!)
 
 - **Games** --- Nested ZIP archive with each game having its own
