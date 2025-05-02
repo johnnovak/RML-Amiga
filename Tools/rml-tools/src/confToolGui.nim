@@ -519,23 +519,17 @@ template setHelpText(s: string, keepNewlines=false) =
 # {{{ renderGraphicsTab()
 proc renderGraphicsTab() =
   group:
-    koi.toggleButton(app.settings.graphics.monitor.set, "Monitor")
-    setHelpText("""
-      The monitor where the WinUAE window will appear after startup. The
-      selected monitor will be used for fullscreen mode as well.
-    """)
-    koi.dropDown(app.settings.graphics.monitor.value,
-                 disabled = not app.settings.graphics.monitor.set)
-
     koi.toggleButton(app.settings.graphics.screenResolution.set, "Screen resolution")
     setHelpText("""
-      Vertical screen resolution of the selected monitor. If the image appears
-      too small, you're using an incorrect resolution setting for the monitor.
+      Vertical screen resolution of your monitor. If the image appears too
+      small or too large regardless of the scaling factor settings, you're
+      using an incorrect resolution setting. In a multi-monitor setup, this
+      must be the vertical resolution of the monitor you use with WinUAE. You
+      can change the monitor to use in the 'General' tab.
     """)
     koi.dropDown(app.settings.graphics.screenResolution.value,
                  disabled = not app.settings.graphics.screenResolution.set)
 
-  group:
     koi.toggleButton(app.settings.graphics.palScaling.set, "PAL scaling")
     setHelpText("""
       Set the scaling factor for PAL games and demos. Fractional scaling
@@ -845,6 +839,16 @@ proc renderAudioTab() =
 # {{{ renderGeneralTab()
 proc renderGeneralTab() =
   group:
+    koi.toggleButton(app.settings.general.monitor.set, "Monitor")
+    setHelpText("""
+      The monitor where the WinUAE window will appear after startup. This
+      monitor will be used for fullscreen mode as well. If you change the
+      monitor setting and the new monitor has a different resolution, make
+      sure to update the resolution in the 'Graphics' tab for all configs.
+    """)
+    koi.dropDown(app.settings.general.monitor.value,
+                 disabled = not app.settings.general.monitor.set)
+
     koi.toggleButton(app.settings.general.displayMode.set, "Display mode")
     setHelpText("""
       Set the default display mode. You can always toggle between 'Windowed'
@@ -938,7 +942,7 @@ proc renderUI() =
 
   # Help text
   x= PadX
-  y += 448
+  y += 408
   koi.textArea(x, y, w=winWidth-2*PadX, h=223, app.helpText, disabled=true,
                style=app.styles.helpText)
 
@@ -993,7 +997,7 @@ proc framebufSizeCb(win: Window, size: tuple[w, h: int32]) =
 # {{{ createWindow()
 proc createWindow(): Window =
   var cfg            = DefaultOpenglWindowConfig
-  cfg.size           = (w: 480, h: 824)
+  cfg.size           = (w: 480, h: 784)
   cfg.title          = fmt"RML Amiga Configuration Tool v{AppVersion}"
   cfg.resizable      = false
   cfg.scaleToMonitor = true

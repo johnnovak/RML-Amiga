@@ -52,30 +52,21 @@ type
   # {{{ Graphics settings
   # -------------------------------------------------------------------------
   GraphicsSettings* = object
-    monitor*:          tuple[value: Monitor, set: bool]
     screenResolution*: tuple[value: ScreenResolution, set: bool]
+    palScaling*:       tuple[value: PalScaling,       set: bool]
+    ntscScaling*:      tuple[value: NtscScaling,      set: bool]
 
-    palScaling*:      tuple[value: PalScaling,    set: bool]
-    ntscScaling*:     tuple[value: NtscScaling,   set: bool]
+    showOsd*:          tuple[value: bool,             set: bool]
 
-    showOsd*:         tuple[value: bool,          set: bool]
+    crtEmulation*:     tuple[value: bool,             set: bool]
+    shaderQuality*:    tuple[value: ShaderQuality,    set: bool]
+    sharperPal*:       tuple[value: bool,             set: bool]
+    sharperNtsc*:      tuple[value: bool,             set: bool]
+    forcePalShader*:   tuple[value: bool,             set: bool]
 
-    crtEmulation*:    tuple[value: bool,          set: bool]
-    shaderQuality*:   tuple[value: ShaderQuality, set: bool]
-    sharperPal*:      tuple[value: bool,          set: bool]
-    sharperNtsc*:     tuple[value: bool,          set: bool]
-    forcePalShader*:  tuple[value: bool,          set: bool]
-
-    interlacing*:     tuple[value: bool,          set: bool]
-    vsyncMode*:       tuple[value: VsyncMode,     set: bool]
-    vsyncSlices*:     tuple[value: string,        set: bool]
-
-  Monitor* = enum
-    monitor0 = (0, "Default")
-    monitor1 = (1, "1")
-    monitor2 = (2, "2")
-    monitor3 = (3, "3")
-    monitor4 = (4, "4")
+    interlacing*:      tuple[value: bool,             set: bool]
+    vsyncMode*:        tuple[value: VsyncMode,        set: bool]
+    vsyncSlices*:      tuple[value: string,           set: bool]
 
   ScreenResolution* = enum
     screenRes1080p = "1080p"
@@ -178,12 +169,20 @@ type
   # {{{ General settings
   # -------------------------------------------------------------------------
   GeneralSettings* = object
+    monitor*:             tuple[value: Monitor,     set: bool]
     displayMode*:         tuple[value: DisplayMode, set: bool]
 
     captureMouseOnFocus*: tuple[value: bool, set: bool]
     pauseWhenUnfocused*:  tuple[value: bool, set: bool]
 
     confirmQuit*:         tuple[value: bool, set: bool]
+
+  Monitor* = enum
+    monitor0 = (0, "Default")
+    monitor1 = (1, "1")
+    monitor2 = (2, "2")
+    monitor3 = (3, "3")
+    monitor4 = (4, "4")
 
   DisplayMode* = enum
     dmWindowed   = "Windowed"
@@ -722,9 +721,6 @@ proc setCaptureMouseOnFocus(c: UaeConfig, enabled: bool) =
 # {{{ applySettings*()
 proc applySettings*(cfg: UaeConfig, settings: Settings) =
   with settings.graphics:
-    if monitor.set:
-      cfg.setMonitor(monitor.value)
-
     if screenResolution.set:
       cfg.setScreenResolution(screenResolution.value)
 
@@ -790,6 +786,9 @@ proc applySettings*(cfg: UaeConfig, settings: Settings) =
 
 
   with settings.general:
+    if monitor.set:
+      cfg.setMonitor(monitor.value)
+
     if displayMode.set:
       cfg.setDisplayMode(displayMode.value)
 
