@@ -92,6 +92,23 @@ ECHO to set the folder name, then press Enter.
 ECHO/
 SET /P DEST_PATH=Installation folder: 
 
+ECHO/
+ECHO/
+ECHO Please specify the vertical resolution of your monitor. If you have a multi-
+ECHO monitor setup, enter the resolution of the monitor you are going to play Amiga
+ECHO games on.
+ECHO/
+ECHO   [1] 1080p or less
+ECHO   [2] 1440p
+ECHO   [3] 2180p (4K^)
+ECHO   [4] 2880p (5K^) or higher
+ECHO/
+
+CHOICE /C 1234 /M "Vertical monitor resolution"
+SET SCREEN_RES=%ERRORLEVEL%
+ECHO %SCREEN_RES%
+
+
 IF "%DEST_PATH%" == "" (
 	SET DEST_PATH=.
 )
@@ -113,29 +130,104 @@ IF %ERRORLEVEL%==2 EXIT
 SET FULL_INSTALL=1
 
 ECHO/
+ECHO %GREEN%Verifying base package...%RESET%
+SET SHA256_BASE_v1_0=TODO
+
+FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-Base-%VERSION%.zip') DO SET HASH=%%i
+IF NOT %HASH% == %SHA256_BASE_v1_0% (
+  ECHO/
+  ECHO %RED%*** ERROR: Package 'RML-Amiga-Base-%VERSION%.zip' is invalid.%RESET%
+  ECHO %RED%           Please re-download it and run the installer again.%RESET%
+  ECHO/
+  PAUSE
+  EXIT
+)
+
+ECHO %GREEN%Verifying systems package...%RESET%
+SET SHA256_SYSTEMS_v1_0=d333c5c66e8ec2052ff6f011b65fde070cc363cbf2bb6bdf653fab1ba543b1a0
+
+FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-Systems-%VERSION%.zip') DO SET HASH=%%i
+IF NOT %HASH% == %SHA256_SYSTEMS_v1_0% (
+  ECHO/
+  ECHO %RED%*** ERROR: Package 'RML-Amiga-Systems-%VERSION%.zip' is invalid.%RESET%
+  ECHO %RED%           Please re-download it and run the installer again.%RESET%
+  ECHO/
+  PAUSE
+  EXIT
+)
+
+IF NOT %INSTALL_ROMS%==1 GOTO :skipVerifyROMs
+
+ECHO %GREEN%Verifying ROMs package...%RESET%
+SET SHA256_ROMS_v1_0=2668b102aa0c61dad711b6e0e3e0a575550df962b2427010f4564140e81f6105
+
+FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-ROMs-%VERSION%.zip') DO SET HASH=%%i
+IF NOT %HASH% == %SHA256_ROMS_v1_0% (
+  ECHO/
+  ECHO %RED%*** ERROR: Package 'RML-Amiga-ROMs-%VERSION%.zip' is invalid.%RESET%
+  ECHO %RED%           Please re-download it and run the installer again.%RESET%
+  ECHO/
+  PAUSE
+  EXIT
+)
+
+:skipVerifyROMs
+
+ECHO %GREEN%Verifying games package... (this will take a few minutes^)%RESET%
+SET SHA256_GAMES_V1_0=f07f7b57af0ad076805eee4a7bf4f85b522ffddc93930b6b9752e1cc6b40f027
+
+FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-Games-%VERSION%.zip') DO SET HASH=%%i
+IF NOT %HASH% == %SHA256_GAMES_V1_0% (
+  ECHO/
+  ECHO %RED%*** ERROR: Package 'RML-Amiga-Games-%VERSION%.zip' is invalid.%RESET%
+  ECHO %RED%           Please re-download it and run the installer again.%RESET%
+  ECHO/
+  PAUSE
+  EXIT
+)
+
+IF NOT %INSTALL_DEMOS%==1 GOTO :skipVerifyDemos
+
+ECHO %GREEN%Verifying demos package...%RESET%
+ECHO/
+SET SHA256_DEMOS_v1_0=bffac9eb1cd492585fb6934dffe179e89bec79539bdab667cb9229a648c263a4
+
+FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-Demos-%VERSION%.zip') DO SET HASH=%%i
+IF NOT %HASH% == %SHA256_DEMOS_v1_0% (
+  ECHO/
+  ECHO %RED%*** ERROR: Package 'RML-Amiga-Demos-%VERSION%.zip' is invalid.%RESET%
+  ECHO %RED%           Please re-download it and run the installer again.%RESET%
+  ECHO/
+  PAUSE
+  EXIT
+)
+
+:skipVerifyDemos
+
+ECHO/
 ECHO %GREEN%Installing base package...%RESET%
-7za x -y -bso0 %OUT_PATH_ARG% RML-Amiga-Base-%VERSION%.zip || goto :error
+7za x -y -bso0 %OUT_PATH_ARG% RML-Amiga-Base-%VERSION%.zip || GOTO :error
 
 ECHO %GREEN%Installing systems package...%RESET%
-7za x -y -bso0 %OUT_PATH_ARG% RML-Amiga-Systems-%VERSION%.zip || goto :error
+7za x -y -bso0 %OUT_PATH_ARG% RML-Amiga-Systems-%VERSION%.zip || GOTO :error
 
 IF %INSTALL_ROMS%==1 (
   ECHO %GREEN%Installing ROMs package...%RESET%
-  7za x -y -bso0 %OUT_PATH_ARG% RML-Amiga-ROMs-%VERSION%.zip || goto :error
+  7za x -y -bso0 %OUT_PATH_ARG% RML-Amiga-ROMs-%VERSION%.zip || GOTO :error
 )
 
 ECHO %GREEN%Installing games package...%RESET%
 ECHO/
-7za x -y -bso0 RML-Amiga-Games-%VERSION%.zip install-games-%VERSION%.bat || goto :error
-CALL install-games-%VERSION%.bat "%DEST_PATH%" || goto :error
-DEL install-games-%VERSION%.bat || goto :error
+7za x -y -bso0 RML-Amiga-Games-%VERSION%.zip install-games-%VERSION%.bat || GOTO :error
+CALL install-games-%VERSION%.bat "%DEST_PATH%" || GOTO :error
+DEL install-games-%VERSION%.bat || GOTO :error
 
 IF %INSTALL_DEMOS%==1 (
   ECHO %GREEN%Installing demos package...%RESET%
   ECHO/
-  7za x -y -bso0 RML-Amiga-Demos-%VERSION%.zip install-demos-%VERSION%.bat || goto :error
-  CALL install-demos-%VERSION%.bat "%DEST_PATH%" || goto :error
-  DEL install-demos-%VERSION%.bat || goto :error
+  7za x -y -bso0 RML-Amiga-Demos-%VERSION%.zip install-demos-%VERSION%.bat || GOTO :error
+  CALL install-demos-%VERSION%.bat "%DEST_PATH%" || GOTO :error
+  DEL install-demos-%VERSION%.bat || GOTO :error
 )
 
 
