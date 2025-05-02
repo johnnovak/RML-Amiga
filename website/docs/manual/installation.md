@@ -162,6 +162,14 @@ command line argument. This is handy if you're short on disk space, so you can
 download the archives to one drive or partition and then install them to a
 different one.
 
+The stock configurations are set up for 1080p resolution. You'll need to use
+the [Configuration tool](customising-your-setup.md/#configuration-tool) to
+update all your configs to your monitor's resolution if you're running RML
+Amiga on a better than 1080p screen (the [automated
+installer](installation.md/#automatic-installation) does this step for you).
+Make sure to check out the instructions in the [4K and better
+monitors](customising-your-setup/#4k-and-better-monitors) section as well.
+
 !!! note 
 
     The **Games** and **Demos** nested archives; each game and demo resides in

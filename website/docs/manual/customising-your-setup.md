@@ -75,3 +75,27 @@ The tool has a simple single-window interface:
   :material-numeric-7-circle:{: .circ-num}. This will reset all settings to
   their defaults and will make them greyed-out (disabled).
 
+
+## 4K and better monitors
+
+If you have a 4K or better monitor (3840&times;2160 or higher resolution), you
+can improve the authenticity of the CRT emulation by doing the following:
+
+<div class="compact" markdown>
+  - Go to the `$RML_BASE\WinUAE` folder
+  - Delete `RGB-CRT.ini`
+  - Make a copy of `RGB-CRT-4k.ini` and rename it to `RGB-CRT.ini` (make sure
+    to get the filename right; it's best to copy-paste it from here)
+</div>
+
+It's the vertical resolution of your monitor that matters; if it's 2160
+pixels or higher, then you should do this.
+
+Conversely, if you're going back to a 1440p or 1080p screen, replace
+`RGB-CRT.ini` with `RGB-CRT-1080p.ini`.
+
+!!! note "Automated installer note"
+
+    If you used the [automatic installation
+    method](installation.md/#automatic-installation) to set up RML Amiga, this
+    step has already been done for you by the installer.

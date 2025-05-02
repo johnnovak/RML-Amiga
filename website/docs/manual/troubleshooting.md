@@ -12,6 +12,18 @@ overwriting the existing files.
 To revert all configs, delete the `Configurations` folder, make a copy of
 `Original Configs`, then rename the copy to `Configurations`.
 
+!!! note "Note for higher than 1080p monitor users"
+
+    The configurations in `Original Configs` are set up for 1080p resolution.
+    If you used the [automatic installation
+    method](installation.md/#automatic-installation) to set up RML Amiga, the
+    installer script asks about your monitor resolution then modifies the
+    configs in `Configurations` accordingly, but leaves `Original Configs`
+    alone. Consequently, if you restore the configs from `Original Configs`,
+    you might need to reapply your monitor resolution to the restoed configs
+    using the [Configuration
+    tool](customising-your-setup.md/#configuration-tool).
+
 
 ## Scrolling jitter with vsync enabled
 
@@ -78,6 +90,18 @@ dropouts.
 If you're using a joystick, low-quality USB joysticks and joystick adapters
 can be another source of increased input lag. Do your research and get another
 joystick or adapter with confirmed low input lag.
+
+
+## Image suddenly too small or too large
+
+If the image is suddenly appearing very small, you've probably set up WinUAE
+for a 1080p monitor and now you're using it on a 1440p or 4K screen. If the
+image appears too large, that's the opposite problem---you've most likely gone
+from 4K to 1440p or 1080p.
+
+The solution is to reapply your monitor resolution to all configs using the
+[Configuration tool](customising-your-setup.md/#configuration-tool). See also
+the note in [Restoring configs](#restoring-configs).
 
 
 ## Black screen or stuck image at startup
