@@ -243,12 +243,10 @@ your setup](customising-your-setup.md) section.
 ### How to use this manual
 
 The rest of the manual is reference documentation, but it's recommended to
-read through it once to be aware of the various Amiga concepts and features
-that RML Amiga provides. At the very least, please skim through it, otherwise
-you'll be missing out on some of the nice extra features or you'll get
-yourself into trouble. You can also use the **Search** box in the top right
-corner of the pages to look up information quickly (it searches in the whole
-documentation, not just the current page).
+read it once so you're aware of the various Amiga concepts and RML Amiga
+features. At the very least, please skim through it. You can also use the
+**Search** box in the top right corner of the pages to look up information
+quickly.
 
 
 ### Further reading
