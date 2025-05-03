@@ -21,9 +21,9 @@ task gitHash, "get Git hash":
 task versionAndGitHash, "get version and Git hash":
   echo fmt"{Version}-{GitHash}"
 
-############# ConfToolGUI #############
+############# ConfTool #############
 
-proc setConfToolGuiCommonParams() =
+proc setConfToolCommonParams() =
   --deepcopy:on
   --d:nvgGL3
   --d:glfwStaticLib
@@ -33,18 +33,18 @@ proc setConfToolGuiCommonParams() =
   switch("path", NimModules / "koi")
 
   switch "out", "ConfTool"
-  setCommand "c", "src/confToolGui"
+  setCommand "c", "src/confTool"
 
-task confToolGuiDebug, "compile ConfToolGUI (debug build)":
+task confToolDebug, "compile ConfTool (debug build)":
   --d:debug
-  setConfToolGuiCommonParams()
+  setConfToolCommonParams()
 
-task confToolGuiRelease, "compile ConfToolGUI (release build)":
+task confToolRelease, "compile ConfTool (release build)":
   --d:release
   --app:gui
   --stacktrace:on
   --linetrace:on
-  setConfToolGuiCommonParams()
+  setConfToolCommonParams()
 
 ############### PkgTool ###############
 
