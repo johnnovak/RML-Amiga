@@ -474,11 +474,9 @@ small {
   background: #888;
   color: var(--md-primary-bg-color);
 }
-.md-typeset .dos-prompt pre > code {
-  padding: 0.67rem 0.8rem 0.5rem 0.8rem;
-  font: 1rem IBM VGA;
-  background: #000;
-  color: #aaa;
+.md-typeset .circ-num {
+  color: red;
+  font-size: 120%;
 }
 
 @media screen and (min-width: 30em) {
