@@ -23,6 +23,9 @@ import with
 when not defined(DEBUG):
   import osdialog
 
+when defined(windows):
+  import platform/windows/console
+
 import core
 import utils
 
@@ -1177,8 +1180,8 @@ proc loadAppConfig() =
 
 # }}}
 
-# {{{ main()
-proc main() =
+# {{{ mainGui()
+proc mainGui() =
   initLogger()
   loadAppConfig()
 
@@ -1202,7 +1205,49 @@ proc main() =
   log.info("Bye!")
 
 # }}}
+# {{{ mainCli()
+proc mainCli() =
+  loadAppConfig()
 
-main()
+  when defined(windows):
+    discard attachOutputToConsole()
+    echo ""
+
+  let command = paramStr(1)
+
+  case command
+  of "set":
+    if paramCount() != 3:
+      echo fmt"Usage: {paramStr(0)} set SETTING VALUE"
+      quit(1)
+
+    let setting = paramStr(2)
+    let value   = paramStr(3)
+
+    var success = true
+
+    for path in getConfigPaths(atAll):
+      try:
+        let cfg = readUaeConfig(path)
+        cfg.cfg[setting] = value
+        cfg.write(path)
+
+      except CatchableError as e:
+        logError(e, fmt"*** Error applying config, path: {path}")
+        success = false
+
+    if not success:
+      quit(1)
+
+  else:
+    echo fmt"Usage: {paramStr(0)} COMMAND [ARGS]"
+    quit(1)
+
+# }}}
+
+if paramCount() == 0:
+  mainGui()
+else:
+  mainCli()
 
 # vim: et:ts=2:sw=2:fdm=marker

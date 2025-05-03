@@ -15,23 +15,8 @@ import with
 
 # }}}
 
-const
-  AppVersion* = staticRead("../CURRENT_VERSION").strip
+const AppVersion* = staticRead("../CURRENT_VERSION").strip
 
-let ForcedNoFilterConfigs = @[
-  "Wonderland - Dream the Dream",
-  "Magnetic Scrolls Collection, The - Vol. 1"
-]
-
-# {{{ UaeConfig
-type
-  UaeConfig* = ref object
-    name*: string
-    cfg*:  OrderedTable[string, string]
-
-const CommentKeyPrefix = "#comment-"
-
-# }}}
 # {{{ Settings
 const
   NoFilter        = "D3D:Point-Prescale.fx"
@@ -267,6 +252,16 @@ proc getConfigPaths*(path: Path): seq[Path] =
         if ext == ".uae": p
   else:
     @[]
+
+# }}}
+
+# {{{ UaeConfig
+type
+  UaeConfig* = ref object
+    name*: string
+    cfg*:  OrderedTable[string, string]
+
+const CommentKeyPrefix = "#comment-"
 
 # }}}
 # {{{ readUaeConfig*()
@@ -526,6 +521,11 @@ proc setCrtEmulation(c: UaeConfig, enabled, sharperPal, sharperNtsc,
 
   func isSharpCrtFilter(): bool =
     c.getFilter().contains("-Sharp")
+
+  let ForcedNoFilterConfigs = @[
+    "Wonderland - Dream the Dream",
+    "Magnetic Scrolls Collection, The - Vol. 1"
+  ]
 
   for name in ForcedNoFilterConfigs:
     if c.name.startsWith(name):
