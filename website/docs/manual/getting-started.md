@@ -12,6 +12,7 @@
     reading as half of the information is emulation-related.
 
 
+
 ### Starting a game
 
 Start the bundled portable Amiga emulator called **WinUAE** by running
@@ -128,7 +129,7 @@ that gives you feedback about what the emulator is currently doing.
     the CDTV and the CD32), the rest are optional.
 
 
-### Manuals
+### Game manuals
 
 It's important to understand that control schemes and user interfaces were a
 lot less standardised in the 1980s and early 90s. You won't get very far in
@@ -237,6 +238,17 @@ If you would like to change the defaults (e.g., you'd like to make the image
 fill the screen, or turn off the CRT shaders or the floppy sounds) or want to
 fine-tune the technical emulator settings, please refer to the [Customising
 your setup](customising-your-setup.md) section.
+
+
+### How to use this manual
+
+The rest of the manual is reference documentation, but it's recommended to
+read through it once to be aware of the various Amiga concepts and features
+that RML Amiga provides. At the very least, please skim through it, otherwise
+you'll be missing out on some of the nice extra features or you'll get
+yourself into trouble. You can also use the **Search** box in the top right
+corner of the pages to look up information quickly (it searches in the whole
+documentation, not just the current page).
 
 
 ### Further reading
