@@ -10,6 +10,8 @@ SET PURPLE=[95m
 SET CYAN=[96m
 SET RESET=[0m
 
+:start
+
 CLS
 ECHO/
 ECHO ==============================================================================
@@ -85,10 +87,10 @@ IF %CAN_INSTALL%==0 (
 
 SET DEST_PATH=
 ECHO Please enter the name of the folder where you want RML Amiga to be installed,
-ECHO or just press Enter% to use the current folder.
+ECHO or just press ENTER to use the current folder.
 ECHO/
 ECHO Alternatively, drag ^& drop a folder onto this window from Windows Explorer
-ECHO to set the folder name, then press Enter.
+ECHO to set the folder name, then press ENTER.
 ECHO/
 SET /P DEST_PATH=Installation folder: 
 
@@ -106,7 +108,29 @@ ECHO/
 
 CHOICE /C 1234 /M "Vertical monitor resolution"
 SET SCREEN_RES=%ERRORLEVEL%
-ECHO %SCREEN_RES%
+
+IF %SCREEN_RES%==1 GOTO setScreenRes1080p
+IF %SCREEN_RES%==2 GOTO setScreenRes1440p
+IF %SCREEN_RES%==3 GOTO setScreenRes2180p
+IF %SCREEN_RES%==4 GOTO setScreenRes2880p
+
+:setScreenRes1080p
+SET SCREEN_RES_NAME=1080p
+GOTO :setScreenResEnd
+
+:setScreenRes1440p
+SET SCREEN_RES_NAME=1440p
+GOTO :setScreenResEnd
+
+:setScreenRes2180p
+SET SCREEN_RES_NAME=2180p (4K)
+GOTO :setScreenResEnd
+
+:setScreenRes2880p
+SET SCREEN_RES_NAME=2880p (5K)
+GOTO :setScreenResEnd
+
+:setScreenResEnd
 
 
 IF "%DEST_PATH%" == "" (
@@ -119,13 +143,19 @@ SET OUT_PATH_ARG=-o"%DEST_PATH%"
 
 ECHO/
 ECHO ------------------------------------------------------------------------------
-ECHO Ready to install RML Amiga %VERSION% into %CYAN%'%DEST_PATH_STR%'%RESET%
-ECHO The installation will take about 15 minutes.
+ECHO Ready to install RML Amiga %VERSION%!
+ECHO The installation will take about 15-20 minutes.
+ECHO/
+ECHO   Destination folder: %CYAN%%DEST_PATH_STR%%RESET%
+ECHO   Display resolution: %CYAN%%SCREEN_RES_NAME%%RESET%
+ECHO/
+ECHO Are you happy with these settings?
 ECHO/
 
-CHOICE /C YN /M "Press Y to proceed or N to cancel."
+CHOICE /C YNC /M "Press Y to proceed, N to choose different settings, or C to cancel."
 
-IF %ERRORLEVEL%==2 EXIT
+IF %ERRORLEVEL%==2 GOTO :start
+IF %ERRORLEVEL%==3 EXIT
 
 SET FULL_INSTALL=1
 
@@ -133,7 +163,9 @@ ECHO/
 ECHO %GREEN%Verifying base package...%RESET%
 SET SHA256_BASE_v1_0=TODO
 
-FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-Base-%VERSION%.zip') DO SET HASH=%%i
+7za h -bsp2 -ba -slfh -scrcSHA256 RML-Amiga-Base-%VERSION%.zip > hash
+SET /P HASH=<hash
+DEL hash
 IF NOT %HASH% == %SHA256_BASE_v1_0% (
   ECHO/
   ECHO %RED%*** ERROR: Package 'RML-Amiga-Base-%VERSION%.zip' is invalid.%RESET%
@@ -146,7 +178,9 @@ IF NOT %HASH% == %SHA256_BASE_v1_0% (
 ECHO %GREEN%Verifying systems package...%RESET%
 SET SHA256_SYSTEMS_v1_0=d333c5c66e8ec2052ff6f011b65fde070cc363cbf2bb6bdf653fab1ba543b1a0
 
-FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-Systems-%VERSION%.zip') DO SET HASH=%%i
+7za h -bsp2 -ba -slfh -scrcSHA256 RML-Amiga-Systems-%VERSION%.zip > hash
+SET /P HASH=<hash
+DEL hash
 IF NOT %HASH% == %SHA256_SYSTEMS_v1_0% (
   ECHO/
   ECHO %RED%*** ERROR: Package 'RML-Amiga-Systems-%VERSION%.zip' is invalid.%RESET%
@@ -161,7 +195,9 @@ IF NOT %INSTALL_ROMS%==1 GOTO :skipVerifyROMs
 ECHO %GREEN%Verifying ROMs package...%RESET%
 SET SHA256_ROMS_v1_0=2668b102aa0c61dad711b6e0e3e0a575550df962b2427010f4564140e81f6105
 
-FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-ROMs-%VERSION%.zip') DO SET HASH=%%i
+7za h -bsp2 -ba -slfh -scrcSHA256 RML-Amiga-ROMs-%VERSION%.zip > hash
+SET /P HASH=<hash
+DEL hash
 IF NOT %HASH% == %SHA256_ROMS_v1_0% (
   ECHO/
   ECHO %RED%*** ERROR: Package 'RML-Amiga-ROMs-%VERSION%.zip' is invalid.%RESET%
@@ -176,7 +212,9 @@ IF NOT %HASH% == %SHA256_ROMS_v1_0% (
 ECHO %GREEN%Verifying games package... (this will take a few minutes^)%RESET%
 SET SHA256_GAMES_V1_0=f07f7b57af0ad076805eee4a7bf4f85b522ffddc93930b6b9752e1cc6b40f027
 
-FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-Games-%VERSION%.zip') DO SET HASH=%%i
+7za h -bsp2 -ba -slfh -scrcSHA256 RML-Amiga-Games-%VERSION%.zip > hash
+SET /P HASH=<hash
+DEL hash
 IF NOT %HASH% == %SHA256_GAMES_V1_0% (
   ECHO/
   ECHO %RED%*** ERROR: Package 'RML-Amiga-Games-%VERSION%.zip' is invalid.%RESET%
@@ -192,7 +230,9 @@ ECHO %GREEN%Verifying demos package...%RESET%
 ECHO/
 SET SHA256_DEMOS_v1_0=bffac9eb1cd492585fb6934dffe179e89bec79539bdab667cb9229a648c263a4
 
-FOR /F %%i in ('7za h -ba -slfh -scrcSHA256 RML-Amiga-Demos-%VERSION%.zip') DO SET HASH=%%i
+7za h -bsp2 -ba -slfh -scrcSHA256 RML-Amiga-Demos-%VERSION%.zip > hash
+SET /P HASH=<hash
+DEL hash
 IF NOT %HASH% == %SHA256_DEMOS_v1_0% (
   ECHO/
   ECHO %RED%*** ERROR: Package 'RML-Amiga-Demos-%VERSION%.zip' is invalid.%RESET%
@@ -204,7 +244,6 @@ IF NOT %HASH% == %SHA256_DEMOS_v1_0% (
 
 :skipVerifyDemos
 
-ECHO/
 ECHO %GREEN%Installing base package...%RESET%
 7za x -y -bso0 %OUT_PATH_ARG% RML-Amiga-Base-%VERSION%.zip || GOTO :error
 
@@ -231,11 +270,39 @@ IF %INSTALL_DEMOS%==1 (
 )
 
 
-ECHO/
+IF %SCREEN_RES%==2 (
+	Tools\ConfTool set gfx_filter_vert_zoom_multf  1.333333
+	Tools\ConfTool set gfx_filter_horiz_zoom_multf 1.333333
+	
+) ELSE IF %SCREEN_RES%==3 (
+	Tools\ConfTool set gfx_filter_vert_zoom_multf  2.000000
+	Tools\ConfTool set gfx_filter_horiz_zoom_multf 2.000000
+	DEL WinUAE\RGB-CRT.ini
+	COPY WinUAE\RGB-CRT-4k.ini WinUAE\RGB-CRT.ini >NUL
+
+) ELSE IF %SCREEN_RES%==4 (
+	Tools\ConfTool set gfx_filter_vert_zoom_multf  2.666666
+	Tools\ConfTool set gfx_filter_horiz_zoom_multf 2.666666
+	DEL WinUAE\RGB-CRT.ini
+	COPY WinUAE\RGB-CRT-4k.ini WinUAE\RGB-CRT.ini >NUL
+)
+
 ECHO ------------------------------------------------------------------------------
 ECHO %GREEN%Installation completed. Enjoy RML Amiga! :)%RESET%
 ECHO/
+ECHO %YELLOW%==============================================================================
+ECHO Please proceed by reading the %CYAN%Getting Started%YELLOW% section of the user manual.
+ECHO Press any key now and the local copy of the documentation will open in your
+ECHO default browser.
+ECHO/
+ECHO You can also read the documentation online at the RML Amiga website:
+ECHO %CYAN%https://rml-amiga.johnnovak.net/%YELLOW%
+ECHO ==============================================================================%RESET%
+ECHO/
 PAUSE
+
+START "" Documentation\manual\getting-started.html
+
 EXIT
 
 :error
@@ -247,5 +314,5 @@ PAUSE
 EXIT
 
 :normalisePath
-  SET RETVAL=%~f1
-  EXIT /B
+SET RETVAL=%~f1
+EXIT /B
