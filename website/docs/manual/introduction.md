@@ -124,13 +124,13 @@ RML Amiga has been developed and tested on Windows 10 64-bit. It will most
 likely work fine on more recent Windows versions, and probably on Windows 7
 64-bit too. Only 64-bit Windows versions are supported.
 
-The CRT shader setup is optimised for 1080p monitors (1920&times;1080
-resolution) but should work on any display. A variable refresh rate (VRR),
-adaptive-sync display (e.g., Nvidia G-Sync or AMD FreeSync capable) is highly
-recommended. Fixed-refresh rate monitors will work fine too, but it can be a
-bit more hassle to minimise input lag in action games with vsync enabled on
-such displays. If you only care about slower-paced games (e.g., RPGs,
-adventures) and watching demos, a fixed-refresh monitor will work great.
+The CRT shader setup works on any display resoution, from 1080p or less to 5K
+and beyond. A variable refresh rate (VRR), adaptive-sync display (e.g., Nvidia
+G-Sync or AMD FreeSync capable) is highly recommended. Fixed-refresh rate
+monitors will work fine too, but it can be a bit more hassle to minimise input
+lag in action games with vsync enabled on such displays. If you only care
+about slower-paced games (e.g., RPGs, adventures) and watching demos, a
+fixed-refresh monitor will work great.
 
 A middle-tier or better CPU released in the last ten years or so is
 recommended. A dedicated GPU is recommended but integrated graphics adapters
