@@ -128,7 +128,7 @@ likely work fine on more recent Windows versions, and probably on Windows 7
 The CRT shader setup works on any monitor resolution, from 1080p to 5K and
 beyond. A variable refresh rate (VRR), adaptive-sync display (e.g., Nvidia
 G-Sync or AMD FreeSync capable) is highly recommended. Fixed-refresh rate
-monitors will work fine, too, but it can be a bit more hassle to minimise input
+monitors will work fine too, but it can be a bit more hassle to minimise input
 lag in action games with vsync enabled on such displays. If you only care
 about slower-paced games (e.g., RPGs, adventures) and watching demos, a
 fixed-refresh monitor will work great.
