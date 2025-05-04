@@ -125,7 +125,7 @@ RML Amiga has been developed and tested on Windows 10 64-bit. It will most
 likely work fine on more recent Windows versions, and probably on Windows 7
 64-bit too. Only 64-bit Windows versions are supported.
 
-The CRT shader setup works on any monitor resoution, from 1080p to 5K and
+The CRT shader setup works on any monitor resolution, from 1080p to 5K and
 beyond. A variable refresh rate (VRR), adaptive-sync display (e.g., Nvidia
 G-Sync or AMD FreeSync capable) is highly recommended. Fixed-refresh rate
 monitors will work fine too, but it can be a bit more hassle to minimise input
