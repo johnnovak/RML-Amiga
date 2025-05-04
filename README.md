@@ -4,4 +4,4 @@
 Adventures, RPGs, simulators, strategy, board and puzzle games are the stars of the show, but a small number of arcade
 classics have also been included.
 
-Visit the project website at https://rml-amiga.johnnovak.net/ for more information.
+Visit https://rml-amiga.johnnovak.net/ for more info.
