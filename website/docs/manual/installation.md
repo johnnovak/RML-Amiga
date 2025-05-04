@@ -168,7 +168,7 @@ update all your configs to your monitor's resolution if you're running RML
 Amiga on a better than 1080p screen (the [automated
 installer](installation.md/#automatic-installation) does this step for you).
 Make sure to check out the instructions in the [4K and better
-monitors](customising-your-setup/#4k-and-better-monitors) section as well.
+monitors](customising-your-setup.md/#4k-and-better-monitors) section as well.
 
 !!! note 
 
