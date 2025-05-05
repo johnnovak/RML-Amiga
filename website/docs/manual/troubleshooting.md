@@ -47,11 +47,11 @@ you don't need to worry about setting 50/60 Hz manually.
     graphics assume the NTSC vertical stretch factor (1:1.2 pixel aspect ratio
     as opposed to 1:1 PAL pixel aspect ratio, in other words).
 
-    You can check whether a game is PAL, NTSC, or NTSC50 in the included game
-    spreadsheet, or you can check the **Hardware / Chipset** tab in the WinUAE
-    settings after loading the game config. If the **NTSC** checkbox is
-    ticked, it's an NTSC game (set your desktop to 60 Hz), otherwise, it's
-    either PAL or NTSC50 (set it to 50 Hz).
+    You can check whether a game is PAL, NTSC, or NTSC50 in the [Game
+    list](../appendices/game-list.md), or you can check the **Hardware /
+    Chipset** tab in the WinUAE settings after loading the game config. If the
+    **NTSC** checkbox is ticked, it's an NTSC game (set your desktop to 60
+    Hz), otherwise, it's either PAL or NTSC50 (set it to 50 Hz).
 
 
 ## Distorted audio in NTSC games
