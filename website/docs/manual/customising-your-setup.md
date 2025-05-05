@@ -50,12 +50,12 @@ The tool has a simple single-window interface:
 
 - You'll need to create a "plan" for your configuration changes, then you can
   apply this "change plan" to one or more configs. By default, every setting
-  is greyed-out (like this one :material-numeric-3-circle:{: .circ-num}).
-  Greyed-out settings will not be modified when you apply the "change plan".
+  is greyed out (like this one :material-numeric-3-circle:{: .circ-num}).
+  Greyed out settings will not be modified when you apply the "change plan".
   If you want to modify a setting, you'll need to enable it first by clicking
   on its name which will highlight it :material-numeric-4-circle:{: .circ-num},
   then you can change its value. If you've changed your mind and
-  don't want to modify that setting, click on it again to make it greyed-out
+  don't want to modify that setting, click on it again to make it greyed out
   (disabled).
 
 - You can specify whether you want to apply the config changes to **All**
@@ -73,7 +73,7 @@ The tool has a simple single-window interface:
 
 - You can reset the "change plan"   by pressing the **Reset** button
   :material-numeric-7-circle:{: .circ-num}. This will reset all settings to
-  their defaults and will make them greyed-out (disabled).
+  their defaults and will make them greyed out (disabled).
 
 
 ## 4K and better monitors

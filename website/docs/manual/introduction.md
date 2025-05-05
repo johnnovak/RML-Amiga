@@ -114,7 +114,7 @@ Curated demoscene collection
   artistic prowess and push the limits of what the machine is capable of. Many
   elite-level programmers and artists of today had been forged in the fires of
   the early Amiga demoscene. The collection includes a modest selection of
-  demos, with the goal to eventually include all demos presented in the
+  demos, with the eventual goal of including all demos presented in the
   prestigious [editions64k](https://www.editions64k.fr/) Amiga demoscene book
   series (and then some more!)
 
@@ -123,19 +123,19 @@ Curated demoscene collection
 
 RML Amiga has been developed and tested on Windows 10 64-bit. It will most
 likely work fine on more recent Windows versions, and probably on Windows 7
-64-bit too. Only 64-bit Windows versions are supported.
+64-bit, too. Only 64-bit Windows versions are supported.
 
 The CRT shader setup works on any monitor resolution, from 1080p to 5K and
 beyond. A variable refresh rate (VRR), adaptive-sync display (e.g., Nvidia
 G-Sync or AMD FreeSync capable) is highly recommended. Fixed-refresh rate
-monitors will work fine too, but it can be a bit more hassle to minimise input
+monitors will work fine, too, but it can be a bit more hassle to minimise input
 lag in action games with vsync enabled on such displays. If you only care
 about slower-paced games (e.g., RPGs, adventures) and watching demos, a
 fixed-refresh monitor will work great.
 
 A middle-tier or better CPU released in the last ten years or so is
-recommended. A dedicated GPU is the best but integrated graphics adapters will
-most likely work too, you just might need to lower the CRT shader quality (see
+recommended. A dedicated GPU is the best, but integrated graphics adapters will
+likely work, too; you only might need to lower the CRT shader quality (see
 the [Customising your setup](customising-your-setup.md) section for details).
 
 

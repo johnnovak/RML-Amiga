@@ -15,7 +15,7 @@ files---such hacks are not allowed in RML Amiga.
 <figure markdown="span">
   ![Amiga 500 with GVP A500-HD+ side expansion](images/amiga-500-gvp.jpg)
   <figcaption>Amiga 500 equipped with the popular GVP A500-HD+ hard drive side
-  expansion running Pool of Radiance</figcaption>
+  expansion running Pool of Radiance (<a href="https://www.reddit.com/r/DnD/comments/ctgozp/oc_not_sure_if_this_is_allowed_here_but_i_thought/">source</a>)</figcaption>
 </figure>
 
 
