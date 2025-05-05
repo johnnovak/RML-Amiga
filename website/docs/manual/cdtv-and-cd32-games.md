@@ -17,12 +17,12 @@ CD-exclusive titles as well, such as
 
 <figure markdown="span">
   ![Amiga CD32 and controller](images/amiga-cd32.jpg)
-  <figcaption>Amiga CD32 and the included game controller</figcaption>
+  <figcaption>Amiga CD32 and the included game controller (<a href="https://en.wikipedia.org/wiki/Amiga_CD32#/media/File:Amiga-CD32-wController-L-TRSP.png">source</a>)</figcaption>
 </figure>
 
 <figure markdown="span">
   ![Commodore CDTV and controller](images/cdtv.jpg)
-  <figcaption>A fully decked-out Commodore CDTV with all optional peripherals and a special black Commodore 1084S monitor</figcaption>
+  <figcaption>A fully decked-out Commodore CDTV with all optional peripherals and a special black Commodore 1084S monitor (<a href="https://oldcrap.org/2017/10/25/amiga-cdtv/">source</a>)</figcaption>
 </figure>
 
 

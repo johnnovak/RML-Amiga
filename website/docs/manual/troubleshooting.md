@@ -20,7 +20,7 @@ To revert all configs, delete the `Configurations` folder, make a copy of
     installer script asks about your monitor resolution then modifies the
     configs in `Configurations` accordingly, but leaves `Original Configs`
     alone. Consequently, if you restore the configs from `Original Configs`,
-    you might need to reapply your monitor resolution to the restoed configs
+    you might need to reapply your monitor resolution to the restored configs
     using the [Configuration
     tool](customising-your-setup.md/#configuration-tool).
 
@@ -44,7 +44,8 @@ you don't need to worry about setting 50/60 Hz manually.
 
     NTSC games need 60 Hz, PAL games need 50 Hz, but NTSC50 games also need 50
     Hz (hence the "50" in the name). They're basically PAL games, just the
-    graphics assume the NTSC stretching factor.
+    graphics assume the NTSC vertical stretch factor (1:1.2 pixel aspect ratio
+    as opposed to 1:1 PAL pixel aspect ratio, in other words).
 
     You can check whether a game is PAL, NTSC, or NTSC50 in the included game
     spreadsheet, or you can check the **Hardware / Chipset** tab in the WinUAE
@@ -96,8 +97,8 @@ joystick or adapter with confirmed low input lag.
 
 If the image is suddenly appearing very small, you've probably set up WinUAE
 for a 1080p monitor and now you're using it on a 1440p or 4K screen. If the
-image appears too large, that's the opposite problem---you've most likely gone
-from 4K to 1440p or 1080p.
+image is too large, that's the opposite problem---you've most likely gone from
+4K to 1440p or 1080p.
 
 The solution is to reapply your monitor resolution to all configs using the
 [Configuration tool](customising-your-setup.md/#configuration-tool). See also
@@ -106,7 +107,7 @@ the note in [Restoring configs](#restoring-configs).
 
 ## Black screen or stuck image at startup
 
-You are probably using some global frame limiter, frame capper, or you have
+You are probably using some global frame limiter or frame capper, or you have
 changed the default global settings of your GPU driver to force vsync in all
 programs.
 

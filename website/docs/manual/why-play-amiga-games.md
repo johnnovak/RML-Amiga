@@ -110,7 +110,7 @@ for software 3D rendering that stock Amigas did not have.
 If you would like to learn more about the fascinating history of the Amiga, 
 make sure to check out this [epic eight-part article series](https://arstechnica.com/gadgets/2015/07/the-amiga-turns-30-nobody-had-ever-designed-a-personal-computer-this-way/) or get the book [The Future Was Here: The Commodore Amiga](https://mitpress.mit.edu/9780262535694/the-future-was-here/).
 
-If you're interested in the rise and fall of the Amiga gaming in relation to
+If you're interested in the rise and fall of Amiga gaming in relation to
 DOS, check out [my
 article](https://blog.johnnovak.net/2023/01/02/gaming-on-the-amiga-part-1-amiga-500-is-all-you-need/)
 on the subject.

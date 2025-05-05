@@ -17,9 +17,9 @@ The total size of the packs is 16 GB for v1.0, and you'll need about 18 GB for
 the installed collection. So about 36 GB of free disk space is needed to
 install RML Amiga. 
 
-If you're short on free space but you have multiple drives or partitions, you
+If you're short on free space but have multiple drives or partitions, you
 can download the packs to one drive, then install to another. The installer
-scripts allows you to install RML Amiga to a different drive or partition.
+script allows you to install RML Amiga to a different drive or partition.
 
 You can delete the packs after the installation if you want to reclaim disk
 space.
@@ -64,9 +64,9 @@ games. Onward to the [Getting started](getting-started.md) section!
 
 !!! note "RML Amiga is fully portable"
 
-    RML Amiga uses relative paths and won't create or modify any files
-    outside of its designated folder. You can move your RML Amiga folder
-    between different drives or even different computers without any problems.
+    RML Amiga uses relative paths and won't create or modify any files outside
+    its designated folder. You can move your RML Amiga folder between
+    different drives or even different computers without any problems.
 
 
 ## About the packs
@@ -172,12 +172,12 @@ monitors](customising-your-setup.md/#4k-and-better-monitors) section as well.
 
 !!! note 
 
-    The **Games** and **Demos** nested archives; each game and demo resides in
-    its own ZIP archive inside the big ZIP archive. You'd need three times the
-    disk space if you wanted to expand these manually. That's why using the
-    installer scripts is recommended because the scripts will expand the
-    nested ZIP files one by one, so you'll only need a bit more than twice the
-    disk space.
+    The **Games** and **Demos** packs are nested archives; each game and demo
+    resides in its own ZIP archive inside the big ZIP archive. You'd need
+    three times the disk space if you wanted to expand these manually. That's
+    why using the installer scripts is recommended because the scripts will
+    expand the nested ZIP files one by one, so you'll only need a bit more
+    than twice the disk space.
 
 !!! tip "Installing only a few games"
 
