@@ -875,12 +875,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../appendices/games-list.html" class="md-nav__link">
+      <a href="../appendices/game-list.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Games list
+    Game list
     
   </span>
   
@@ -1512,7 +1512,7 @@ method</a> to set up RML Amiga, the
 installer script asks about your monitor resolution then modifies the
 configs in <code>Configurations</code> accordingly, but leaves <code>Original Configs</code>
 alone. Consequently, if you restore the configs from <code>Original Configs</code>,
-you might need to reapply your monitor resolution to the restoed configs
+you might need to reapply your monitor resolution to the restored configs
 using the <a href="customising-your-setup.html#configuration-tool">Configuration
 tool</a>.</p>
 </div>
@@ -1531,7 +1531,8 @@ you don&rsquo;t need to worry about setting 50/60 Hz manually.</p>
 <p class="admonition-title">PAL, NTSC, and NTSC50</p>
 <p>NTSC games need 60 Hz, PAL games need 50 Hz, but NTSC50 games also need 50
 Hz (hence the &ldquo;50&rdquo; in the name). They&rsquo;re basically PAL games, just the
-graphics assume the NTSC stretching factor.</p>
+graphics assume the NTSC vertical stretch factor (1:1.2 pixel aspect ratio
+as opposed to 1:1 PAL pixel aspect ratio, in other words).</p>
 <p>You can check whether a game is PAL, NTSC, or NTSC50 in the included game
 spreadsheet, or you can check the <strong>Hardware / Chipset</strong> tab in the WinUAE
 settings after loading the game config. If the <strong>NTSC</strong> checkbox is
@@ -1569,13 +1570,13 @@ joystick or adapter with confirmed low input lag.</p>
 <h2 id="image-suddenly-too-small-or-too-large">Image suddenly too small or too large<a class="headerlink" href="#image-suddenly-too-small-or-too-large" title="Permanent link">&para;</a></h2>
 <p>If the image is suddenly appearing very small, you&rsquo;ve probably set up WinUAE
 for a 1080p monitor and now you&rsquo;re using it on a 1440p or 4K screen. If the
-image appears too large, that&rsquo;s the opposite problem&mdash;you&rsquo;ve most likely gone
-from 4K to 1440p or 1080p.</p>
+image is too large, that&rsquo;s the opposite problem&mdash;you&rsquo;ve most likely gone from
+4K to 1440p or 1080p.</p>
 <p>The solution is to reapply your monitor resolution to all configs using the
 <a href="customising-your-setup.html#configuration-tool">Configuration tool</a>. See also
 the note in <a href="#restoring-configs">Restoring configs</a>.</p>
 <h2 id="black-screen-or-stuck-image-at-startup">Black screen or stuck image at startup<a class="headerlink" href="#black-screen-or-stuck-image-at-startup" title="Permanent link">&para;</a></h2>
-<p>You are probably using some global frame limiter, frame capper, or you have
+<p>You are probably using some global frame limiter or frame capper, or you have
 changed the default global settings of your GPU driver to force vsync in all
 programs.</p>
 <p>The solution is to disable any such frame limiters and frame cappers for
