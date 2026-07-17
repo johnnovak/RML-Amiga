@@ -29,8 +29,8 @@ features.
 | Shortcut   | Description                |
 | --------   | -----------                |
 | ++end+j++  | Swap joystick ports        |
-| ++home+w++ | Enable [WASD movement keys](../manual/input-handling.md#wasd-movement-keys) (in supported games) |
-| ++home+q++ | Disable WASD movement keys |
+| ++end+w++ | Enable [WASD movement keys](../manual/input-handling.md#wasd-movement-keys) (in supported games) |
+| ++end+q++ | Disable WASD movement keys |
 </div>
 
 

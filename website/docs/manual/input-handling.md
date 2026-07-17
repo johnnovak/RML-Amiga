@@ -116,10 +116,10 @@ However, some people might prefer to use the **WASD** keys instead.
 All such RPGs in the collection feature optional WASD-style movement via a
 custom WinUAE keyboard mapping:
 
-- Press ++home+w++ to switch to the alternative keyboard mapping which maps
+- Press ++end+w++ to switch to the alternative keyboard mapping which maps
   the party-movement keys (usually the cursor keys) to the WASD keys.
 
-- Press ++home+q++ to restore the normal keyboard mapping.
+- Press ++end+q++ to restore the normal keyboard mapping.
 
 You'll need to return to the normal keyboard mapping if you want to type in
 some text that contains the letters "WASD" (e.g., to name your characters, the
