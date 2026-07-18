@@ -99,3 +99,88 @@ Conversely, if you're going back to a 1440p or 1080p screen, replace
     If you used the [automatic installation
     method](installation.md/#automatic-installation) to set up RML Amiga, this
     step has already been done for you by the installer.
+
+
+## Scaling customisation
+
+The **Screen resolution** setting in the configuration tool effectively
+applies additional scaling on top of **PAL scaling** / **NTSC scaling**:
+
+<div class="compact" markdown>
+| Screen resolution | Additional scaling |
+| ---               | ---                |
+| 1080p             | 1.00x              |
+| 1440p             | 1.33x              |
+| 2160p (4K)        | 2.00x              |
+| 2880p (5K)        | 2.66x              |
+</div>
+
+For example, **2160p (4K)** screen resolution and **3.5x** PAL scaling will
+result in 2.0 &times; 3.5 = 7.0 scaling for PAL games.
+
+Choosing a matching screen resolution setting for your monitor is a good idea
+if you want to minimise pillar and letterboxing around the image. However, if
+you want to emulate close to period-authentic image sizes and gain
+finer-grained control over scaling, consider choosing a lower resolution
+setting (i.e., **1440p** on a 4K monitor, which is my preference). Read [CRT
+emulation](crt-emulation.md) for more details.
+
+
+## DCI-P3 colorspace support
+
+If you have a DCI-P3-capable wide-gamut monitor, running the [CRT
+emulation](crt-emulation.md) in DCI-P3 mode will give you superior results
+(deeper blacks, increased contrast, and more vivid colours that are much
+closer to a real CRT).
+
+Make sure your monitor is set to DCI-P3 mode, then do the following:
+
+<div class="compact" markdown>
+  - Go to the `$RML_BASE\WinUAE` folder
+  - Delete `RGB-CRT.ini`
+  - Make a copy of `RGB-CRT-1080p-DCI-P3.ini` or `RGB-CRT-4k-DCI-P3.ini` and
+    rename it to `RGB-CRT.ini` (make sure to get the filename right; it's best
+    to copy-paste it from here)
+</div>
+
+The Windows desktop and most Windows programs assume sRGB, so in DCI-P3 they
+will appear oversaturated. The best way to fix this is to use a utility that
+will only enable DCI-P3 mode when WinUAE is active. **ClickMonitorDCC** is one
+of the best utilities for the job.
+
+In **ClickMonitorDCC**, navigate to the **Auto-Run commands** tab in the
+settings, select `winuae64.exe` as the program, tick the **Only in
+full-screen** checkbox, and enter the [DCC
+command](https://en.wikipedia.org/wiki/Display_Data_Channel) to enable DCI-P3
+mode on your monitor.
+
+You'll need to do some research to find this out, e.g., for the DELL U2725QE,
+the command for enabling DCI-P3 is `setVCP 0xf0 10`. You can use
+[softMCCS](https://entechtaiwan.com/lib/softmccs.shtm) to find out all the VCP
+commands supported by your monitor. You'll probably need to experiment with
+the manufacturer-specific commands.
+
+Alternatively, you can use [TwinkleTray](https://twinkletray.com/), but that
+doesn't support auto-sending VCP commands based on the active window. In
+**TwinkleTray**, you can find all VCP codes supported by the display under
+**DDC/CI Features** in the program's settings.
+
+!!! danger "Malware danger!"
+
+    Make sure to download **ClickMonitorDCC** from reputable sources! The
+    project's original website is no longer active, but you can still download
+    the program from safe, trusted mirrors:
+
+    <div class="compact" markdown>
+
+      - [https://github.com/chrismah/ClickMonitorDDC7.2](https://github.com/chrismah/ClickMonitorDDC7.2)
+      - [https://www.majorgeeks.com/files/details/clickmonitorddc.html](https://www.majorgeeks.com/files/details/clickmonitorddc.html)
+      - [https://www.softpedia.com/get/System/System-Miscellaneous/ClickMonitorDDC.shtml](https://www.softpedia.com/get/System/System-Miscellaneous/ClickMonitorDDC.shtml)
+
+    </div>
+
+    If you simply do a web search for "ClickMonitorDCC", you'll see polished,
+    convincing-looking websites in the top results that claim they're the
+    continuation of the project. Upon deeper inspection, you'll find these are
+    AI-generated slop websites --- _do NOT trust them; it's almost certain they
+    contain malware that can steal your personal data or harm your computer!_
