@@ -9,7 +9,7 @@ You can customise your RML Amiga game configurations in two ways:
 
 - By making changes to the configs in the WinUAE settings window directly. The
   benefit of this approach is that you can customise every aspect of the
-  emulation---only a small subset of these possibilities is exposed in the
+  emulation --- only a small subset of these possibilities is exposed in the
   config tool. The drawback is it's fairly easy to screw things up if you're
   not an expert WinUAE user and you cannot apply bulk changes to multiple
   configs this way.
@@ -21,7 +21,7 @@ You can customise your RML Amiga game configurations in two ways:
      your warranty the moment you start tinkering with the game configs with
      the direct WinUAE method. If you've screwed up one of your game configs,
      just [restore the original config](troubleshooting.md/#restoring-configs)
-     and try again---maybe by using the config tool this time.
+     and try again --- maybe by using the config tool this time.
 
 
 ## Configuration tool

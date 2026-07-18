@@ -71,7 +71,7 @@ that folder and the manual will open in your default browser.
 
 Always check the [Game notes](../game-notes/index.md) before trying a game for the
 first time. A few titles need some extra steps to even just start the
-game---this could be hard to figure out if you've never used an Amiga before.
+game --- this could be hard to figure out if you've never used an Amiga before.
 Some of this advice is next to impossible to figure out on your own (you'd
 need to do a lot of forum diving to find it), or the information is included
 in the manual but it's easy to miss if you don't read it carefully.

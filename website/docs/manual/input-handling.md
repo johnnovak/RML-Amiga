@@ -3,7 +3,7 @@
 All Amiga computers came with a keyboard and a mouse. Including a mouse as a
 standard accessory was a big selling point back in the day, so most Amiga
 games are primarily mouse-operated. The exceptions are action, sports, and
-racing games---these usually need a joystick (or two for "player vs player"
+racing games --- these usually need a joystick (or two for "player vs player"
 gaming).
 
 All Amigas have two DB9 (9-pin) **joystick ports** for connecting your input devices. The
@@ -65,7 +65,7 @@ game.
 
 All Amigas came with a 2-button mouse, so the vast majority of games that are
 not action games are mouse-operated. Even most text adventures have some
-rudimentary mouse-driven interface---that's how big of a deal built-in mouse
+rudimentary mouse-driven interface --- that's how big of a deal built-in mouse
 support was back in the 80s.
 
 The left and right mouse buttons work as expected, and the middle mouse is

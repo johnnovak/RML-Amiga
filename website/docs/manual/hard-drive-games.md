@@ -10,7 +10,7 @@ developed by American studios, are hard drive installable. Then a good number
 of games that don't have official hard drive installers can be still run
 cleanly from a hard drive by employing a few simple tricks. It's important to
 note that none of these tricks involve modifying the game's executable or data
-files---such hacks are not allowed in RML Amiga.
+files --- such hacks are not allowed in RML Amiga.
 
 <figure markdown="span">
   ![Amiga 500 with GVP A500-HD+ side expansion](images/amiga-500-gvp.jpg)
@@ -26,7 +26,7 @@ The first hard drive is called **DH0:** (**D**rive **H**ard **0**), the second
 Windows. Most hard drive games in the collection use a two hard
 drive configuration:
 
-- **DH0:** contains a heavily stripped-down AmigaOS---just the bare minimum
+- **DH0:** contains a heavily stripped-down AmigaOS --- just the bare minimum
   necessary for running games. This drive has the **System** label.
 
 - **DH1:** contains the game itself and usually has the label **Game**, but
@@ -93,7 +93,7 @@ requires a full reinstall ([Amberstar](../game-notes/a.md#amberstar) and
 [Demon's Winter](../game-notes/d.md#demons-winter) are such games).
 
 The [Game notes](../game-notes/index.md) contain detailed instructions for these
-special snowflakes---make it a habit to always check these notes before
+special snowflakes --- make it a habit to always check these notes before
 playing a new game.
 
 !!! danger "Patience is a virtue"
@@ -106,7 +106,7 @@ playing a new game.
     corrupt your save game!
 
     The reason for this is that hard drive writes happen in a slightly delayed
-    manner on the Amiga---it's just a quirk of the platform you will need to
+    manner on the Amiga --- it's just a quirk of the platform you will need to
     get used to.
 
 
@@ -160,7 +160,7 @@ experience.
 !!! important "Always quit WHDLoad games to save your progress to disk!"
 
     Due to various technical complications, WHDLoad games only write the save
-    games to the hard drive when you quit the game---the saves are kept
+    games to the hard drive when you quit the game --- the saves are kept
     in memory until then.
 
     Therefore, you _must_ always quit WHDLoad games by pressing the ++f11++
