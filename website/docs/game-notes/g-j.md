@@ -44,8 +44,8 @@
 - Needs a gamepad (it's very hard to play with keyboard mappings).
 
 - You can only save in the Hall of Worlds by finding a special book.
-  Unfortunately, this saving mechanism is buggy---it's possible to end up in a
-  state where you're unable to revisit other worlds, preventing you from
+  Unfortunately, this saving mechanism is buggy --- it's possible to end up in
+  a state where you're unable to revisit other worlds, preventing you from
   completing the game. Using save states is recommended instead (which isn't
   considered cheating because you can save anywhere in the OCS and AGA
   versions).

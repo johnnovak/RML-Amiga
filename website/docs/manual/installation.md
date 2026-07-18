@@ -136,7 +136,7 @@ you don't want to download all games, just a few), and for those who have
 problems with using certain parts of the collection for whatever reasons
 (e.g., the Kickstart ROMs).
 
-Start by downloading the **Base** and **Systems** packs---these are mandatory.
+Start by downloading the **Base** and **Systems** packs --- these are mandatory.
 The **ROMs** pack is not necessary if you have acquired the ROM files from
 elsewhere (see [Supplying your own ROM files](#supplying-your-own-rom-files)).
 
@@ -193,7 +193,7 @@ monitors](customising-your-setup.md/#4k-and-better-monitors) section as well.
 !!! warning "This voids your warranty, pal!"
 
     The games are only guaranteed to work with the bundled WinUAE version.
-    Switching to any other version is asking for trouble---don't do it.
+    Switching to any other version is asking for trouble --- don't do it.
 
 
 ## Supplying your own ROM files

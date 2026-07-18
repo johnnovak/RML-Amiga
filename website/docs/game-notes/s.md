@@ -47,7 +47,7 @@
 
 !!! danger "Only use regular saves"
 
-    The game is _not_ compatible with save states---only user regular in-game
+    The game is _not_ compatible with save states --- only user regular in-game
     saves!
 
 

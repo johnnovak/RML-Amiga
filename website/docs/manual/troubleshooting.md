@@ -97,7 +97,7 @@ joystick or adapter with confirmed low input lag.
 
 If the image is suddenly appearing very small, you've probably set up WinUAE
 for a 1080p monitor and now you're using it on a 1440p or 4K screen. If the
-image is too large, that's the opposite problem---you've most likely gone from
+image is too large, that's the opposite problem --- you've most likely gone from
 4K to 1440p or 1080p.
 
 The solution is to reapply your monitor resolution to all configs using the
@@ -118,7 +118,7 @@ your GPU driver's settings.
 
 ## Weird vsync issues
 
-If vsync behaves really erratically, see the [previous point](#black-screen-or-stuck-image-at-startup)---disable all
+If vsync behaves really erratically, see the [previous point](#black-screen-or-stuck-image-at-startup) --- disable all
 frame limiters and don't force vsync globally at the driver level.
 
 

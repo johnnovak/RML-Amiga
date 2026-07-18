@@ -1,6 +1,6 @@
 # CRT emulation
 
-CRT shaders, sharp pixels, black borders around the image---these are very
+CRT shaders, sharp pixels, black borders around the image --- these are very
 divisive topics in emulation circles, and the default graphics settings of RML
 Amiga might not suit your preferences. That's fine, we're all a bit different.
 Rest assured, you can customise these settings to your liking, including
@@ -57,10 +57,10 @@ image size (3.0x scaling factor), you will start seeing the "pixels". The
 beneficial blur of the CRT emulation will also be enlarged, resulting in a
 subjectively less sharp-looking image. You can offset this by using the
 "sharp" variants of the shaders; these will reduce the blurriness
-substantially, but at the expense of the beneficial smoothing effects---the
+substantially, but at the expense of the beneficial smoothing effects --- the
 pixels will start looking blockier. Moreover, the scanlines will be more
-apparent at higher scaling factors, too, especially with the NTSC shader. You might
-want to force the PAL shader even in NTSC games to mitigate this as that
+apparent at higher scaling factors, too, especially with the NTSC shader. You
+might want to force the PAL shader even in NTSC games to mitigate this as that
 renders more "densely packed" scanlines.
 
 <figure markdown="span">

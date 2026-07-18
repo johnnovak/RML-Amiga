@@ -92,7 +92,7 @@ select the state file, and then press **Ok**.
 
 Quite a few games have special config variants to skip the intro of the game
 or the manual-based copy protection checks. These special configs are
-implemented via the automatic save state loading feature of WinUAE---you
+implemented via the automatic save state loading feature of WinUAE --- you
 can create configs that will load a save state immediately after launching
 them.
 
@@ -240,7 +240,7 @@ such games, so make sure to check them out before starting your next long RPG.
 
 WHDLoad games perform in-game saves to memory only, then write these cached
 save games to disk when you exit the game with the ++f10++ key. The same sync
-issues explained in the previous section apply---_never_ use save states with
+issues explained in the previous section apply --- _never_ use save states with
 WHDLoad games if you don't like losing your progress!
 
 ### Running games for too long

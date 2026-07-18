@@ -18,7 +18,7 @@ IBM PCs from that era cost a small fortune, could only display 16 garish
 colours at best, and had rather primitive sound capabilities. The Amiga could
 display 64 colours out of its 4096-colour palette (or even hundreds of colours
 with clever programming tricks, or all 4096 colours at once in a special video
-mode), and had 4-channel digital sound---all that at a fraction of what an IBM
+mode), and had 4-channel digital sound --- all that at a fraction of what an IBM
 PC costed[^1]. Although early models only had a 7.14 MHz CPU, all Amigas were also
 equipped with custom graphics and sound chips (co-processors) that worked in
 parallel with the CPU, freeing it up to do other tasks. This is similar to how
@@ -96,7 +96,7 @@ music.
 
 ## General recommendations
 
-In short, for pre-1990 games, it's not even a contest---the Amiga almost
+In short, for pre-1990 games, it's not even a contest --- the Amiga almost
 always wins on all fronts. From 1990 onwards, it varies per game, but in
 general, European-made games are often best on the Amiga. Then regardless of
 the year of release, the Amiga versions are often the best-sounding, or at

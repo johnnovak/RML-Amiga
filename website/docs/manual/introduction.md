@@ -12,7 +12,7 @@ reference cards, interactive code wheels, maps, posters, box art, audio
 recordings, hint books, and various other extras to enjoy the games to the
 fullest are all included.
 
-No previous Amiga experience is assumed or required---things are kept as
+No previous Amiga experience is assumed or required --- things are kept as
 simple as possible, and everything you need to know is explained in this
 manual.
 
@@ -62,7 +62,7 @@ Optimal configurations
   extra RAM). Then some games assume very specific configurations and start
   exhibiting strange bugs if their expectations are not met. Figuring this out
   for each game is tricky as it requires in-depth Amiga knowledge or manual
-  and forum diving---usually all of the above, and this can be tedious even
+  and forum diving --- usually all of the above, and this can be tedious even
   for Amiga gurus. The good news is you don't have to worry about any of that;
   all games have been configured to give you the most they have to offer.
 
