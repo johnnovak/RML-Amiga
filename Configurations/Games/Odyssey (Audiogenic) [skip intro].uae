@@ -444,3 +444,4 @@ input.4.keyboard.0.custom=true
 floppy1sound=1
 floppy1soundvolume_disk=100
 floppy1soundvolume_empty=100
+gfx_ntscpixels=false
