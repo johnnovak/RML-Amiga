@@ -115,7 +115,6 @@ nav:
     - manual/crt-emulation.md
     - manual/customising-your-setup.md
     - manual/troubleshooting.md
-    # - manual/folder-organisation.md
 
     - Appendices:
       - appendices/keyboard-shortcuts.md
