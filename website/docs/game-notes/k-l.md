@@ -34,6 +34,14 @@
 - Save disk is in drive DF2:
 
 
+## Kult
+
+- Multi-language release (English, French, German).
+
+- Put the save disk in DF0: before clicking on the save game icon, then
+  reinsert the game disk after "OK" appears.
+
+
 ## Lancelot
 
 - Use the **SAVE** command to save your game. Press ++enter++ at the
