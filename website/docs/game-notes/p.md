@@ -31,7 +31,7 @@
 ## Pinball Dreams
 
 - Supports two floppy drives, no disk swapping necessary.
-- Saves the high scores to the game disk.
+- Saves the high scores to the game disk in DF1:
 
 
 ## Pirates!

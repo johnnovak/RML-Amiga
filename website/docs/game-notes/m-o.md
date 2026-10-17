@@ -76,4 +76,3 @@
 - Best played with a digital joystick.
 - Supports two floppy drives, no disk swapping necessary.
 
-
