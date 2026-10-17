@@ -102,7 +102,10 @@ plugins:
 # Page tree
 nav:
   - Home: index.md
+
   - Manual:
+    - manual/index.md # dummy page for redirecting
+
     - manual/introduction.md
     - manual/installation.md
     - manual/why-play-amiga-games.md
