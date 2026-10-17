@@ -135,3 +135,9 @@
 
 - Multi-language release (English, French, German, Italian).
 
+
+## Purple Saturn Day
+
+- Best played with a digital joystick.
+- Saves high scores to the game disk.
+
