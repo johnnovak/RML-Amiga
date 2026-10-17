@@ -143,7 +143,7 @@ it (e.g., code wheels, code sheets, or other documents and images you'll need
 to refer to during your playthrough as a form of copy protection).
 
 The **Extras** folder contains optional content not strictly necessary to
-complete the game (e.g., covers, posters, maps, hint books, etc.).
+complete the game (e.g., covers, posters, maps, hint books, cheats, etc.).
 
 
 ### Floppy games
