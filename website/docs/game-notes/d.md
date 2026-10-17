@@ -1,5 +1,12 @@
 # D
 
+## Darkmere
+
+- Multi-language release (English, French, German, Italian).
+- Supports two floppy drives.
+- Best played with a digital joystick.
+
+
 ## Dark Queen of Krynn, The
 
 - To start the game, double-click on the **TheDarkQueenOfKrynn** disk icon,
